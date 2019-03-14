@@ -3798,11 +3798,6 @@ CAP-08070</description>
 <sheets>
 <sheet>
 <plain>
-<wire x1="-81.28" y1="195.58" x2="223.52" y2="195.58" width="0.1524" layer="94" style="longdash"/>
-<wire x1="223.52" y1="195.58" x2="223.52" y2="-12.7" width="0.1524" layer="94" style="longdash"/>
-<wire x1="223.52" y1="-12.7" x2="-83.82" y2="-12.7" width="0.1524" layer="94" style="longdash"/>
-<wire x1="-83.82" y1="-12.7" x2="-83.82" y2="195.58" width="0.1524" layer="94" style="longdash"/>
-<wire x1="-83.82" y1="195.58" x2="-81.28" y2="195.58" width="0.1524" layer="94" style="longdash"/>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="-10.16" y="81.28"/>
