@@ -8,7 +8,7 @@ RF24 radio(9, 8);  // CE, CSN
 
 // N total address for nodes to read/write on.
 // TODO: configure per radio using!
-bool nodeNumber = 1; // TODO: switch between 0 and N depending on radio
+int nodeNumber = 2; // TODO: switch between 0 and N depending on radio
 const int N = 6;  // Reading only supported on pipes 1-5
 // Addresses through which N modules communicate.
 // Note: Using other types for addressing did not work for reading from multiple pipes.  Why?  IDK but this works ;-)
@@ -17,8 +17,7 @@ long long unsigned addresses[6] = {0xF0F0F0F0F0, 0xF0F0F0F0AA, 0xF0F0F0F0BB, 0xF
 // Note: The LED_BUILTIN is connected to tx/rx so it requires
 // serial communication (monitor open) in order to work.
 // Using other LED instead
-const int TEST_LED = 3;
-const int controlLedPin = 13;
+const int LED_PIN = 3;
 
 const int lowPulse = 20;
 const int highPulse = 255;
@@ -66,9 +65,7 @@ void setup() {
 
   setupRadio();
   
-  // TODO: use controlledPin instead of built in LED (controlledPin is for LED strip)
-  pinMode(TEST_LED, OUTPUT);
-//  pinMode(controlLedPin, OUTPUT); // TODO: uncomment when using LED strip
+  pinMode(LED_PIN, OUTPUT);
 }
 
 
@@ -113,8 +110,9 @@ void loop() {
   // set the light brightness based on where we are in the interval time
   // for default period: set light on HI (TODO)
   // fake pulsing when using just LEDs on arduino.
-  testLight(phase);
-  // pulseLight(phase);
+//  testLight(phase);
+  testLightAnalog(phase);
+//  pulseLight(phase);
   updatePhase();
   // send to other bikes at limited frequency of once per period
   if ((millis() - lastTransmitTime) > period) {
@@ -198,9 +196,22 @@ void testLight(int phase) {
   // at time between [period midpoint, period): ON
   // Check if interval time at HI: within lightTime of 0 or period
   if (phase < periodMidpoint) {
-    digitalWrite(TEST_LED, LOW);
+    digitalWrite(LED_PIN, LOW);
   } else  {
-    digitalWrite(TEST_LED, HIGH);
+    digitalWrite(LED_PIN, HIGH);
+  }
+}
+
+void testLightAnalog(int phase) {
+  // This is a fake pulse light method used to keep track of the interval
+  // when using a simple LED that cannot pulse with a varying amplitude.
+  // at time between [0, period midpoint): OFF
+  // at time between [period midpoint, period): ON
+  // Check if interval time at HI: within lightTime of 0 or period
+  if (phase < periodMidpoint) {
+    analogWrite(LED_PIN, lowPulse);
+  } else  {
+    analogWrite(LED_PIN, highPulse);
   }
 }
 
@@ -226,5 +237,5 @@ void pulseLight(int phase) {
 }
 
 void light(int amplitude) {
-  analogWrite(controlLedPin, amplitude);
+  analogWrite(LED_PIN, amplitude);
 }
