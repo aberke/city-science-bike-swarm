@@ -6,8 +6,14 @@
 //create an RF24 object (RADIO)
 RF24 radio(9, 8);  // CE, CSN
 
+// N total address for nodes to read/write on.
 // TODO: configure per radio using!
-bool nodeNumber = 0; // TODO: switch between 0 and 1 depending on radio
+bool nodeNumber = 1; // TODO: switch between 0 and N depending on radio
+const int N = 6;  // Reading only supported on pipes 1-5
+// Addresses through which N modules communicate.
+// Note: Using other types for addressing did not work for reading from multiple pipes.  Why?  IDK but this works ;-)
+long long unsigned addresses[6] = {0xF0F0F0F0F0, 0xF0F0F0F0AA, 0xF0F0F0F0BB, 0xF0F0F0F0CC, 0xF0F0F0F0DD, 0xF0F0F0F0EE};
+
 // Note: The LED_BUILTIN is connected to tx/rx so it requires
 // serial communication (monitor open) in order to work.
 // Using other LED instead
@@ -22,9 +28,6 @@ const int period = 2200;  // ms
 
 const int periodMidpoint = int(float(period) / 2.0);
 const float amplitudeSlope = float(highPulse - lowPulse) / float(periodMidpoint);
-
-// Addresses through which modules communicate.
-const byte addresses[][6] = {"00000", "00001", "00002", "00003", "00004", "00005"};
 
 // Keep track of when last message was received from another bike
 // This tracks whether this bike is currently ‘in sync’ (in phase) with another bike
@@ -45,8 +48,7 @@ const int defaultPhase = period;
 int phase = defaultPhase;  // initialize to default
 
 int expectedLatency;  // ms; This number is updated based on length of loop.
-// TODO: determine best value for allowed phase shift
-const int allowedPhaseShift = 300;  // ms
+const int allowedPhaseShift = 100;  // ms
 
 // A variable keeps track of when time was last checked in order to properly
 // update the interval time with time
@@ -64,34 +66,25 @@ void setup() {
 
   setupRadio();
   
-  // TODO: use controlledPin instead of built in LED
+  // TODO: use controlledPin instead of built in LED (controlledPin is for LED strip)
   pinMode(TEST_LED, OUTPUT);
-//  pinMode(controlLedPin, OUTPUT); // TODO: uncomment when
+//  pinMode(controlLedPin, OUTPUT); // TODO: uncomment when using LED strip
 }
 
 
 void  setupRadio() {
   radio.begin();
-  // TODO: figure out way to not have pre-numbered radios
-  // The current configuration is for 2 radios with pre-assigned addresses.
+  // The current configuration is for N radios with pre-assigned addresses.
   // This is a temporary implementation to get the light system working as desired.
   Serial.print("setupRadio for node:");
   Serial.println(nodeNumber);
-  if (nodeNumber) {
-    // Pipe 0 is also used by the writing pipe. So if you open pipe 0 for reading, and then startListening(), it will overwrite the writing pipe
-    radio.openWritingPipe(addresses[0]);
-    radio.openReadingPipe(1, addresses[1]);
-    radio.openReadingPipe(2, addresses[2]);
-    radio.openReadingPipe(3, addresses[3]);
-    radio.openReadingPipe(4, addresses[4]);
-    radio.openReadingPipe(5, addresses[5]);
-  } else {
-    radio.openWritingPipe(addresses[1]);
-    radio.openReadingPipe(1, addresses[0]);
-    radio.openReadingPipe(2, addresses[2]);
-    radio.openReadingPipe(3, addresses[3]);
-    radio.openReadingPipe(4, addresses[4]);
-    radio.openReadingPipe(5, addresses[5]);
+  // Radio writes to one address and reads on all other configured addreses,
+  // The writing and reading addresses are determined by the nodeNumber
+  // Note: Pipe 0 is used by the writing pipe.
+  // So if you open pipe 0 for reading, and then startListening(), it will overwrite the writing pipe.
+  radio.openWritingPipe(addresses[(nodeNumber + 0) % N]);
+  for (int i=1; i < N; i++) {
+    radio.openReadingPipe(i, addresses[(nodeNumber + i) % N]);
   }
 //  radio.setPALevel(RF24_PA_MIN);
   radio.startListening();
@@ -137,7 +130,7 @@ void loop() {
     // change to other bike’s interval iff it is SOONER than our current interval
     // allow a phase shift to determine whose interval is sooner to account for latency
     updatePhase();
-    if (otherPhase < (phase - allowedPhaseShift))  {
+    if (otherPhase < (phase - min(allowedPhaseShift, loopLength)))  {
       // change to other interval (put in helper function "setphase")
       expectedLatency = loopLength/2;
       phase = otherPhase + expectedLatency;
