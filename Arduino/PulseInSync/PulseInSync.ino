@@ -45,7 +45,7 @@ bool inSync = false; // True when in sync with another bicycle
 // This variable is updated with time when the bike is in sync with other bikes
 // Otherwise it stays constant at the default
 // The current value of the interval time determines the brightness of the light
-const int defaultPhase = period;
+const int defaultPhase = 0;
 int phase = defaultPhase;  // initialize to default
 
 int expectedLatency;  // ms; This number is updated based on length of loop.
@@ -118,6 +118,8 @@ void loop() {
   // listen for messages from other bikes
   bool changedPhase = false;
   int otherPhase = radioReceive();
+  Serial.print("received:");
+  Serial.println(otherPhase);
   if (otherPhase >= 0) {  // -1 indicates no message was received
     // another bike sent their current interval time
     lastReceiveTime = millis();  // update for later checking whether in sync
@@ -199,7 +201,7 @@ void testLight(int phase) {
   // at time between [0, period midpoint): OFF
   // at time between [period midpoint, period): ON
   // Check if interval time at HI: within lightTime of 0 or period
-  if (phase < periodMidpoint) {
+  if (phase > periodMidpoint) {
     digitalWrite(LED_PIN, LOW);
   } else  {
     digitalWrite(LED_PIN, HIGH);
@@ -212,7 +214,7 @@ void testLightAnalog(int phase) {
   // at time between [0, period midpoint): OFF
   // at time between [period midpoint, period): ON
   // Check if interval time at HI: within lightTime of 0 or period
-  if (phase < periodMidpoint) {
+  if (phase > periodMidpoint) {
     analogWrite(LED_PIN, lowPulse);
   } else  {
     analogWrite(LED_PIN, highPulse);
