@@ -6,7 +6,7 @@
 //create an RF24 object (RADIO)
 // Arduino Nano
 const bool NANO = true;
-RF24 radio(9, 10);  // CE=D9=9, CSN=D10=10
+RF24 radio(7, 8);  // CE=7, CSN=8
 
 //Arduino Uno
 //const bool NANO = false;
@@ -15,7 +15,7 @@ RF24 radio(9, 10);  // CE=D9=9, CSN=D10=10
 
 // N total address for nodes to read/write on.
 // TODO: configure per radio using!
-int nodeNumber = 0; // TODO: switch between 0 and N depending on radio
+int nodeNumber = 1; // TODO: switch between 0 and N depending on radio
 const int N = 6;  // Reading only supported on pipes 1-5
 // Addresses through which N modules communicate.
 // Note: Using other types for addressing did not work for reading from multiple pipes.  Why?  IDK but this works ;-)
