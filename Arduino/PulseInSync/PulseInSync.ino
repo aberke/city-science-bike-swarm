@@ -4,11 +4,18 @@
 #include <RF24.h>
 
 //create an RF24 object (RADIO)
-RF24 radio(9, 8);  // CE, CSN
+// Arduino Nano
+const bool NANO = true;
+RF24 radio(9, 10);  // CE=D9=9, CSN=D10=10
+
+//Arduino Uno
+//const bool NANO = false;
+//RF24 radio(9, 8);  // CE, CSN
+
 
 // N total address for nodes to read/write on.
 // TODO: configure per radio using!
-int nodeNumber = 1; // TODO: switch between 0 and N depending on radio
+int nodeNumber = 0; // TODO: switch between 0 and N depending on radio
 const int N = 6;  // Reading only supported on pipes 1-5
 // Addresses through which N modules communicate.
 // Note: Using other types for addressing did not work for reading from multiple pipes.  Why?  IDK but this works ;-)
@@ -37,7 +44,7 @@ unsigned long currentTime;
 unsigned long loopTime; // using for profiling/debugging
 unsigned long loopLength;  // used for calculated expected latency
 
-const int sendFrequency = float(period/4);
+const int sendFrequency = float(period)/2;
 
 bool inSync = false; // True when in sync with another bicycle
 
@@ -85,7 +92,7 @@ void  setupRadio() {
   for (int i=1; i < N; i++) {
     radio.openReadingPipe(i, addresses[(nodeNumber + i) % N]);
   }
-//  radio.setPALevel(RF24_PA_MIN);
+  radio.setPALevel(RF24_PA_MAX); // Keep at MAX for Nano
   radio.startListening();
 }
 
@@ -118,8 +125,6 @@ void loop() {
   // listen for messages from other bikes
   bool changedPhase = false;
   int otherPhase = radioReceive();
-  Serial.print("received:");
-  Serial.println(otherPhase);
   if (otherPhase >= 0) {  // -1 indicates no message was received
     // another bike sent their current interval time
     lastReceiveTime = millis();  // update for later checking whether in sync
@@ -136,7 +141,7 @@ void loop() {
     }
   }
   // send to other bikes at limited frequency or if phase recently changed
-  if (changedPhase || (millis() - lastTransmitTime) > 1/sendFrequency) {
+  if (changedPhase || (millis() - lastTransmitTime) > period) {
     radioBroadcast(phase);
     lastTransmitTime = millis();
   }
@@ -147,7 +152,7 @@ int computePhaseShift(int phase1, int phase2) {
   if (phase1 > phase2) {
     int temp = phase1;
     phase1 = phase2;
-    phase2 = phase1;
+    phase2 = temp;
   }
   int a = phase2 - phase1;
   int b = period - phase2 + phase1;
