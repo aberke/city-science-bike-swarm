@@ -6,13 +6,18 @@
 //create an RF24 object (RADIO)
 RF24 radio(9, 8);  // CE, CSN
 
+// N total address for nodes to read/write on.
 // TODO: configure per radio using!
-bool nodeNumber = 0; // TODO: switch between 0 and 1 depending on radio
+int nodeNumber = 1; // TODO: switch between 0 and N depending on radio
+const int N = 6;  // Reading only supported on pipes 1-5
+// Addresses through which N modules communicate.
+// Note: Using other types for addressing did not work for reading from multiple pipes.  Why?  IDK but this works ;-)
+long long unsigned addresses[6] = {0xF0F0F0F0F0, 0xF0F0F0F0AA, 0xF0F0F0F0BB, 0xF0F0F0F0CC, 0xF0F0F0F0DD, 0xF0F0F0F0EE};
+
 // Note: The LED_BUILTIN is connected to tx/rx so it requires
 // serial communication (monitor open) in order to work.
 // Using other LED instead
-const int TEST_LED = 3;
-const int controlLedPin = 13;
+const int LED_PIN = 3;
 
 const int lowPulse = 20;
 const int highPulse = 255;
@@ -20,11 +25,8 @@ const int highPulse = 255;
 // The length of the full breathing period
 const int period = 2200;  // ms
 
-const int periodMidpoint = int(float(period) / 2.0);
+const float periodMidpoint = float(period)/2.0;
 const float amplitudeSlope = float(highPulse - lowPulse) / float(periodMidpoint);
-
-// Addresses through which modules communicate.
-const byte addresses[][6] = {"00000", "00001", "00002", "00003", "00004", "00005"};
 
 // Keep track of when last message was received from another bike
 // This tracks whether this bike is currently ‘in sync’ (in phase) with another bike
@@ -35,18 +37,19 @@ unsigned long currentTime;
 unsigned long loopTime; // using for profiling/debugging
 unsigned long loopLength;  // used for calculated expected latency
 
+const int sendFrequency = float(period/4);
+
 bool inSync = false; // True when in sync with another bicycle
 
 // Keep track of where this bike is in its pulsating interval time
 // This variable is updated with time when the bike is in sync with other bikes
 // Otherwise it stays constant at the default
 // The current value of the interval time determines the brightness of the light
-const int defaultPhase = period;
+const int defaultPhase = 0;
 int phase = defaultPhase;  // initialize to default
 
 int expectedLatency;  // ms; This number is updated based on length of loop.
-// TODO: determine best value for allowed phase shift
-const int allowedPhaseShift = 300;  // ms
+const int maxAllowedPhaseShift = 100;  // ms
 
 // A variable keeps track of when time was last checked in order to properly
 // update the interval time with time
@@ -64,34 +67,23 @@ void setup() {
 
   setupRadio();
   
-  // TODO: use controlledPin instead of built in LED
-  pinMode(TEST_LED, OUTPUT);
-//  pinMode(controlLedPin, OUTPUT); // TODO: uncomment when
+  pinMode(LED_PIN, OUTPUT);
 }
 
 
 void  setupRadio() {
   radio.begin();
-  // TODO: figure out way to not have pre-numbered radios
-  // The current configuration is for 2 radios with pre-assigned addresses.
+  // The current configuration is for N radios with pre-assigned addresses.
   // This is a temporary implementation to get the light system working as desired.
   Serial.print("setupRadio for node:");
   Serial.println(nodeNumber);
-  if (nodeNumber) {
-    // Pipe 0 is also used by the writing pipe. So if you open pipe 0 for reading, and then startListening(), it will overwrite the writing pipe
-    radio.openWritingPipe(addresses[0]);
-    radio.openReadingPipe(1, addresses[1]);
-    radio.openReadingPipe(2, addresses[2]);
-    radio.openReadingPipe(3, addresses[3]);
-    radio.openReadingPipe(4, addresses[4]);
-    radio.openReadingPipe(5, addresses[5]);
-  } else {
-    radio.openWritingPipe(addresses[1]);
-    radio.openReadingPipe(1, addresses[0]);
-    radio.openReadingPipe(2, addresses[2]);
-    radio.openReadingPipe(3, addresses[3]);
-    radio.openReadingPipe(4, addresses[4]);
-    radio.openReadingPipe(5, addresses[5]);
+  // Radio writes to one address and reads on all other configured addreses,
+  // The writing and reading addresses are determined by the nodeNumber
+  // Note: Pipe 0 is used by the writing pipe.
+  // So if you open pipe 0 for reading, and then startListening(), it will overwrite the writing pipe.
+  radio.openWritingPipe(addresses[(nodeNumber + 0) % N]);
+  for (int i=1; i < N; i++) {
+    radio.openReadingPipe(i, addresses[(nodeNumber + i) % N]);
   }
 //  radio.setPALevel(RF24_PA_MIN);
   radio.startListening();
@@ -111,39 +103,56 @@ void loop() {
   currentTime = millis();
   // check/update whether in sync with another bike
   // being in sync with another bike times out after given amount of time
-  // without hearing from other bikes: 2*period
+  // without hearing from other bikes
   inSync = false;
-  if ((currentTime - lastReceiveTime) < 3*period)  {
+  if ((currentTime - lastReceiveTime) < 2*period)  {
     inSync =  true;
   }
   updatePhase();
   // set the light brightness based on where we are in the interval time
-  // for default period: set light on HI (TODO)
   // fake pulsing when using just LEDs on arduino.
   testLight(phase);
-  // pulseLight(phase);
-  updatePhase();
-  // send to other bikes at limited frequency of once per period
-  if ((millis() - lastTransmitTime) > period) {
-    radioTransmit(phase);
-    lastTransmitTime = millis();
-  }
+//  testLightAnalog(phase);
+//  pulseLight(phase);
   updatePhase();
   // listen for messages from other bikes
+  bool changedPhase = false;
   int otherPhase = radioReceive();
+  Serial.print("received:");
+  Serial.println(otherPhase);
   if (otherPhase >= 0) {  // -1 indicates no message was received
     // another bike sent their current interval time
     lastReceiveTime = millis();  // update for later checking whether in sync
-    // change to other bike’s interval iff it is SOONER than our current interval
+    // change to other bike’s interval iff it is GREATER than our current interval
     // allow a phase shift to determine whose interval is sooner to account for latency
     updatePhase();
-    if (otherPhase < (phase - allowedPhaseShift))  {
-      // change to other interval (put in helper function "setphase")
+    int allowedPhaseShift = min(maxAllowedPhaseShift, loopLength);
+    if ((otherPhase > phase) && computePhaseShift(phase, otherPhase) > allowedPhaseShift)  {
+      // change to other phase
       expectedLatency = loopLength/2;
       phase = otherPhase + expectedLatency;
       lastTimeCheck = lastReceiveTime;
+      changedPhase = true;
     }
   }
+  // send to other bikes at limited frequency or if phase recently changed
+  if (changedPhase || (millis() - lastTransmitTime) > 1/sendFrequency) {
+    radioBroadcast(phase);
+    lastTransmitTime = millis();
+  }
+}
+
+int computePhaseShift(int phase1, int phase2) {
+  // Use phase1 as lower value, phase2 as higher value
+  if (phase1 > phase2) {
+    int temp = phase1;
+    phase1 = phase2;
+    phase2 = phase1;
+  }
+  int a = phase2 - phase1;
+  int b = period - phase2 + phase1;
+  int phaseShift = min(a, b);
+  return phaseShift;
 }
 
 
@@ -162,35 +171,23 @@ int updatePhase() {
 }
 
 
-void printTime(int num) {
-  unsigned long newTime = millis();
-  Serial.print(num);
-  Serial.print(": Time: ");
-  Serial.print(newTime);
-  Serial.print(";  Delta: ");
-  Serial.println(newTime - currentTime);
-  currentTime = newTime;
-}
-
-
 int radioReceive() {
-  //  If there is a message AND message is an integer AND 0 <= int(message) <= period:
-  //    Return int(message)
-  //  Else:
-  //    Return  -1
-  if (radio.available()) {
-    String messageString = "";
+  // Read all the available messages in the queue,
+  // return the message with the highest phase message if messages available,
+  // otherwise return -1 to indicate there was no message.
+  int messageInt = -1;
+  while (radio.available()) {
     char messageBuffer[32];
     radio.read(&messageBuffer, sizeof(messageBuffer));
-    int messageInt = atoi(messageBuffer);
-    if ((messageInt > 0) && (messageInt <= period)) {
-      return  messageInt;
+    int newMessageInt = atoi(messageBuffer);
+    if ((newMessageInt > messageInt) && (newMessageInt <= period)) {
+      messageInt = newMessageInt;
     }
   }
-  return -1;
+  return messageInt;
 }
 
-void radioTransmit(int phase) {
+void radioBroadcast(int phase) {
   radio.stopListening();
   char messageBuffer[32];
   itoa(phase, messageBuffer, 10);
@@ -204,10 +201,23 @@ void testLight(int phase) {
   // at time between [0, period midpoint): OFF
   // at time between [period midpoint, period): ON
   // Check if interval time at HI: within lightTime of 0 or period
-  if (phase < periodMidpoint) {
-    digitalWrite(TEST_LED, LOW);
+  if (phase > periodMidpoint) {
+    digitalWrite(LED_PIN, LOW);
   } else  {
-    digitalWrite(TEST_LED, HIGH);
+    digitalWrite(LED_PIN, HIGH);
+  }
+}
+
+void testLightAnalog(int phase) {
+  // This is a fake pulse light method used to keep track of the interval
+  // when using a simple LED that cannot pulse with a varying amplitude.
+  // at time between [0, period midpoint): OFF
+  // at time between [period midpoint, period): ON
+  // Check if interval time at HI: within lightTime of 0 or period
+  if (phase > periodMidpoint) {
+    analogWrite(LED_PIN, lowPulse);
+  } else  {
+    analogWrite(LED_PIN, highPulse);
   }
 }
 
@@ -233,5 +243,17 @@ void pulseLight(int phase) {
 }
 
 void light(int amplitude) {
-  analogWrite(controlLedPin, amplitude);
+  analogWrite(LED_PIN, amplitude);
+}
+
+
+
+void printTime(int num) {
+  unsigned long newTime = millis();
+  Serial.print(num);
+  Serial.print(": Time: ");
+  Serial.print(newTime);
+  Serial.print(";  Delta: ");
+  Serial.println(newTime - currentTime);
+  currentTime = newTime;
 }
