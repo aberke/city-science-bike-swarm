@@ -92,7 +92,8 @@ void  setupRadio() {
   for (int i=1; i < N; i++) {
     radio.openReadingPipe(i, addresses[(nodeNumber + i) % N]);
   }
-  radio.setPALevel(RF24_PA_MAX); // Keep at MAX for Nano
+  // Configure for radio range.
+  radio.setPALevel(-6);
   radio.startListening();
 }
 
