@@ -231,7 +231,7 @@ void pulseLightCurve(int phase) {
   // It starts HI and decreases in amplitude until the period midpoint: LO
   // And then increases in amplitude
   //0:HI mid:LO
-  // A = [cos(2*pi/period) + 1]((HI - LO)/2) + LO
+  // A = [cos(phase*2*pi/period) + 1]((HI - LO)/2) + LO
   float theta = phase*(2*PI/float(period));
   int amplitude = (cos(theta) + 1)*((highPulse - lowPulse)/2) + lowPulse;
   light(amplitude);
