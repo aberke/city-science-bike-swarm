@@ -2,9 +2,9 @@
 A swarm of bikes pulsating light in harmony take the city streets.
 
 
-### Radio Frequency
+#### Radio Communications
 
-Possible module nRF24L01+ 2.4Ghz
+Using module nRF24L01+ 2.4Ghz
 
 Arduino Library RadioHead
 http://www.airspayce.com/mikem/arduino/RadioHead/
