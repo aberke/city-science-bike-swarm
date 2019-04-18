@@ -176,8 +176,6 @@
 <text x="73.5" y="24.5" size="1.778" layer="25">-</text>
 <text x="72" y="24.5" size="1.778" layer="25">-</text>
 <text x="5" y="0.5" size="1.016" layer="25">Bike Swarm 0.1v</text>
-<dimension x1="42.59" y1="16.92" x2="42.5" y2="11.75" x3="38.7961375" y3="14.400259375" textsize="1.778" layer="1"/>
-<dimension x1="38.51" y1="48.67" x2="38.5" y2="17" x3="32.255390625" y3="32.836971875" textsize="1.778" layer="1"/>
 </plain>
 <libraries>
 <library name="microbuilder">

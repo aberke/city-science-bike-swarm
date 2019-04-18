@@ -838,13 +838,13 @@ design rules under a new name.</description>
 <attribute name="PROD_ID" value="CAP-09538" x="51.3" y="18.23" size="1.778" layer="27" display="off"/>
 </element>
 <element name="JP1" library="adafruit" package="1X03" value="" x="36.25" y="7" rot="R90"/>
-<element name="CN1" library="adafruit" package="DCJACK_2MM_PTH" value="" x="42.25" y="7.25" rot="R270"/>
+<element name="CN1" library="adafruit" package="DCJACK_2MM_PTH" value="" x="42.25" y="7.75" rot="R270"/>
 </elements>
 <signals>
 <signal name="12V">
 <contactref element="S1" pad="2"/>
 <contactref element="CN1" pad="PWR"/>
-<wire x1="22.12" y1="3.56" x2="55.85" y2="7.25" width="0" layer="19" extent="1-1"/>
+<wire x1="22.12" y1="3.56" x2="55.85" y2="7.75" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GND">
 <contactref element="U$1" pad="GND1"/>
@@ -917,7 +917,7 @@ design rules under a new name.</description>
 <signal name="GND_IN">
 <contactref element="DRIVER_IN" pad="1"/>
 <contactref element="CN1" pad="GND"/>
-<wire x1="42.09" y1="17.17" x2="49.6" y2="7.25" width="0" layer="19" extent="1-1"/>
+<wire x1="42.09" y1="17.17" x2="49.6" y2="7.75" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="CLED">
 <contactref element="DRIVER_IN" pad="4"/>

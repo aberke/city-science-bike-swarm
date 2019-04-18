@@ -172,9 +172,6 @@
 <text x="-1" y="5" size="1.778" layer="25">-</text>
 <text x="43.5" y="18.5" size="1.778" layer="25">-</text>
 <text x="43" y="48" size="1.778" layer="25">-</text>
-<text x="70" y="2.75" size="1.778" layer="25">-</text>
-<text x="73.5" y="24.5" size="1.778" layer="25">-</text>
-<text x="72" y="24.5" size="1.778" layer="25">-</text>
 <text x="5" y="0.5" size="1.016" layer="25">Bike Swarm 0.1v</text>
 <dimension x1="37.26" y1="17.17" x2="37.25" y2="49" x3="33.753271875" y3="33.0839" textsize="1.778" layer="1"/>
 <dimension x1="39.8" y1="17.17" x2="39.75" y2="11" x3="68.291359375" y3="13.853909375" textsize="1.778" layer="1"/>
