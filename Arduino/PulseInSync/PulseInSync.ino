@@ -4,7 +4,7 @@
 #include <RF24.h>
 
 //create an RF24 object (RADIO)
-RF24 radio(9, 8);  // CE, CSN
+RF24 radio(7, 8);  // CE, CSN
 
 // N total address for nodes to read/write on.
 // TODO: configure per radio using!
@@ -17,7 +17,7 @@ long long unsigned addresses[6] = {0xF0F0F0F0F0, 0xF0F0F0F0AA, 0xF0F0F0F0BB, 0xF
 // Note: The LED_BUILTIN is connected to tx/rx so it requires
 // serial communication (monitor open) in order to work.
 // Using other LED instead
-const int LED_PIN = 3;
+const int LED_PIN = 6;
 
 const int lowPulse = 20;
 const int highPulse = 255;
