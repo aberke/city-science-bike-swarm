@@ -21,7 +21,6 @@ class Particle {
   
   float  amplitude = 0;
 
-
   Particle(float posX, float posY) {
     this.posX = posX;
     this.posY = posY;
