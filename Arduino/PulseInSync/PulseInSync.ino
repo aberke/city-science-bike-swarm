@@ -4,16 +4,12 @@
 #include <RF24.h>
 
 //create an RF24 object (RADIO)
-<<<<<<< HEAD
-RF24 radio(7, 8);  // CE, CSN
-=======
 // Arduino Nano
 RF24 radio(7, 8);  // CE=7, CSN=8
 
 //Arduino Uno
 //RF24 radio(9, 8);  // CE, CSN
 
->>>>>>> 8815922e64ca1cc597360aa94a0b16e3109456bc
 
 // N total address for nodes to read/write on.
 // TODO: configure per radio using!
@@ -67,15 +63,15 @@ unsigned long lastTimeCheck = 0; // set to now() in setup
 
 void setup() {
   // Starts serial communication, so that the Arduino can send out commands through the USB connection.
-  // 9600 is the 'baud rate' 
+  // 9600 is the 'baud rate'
   Serial.begin(9600);
-  
+
   lastTimeCheck = millis(); // NOW
   lastReceiveTime = (-10)*period; // initialize at a long time ago
   lastTransmitTime = 0;
 
   setupRadio();
-  
+
   pinMode(LED_PIN, OUTPUT);
 }
 
@@ -251,7 +247,7 @@ void pulseLightLinear(int phase) {
   // |  \       /    \
   // |   \    /        \
   // |     \/            \
-  //0:HI mid:LO  
+  //0:HI mid:LO
   int amplitude;
   if (phase < periodMidpoint) {
     amplitude = highPulse - (amplitudeSlope * phase);
