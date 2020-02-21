@@ -7,17 +7,12 @@
 // Arduino Nano
 RF24 radio(7, 8);  // CE=7, CSN=8
 
-//Arduino Uno
-//RF24 radio(9, 8);  // CE, CSN
-
-
 // N total address for nodes to read/write on.
-// TODO: configure per radio using!
-int nodeNumber = 2; // TODO: switch between 0 and N depending on radio
-const int N = 6;  // Reading only supported on pipes 1-5
+int nodeNumber = 1; // Changes between 0 and N depending on radio
 // Addresses through which N modules communicate.
 // Note: Using other types for addressing did not work for reading from multiple pipes.  Why?  IDK but this works ;-)
-long long unsigned addresses[6] = {0xF0F0F0F0F0, 0xF0F0F0F0AA, 0xF0F0F0F0BB, 0xF0F0F0F0CC, 0xF0F0F0F0DD, 0xF0F0F0F0EE};
+long long unsigned addresses[6] = {0xF0F0F0F0F1, 0xF0F0F0F0AA, 0xF0F0F0F0BB, 0xF0F0F0F0CB, 0xF0F0F0F0DC, 0xF0F0F0F0ED};
+const int N = (sizeof(addresses))/8;  //(will N always equal 6?)sizeof array is 48 so each address must be 8 bytes
 
 // Note: The LED_BUILTIN is connected to tx/rx so it requires
 // serial communication (monitor open) in order to work.
@@ -36,13 +31,12 @@ const float amplitudeSlope = float(highPulse - lowPulse) / periodMidpoint;
 // Keep track of when last message was received from another bike
 // This tracks whether this bike is currently ‘in sync’ (in phase) with another bike
 // Note: variables storing millis() must be unsigned longs
-unsigned long lastReceiveTime;
-unsigned long lastTransmitTime;
+unsigned long lastReceiveTime;// updated if radioreceive() returns message
+unsigned long lastTransmitTime;// updated when radiobroadcast() is called
 unsigned long currentTime;
 unsigned long loopTime; // using for profiling/debugging
 unsigned long loopLength;  // used for calculated expected latency
-
-const int sendFrequency = period/2;
+unsigned long lastTimeCheck=0;// keeps track of when time was last checked to update interval time with current time
 
 bool inSync = false; // True when in sync with another bicycle
 
@@ -55,10 +49,6 @@ int phase = defaultPhase;  // initialize to default
 
 int expectedLatency;  // ms; This number is updated based on length of loop.
 const int maxAllowedPhaseShift = 100;  // ms
-
-// A variable keeps track of when time was last checked in order to properly
-// update the interval time with time
-unsigned long lastTimeCheck = 0; // set to now() in setup
 
 
 void setup() {
@@ -95,9 +85,8 @@ void  setupRadio() {
   radio.startListening();
 }
 
-
 void loop() {
-  // Print how long a loop takes
+  // Print how long a loop takes 
   // Serial print statements add significant time
   // loop length 20-30ms without Serial print statements
   unsigned long newLoopTime = millis();
@@ -105,8 +94,8 @@ void loop() {
   Serial.print("Total loop time length: ");
   Serial.println(loopLength);
   loopTime = newLoopTime;
-  // update current interval
-  currentTime = millis();
+
+  currentTime = millis();// NOW
   // check/update whether in sync with another bike
   // being in sync with another bike times out after given amount of time
   // without hearing from other bikes
@@ -115,13 +104,11 @@ void loop() {
     inSync =  true;
   }
   updatePhase();
+
   // set the light brightness based on where we are in the interval time
-  // fake pulsing when using just LEDs on arduino.
-//  testLight(phase);
-//  testLightAnalog(phase);
-//  pulseLightLinear(phase);
   pulseLightCurve(phase);
-  updatePhase();
+  updatePhase();//why call updatephase again...
+
   // listen for messages from other bikes
   bool changedPhase = false;
   int otherPhase = radioReceive();
@@ -140,11 +127,25 @@ void loop() {
       changedPhase = true;
     }
   }
-  // send to other bikes at limited frequency or if phase recently changed
+  // broadcast new phase to all other bikes at limited frequency or if phase recently changed
   if (changedPhase || (millis() - lastTransmitTime) > period) {
-    radioBroadcast(phase);
+    radioBroadcast(phase);//the only place where radios stop listening to transmit
     lastTransmitTime = millis();
   }
+}
+
+int updatePhase() {
+  // Update phase when in sync with another bike
+  // Otherwise set phase to default and stay there
+  currentTime = millis();
+  if (inSync) {
+    int  timeDelta = currentTime - lastTimeCheck;
+    phase = (phase + timeDelta) % period;//time 
+  } else {
+    phase = defaultPhase;
+  }
+  lastTimeCheck = currentTime;
+  return phase;
 }
 
 int computePhaseShift(int phase1, int phase2) {
@@ -160,28 +161,12 @@ int computePhaseShift(int phase1, int phase2) {
   return phaseShift;
 }
 
-
-int updatePhase() {
-  // Update phase when in sync with another bike
-  // Otherwise set phase to default and stay there
-  currentTime = millis();
-  if (inSync) {
-    int  timeDelta = currentTime - lastTimeCheck;
-    phase = (phase + timeDelta) % period;
-  } else {
-    phase = defaultPhase;
-  }
-  lastTimeCheck = currentTime;
-  return phase;
-}
-
-
 int radioReceive() {
   // Read all the available messages in the queue,
   // return the message with the highest phase message if messages available,
   // otherwise return -1 to indicate there was no message.
   int messageInt = -1;
-  while (radio.available()) {
+  while (radio.available()) { //returns true when a payload is available
     char messageBuffer[32];
     radio.read(&messageBuffer, sizeof(messageBuffer));
     int newMessageInt = atoi(messageBuffer);
@@ -192,12 +177,61 @@ int radioReceive() {
   return messageInt;
 }
 
+//if bike has unknown addresses, they should be included here in the payload
 void radioBroadcast(int phase) {
-  radio.stopListening();
+  radio.stopListening();//goes to transmit mode !only time stopListening is used!
   char messageBuffer[32];
   itoa(phase, messageBuffer, 10);
-  radio.write(&messageBuffer, sizeof(messageBuffer));
+  radio.write(&messageBuffer, sizeof(messageBuffer)); 
+  //goes to receive mode
+  //reading pipes back to listening for transmissions
   radio.startListening();
+}
+
+void pulseLightCurve(int phase) {
+  //phase = x value of curve, time
+  // The light pulses on a sinusoidal corve
+  // It starts HI and decreases in amplitude until the period midpoint: LO
+  // And then increases in amplitude
+  //0:HI mid:LO
+  // A = [cos(phase*2*pi/period) + 1]((HI - LO)/2) + LO
+  float theta = phase*(2*PI/float(period));
+  int amplitude = (cos(theta) + 1)*((highPulse - lowPulse)/2) + lowPulse;
+  light(amplitude);
+}
+
+void light(int amplitude) {
+  analogWrite(LED_PIN, amplitude);
+}
+
+void printTime(int num) {
+  unsigned long newTime = millis();
+  Serial.print(num);
+  Serial.print(": Time: ");
+  Serial.print(newTime);
+  Serial.print(";  Delta: ");
+  Serial.println(newTime - currentTime);
+  currentTime = newTime;
+}
+//Testing/UNUSED functions
+void pulseLightLinear(int phase) {
+  // The light pulses on a linear path
+  // It starts HI and decreases in amplitude until the period midpoint: LO
+  // And then increases in amplitude
+  // Phase picture:
+  //
+  // |\           /\
+  // |  \       /    \
+  // |   \    /        \
+  // |     \/            \
+  //0:HI mid:LO
+  int amplitude;
+  if (phase < periodMidpoint) {
+    amplitude = highPulse - (amplitudeSlope * phase);
+  } else {
+    amplitude = lowPulse + (amplitudeSlope * (phase - periodMidpoint));
+  }
+  light(amplitude);
 }
 
 void testLight(int phase) {
@@ -224,51 +258,4 @@ void testLightAnalog(int phase) {
   } else  {
     analogWrite(LED_PIN, highPulse);
   }
-}
-
-void pulseLightCurve(int phase) {
-  // The light pulses on a sinusoidal corve
-  // It starts HI and decreases in amplitude until the period midpoint: LO
-  // And then increases in amplitude
-  //0:HI mid:LO
-  // A = [cos(phase*2*pi/period) + 1]((HI - LO)/2) + LO
-  float theta = phase*(2*PI/float(period));
-  int amplitude = (cos(theta) + 1)*((highPulse - lowPulse)/2) + lowPulse;
-  light(amplitude);
-}
-
-void pulseLightLinear(int phase) {
-  // The light pulses on a linear path
-  // It starts HI and decreases in amplitude until the period midpoint: LO
-  // And then increases in amplitude
-  // Phase picture:
-  //
-  // |\           /\
-  // |  \       /    \
-  // |   \    /        \
-  // |     \/            \
-  //0:HI mid:LO
-  int amplitude;
-  if (phase < periodMidpoint) {
-    amplitude = highPulse - (amplitudeSlope * phase);
-  } else {
-    amplitude = lowPulse + (amplitudeSlope * (phase - periodMidpoint));
-  }
-  light(amplitude);
-}
-
-void light(int amplitude) {
-  analogWrite(LED_PIN, amplitude);
-}
-
-
-
-void printTime(int num) {
-  unsigned long newTime = millis();
-  Serial.print(num);
-  Serial.print(": Time: ");
-  Serial.print(newTime);
-  Serial.print(";  Delta: ");
-  Serial.println(newTime - currentTime);
-  currentTime = newTime;
 }
