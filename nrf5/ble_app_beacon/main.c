@@ -55,6 +55,7 @@
 #include "nrf_sdh.h"
 #include "nrf_sdh_ble.h"
 #include "ble_advdata.h"
+#include "nrf_delay.h"
 #include "app_timer.h"
 #include "nrf_pwr_mgmt.h"
 #include "ble_radio_notification.h"
@@ -148,7 +149,7 @@ void assert_nrf_callback(uint16_t line_num, const uint8_t * p_file_name)
  * @details Encodes the required advertising data and passes it to the stack.
  *          Also builds a structure to be passed to the stack when starting advertising.
  */
-static void advertising_init(void)
+static void advertising_init(bool update)
 {
     uint32_t      err_code;
     ble_advdata_t advdata;
@@ -221,9 +222,11 @@ static void advertising_init(void)
 
     err_code = ble_advdata_encode(&advdata, m_adv_data.adv_data.p_data, &m_adv_data.adv_data.len);
     APP_ERROR_CHECK(err_code);
-
-    err_code = sd_ble_gap_adv_set_configure(&m_adv_handle, &m_adv_data, &m_adv_params);
-    APP_ERROR_CHECK(err_code);
+    
+    if (!update) {
+      err_code = sd_ble_gap_adv_set_configure(&m_adv_handle, &m_adv_data, &m_adv_params);
+      APP_ERROR_CHECK(err_code);
+    }
 }
 
 /**
@@ -240,12 +243,13 @@ static void on_ble_radio_active_evt(bool radio_active) {
     // activate/deactivate sequence of radio event (when radio activity is
     // finished).
     if (radio_active) {
-        // First update the advertisement and scan response data with
-        // current values.
-        advertising_init();
         // Increment counter for next window (no need to protect against
         // overflow => it will restart from zero again).
         m_dynamic_adv_counter++;
+        m_dynamic_adv_counter = m_dynamic_adv_counter % 7;
+        // First update the advertisement and scan response data with
+        // current values.
+        advertising_init(true);
     }
 }
 
@@ -274,10 +278,10 @@ static void advertising_start(void)
     adv_stop();
 
      // Enable radio notification events to be able to change advertising data after each broadcast.
-    // err_code = ble_radio_notification_init(APP_IRQ_PRIORITY_LOW,
-    //                                        NRF_RADIO_NOTIFICATION_DISTANCE_1740US,
-    //                                        on_ble_radio_active_evt);
-    // APP_ERROR_CHECK(err_code);
+     err_code = ble_radio_notification_init(APP_IRQ_PRIORITY_LOW,
+                                            NRF_RADIO_NOTIFICATION_DISTANCE_1740US,
+                                            on_ble_radio_active_evt);
+    APP_ERROR_CHECK(err_code);
     
     err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
     APP_ERROR_CHECK(err_code);
@@ -388,13 +392,20 @@ static void idle_state_handle(void)
  */
 int main(void)
 {
+
     // Initialize.
     log_init();
     timers_init();
     leds_init();
     power_management_init();
     ble_stack_init();
-    advertising_init();
+    advertising_init(false);
+
+        for (int i = 0; i < LEDS_NUMBER; i++)
+        {
+            bsp_board_led_invert(i);
+            nrf_delay_ms(500);
+        }
 
     // Start execution.
     NRF_LOG_INFO("Beacon example started.");
@@ -405,6 +416,11 @@ int main(void)
     for (;; )
     {
         idle_state_handle();
+        for (int i = 0; i < LEDS_NUMBER; i++)
+        {
+            bsp_board_led_invert(i);
+            nrf_delay_ms(500);
+        }
     }
 }
 
