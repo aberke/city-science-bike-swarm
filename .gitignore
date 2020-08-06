@@ -2,3 +2,7 @@
 _build/*
 *.d
 *.o
+Circuit/*.lck
+Circuit/**/*.lck
+Circuit/*.b#?
+Circuit/*.s#?
