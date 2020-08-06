@@ -1,0 +1,59 @@
+{
+    "env": {
+        "nrfSDK": "${workspaceFolder}/nrf5"
+    },
+    "configurations": [
+        {
+            "name": "ARMGCC",
+            "includePath": [
+                "/usr/local/include",
+                "${workspaceFolder}/**",
+                "${nrfSDK}/config",
+                "${nrfSDK}/components/**",
+                "${nrfSDK}/components",
+                "${nrfSDK}/components/libraries/experimental_section_vars",
+                "${nrfSDK}/modules/nrfx/mdk",
+                "${nrfSDK}/modules/nrfx/hal",
+                "${nrfSDK}/components/libraries/balloc",
+                "${nrfSDK}/components/libraries/delay",
+                "${nrfSDK}/integration/nrfx",
+                "${nrfSDK}/components/libraries/bsp",
+                "${nrfSDK}/components/drivers_nrf/nrf_soc_nosd",
+                "${nrfSDK}/components/libraries/strerror",
+                "${nrfSDK}/components/boards",
+                "${nrfSDK}/components/toolchain/cmsis/include",
+                "${nrfSDK}/modules/nrfx",
+                "${nrfSDK}/components/libraries/util",
+                "${nrfSDK}/components/libraries/fifo",
+                "${nrfSDK}/components/libraries/uart",
+                "${nrfSDK}/integration/nrfx/legacy",
+                "${nrfSDK}/components/libraries/delay",
+                "${nrfSDK}/modules/nrfx/drivers/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "BOARD_SPARKFUN_NRF52840_MINI",
+                "BSP_DEFINES_ONLY",
+                "NRF52840_XXAA",
+                "DCONFIG_NFCT_PINS_AS_GPIOS",
+                "BOARD_PCA10040",
+                "CONFIG_GPIO_AS_PINRESET",
+                "FLOAT_ABI_HARD",
+                "NRF52",
+                "NRF52832_XXAA",
+                "NRF52_PAN_74",
+                "NRF_SD_BLE_API_VERSION=6",
+                "S132",
+                "SOFTDEVICE_PRESENT",
+                "SWI_DISABLE0"
+            ],
+            "compilerPath": "/usr/local/bin/arm-none-eabi-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
