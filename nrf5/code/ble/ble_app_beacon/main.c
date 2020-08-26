@@ -59,7 +59,7 @@
 #include "app_timer.h"
 #include "nrf_pwr_mgmt.h"
 #include "ble_radio_notification.h"
-
+#include "nrf_nvic.h"
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"
 #include "nrf_log_default_backends.h"

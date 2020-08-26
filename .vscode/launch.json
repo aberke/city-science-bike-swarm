@@ -13,7 +13,7 @@
             "servertype": "jlink",
             "device": "nrf52",
             "interface": "swd",
-            "armToolchainPath": "/usr/local/bin/"
+            "armToolchainPath": "/usr/local/gcc-arm-none-eabi-9-2020-q2-update/bin/"
         },
         {
             "name": "C++ Launch",
@@ -54,8 +54,8 @@
             },
             "osx": {
                 "MIMode": "gdb",
-                "MIDebuggerPath": "/usr/local/bin/arm-none-eabi-gdb",
-                "debugServerPath": "~/Library/Python/3.7/bin/pyocd-gdbserver"
+                "MIDebuggerPath": "/usr/local/gcc-arm-none-eabi-9-2020-q2-update/bin/arm-none-eabi-gdb",
+                "debugServerPath":"/Users/sclay/Library/Python/3.7/bin/pyocd-gdbserver"
             },
             "windows": {
                 "preLaunchTask": "make.exe",
