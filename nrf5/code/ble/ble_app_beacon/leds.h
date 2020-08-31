@@ -12,6 +12,7 @@
 #include "app_timer.h"
 #include "nrf_drv_clock.h"
 #include "app_util_platform.h"
+#include "nrf_gpiote.h"
 
 void swarm_leds_init(void);
 void swarm_leds_loop(void);
