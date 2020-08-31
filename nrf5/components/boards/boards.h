@@ -86,7 +86,7 @@
 #elif defined (BOARD_SPARKFUN_NRF52840_MINI)
   #include "sparkfun_nrf52840_mini.h"
 #elif defined (BOARD_SWARM_NRF52840)
-  #include "sparkfun_nrf52840_mini.h"
+  #include "pca10040.h"
 #elif defined(BOARD_CUSTOM)
   #include "custom_board.h"
 #else

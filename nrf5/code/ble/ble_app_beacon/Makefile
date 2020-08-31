@@ -10,7 +10,7 @@ $(OUTPUT_DIRECTORY)/nrf52840_xxaa.out: \
 
 # Source files common to all targets
 SRC_FILES += \
-  $(SDK_ROOT)/modules/nrfx/mdk/gcc_startup_nrf52840.S \
+  $(SDK_ROOT)/modules/nrfx/mdk/gcc_startup_nrf52832.S \
   $(SDK_ROOT)/components/libraries/log/src/nrf_log_backend_rtt.c \
   $(SDK_ROOT)/components/libraries/log/src/nrf_log_backend_serial.c \
   $(SDK_ROOT)/components/libraries/log/src/nrf_log_backend_uart.c \
@@ -213,7 +213,7 @@ CFLAGS += -DCONFIG_GPIO_AS_PINRESET
 CFLAGS += -DFLOAT_ABI_HARD
 CFLAGS += -DDEBUG
 CFLAGS += -DNRF52
-CFLAGS += -DNRF52840_XXAA
+CFLAGS += -DNRF52832_XXAA
 CFLAGS += -DNRF_SD_BLE_API_VERSION=7
 CFLAGS += -DS132
 CFLAGS += -DSOFTDEVICE_PRESENT
@@ -287,14 +287,14 @@ $(foreach target, $(TARGETS), $(call define_target, $(target)))
 # Flash the program
 flash: default
 	@echo Flashing: $(OUTPUT_DIRECTORY)/nrf52840_xxaa.hex
-	nrfjprog --flash $(OUTPUT_DIRECTORY)/nrf52840_xxaa.hex
-	nrfjprog --reset
+	./nrfjprog.sh --flash $(OUTPUT_DIRECTORY)/nrf52840_xxaa.hex
+	./nrfjprog.sh --reset
 
 # Flash softdevice
 flash_softdevice:
 	@echo Flashing: s132_nrf52_7.0.1_softdevice.hex
-	nrfjprog -f nrf52 --program $(SDK_ROOT)/components/softdevice/s132/hex/s132_nrf52_7.0.1_softdevice.hex --sectorerase
-	nrfjprog -f nrf52 --reset
+	./nrfjprog.sh --flash-softdevice $(SDK_ROOT)/components/softdevice/s132/hex/s132_nrf52_7.0.1_softdevice.hex
+	./nrfjprog.sh --reset
 
 erase:
 	nrfjprog -f nrf52 --eraseall

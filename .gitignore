@@ -1,6 +1,7 @@
 .DS_Store
 _build/*
 **/_build/*
+**/Output/Release/*
 *.d
 *.o
 Circuit/*.lck

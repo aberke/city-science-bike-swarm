@@ -3,12 +3,12 @@
 void swarm_leds_init(void) {
     ret_code_t err_code;
 
-    const led_sb_init_params_t led_sb_init_param = LED_SB_INIT_DEFAULT_PARAMS(LEDS_MASK | PIN_MASK(ARDUINO_5_PIN) | PIN_MASK(ARDUINO_4_PIN) | PIN_MASK(ARDUINO_3_PIN));
+    const led_sb_init_params_t led_sb_init_param = LED_SB_INIT_DEFAULT_PARAMS(BSP_LED_1_MASK | PIN_MASK(NRF_GPIO_PIN_MAP(0, 22)) | PIN_MASK(NRF_GPIO_PIN_MAP(0, 19)) | PIN_MASK(NRF_GPIO_PIN_MAP(0, 25)));
 
     err_code = led_softblink_init(&led_sb_init_param);
     APP_ERROR_CHECK(err_code);
 
-    err_code = led_softblink_start(LEDS_MASK | PIN_MASK(ARDUINO_5_PIN) | PIN_MASK(ARDUINO_4_PIN) | PIN_MASK(ARDUINO_3_PIN));
+    err_code = led_softblink_start(BSP_LED_1_MASK | PIN_MASK(NRF_GPIO_PIN_MAP(0, 22)) | PIN_MASK(NRF_GPIO_PIN_MAP(0, 19)) | PIN_MASK(NRF_GPIO_PIN_MAP(0, 25)));
     APP_ERROR_CHECK(err_code);
 }
 
