@@ -16,5 +16,6 @@
 
 void swarm_leds_init(void);
 void swarm_leds_loop(void);
+void swarm_leds_restart(void);
 
 #endif /* _LEDS_H */

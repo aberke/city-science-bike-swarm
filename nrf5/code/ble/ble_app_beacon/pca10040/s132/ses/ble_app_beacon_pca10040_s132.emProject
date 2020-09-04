@@ -68,6 +68,7 @@
       <file file_name="../../../../../../components/libraries/strerror/nrf_strerror.c" />
       <file file_name="../../../../../../components/libraries/led_softblink/led_softblink.c" />
       <file file_name="../../../../../../components/libraries/low_power_pwm/low_power_pwm.c" />
+      <file file_name="../../../../../../components/libraries/pwm/app_pwm.c" />
     </folder>
     <folder Name="None">
       <file file_name="../../../../../../modules/nrfx/mdk/ses_startup_nrf52.s" />
@@ -86,6 +87,8 @@
       <file file_name="../../../../../../modules/nrfx/drivers/src/prs/nrfx_prs.c" />
       <file file_name="../../../../../../modules/nrfx/drivers/src/nrfx_uart.c" />
       <file file_name="../../../../../../modules/nrfx/drivers/src/nrfx_uarte.c" />
+      <file file_name="../../../../../../modules/nrfx/drivers/src/nrfx_ppi.c" />
+      <file file_name="../../../../../../modules/nrfx/drivers/src/nrfx_timer.c" />
     </folder>
     <folder Name="Board Support">
       <file file_name="../../../../../../components/libraries/bsp/bsp.c" />
@@ -94,6 +97,7 @@
       <file file_name="../../../main.c" />
       <file file_name="../config/sdk_config.h" />
       <file file_name="../../../leds.c" />
+      <file file_name="../../../buttons.c" />
     </folder>
     <folder Name="nRF_Segger_RTT">
       <file file_name="../../../../../../external/segger_rtt/SEGGER_RTT.c" />
@@ -113,6 +117,7 @@
       <file file_name="../../../../../../components/softdevice/common/nrf_sdh_ble.c" />
       <file file_name="../../../../../../components/softdevice/common/nrf_sdh_soc.c" />
     </folder>
+    <configuration Name="Release" linker_section_placement_macros="" />
   </project>
   <configuration
     Name="Release"

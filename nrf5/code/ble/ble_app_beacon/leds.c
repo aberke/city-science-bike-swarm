@@ -15,3 +15,13 @@ void swarm_leds_init(void) {
 void swarm_leds_loop(void) {
 
 }
+
+void swarm_leds_restart(void) {
+    ret_code_t err_code;
+    
+    err_code = led_softblink_uninit();
+    APP_ERROR_CHECK(err_code);
+
+    swarm_leds_init();
+}
+

@@ -10,7 +10,7 @@ $(OUTPUT_DIRECTORY)/nrf52840_xxaa.out: \
 
 # Source files common to all targets
 SRC_FILES += \
-  $(SDK_ROOT)/modules/nrfx/mdk/gcc_startup_nrf52832.S \
+  $(SDK_ROOT)/modules/nrfx/mdk/gcc_startup_nrf52840.S \
   $(SDK_ROOT)/components/libraries/log/src/nrf_log_backend_rtt.c \
   $(SDK_ROOT)/components/libraries/log/src/nrf_log_backend_serial.c \
   $(SDK_ROOT)/components/libraries/log/src/nrf_log_backend_uart.c \
@@ -24,6 +24,7 @@ SRC_FILES += \
   $(SDK_ROOT)/components/libraries/scheduler/app_scheduler.c \
   $(SDK_ROOT)/components/libraries/timer/app_timer2.c \
   $(SDK_ROOT)/components/libraries/util/app_util_platform.c \
+  $(SDK_ROOT)/components/libraries/pwm/app_pwm.c \
   $(SDK_ROOT)/components/libraries/timer/drv_rtc.c \
   $(SDK_ROOT)/components/libraries/hardfault/hardfault_implementation.c \
   $(SDK_ROOT)/components/libraries/util/nrf_assert.c \
@@ -50,7 +51,10 @@ SRC_FILES += \
   $(SDK_ROOT)/modules/nrfx/drivers/src/prs/nrfx_prs.c \
   $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_uart.c \
   $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_uarte.c \
+  $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_ppi.c \
+  $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_timer.c \
   $(SDK_ROOT)/components/libraries/bsp/bsp.c \
+  $(PROJ_DIR)/buttons.c \
   $(PROJ_DIR)/leds.c \
   $(PROJ_DIR)/main.c \
   $(SDK_ROOT)/external/segger_rtt/SEGGER_RTT.c \
@@ -211,9 +215,9 @@ CFLAGS += -DAPP_TIMER_V2_RTC1_ENABLED
 CFLAGS += -DBOARD_SWARM_NRF52840
 CFLAGS += -DCONFIG_GPIO_AS_PINRESET
 CFLAGS += -DFLOAT_ABI_HARD
-CFLAGS += -DDEBUG
+# CFLAGS += -DDEBUG
 CFLAGS += -DNRF52
-CFLAGS += -DNRF52832_XXAA
+CFLAGS += -DNRF52840_XXAA
 CFLAGS += -DNRF_SD_BLE_API_VERSION=7
 CFLAGS += -DS132
 CFLAGS += -DSOFTDEVICE_PRESENT

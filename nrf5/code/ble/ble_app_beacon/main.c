@@ -65,6 +65,7 @@
 #include "nrf_log_default_backends.h"
 
 #include "leds.h"
+#include "buttons.h"
 
 
 #define APP_BLE_CONN_CFG_TAG            1                                  /**< A tag identifying the SoftDevice BLE configuration. */
@@ -414,6 +415,7 @@ int main(void)
     application_timers_start();
     advertising_start();
     swarm_leds_init();
+    buttons_init();
 
     // Enter main loop.
     for (;; )
