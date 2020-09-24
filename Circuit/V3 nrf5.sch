@@ -2935,6 +2935,525 @@ Silk outline shows header location.
 <text x="-1.5748" y="1.9304" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
 <text x="-1.8288" y="-2.4638" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
 </package>
+<package name="POWER_JACK_SMD" urn="urn:adsk.eagle:footprint:37870/1" library_version="1">
+<description>&lt;h3&gt;DC Barrel Power Jack/Connector -SMD&lt;/h3&gt;
+5.5mm jack, 2.1mm center pole diameter. 
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count:4&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=”http://cdn.sparkfun.com/datasheets/Prototyping/ADC-H-028-1.pdf”&gt;Datasheet referenced for footprint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;POWER_JACK&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<wire x1="-5" y1="4.5" x2="-5" y2="-4.5" width="0.2032" layer="51"/>
+<wire x1="-5" y1="4.5" x2="-3.5" y2="4.5" width="0.2032" layer="51"/>
+<wire x1="9.8" y1="4.5" x2="9.8" y2="-4.5" width="0.2032" layer="21"/>
+<wire x1="-3.5" y1="-4.5" x2="-5" y2="-4.5" width="0.2032" layer="51"/>
+<wire x1="-3.5" y1="4.5" x2="-3.5" y2="2.5" width="0.2032" layer="21"/>
+<wire x1="-3.5" y1="2.5" x2="-3.5" y2="-2.5" width="0.2032" layer="21"/>
+<wire x1="-3.5" y1="-2.5" x2="-3.5" y2="-4.5" width="0.2032" layer="21"/>
+<wire x1="-3.5" y1="2.5" x2="0" y2="2.5" width="0.2032" layer="21"/>
+<wire x1="0" y1="2.5" x2="2.286" y2="0" width="0.2032" layer="21" curve="-90"/>
+<wire x1="2.286" y1="0" x2="0" y2="-2.5" width="0.2032" layer="21" curve="-90"/>
+<wire x1="0" y1="-2.5" x2="-3.5" y2="-2.5" width="0.2032" layer="21"/>
+<wire x1="-3.5" y1="4.5" x2="-2" y2="4.5" width="0.2032" layer="21"/>
+<wire x1="2" y1="4.5" x2="4.1" y2="4.5" width="0.2032" layer="21"/>
+<wire x1="8.2" y1="4.5" x2="9.8" y2="4.5" width="0.2032" layer="21"/>
+<wire x1="9.8" y1="-4.5" x2="8.1" y2="-4.5" width="0.2032" layer="21"/>
+<wire x1="4.1" y1="-4.5" x2="2" y2="-4.5" width="0.2032" layer="21"/>
+<wire x1="-2" y1="-4.5" x2="-3.5" y2="-4.5" width="0.2032" layer="21"/>
+<smd name="VIN0" x="0" y="5.7" dx="2.8" dy="2.4" layer="1"/>
+<smd name="GND" x="0" y="-5.7" dx="2.8" dy="2.4" layer="1"/>
+<smd name="VIN1" x="6.1" y="5.7" dx="2.8" dy="2.4" layer="1"/>
+<smd name="P$4" x="6.1" y="-5.7" dx="2.8" dy="2.4" layer="1"/>
+<hole x="0" y="0" drill="2.032"/>
+<hole x="4.572" y="0" drill="2.032"/>
+<text x="4.1402" y="2.794" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="3.81" y="-3.302" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
+</package>
+<package name="POWER_JACK_SLOT" urn="urn:adsk.eagle:footprint:37871/1" library_version="1">
+<description>&lt;h3&gt;DC Barrel Power Jack/Connector PTH Slot Pads&lt;/h3&gt;
+Extended soldering pads. 
+5.5mm jack, 2.1mm center pole diameter
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count: 3&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=”https://www.sparkfun.com/datasheets/Prototyping/Barrel-Connector-PJ-202A.pdf”&gt;Datasheet referenced for footprint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;POWER_JACK&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<wire x1="9.33" y1="13.7" x2="4.83" y2="13.7" width="0.2032" layer="21"/>
+<wire x1="4.83" y1="13.7" x2="0.83" y2="13.7" width="0.2032" layer="51"/>
+<wire x1="0.83" y1="13.7" x2="0.83" y2="12.7" width="0.2032" layer="51"/>
+<wire x1="0.83" y1="12.7" x2="0.83" y2="8.4" width="0.2032" layer="21"/>
+<wire x1="0.83" y1="8.4" x2="0.83" y2="6.55" width="0.2032" layer="51"/>
+<wire x1="0.98" y1="13.8" x2="4.18" y2="13.8" width="0" layer="46"/>
+<wire x1="0.98" y1="13.8" x2="1.48" y2="14.3" width="0" layer="46" curve="-90"/>
+<wire x1="1.48" y1="14.3" x2="3.68" y2="14.3" width="0" layer="46"/>
+<wire x1="3.68" y1="14.3" x2="4.18" y2="13.8" width="0" layer="46" curve="-90"/>
+<wire x1="4.18" y1="13.8" x2="3.68" y2="13.3" width="0" layer="46" curve="-90"/>
+<wire x1="3.68" y1="13.3" x2="1.48" y2="13.3" width="0" layer="46"/>
+<wire x1="1.48" y1="13.3" x2="0.98" y2="13.8" width="0" layer="46" curve="-90"/>
+<wire x1="0.98" y1="7.5" x2="1.48" y2="8" width="0" layer="46" curve="-90"/>
+<wire x1="1.48" y1="8" x2="3.68" y2="8" width="0" layer="46"/>
+<wire x1="3.68" y1="8" x2="4.18" y2="7.5" width="0" layer="46" curve="-90"/>
+<wire x1="4.18" y1="7.5" x2="3.68" y2="7" width="0" layer="46" curve="-90"/>
+<wire x1="3.68" y1="7" x2="1.48" y2="7" width="0" layer="46"/>
+<wire x1="1.48" y1="7" x2="0.98" y2="7.5" width="0" layer="46" curve="-90"/>
+<wire x1="7.58" y1="12.4" x2="8.08" y2="11.9" width="0" layer="46" curve="-90"/>
+<wire x1="8.08" y1="11.9" x2="8.08" y2="9.7" width="0" layer="46"/>
+<wire x1="8.08" y1="9.7" x2="7.58" y2="9.2" width="0" layer="46" curve="-90"/>
+<wire x1="7.58" y1="9.2" x2="7.08" y2="9.7" width="0" layer="46" curve="-90"/>
+<wire x1="7.08" y1="9.7" x2="7.08" y2="11.9" width="0" layer="46"/>
+<wire x1="7.08" y1="11.9" x2="7.58" y2="12.4" width="0" layer="46" curve="-90"/>
+<wire x1="0.83" y1="3.1" x2="0.83" y2="0.1" width="0.2032" layer="51"/>
+<wire x1="9.33" y1="0.1" x2="9.33" y2="3.1" width="0.2032" layer="51"/>
+<wire x1="9.33" y1="0.1" x2="0.83" y2="0.1" width="0.2032" layer="51"/>
+<wire x1="0.83" y1="6.51" x2="0.83" y2="3.1" width="0.2032" layer="21"/>
+<wire x1="9.33" y1="3.1" x2="9.33" y2="13.7" width="0.2032" layer="21"/>
+<wire x1="0.83" y1="3.1" x2="9.33" y2="3.1" width="0.2032" layer="21"/>
+<wire x1="9.33" y1="3.1" x2="9.28" y2="3.1" width="0.2032" layer="21"/>
+<pad name="PWR" x="2.58" y="13.8" drill="1" diameter="2" shape="long"/>
+<pad name="GND@1" x="2.58" y="7.5" drill="1" diameter="2" shape="long"/>
+<pad name="GND@2" x="7.58" y="10.8" drill="1" diameter="2" shape="long" rot="R90"/>
+<text x="3.5052" y="2.159" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="3.175" y="1.143" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
+</package>
+<package name="POWER_JACK_PTH" urn="urn:adsk.eagle:footprint:37872/1" library_version="1">
+<description>&lt;h3&gt;DC Barrel Power Jack/Connector PTH&lt;/h3&gt;
+5.5mm jack, 2.1mm center pole diameter
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count: 3&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=”https://www.sparkfun.com/datasheets/Prototyping/Barrel-Connector-PJ-202A.pdf”&gt;Datasheet referenced for footprint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;POWER_JACK&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<wire x1="4.5" y1="13.7" x2="2.4" y2="13.7" width="0.2032" layer="21"/>
+<wire x1="-4.5" y1="3" x2="-4.5" y2="0.1" width="0.2032" layer="51"/>
+<wire x1="4.5" y1="0.1" x2="4.5" y2="3" width="0.2032" layer="51"/>
+<wire x1="4.5" y1="0.1" x2="-4.5" y2="0.1" width="0.2032" layer="51"/>
+<wire x1="4.5" y1="3" x2="4.5" y2="8.3" width="0.2032" layer="21"/>
+<wire x1="4.5" y1="13.7" x2="4.5" y2="13" width="0.2032" layer="21"/>
+<wire x1="-4.5" y1="3" x2="-4.5" y2="13.7" width="0.2032" layer="21"/>
+<wire x1="-4.5" y1="13.7" x2="-2.4" y2="13.7" width="0.2032" layer="21"/>
+<wire x1="-4.5" y1="3" x2="4.5" y2="3" width="0.2032" layer="21"/>
+<pad name="PWR" x="0" y="13.7" drill="2.9972" diameter="4.318"/>
+<pad name="GND" x="0" y="7.7" drill="2.9972" diameter="4.318"/>
+<pad name="GNDBREAK" x="4.7" y="10.7" drill="2.9972" diameter="4.318" rot="R90"/>
+<text x="-1.3716" y="1.8288" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="-1.7526" y="0.8128" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
+</package>
+<package name="POWER_JACK_COMBO" urn="urn:adsk.eagle:footprint:37873/1" library_version="1">
+<wire x1="-5" y1="4.5" x2="-5" y2="-4.5" width="0.2032" layer="51"/>
+<wire x1="-5" y1="4.5" x2="-3.5" y2="4.5" width="0.2032" layer="51"/>
+<wire x1="9.8" y1="4.5" x2="9.8" y2="-4.5" width="0.2032" layer="51"/>
+<wire x1="-3.5" y1="-4.5" x2="-5" y2="-4.5" width="0.2032" layer="51"/>
+<wire x1="-3.5" y1="4.5" x2="-3.5" y2="2.5" width="0.2032" layer="51"/>
+<wire x1="-3.5" y1="2.5" x2="-3.5" y2="-2.5" width="0.2032" layer="51"/>
+<wire x1="-3.5" y1="-2.5" x2="-3.5" y2="-4.5" width="0.2032" layer="51"/>
+<wire x1="-3.5" y1="2.5" x2="0" y2="2.5" width="0.2032" layer="51"/>
+<wire x1="0" y1="2.5" x2="2.286" y2="0" width="0.2032" layer="51" curve="-90"/>
+<wire x1="2.286" y1="0" x2="0" y2="-2.5" width="0.2032" layer="51" curve="-90"/>
+<wire x1="0" y1="-2.5" x2="-3.5" y2="-2.5" width="0.2032" layer="51"/>
+<wire x1="-3.5" y1="4.5" x2="-2" y2="4.5" width="0.2032" layer="51"/>
+<wire x1="2" y1="4.5" x2="4.1" y2="4.5" width="0.2032" layer="51"/>
+<wire x1="8.2" y1="4.5" x2="9.8" y2="4.5" width="0.2032" layer="51"/>
+<wire x1="9.8" y1="-4.5" x2="8.1" y2="-4.5" width="0.2032" layer="51"/>
+<wire x1="4.1" y1="-4.5" x2="2" y2="-4.5" width="0.2032" layer="51"/>
+<wire x1="-2" y1="-4.5" x2="-3.5" y2="-4.5" width="0.2032" layer="51"/>
+<wire x1="8.62" y1="-1.96" x2="8.62" y2="0.14" width="0.2032" layer="51"/>
+<wire x1="-2.08" y1="7.04" x2="-4.98" y2="7.04" width="0.2032" layer="51"/>
+<wire x1="-4.98" y1="-1.96" x2="-2.08" y2="-1.96" width="0.2032" layer="51"/>
+<wire x1="-4.98" y1="-1.96" x2="-4.98" y2="7.04" width="0.2032" layer="51"/>
+<wire x1="-2.08" y1="-1.96" x2="3.22" y2="-1.96" width="0.2032" layer="51"/>
+<wire x1="8.62" y1="-1.96" x2="7.92" y2="-1.96" width="0.2032" layer="51"/>
+<wire x1="-2.08" y1="7.04" x2="8.62" y2="7.04" width="0.2032" layer="51"/>
+<wire x1="8.62" y1="7.04" x2="8.62" y2="4.94" width="0.2032" layer="51"/>
+<wire x1="-2.08" y1="7.04" x2="-2.08" y2="-1.96" width="0.2032" layer="51"/>
+<wire x1="0" y1="5.715" x2="6.35" y2="5.715" width="1.27" layer="1"/>
+<wire x1="6.35" y1="5.715" x2="6.35" y2="5.08" width="1.27" layer="1"/>
+<wire x1="6.35" y1="5.08" x2="8.89" y2="2.54" width="1.27" layer="1"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="-1.905" width="1.27" layer="1"/>
+<wire x1="2.54" y1="-1.905" x2="2.54" y2="-5.715" width="1.27" layer="1"/>
+<wire x1="2.54" y1="-5.715" x2="0" y2="-5.715" width="1.27" layer="1"/>
+<wire x1="6.35" y1="-5.715" x2="2.54" y2="-5.715" width="1.27" layer="1"/>
+<wire x1="5.715" y1="-1.905" x2="2.54" y2="-1.905" width="1.27" layer="1"/>
+<pad name="POWER" x="8.62" y="2.54" drill="2.9972" rot="R270"/>
+<pad name="GND@1" x="2.62" y="2.54" drill="2.9972" rot="R270"/>
+<pad name="GND" x="5.62" y="-2.16" drill="2.9972"/>
+<smd name="POWER@1" x="0" y="5.7" dx="2.8" dy="2.4" layer="1"/>
+<smd name="GND@3" x="0" y="-5.7" dx="2.8" dy="2.4" layer="1"/>
+<smd name="POWER@2" x="6.1" y="5.7" dx="2.8" dy="2.4" layer="1"/>
+<smd name="GND@4" x="6.1" y="-5.7" dx="2.8" dy="2.4" layer="1"/>
+<hole x="0" y="0" drill="1.6"/>
+<hole x="5.08" y="0" drill="1.6"/>
+<text x="1.27" y="7.747" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="1.27" y="-8.382" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
+</package>
+<package name="POWER_JACK_PTH_LOCK" urn="urn:adsk.eagle:footprint:37874/1" library_version="1">
+<description>&lt;h3&gt;DC Barrel Power Jack/Connector PTH Locking Footprint&lt;/h3&gt;
+5.5mm jack, 2.1mm center pole diameter.
+&lt;br&gt; Holes are offset from center 0.005" to hold pins in place during soldering. 
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count: 3&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=”https://www.sparkfun.com/datasheets/Prototyping/Barrel-Connector-PJ-202A.pdf”&gt;Datasheet referenced for footprint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;POWER_JACK&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<wire x1="4.3476" y1="14.2588" x2="2.4" y2="14.2588" width="0.2032" layer="21"/>
+<wire x1="-4.3476" y1="3.2794" x2="-4.3476" y2="0.1" width="0.2032" layer="51"/>
+<wire x1="4.3476" y1="0.1" x2="4.3476" y2="3.2794" width="0.2032" layer="51"/>
+<wire x1="4.3476" y1="0.1" x2="-4.3476" y2="0.1" width="0.2032" layer="51"/>
+<wire x1="4.3476" y1="3.254" x2="4.3476" y2="8.3" width="0.2032" layer="21"/>
+<wire x1="4.3476" y1="14.2588" x2="4.3476" y2="13" width="0.2032" layer="21"/>
+<wire x1="-4.3476" y1="3.254" x2="-4.3476" y2="14.2588" width="0.2032" layer="21"/>
+<wire x1="-4.3476" y1="14.2588" x2="-2.4" y2="14.2588" width="0.2032" layer="21"/>
+<wire x1="-4.3476" y1="3.254" x2="4.3476" y2="3.254" width="0.2032" layer="21"/>
+<pad name="PWR" x="0" y="13.8778" drill="3.2" diameter="4.1148"/>
+<pad name="GND" x="0.0254" y="6.557" drill="2.9972" diameter="4.1148"/>
+<pad name="GNDBREAK" x="3.7616" y="10.7" drill="2.9972" diameter="4.1148" rot="R90"/>
+<rectangle x1="-0.2159" y1="12.1793" x2="0.2413" y2="15.1003" layer="51" rot="R90"/>
+<rectangle x1="-0.1397" y1="6.3119" x2="0.1397" y2="8.7503" layer="51" rot="R90"/>
+<rectangle x1="4.4704" y1="9.4742" x2="4.7498" y2="11.9126" layer="51" rot="R180"/>
+<text x="-1.5748" y="2.159" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="-1.905" y="1.143" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
+</package>
+<package name="POWER_JACK_SMD_OVERPASTE_TOE" urn="urn:adsk.eagle:footprint:37875/1" library_version="1">
+<description>&lt;h3&gt;DC Barrel Power Jack/Connector -SMD Overpaste&lt;/h3&gt;
+Over paste toe on each SMD pad to ease use of AOI. 
+5.5mm jack, 2.1mm center pole diameter. 
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count:4&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=”http://cdn.sparkfun.com/datasheets/Prototyping/ADC-H-028-1.pdf”&gt;Datasheet referenced for footprint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;POWER_JACK&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<wire x1="-5" y1="4.5" x2="-5" y2="-4.5" width="0.2032" layer="51"/>
+<wire x1="-5" y1="4.5" x2="-3.5" y2="4.5" width="0.2032" layer="51"/>
+<wire x1="9.8" y1="4.5" x2="9.8" y2="-4.5" width="0.2032" layer="21"/>
+<wire x1="-3.5" y1="-4.5" x2="-5" y2="-4.5" width="0.2032" layer="51"/>
+<wire x1="-3.5" y1="4.5" x2="-3.5" y2="2.5" width="0.2032" layer="21"/>
+<wire x1="-3.5" y1="2.5" x2="-3.5" y2="-2.5" width="0.2032" layer="21"/>
+<wire x1="-3.5" y1="-2.5" x2="-3.5" y2="-4.5" width="0.2032" layer="21"/>
+<wire x1="-3.5" y1="2.5" x2="0" y2="2.5" width="0.2032" layer="21"/>
+<wire x1="0" y1="2.5" x2="2.286" y2="0" width="0.2032" layer="21" curve="-90"/>
+<wire x1="2.286" y1="0" x2="0" y2="-2.5" width="0.2032" layer="21" curve="-90"/>
+<wire x1="0" y1="-2.5" x2="-3.5" y2="-2.5" width="0.2032" layer="21"/>
+<wire x1="-3.5" y1="4.5" x2="-2" y2="4.5" width="0.2032" layer="21"/>
+<wire x1="2" y1="4.5" x2="4.1" y2="4.5" width="0.2032" layer="21"/>
+<wire x1="8.2" y1="4.5" x2="9.8" y2="4.5" width="0.2032" layer="21"/>
+<wire x1="9.8" y1="-4.5" x2="8.1" y2="-4.5" width="0.2032" layer="21"/>
+<wire x1="4.1" y1="-4.5" x2="2" y2="-4.5" width="0.2032" layer="21"/>
+<wire x1="-2" y1="-4.5" x2="-3.5" y2="-4.5" width="0.2032" layer="21"/>
+<wire x1="1.3462" y1="7.0358" x2="1.3462" y2="8.3312" width="0.127" layer="51" style="shortdash"/>
+<wire x1="1.3462" y1="8.3312" x2="-1.3462" y2="8.3312" width="0.127" layer="51"/>
+<wire x1="-1.3462" y1="8.3312" x2="-1.3462" y2="6.9596" width="0.127" layer="51" style="shortdash"/>
+<wire x1="7.4422" y1="7.0104" x2="7.4422" y2="8.3058" width="0.127" layer="51" style="shortdash"/>
+<wire x1="7.4422" y1="8.3058" x2="4.7498" y2="8.3058" width="0.127" layer="51"/>
+<wire x1="4.7498" y1="8.3058" x2="4.7498" y2="6.9342" width="0.127" layer="51" style="shortdash"/>
+<wire x1="-1.3716" y1="-7.0358" x2="-1.3716" y2="-8.3312" width="0.127" layer="51" style="shortdash"/>
+<wire x1="-1.3716" y1="-8.3312" x2="1.3208" y2="-8.3312" width="0.127" layer="51"/>
+<wire x1="1.3208" y1="-8.3312" x2="1.3208" y2="-6.9596" width="0.127" layer="51" style="shortdash"/>
+<wire x1="4.7498" y1="-7.0612" x2="4.7498" y2="-8.3566" width="0.127" layer="51" style="shortdash"/>
+<wire x1="4.7498" y1="-8.3566" x2="7.4422" y2="-8.3566" width="0.127" layer="51"/>
+<wire x1="7.4422" y1="-8.3566" x2="7.4422" y2="-6.985" width="0.127" layer="51" style="shortdash"/>
+<smd name="VIN0" x="0" y="5.7" dx="2.8" dy="2.4" layer="1"/>
+<smd name="GND" x="0" y="-5.7" dx="2.8" dy="2.4" layer="1"/>
+<smd name="VIN1" x="6.1" y="5.7" dx="2.8" dy="2.4" layer="1"/>
+<smd name="P$4" x="6.1" y="-5.7" dx="2.8" dy="2.4" layer="1"/>
+<hole x="0" y="0" drill="2.032"/>
+<hole x="4.572" y="0" drill="2.032"/>
+<rectangle x1="-1.399540625" y1="-8.382" x2="1.399540625" y2="-6.8961" layer="31"/>
+<rectangle x1="4.701540625" y1="-8.384540625" x2="7.500621875" y2="-6.898640625" layer="31"/>
+<rectangle x1="4.7015375" y1="6.8961" x2="7.50061875" y2="8.382" layer="31" rot="R180"/>
+<rectangle x1="-1.39954375" y1="6.8961" x2="1.3995375" y2="8.382" layer="31" rot="R180"/>
+<rectangle x1="5.7531" y1="-6.6675" x2="6.8707" y2="-6.6421" layer="200" rot="R180"/>
+<rectangle x1="5.6261" y1="-6.6421" x2="6.9215" y2="-6.6167" layer="200" rot="R180"/>
+<rectangle x1="5.5753" y1="-6.6167" x2="6.9723" y2="-6.5913" layer="200" rot="R180"/>
+<rectangle x1="5.5499" y1="-6.5913" x2="6.9723" y2="-6.5659" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="-6.5659" x2="6.9977" y2="-6.5405" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="-6.5405" x2="7.0231" y2="-6.5151" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="-6.5151" x2="7.0231" y2="-6.4897" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-6.4897" x2="7.0231" y2="-6.4643" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-6.4643" x2="7.0231" y2="-6.4389" layer="200" rot="R180"/>
+<rectangle x1="-0.7493" y1="-6.4643" x2="0.4445" y2="-6.4389" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-6.4389" x2="7.0231" y2="-6.4135" layer="200" rot="R180"/>
+<rectangle x1="-0.8001" y1="-6.4389" x2="0.5207" y2="-6.4135" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-6.4135" x2="7.0231" y2="-6.3881" layer="200" rot="R180"/>
+<rectangle x1="-0.8255" y1="-6.4135" x2="0.5461" y2="-6.3881" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-6.3881" x2="7.0231" y2="-6.3627" layer="200" rot="R180"/>
+<rectangle x1="-0.8509" y1="-6.3881" x2="0.5715" y2="-6.3627" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-6.3627" x2="7.0231" y2="-6.3373" layer="200" rot="R180"/>
+<rectangle x1="-0.8509" y1="-6.3627" x2="0.5969" y2="-6.3373" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-6.3373" x2="7.0231" y2="-6.3119" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-6.3373" x2="0.6223" y2="-6.3119" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-6.3119" x2="7.0231" y2="-6.2865" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-6.3119" x2="0.6223" y2="-6.2865" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-6.2865" x2="7.0231" y2="-6.2611" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-6.2865" x2="0.6223" y2="-6.2611" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-6.2611" x2="7.0231" y2="-6.2357" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-6.2611" x2="0.6477" y2="-6.2357" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-6.2357" x2="7.0231" y2="-6.2103" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-6.2357" x2="0.6477" y2="-6.2103" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-6.2103" x2="7.0231" y2="-6.1849" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-6.2103" x2="0.6477" y2="-6.1849" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-6.1849" x2="7.0231" y2="-6.1595" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-6.1849" x2="0.6477" y2="-6.1595" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-6.1595" x2="7.0231" y2="-6.1341" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-6.1595" x2="0.6477" y2="-6.1341" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-6.1341" x2="7.0231" y2="-6.1087" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-6.1341" x2="0.6477" y2="-6.1087" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-6.1087" x2="7.0231" y2="-6.0833" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-6.1087" x2="0.6477" y2="-6.0833" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-6.0833" x2="7.0231" y2="-6.0579" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-6.0833" x2="0.6477" y2="-6.0579" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-6.0579" x2="7.0231" y2="-6.0325" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-6.0579" x2="0.6477" y2="-6.0325" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-6.0325" x2="7.0231" y2="-6.0071" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-6.0325" x2="0.6477" y2="-6.0071" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-6.0071" x2="7.0231" y2="-5.9817" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-6.0071" x2="0.6477" y2="-5.9817" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-5.9817" x2="7.0231" y2="-5.9563" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-5.9817" x2="0.6731" y2="-5.9563" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-5.9563" x2="7.0231" y2="-5.9309" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-5.9563" x2="0.6731" y2="-5.9309" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-5.9309" x2="7.0231" y2="-5.9055" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-5.9309" x2="0.6731" y2="-5.9055" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-5.9055" x2="7.0231" y2="-5.8801" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-5.9055" x2="0.6731" y2="-5.8801" layer="200" rot="R180"/>
+<rectangle x1="5.4483" y1="-5.8801" x2="7.0231" y2="-5.8547" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-5.8801" x2="0.6731" y2="-5.8547" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.8547" x2="7.0231" y2="-5.8293" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-5.8547" x2="0.6731" y2="-5.8293" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.8293" x2="7.0231" y2="-5.8039" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-5.8293" x2="0.6731" y2="-5.8039" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.8039" x2="7.0231" y2="-5.7785" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-5.8039" x2="0.6731" y2="-5.7785" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.7785" x2="7.0231" y2="-5.7531" layer="200" rot="R180"/>
+<rectangle x1="-0.9017" y1="-5.7785" x2="0.6731" y2="-5.7531" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.7531" x2="7.0231" y2="-5.7277" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.7531" x2="0.6731" y2="-5.7277" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.7277" x2="7.0231" y2="-5.7023" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.7277" x2="0.6731" y2="-5.7023" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.7023" x2="7.0231" y2="-5.6769" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.7023" x2="0.6731" y2="-5.6769" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.6769" x2="7.0231" y2="-5.6515" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.6769" x2="0.6731" y2="-5.6515" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.6515" x2="7.0231" y2="-5.6261" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.6515" x2="0.6731" y2="-5.6261" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.6261" x2="7.0231" y2="-5.6007" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.6261" x2="0.6731" y2="-5.6007" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.6007" x2="7.0231" y2="-5.5753" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.6007" x2="0.6731" y2="-5.5753" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.5753" x2="7.0231" y2="-5.5499" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.5753" x2="0.6731" y2="-5.5499" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.5499" x2="7.0231" y2="-5.5245" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.5499" x2="0.6731" y2="-5.5245" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.5245" x2="7.0231" y2="-5.4991" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.5245" x2="0.6731" y2="-5.4991" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.4991" x2="7.0231" y2="-5.4737" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.4991" x2="0.6731" y2="-5.4737" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.4737" x2="7.0231" y2="-5.4483" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.4737" x2="0.6731" y2="-5.4483" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.4483" x2="7.0231" y2="-5.4229" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.4483" x2="0.6731" y2="-5.4229" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.4229" x2="7.0231" y2="-5.3975" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.4229" x2="0.6731" y2="-5.3975" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.3975" x2="7.0231" y2="-5.3721" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.3975" x2="0.6731" y2="-5.3721" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.3721" x2="7.0231" y2="-5.3467" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.3721" x2="0.6731" y2="-5.3467" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.3467" x2="7.0231" y2="-5.3213" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.3467" x2="0.6731" y2="-5.3213" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.3213" x2="7.0231" y2="-5.2959" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.3213" x2="0.6731" y2="-5.2959" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.2959" x2="7.0231" y2="-5.2705" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.2959" x2="0.6731" y2="-5.2705" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.2705" x2="7.0231" y2="-5.2451" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.2705" x2="0.6731" y2="-5.2451" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.2451" x2="7.0231" y2="-5.2197" layer="200" rot="R180"/>
+<rectangle x1="-0.8763" y1="-5.2451" x2="0.6731" y2="-5.2197" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.2197" x2="7.0231" y2="-5.1943" layer="200" rot="R180"/>
+<rectangle x1="-0.8509" y1="-5.2197" x2="0.6731" y2="-5.1943" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.1943" x2="7.0231" y2="-5.1689" layer="200" rot="R180"/>
+<rectangle x1="-0.8509" y1="-5.1943" x2="0.6731" y2="-5.1689" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.1689" x2="7.0231" y2="-5.1435" layer="200" rot="R180"/>
+<rectangle x1="-0.8509" y1="-5.1689" x2="0.6731" y2="-5.1435" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.1435" x2="7.0231" y2="-5.1181" layer="200" rot="R180"/>
+<rectangle x1="-0.8509" y1="-5.1435" x2="0.6731" y2="-5.1181" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.1181" x2="7.0231" y2="-5.0927" layer="200" rot="R180"/>
+<rectangle x1="-0.8509" y1="-5.1181" x2="0.6731" y2="-5.0927" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.0927" x2="7.0231" y2="-5.0673" layer="200" rot="R180"/>
+<rectangle x1="-0.8509" y1="-5.0927" x2="0.6731" y2="-5.0673" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.0673" x2="7.0231" y2="-5.0419" layer="200" rot="R180"/>
+<rectangle x1="-0.8509" y1="-5.0673" x2="0.6731" y2="-5.0419" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.0419" x2="7.0231" y2="-5.0165" layer="200" rot="R180"/>
+<rectangle x1="-0.8509" y1="-5.0419" x2="0.6731" y2="-5.0165" layer="200" rot="R180"/>
+<rectangle x1="5.4737" y1="-5.0165" x2="6.9977" y2="-4.9911" layer="200" rot="R180"/>
+<rectangle x1="-0.8509" y1="-5.0165" x2="0.6731" y2="-4.9911" layer="200" rot="R180"/>
+<rectangle x1="-0.8509" y1="-4.9911" x2="0.6731" y2="-4.9657" layer="200" rot="R180"/>
+<rectangle x1="-0.8509" y1="-4.9657" x2="0.5207" y2="-4.9403" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="4.8133" x2="7.0739" y2="4.8387" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="4.8387" x2="7.0993" y2="4.8641" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="4.8641" x2="7.0993" y2="4.8895" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="4.8895" x2="7.0993" y2="4.9149" layer="200" rot="R180"/>
+<rectangle x1="-0.1651" y1="4.8895" x2="0.7239" y2="4.9149" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="4.9149" x2="7.0993" y2="4.9403" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="4.9149" x2="0.7239" y2="4.9403" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="4.9403" x2="7.0993" y2="4.9657" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="4.9403" x2="0.7239" y2="4.9657" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="4.9657" x2="7.0993" y2="4.9911" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="4.9657" x2="0.7239" y2="4.9911" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="4.9911" x2="7.0993" y2="5.0165" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="4.9911" x2="0.7239" y2="5.0165" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="5.0165" x2="7.0993" y2="5.0419" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.0165" x2="0.7239" y2="5.0419" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="5.0419" x2="7.0993" y2="5.0673" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.0419" x2="0.7239" y2="5.0673" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="5.0673" x2="7.0993" y2="5.0927" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.0673" x2="0.7239" y2="5.0927" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="5.0927" x2="7.0993" y2="5.1181" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.0927" x2="0.7239" y2="5.1181" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="5.1181" x2="7.0993" y2="5.1435" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.1181" x2="0.7239" y2="5.1435" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="5.1435" x2="7.0993" y2="5.1689" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.1435" x2="0.7239" y2="5.1689" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="5.1689" x2="7.0993" y2="5.1943" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.1689" x2="0.7239" y2="5.1943" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="5.1943" x2="7.0993" y2="5.2197" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.1943" x2="0.7239" y2="5.2197" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="5.2197" x2="7.0993" y2="5.2451" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.2197" x2="0.7239" y2="5.2451" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="5.2451" x2="7.0993" y2="5.2705" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.2451" x2="0.7239" y2="5.2705" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="5.2705" x2="7.0993" y2="5.2959" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.2705" x2="0.7239" y2="5.2959" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="5.2959" x2="7.0739" y2="5.3213" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.2959" x2="0.7239" y2="5.3213" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="5.3213" x2="7.0739" y2="5.3467" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.3213" x2="0.7239" y2="5.3467" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="5.3467" x2="7.0739" y2="5.3721" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.3467" x2="0.7239" y2="5.3721" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="5.3721" x2="7.0739" y2="5.3975" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.3721" x2="0.7239" y2="5.3975" layer="200" rot="R180"/>
+<rectangle x1="5.4991" y1="5.3975" x2="7.0739" y2="5.4229" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.3975" x2="0.7239" y2="5.4229" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.4229" x2="7.0739" y2="5.4483" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.4229" x2="0.7239" y2="5.4483" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.4483" x2="7.0739" y2="5.4737" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.4483" x2="0.7239" y2="5.4737" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.4737" x2="7.0739" y2="5.4991" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.4737" x2="0.7239" y2="5.4991" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.4991" x2="7.0739" y2="5.5245" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.4991" x2="0.7239" y2="5.5245" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.5245" x2="7.0739" y2="5.5499" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.5245" x2="0.7239" y2="5.5499" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.5499" x2="7.0739" y2="5.5753" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.5499" x2="0.7239" y2="5.5753" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.5753" x2="7.0739" y2="5.6007" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.5753" x2="0.7239" y2="5.6007" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.6007" x2="7.0739" y2="5.6261" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.6007" x2="0.7239" y2="5.6261" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.6261" x2="7.0739" y2="5.6515" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.6261" x2="0.7239" y2="5.6515" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.6515" x2="7.0739" y2="5.6769" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.6515" x2="0.7239" y2="5.6769" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.6769" x2="7.0739" y2="5.7023" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.6769" x2="0.7239" y2="5.7023" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.7023" x2="7.0739" y2="5.7277" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.7023" x2="0.7239" y2="5.7277" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.7277" x2="7.0739" y2="5.7531" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.7277" x2="0.7239" y2="5.7531" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.7531" x2="7.0739" y2="5.7785" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.7531" x2="0.7239" y2="5.7785" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.7785" x2="7.0739" y2="5.8039" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.7785" x2="0.7239" y2="5.8039" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.8039" x2="7.0739" y2="5.8293" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.8039" x2="0.7239" y2="5.8293" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.8293" x2="7.0739" y2="5.8547" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.8293" x2="0.7239" y2="5.8547" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.8547" x2="7.0739" y2="5.8801" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.8547" x2="0.7239" y2="5.8801" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.8801" x2="7.0739" y2="5.9055" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.8801" x2="0.7239" y2="5.9055" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.9055" x2="7.0739" y2="5.9309" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.9055" x2="0.6985" y2="5.9309" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.9309" x2="7.0739" y2="5.9563" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.9309" x2="0.6985" y2="5.9563" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.9563" x2="7.0739" y2="5.9817" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.9563" x2="0.6985" y2="5.9817" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="5.9817" x2="7.0739" y2="6.0071" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="5.9817" x2="0.6985" y2="6.0071" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="6.0071" x2="7.0739" y2="6.0325" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="6.0071" x2="0.6985" y2="6.0325" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="6.0325" x2="7.0739" y2="6.0579" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="6.0325" x2="0.6985" y2="6.0579" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="6.0579" x2="7.0739" y2="6.0833" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="6.0579" x2="0.6985" y2="6.0833" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="6.0833" x2="7.0739" y2="6.1087" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="6.0833" x2="0.6985" y2="6.1087" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="6.1087" x2="7.0739" y2="6.1341" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="6.1087" x2="0.6985" y2="6.1341" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="6.1341" x2="7.0739" y2="6.1595" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="6.1341" x2="0.6985" y2="6.1595" layer="200" rot="R180"/>
+<rectangle x1="5.5245" y1="6.1595" x2="7.0739" y2="6.1849" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="6.1595" x2="0.6985" y2="6.1849" layer="200" rot="R180"/>
+<rectangle x1="5.5499" y1="6.1849" x2="7.0739" y2="6.2103" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="6.1849" x2="0.6985" y2="6.2103" layer="200" rot="R180"/>
+<rectangle x1="5.5499" y1="6.2103" x2="7.0485" y2="6.2357" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="6.2103" x2="0.6985" y2="6.2357" layer="200" rot="R180"/>
+<rectangle x1="5.5499" y1="6.2357" x2="7.0485" y2="6.2611" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="6.2357" x2="0.6985" y2="6.2611" layer="200" rot="R180"/>
+<rectangle x1="5.5499" y1="6.2611" x2="7.0485" y2="6.2865" layer="200" rot="R180"/>
+<rectangle x1="-0.7747" y1="6.2611" x2="0.6985" y2="6.2865" layer="200" rot="R180"/>
+<rectangle x1="5.5753" y1="6.2865" x2="7.0231" y2="6.3119" layer="200" rot="R180"/>
+<rectangle x1="-0.7493" y1="6.2865" x2="0.6731" y2="6.3119" layer="200" rot="R180"/>
+<rectangle x1="5.6007" y1="6.3119" x2="7.0231" y2="6.3373" layer="200" rot="R180"/>
+<rectangle x1="-0.7493" y1="6.3119" x2="0.6731" y2="6.3373" layer="200" rot="R180"/>
+<rectangle x1="5.6007" y1="6.3373" x2="6.9977" y2="6.3627" layer="200" rot="R180"/>
+<rectangle x1="-0.7239" y1="6.3373" x2="0.6477" y2="6.3627" layer="200" rot="R180"/>
+<rectangle x1="5.6261" y1="6.3627" x2="6.9723" y2="6.3881" layer="200" rot="R180"/>
+<rectangle x1="-0.6985" y1="6.3627" x2="0.6223" y2="6.3881" layer="200" rot="R180"/>
+<rectangle x1="5.6769" y1="6.3881" x2="6.9215" y2="6.4135" layer="200" rot="R180"/>
+<rectangle x1="-0.6223" y1="6.3881" x2="0.5461" y2="6.4135" layer="200" rot="R180"/>
+<rectangle x1="5.7531" y1="6.4135" x2="6.8707" y2="6.4389" layer="200" rot="R180"/>
+<text x="9.906" y="-6.8072" size="0.0508" layer="200" font="vector" rot="MR0">//kentro/work/Production/AOI Parts/Tyler/Breadboard power 5v/barreljack.bmp</text>
+<text x="4.7752" y="2.159" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="4.445" y="-2.667" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
+<text x="-1.2192" y="7.874" size="0.3048" layer="51" font="vector">OVERPASTE</text>
+<text x="4.8768" y="7.8486" size="0.3048" layer="51" font="vector">OVERPASTE</text>
+<text x="1.1938" y="-7.874" size="0.3048" layer="51" font="vector" rot="R180">OVERPASTE</text>
+<text x="7.3152" y="-7.8994" size="0.3048" layer="51" font="vector" rot="R180">OVERPASTE</text>
+</package>
+<package name="POWER_JACK_PTH_BREAD" urn="urn:adsk.eagle:footprint:37876/1" library_version="1">
+<description>&lt;h3&gt;DC Barrel Power Jack/Connector Breadboard Compatible&lt;/h3&gt;
+Breadboard-friendly pins. 
+5.5mm jack, 2.1mm center pole diameter
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count: 3&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=”http://cdn.sparkfun.com/datasheets/Prototyping/18742.pdf”&gt;Datasheet referenced for footprint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;POWER_JACK&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<wire x1="4.5" y1="14.6" x2="0.9" y2="14.6" width="0.2032" layer="21"/>
+<wire x1="-4.5" y1="3.6" x2="-4.5" y2="0.1" width="0.2032" layer="51"/>
+<wire x1="4.5" y1="0.1" x2="4.5" y2="3.4" width="0.2032" layer="51"/>
+<wire x1="4.5" y1="0.1" x2="-4.5" y2="0.1" width="0.2032" layer="51"/>
+<wire x1="4.5" y1="3.6" x2="4.5" y2="9.5" width="0.2032" layer="21"/>
+<wire x1="4.5" y1="14.6" x2="4.5" y2="11.9" width="0.2032" layer="21"/>
+<wire x1="-4.5" y1="3.6" x2="-4.5" y2="14.6" width="0.2032" layer="21"/>
+<wire x1="-4.5" y1="14.6" x2="-0.9" y2="14.6" width="0.2032" layer="21"/>
+<wire x1="-4.5" y1="3.6" x2="4.5" y2="3.6" width="0.2032" layer="21"/>
+<pad name="PWR" x="0" y="13.7" drill="1.3"/>
+<pad name="GND" x="0" y="7.9" drill="1.3"/>
+<pad name="GNDBREAK" x="4.8" y="10.7" drill="1.3" rot="R90"/>
+<text x="-1.5748" y="2.159" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="-1.905" y="1.143" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
+</package>
 </packages>
 <packages3d>
 <package3d name="JST-2-SMD" urn="urn:adsk.eagle:package:38042/1" type="box" library_version="1">
@@ -3511,6 +4030,99 @@ CONN_05x2
 <packageinstance name="2X5-PTH-1.27MM"/>
 </packageinstances>
 </package3d>
+<package3d name="POWER_JACK_SMD" urn="urn:adsk.eagle:package:38221/1" type="box" library_version="1">
+<description>DC Barrel Power Jack/Connector -SMD
+5.5mm jack, 2.1mm center pole diameter. 
+Specifications:
+Pin count:4
+
+Datasheet referenced for footprint
+Example device(s):
+POWER_JACK
+</description>
+<packageinstances>
+<packageinstance name="POWER_JACK_SMD"/>
+</packageinstances>
+</package3d>
+<package3d name="POWER_JACK_SLOT" urn="urn:adsk.eagle:package:38222/1" type="box" library_version="1">
+<description>DC Barrel Power Jack/Connector PTH Slot Pads
+Extended soldering pads. 
+5.5mm jack, 2.1mm center pole diameter
+Specifications:
+Pin count: 3
+
+Datasheet referenced for footprint
+Example device(s):
+POWER_JACK
+</description>
+<packageinstances>
+<packageinstance name="POWER_JACK_SLOT"/>
+</packageinstances>
+</package3d>
+<package3d name="POWER_JACK_PTH" urn="urn:adsk.eagle:package:38231/1" type="box" library_version="1">
+<description>DC Barrel Power Jack/Connector PTH
+5.5mm jack, 2.1mm center pole diameter
+Specifications:
+Pin count: 3
+
+Datasheet referenced for footprint
+Example device(s):
+POWER_JACK
+</description>
+<packageinstances>
+<packageinstance name="POWER_JACK_PTH"/>
+</packageinstances>
+</package3d>
+<package3d name="POWER_JACK_COMBO" urn="urn:adsk.eagle:package:38223/1" type="box" library_version="1">
+<packageinstances>
+<packageinstance name="POWER_JACK_COMBO"/>
+</packageinstances>
+</package3d>
+<package3d name="POWER_JACK_PTH_LOCK" urn="urn:adsk.eagle:package:38224/1" type="box" library_version="1">
+<description>DC Barrel Power Jack/Connector PTH Locking Footprint
+5.5mm jack, 2.1mm center pole diameter.
+ Holes are offset from center 0.005" to hold pins in place during soldering. 
+Specifications:
+Pin count: 3
+
+Datasheet referenced for footprint
+Example device(s):
+POWER_JACK
+</description>
+<packageinstances>
+<packageinstance name="POWER_JACK_PTH_LOCK"/>
+</packageinstances>
+</package3d>
+<package3d name="POWER_JACK_SMD_OVERPASTE_TOE" urn="urn:adsk.eagle:package:38226/1" type="box" library_version="1">
+<description>DC Barrel Power Jack/Connector -SMD Overpaste
+Over paste toe on each SMD pad to ease use of AOI. 
+5.5mm jack, 2.1mm center pole diameter. 
+Specifications:
+Pin count:4
+
+Datasheet referenced for footprint
+Example device(s):
+POWER_JACK
+</description>
+<packageinstances>
+<packageinstance name="POWER_JACK_SMD_OVERPASTE_TOE"/>
+</packageinstances>
+</package3d>
+<package3d name="POWER_JACK_PTH_BREAD" urn="urn:adsk.eagle:package:38228/1" type="box" library_version="1">
+<description>DC Barrel Power Jack/Connector Breadboard Compatible
+Breadboard-friendly pins. 
+5.5mm jack, 2.1mm center pole diameter
+Specifications:
+Pin count: 3
+
+Datasheet referenced for footprint
+Example device(s):
+POWER_JACK
+</description>
+<packageinstances>
+<packageinstance name="POWER_JACK_PTH_BREAD"/>
+</packageinstances>
+</package3d>
 </packages3d>
 <symbols>
 <symbol name="CONN_02" urn="urn:adsk.eagle:symbol:37653/1" library_version="1">
@@ -3590,6 +4202,20 @@ CONN_05x2
 <wire x1="15.24" y1="-7.62" x2="-12.7" y2="-7.62" width="0.254" layer="94"/>
 <text x="-12.7" y="7.874" size="1.778" layer="95" font="vector">&gt;Name</text>
 <text x="-12.7" y="-9.906" size="1.778" layer="96" font="vector">&gt;Value</text>
+</symbol>
+<symbol name="POWERJACK" urn="urn:adsk.eagle:symbol:37869/1" library_version="1">
+<wire x1="-10.16" y1="2.54" x2="-7.62" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="5.08" x2="-5.08" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="2.54" x2="-2.54" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="0" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="-2.54" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="5.08" x2="0" y2="5.08" width="0.1524" layer="94"/>
+<text x="-10.16" y="10.16" size="1.778" layer="96" font="vector">&gt;Value</text>
+<text x="-10.16" y="0" size="1.778" layer="95" font="vector">&gt;Name</text>
+<rectangle x1="-10.16" y1="6.858" x2="0" y2="8.382" layer="94"/>
+<pin name="GNDBREAK" x="2.54" y="5.08" visible="off" length="short" rot="R180"/>
+<pin name="GND" x="2.54" y="2.54" visible="off" length="short" rot="R180"/>
+<pin name="PWR" x="2.54" y="7.62" visible="off" length="short" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -4340,6 +4966,145 @@ PTH and SMD connector options available.&lt;/p&gt;
 </package3dinstances>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="POWER_JACK" urn="urn:adsk.eagle:component:38358/1" prefix="J" library_version="1">
+<description>&lt;h3&gt;Power Jack Connector&lt;/h3&gt;
+This is the standard 5.5mm barrel jack for power.&lt;br&gt;
+The PTH is the most common, proven, reliable, footprint.&lt;br&gt;
+The Slot footprint only works if the mill layer is transmitted to the PCB fab house so be warned.&lt;br&gt;
+
+&lt;p&gt;&lt;/p&gt;
+&lt;b&gt;Here are the connectors we sell at SparkFun:&lt;/b&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/119"&gt;DC Barrel Power Jack/Connector&lt;/a&gt; (PRT-00119)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/12748"&gt;DC Barrel Power Jack/Connector (SMD)&lt;/a&gt; (PRT-12748)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/10811"&gt;DC Barrel Jack Adapter - Breadboard Compatible&lt;/a&gt; (PRT-10811)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;
+&lt;b&gt;It is used on this SparkFun product (and many, many others):&lt;/b&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/12757"&gt;SparkFun RedBoard - Programmed with Arduino&lt;/a&gt; (DEV-12757)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;
+&lt;b&gt;Also, if you need a mating power supply or connector, please check these out:&lt;/b&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/298"&gt;Wall Adapter Power Supply - 9VDC 650mA&lt;/a&gt; (TOL-00298)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/10287"&gt;DC Barrel Jack Adapter - Male&lt;/a&gt; (PRT-10287)&lt;/li&gt;
+&lt;/ul&gt;</description>
+<gates>
+<gate name="G$1" symbol="POWERJACK" x="7.62" y="-2.54"/>
+</gates>
+<devices>
+<device name="SMD" package="POWER_JACK_SMD">
+<connects>
+<connect gate="G$1" pin="GND" pad="P$4"/>
+<connect gate="G$1" pin="GNDBREAK" pad="GND"/>
+<connect gate="G$1" pin="PWR" pad="VIN0"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:38221/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="CONN-08106"/>
+<attribute name="SF_ID" value="PRT-12748" constant="no"/>
+<attribute name="VALUE" value="5.5x2.1mm Barrel" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="SLT" package="POWER_JACK_SLOT">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND@2"/>
+<connect gate="G$1" pin="GNDBREAK" pad="GND@1"/>
+<connect gate="G$1" pin="PWR" pad="PWR"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:38222/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="PRT-00119" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="" package="POWER_JACK_PTH">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="GNDBREAK" pad="GNDBREAK"/>
+<connect gate="G$1" pin="PWR" pad="PWR"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:38231/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="CONN-08197"/>
+</technology>
+</technologies>
+</device>
+<device name="PTH_SMD_COMBO" package="POWER_JACK_COMBO">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND@1"/>
+<connect gate="G$1" pin="GNDBREAK" pad="GND"/>
+<connect gate="G$1" pin="PWR" pad="POWER"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:38223/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="PTH_LOCK" package="POWER_JACK_PTH_LOCK">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="GNDBREAK" pad="GNDBREAK"/>
+<connect gate="G$1" pin="PWR" pad="PWR"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:38224/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="CONN-08197" constant="no"/>
+<attribute name="SF_ID" value="PRT-00119" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="TOE" package="POWER_JACK_SMD_OVERPASTE_TOE">
+<connects>
+<connect gate="G$1" pin="GND" pad="P$4"/>
+<connect gate="G$1" pin="GNDBREAK" pad="GND"/>
+<connect gate="G$1" pin="PWR" pad="VIN0"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:38226/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="CONN-08106" constant="no"/>
+<attribute name="SF_ID" value="PRT-12748" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="PTH_BREAD" package="POWER_JACK_PTH_BREAD">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="GNDBREAK" pad="GNDBREAK"/>
+<connect gate="G$1" pin="PWR" pad="PWR"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:38228/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="PRT-10811" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -6640,47 +7405,156 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </device>
 </devices>
 </deviceset>
-<deviceset name="V_REG_MIC5219" urn="urn:adsk.eagle:component:39094/1" prefix="U" uservalue="yes" library_version="1">
-<description>&lt;b&gt;V_REG MIC5219&lt;/b&gt;
-Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part MIC5219. BP (by-pass) pin is used to lower output noise with 470pF cap, may be left open.</description>
+</devicesets>
+</library>
+<library name="TS30013">
+<packages>
+<package name="QFN16-3X3-TI-RTE">
+<description>3x3 mm</description>
+<wire x1="-1.5" y1="1.5" x2="1.5" y2="1.5" width="0.1016" layer="51"/>
+<wire x1="1.5" y1="1.5" x2="1.5" y2="-1.5" width="0.1016" layer="51"/>
+<wire x1="1.5" y1="-1.5" x2="-1.5" y2="-1.5" width="0.1016" layer="51"/>
+<wire x1="-1.5" y1="-1.5" x2="-1.5" y2="1.5" width="0.1016" layer="51"/>
+<wire x1="1.5" y1="1.5" x2="1.5" y2="1.025" width="0.1016" layer="21"/>
+<wire x1="1.025" y1="1.5" x2="1.5" y2="1.5" width="0.1016" layer="21"/>
+<wire x1="-1.5" y1="-1.5" x2="-1.5" y2="-1.025" width="0.1016" layer="21"/>
+<wire x1="-1.025" y1="-1.5" x2="-1.5" y2="-1.5" width="0.1016" layer="21"/>
+<wire x1="1.5" y1="-1.5" x2="1.025" y2="-1.5" width="0.1016" layer="21"/>
+<wire x1="1.5" y1="-1.025" x2="1.5" y2="-1.5" width="0.1016" layer="21"/>
+<circle x="-1.2" y="0.75" radius="0.125" width="0" layer="31"/>
+<circle x="-1.2" y="0.75" radius="0.2" width="0" layer="29"/>
+<circle x="-1.2" y="0.25" radius="0.125" width="0" layer="31"/>
+<circle x="-1.2" y="0.25" radius="0.2" width="0" layer="29"/>
+<circle x="-1.2" y="-0.25" radius="0.125" width="0" layer="31"/>
+<circle x="-1.2" y="-0.75" radius="0.125" width="0" layer="31"/>
+<circle x="-0.75" y="-1.2" radius="0.125" width="0" layer="31"/>
+<circle x="-0.25" y="-1.2" radius="0.125" width="0" layer="31"/>
+<circle x="0.25" y="-1.2" radius="0.125" width="0" layer="31"/>
+<circle x="0.75" y="-1.2" radius="0.125" width="0" layer="31"/>
+<circle x="1.2" y="-0.75" radius="0.125" width="0" layer="31"/>
+<circle x="1.2" y="-0.25" radius="0.125" width="0" layer="31"/>
+<circle x="1.2" y="0.25" radius="0.125" width="0" layer="31"/>
+<circle x="1.2" y="0.75" radius="0.125" width="0" layer="31"/>
+<circle x="0.75" y="1.2" radius="0.125" width="0" layer="31"/>
+<circle x="0.25" y="1.2" radius="0.125" width="0" layer="31"/>
+<circle x="-0.25" y="1.2" radius="0.125" width="0" layer="31"/>
+<circle x="-0.75" y="1.2" radius="0.125" width="0" layer="31"/>
+<circle x="0" y="0" radius="0.15" width="0.01" layer="49"/>
+<circle x="0.5" y="0.5" radius="0.15" width="0.01" layer="49"/>
+<circle x="0.5" y="-0.5" radius="0.15" width="0.01" layer="49"/>
+<circle x="-0.5" y="-0.5" radius="0.15" width="0.01" layer="49"/>
+<circle x="-0.5" y="0.5" radius="0.15" width="0.01" layer="49"/>
+<circle x="-1.2" y="-0.25" radius="0.2" width="0" layer="29"/>
+<circle x="-1.2" y="-0.75" radius="0.2" width="0" layer="29"/>
+<circle x="-0.75" y="-1.2" radius="0.2" width="0" layer="29"/>
+<circle x="-0.25" y="-1.2" radius="0.2" width="0" layer="29"/>
+<circle x="0.25" y="-1.2" radius="0.2" width="0" layer="29"/>
+<circle x="0.75" y="-1.2" radius="0.2" width="0" layer="29"/>
+<circle x="1.2" y="-0.75" radius="0.2" width="0" layer="29"/>
+<circle x="1.2" y="-0.25" radius="0.2" width="0" layer="29"/>
+<circle x="1.2" y="0.25" radius="0.2" width="0" layer="29"/>
+<circle x="1.2" y="0.75" radius="0.2" width="0" layer="29"/>
+<circle x="0.75" y="1.2" radius="0.2" width="0" layer="29"/>
+<circle x="0.25" y="1.2" radius="0.2" width="0" layer="29"/>
+<circle x="-0.25" y="1.2" radius="0.2" width="0" layer="29"/>
+<circle x="-0.75" y="1.2" radius="0.2" width="0" layer="29"/>
+<smd name="TH" x="0" y="0" dx="1.7" dy="1.7" layer="1" stop="no" cream="no"/>
+<smd name="1" x="-1.475" y="0.75" dx="0.85" dy="0.3" layer="1" roundness="75" stop="no" cream="no"/>
+<smd name="2" x="-1.475" y="0.25" dx="0.85" dy="0.3" layer="1" roundness="75" stop="no" cream="no"/>
+<smd name="3" x="-1.475" y="-0.25" dx="0.85" dy="0.3" layer="1" roundness="75" stop="no" cream="no"/>
+<smd name="4" x="-1.475" y="-0.75" dx="0.85" dy="0.3" layer="1" roundness="75" stop="no" cream="no"/>
+<smd name="5" x="-0.75" y="-1.475" dx="0.85" dy="0.3" layer="1" roundness="75" rot="R90" stop="no" cream="no"/>
+<smd name="6" x="-0.25" y="-1.475" dx="0.85" dy="0.3" layer="1" roundness="75" rot="R90" stop="no" cream="no"/>
+<smd name="7" x="0.25" y="-1.475" dx="0.85" dy="0.3" layer="1" roundness="75" rot="R90" stop="no" cream="no"/>
+<smd name="8" x="0.75" y="-1.475" dx="0.85" dy="0.3" layer="1" roundness="75" rot="R90" stop="no" cream="no"/>
+<smd name="9" x="1.475" y="-0.75" dx="0.85" dy="0.3" layer="1" roundness="75" rot="R180" stop="no" cream="no"/>
+<smd name="10" x="1.475" y="-0.25" dx="0.85" dy="0.3" layer="1" roundness="75" rot="R180" stop="no" cream="no"/>
+<smd name="11" x="1.475" y="0.25" dx="0.85" dy="0.3" layer="1" roundness="75" rot="R180" stop="no" cream="no"/>
+<smd name="12" x="1.475" y="0.75" dx="0.85" dy="0.3" layer="1" roundness="75" rot="R180" stop="no" cream="no"/>
+<smd name="13" x="0.75" y="1.475" dx="0.85" dy="0.3" layer="1" roundness="75" rot="R270" stop="no" cream="no"/>
+<smd name="14" x="0.25" y="1.475" dx="0.85" dy="0.3" layer="1" roundness="75" rot="R270" stop="no" cream="no"/>
+<smd name="15" x="-0.25" y="1.475" dx="0.85" dy="0.3" layer="1" roundness="75" rot="R270" stop="no" cream="no"/>
+<smd name="16" x="-0.75" y="1.475" dx="0.85" dy="0.3" layer="1" roundness="75" rot="R270" stop="no" cream="no"/>
+<text x="-2" y="2" size="1.27" layer="25">&gt;NAME</text>
+<text x="-2" y="-3.5" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.875" y1="-0.875" x2="0.875" y2="0.875" layer="29"/>
+<rectangle x1="-0.8" y1="0.1" x2="-0.1" y2="0.8" layer="31" rot="R90"/>
+<rectangle x1="-1.9" y1="0.55" x2="-1.2" y2="0.95" layer="29"/>
+<rectangle x1="-1.85" y1="0.625" x2="-1.2" y2="0.875" layer="31"/>
+<rectangle x1="-1.9" y1="0.05" x2="-1.2" y2="0.45" layer="29"/>
+<rectangle x1="-1.85" y1="0.125" x2="-1.2" y2="0.375" layer="31"/>
+<rectangle x1="-1.85" y1="-0.375" x2="-1.2" y2="-0.125" layer="31"/>
+<rectangle x1="-1.85" y1="-0.875" x2="-1.2" y2="-0.625" layer="31"/>
+<rectangle x1="-1.075" y1="-1.65" x2="-0.425" y2="-1.4" layer="31" rot="R90"/>
+<rectangle x1="-0.575" y1="-1.65" x2="0.075" y2="-1.4" layer="31" rot="R90"/>
+<rectangle x1="-0.075" y1="-1.65" x2="0.575" y2="-1.4" layer="31" rot="R90"/>
+<rectangle x1="0.425" y1="-1.65" x2="1.075" y2="-1.4" layer="31" rot="R90"/>
+<rectangle x1="1.2" y1="-0.875" x2="1.85" y2="-0.625" layer="31" rot="R180"/>
+<rectangle x1="1.2" y1="-0.375" x2="1.85" y2="-0.125" layer="31" rot="R180"/>
+<rectangle x1="1.2" y1="0.125" x2="1.85" y2="0.375" layer="31" rot="R180"/>
+<rectangle x1="1.2" y1="0.625" x2="1.85" y2="0.875" layer="31" rot="R180"/>
+<rectangle x1="0.425" y1="1.4" x2="1.075" y2="1.65" layer="31" rot="R270"/>
+<rectangle x1="-0.075" y1="1.4" x2="0.575" y2="1.65" layer="31" rot="R270"/>
+<rectangle x1="-0.575" y1="1.4" x2="0.075" y2="1.65" layer="31" rot="R270"/>
+<rectangle x1="-1.075" y1="1.4" x2="-0.425" y2="1.65" layer="31" rot="R270"/>
+<rectangle x1="-0.8" y1="-0.8" x2="-0.1" y2="-0.1" layer="31" rot="R180"/>
+<rectangle x1="0.1" y1="-0.8" x2="0.8" y2="-0.1" layer="31" rot="R270"/>
+<rectangle x1="0.1" y1="0.1" x2="0.8" y2="0.8" layer="31"/>
+<rectangle x1="-1.9" y1="-0.45" x2="-1.2" y2="-0.05" layer="29"/>
+<rectangle x1="-1.9" y1="-0.95" x2="-1.2" y2="-0.55" layer="29"/>
+<rectangle x1="-1.1" y1="-1.75" x2="-0.4" y2="-1.35" layer="29" rot="R90"/>
+<rectangle x1="-0.6" y1="-1.75" x2="0.1" y2="-1.35" layer="29" rot="R90"/>
+<rectangle x1="-0.1" y1="-1.75" x2="0.6" y2="-1.35" layer="29" rot="R90"/>
+<rectangle x1="0.4" y1="-1.75" x2="1.1" y2="-1.35" layer="29" rot="R90"/>
+<rectangle x1="1.2" y1="-0.95" x2="1.9" y2="-0.55" layer="29" rot="R180"/>
+<rectangle x1="1.2" y1="-0.45" x2="1.9" y2="-0.05" layer="29" rot="R180"/>
+<rectangle x1="1.2" y1="0.05" x2="1.9" y2="0.45" layer="29" rot="R180"/>
+<rectangle x1="1.2" y1="0.55" x2="1.9" y2="0.95" layer="29" rot="R180"/>
+<rectangle x1="0.4" y1="1.35" x2="1.1" y2="1.75" layer="29" rot="R270"/>
+<rectangle x1="-0.1" y1="1.35" x2="0.6" y2="1.75" layer="29" rot="R270"/>
+<rectangle x1="-0.6" y1="1.35" x2="0.1" y2="1.75" layer="29" rot="R270"/>
+<rectangle x1="-1.1" y1="1.35" x2="-0.4" y2="1.75" layer="29" rot="R270"/>
+<wire x1="-1.5" y1="1.02" x2="-1.03" y2="1.5" width="0.127" layer="21"/>
+<circle x="-2.06" y="1.24" radius="0.15" width="0.127" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="BUCK-TS30011-12-13">
+<pin name="BST" x="15.24" y="10.16" length="middle" rot="R180"/>
+<pin name="VSW" x="15.24" y="2.54" length="middle" rot="R180"/>
+<pin name="PG" x="15.24" y="-7.62" length="middle" rot="R180"/>
+<pin name="VCC" x="-15.24" y="10.16" length="middle"/>
+<pin name="EN" x="-15.24" y="2.54" length="middle"/>
+<pin name="GND" x="-15.24" y="-5.08" length="middle"/>
+<pin name="PGND" x="-15.24" y="-7.62" length="middle"/>
+<wire x1="-10.16" y1="12.7" x2="-10.16" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-10.16" x2="10.16" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-10.16" x2="10.16" y2="12.7" width="0.254" layer="94"/>
+<wire x1="10.16" y1="12.7" x2="-10.16" y2="12.7" width="0.254" layer="94"/>
+<pin name="FB" x="15.24" y="-5.08" length="middle" rot="R180"/>
+<text x="-2.54" y="12.7" size="1.27" layer="95">&gt;NAME</text>
+<text x="-2.54" y="-12.7" size="1.27" layer="96">&gt;VALUE</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="BUCK-TS30011-12-13" prefix="U">
 <gates>
-<gate name="G$1" symbol="V-REG-LDO" x="2.54" y="0"/>
+<gate name="G$1" symbol="BUCK-TS30011-12-13" x="0" y="0"/>
 </gates>
 <devices>
-<device name="3.3V" package="SOT23-5">
+<device name="QFN" package="QFN16-3X3-TI-RTE">
 <connects>
-<connect gate="G$1" pin="BP" pad="4"/>
-<connect gate="G$1" pin="EN" pad="3"/>
-<connect gate="G$1" pin="GND" pad="2"/>
-<connect gate="G$1" pin="IN" pad="1"/>
-<connect gate="G$1" pin="OUT" pad="5"/>
+<connect gate="G$1" pin="BST" pad="10"/>
+<connect gate="G$1" pin="EN" pad="9"/>
+<connect gate="G$1" pin="FB" pad="5"/>
+<connect gate="G$1" pin="GND" pad="4 TH"/>
+<connect gate="G$1" pin="PG" pad="8"/>
+<connect gate="G$1" pin="PGND" pad="14 15"/>
+<connect gate="G$1" pin="VCC" pad="2 3 11"/>
+<connect gate="G$1" pin="VSW" pad="1 12 13 16"/>
 </connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:39060/1"/>
-</package3dinstances>
 <technologies>
-<technology name="">
-<attribute name="PROD_ID" value="VREG-09872"/>
-<attribute name="VALUE" value="MIC5219 3.3V" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="5V" package="SOT23-5">
-<connects>
-<connect gate="G$1" pin="BP" pad="4"/>
-<connect gate="G$1" pin="EN" pad="3"/>
-<connect gate="G$1" pin="GND" pad="2"/>
-<connect gate="G$1" pin="IN" pad="1"/>
-<connect gate="G$1" pin="OUT" pad="5"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:39060/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="VREG-10107"/>
-<attribute name="VALUE" value="MIC5219 5V" constant="no"/>
-</technology>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
@@ -6699,20 +7573,13 @@ Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part M
 </class>
 </classes>
 <parts>
-<part name="C10" library="SparkFun" deviceset="CAP" device="0603-CAP" value="1uF"/>
-<part name="C13" library="SparkFun" deviceset="CAP_POL" device="1206" value="10uF"/>
-<part name="GND25" library="SparkFun" deviceset="GND" device=""/>
-<part name="GND26" library="SparkFun" deviceset="GND" device=""/>
 <part name="R11" library="SparkFun" deviceset="RESISTOR" device="0603-RES" value="1K"/>
 <part name="LED1" library="SparkFun" deviceset="LED" device="0603" value="Red"/>
 <part name="GND28" library="SparkFun" deviceset="GND" device=""/>
 <part name="C3" library="SparkFun" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="GND1" library="SparkFun" deviceset="GND" device=""/>
 <part name="R6" library="SparkFun" deviceset="RESISTOR" device="0603-RES" value="330"/>
 <part name="D3" library="SparkFun" deviceset="LED" device="0603" value="Green"/>
-<part name="U2" library="SparkFun-IC-Power" library_urn="urn:adsk.eagle:library:526" deviceset="V_REG_MIC5219" device="5V" package3d_urn="urn:adsk.eagle:package:39060/1" value="MIC5219 5V"/>
 <part name="C19" library="SparkFun" deviceset="CAP_POL" device="1206" value="10uF"/>
-<part name="GND30" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND32" library="SparkFun" deviceset="GND" device=""/>
 <part name="P+12" library="SparkFun" deviceset="3.3V" device="" value="5V"/>
 <part name="P+4" library="SparkFun" deviceset="3.3V" device="" value="3V3"/>
@@ -6773,15 +7640,18 @@ Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part M
 <part name="P+6" library="SparkFun" deviceset="3.3V" device="" value="VCC"/>
 <part name="GND14" library="SparkFun" deviceset="GND" device=""/>
 <part name="U4" library="SparkFun-IC-Power" library_urn="urn:adsk.eagle:library:526" deviceset="V_REG_MIC5205" device="3.3V" package3d_urn="urn:adsk.eagle:package:39060/1" value="3.3V/150mA"/>
+<part name="U8" library="TS30013" deviceset="BUCK-TS30011-12-13" device="QFN"/>
+<part name="L4" library="SparkFun-Passives" deviceset="INDUCTOR" device="BOURNS_SRN6045" value="4.7uH"/>
+<part name="C1" library="SparkFun" deviceset="CAP_POL" device="1206" value="10uF"/>
+<part name="C6" library="SparkFun" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
+<part name="J4" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="POWER_JACK" device="SMD" package3d_urn="urn:adsk.eagle:package:38221/1" value="5.5x2.1mm Barrel"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="53.34" y="134.62" size="1.778" layer="97">Max Voltage Input: 16VDC</text>
-<text x="53.34" y="132.08" size="1.778" layer="97">Max Current Output: 500mA</text>
-<text x="40.64" y="121.92" size="1.778" layer="97">Board is marked with combination of</text>
-<text x="40.64" y="119.38" size="1.778" layer="97">resonator frequency and regulator voltage.</text>
-<text x="53.34" y="137.16" size="1.778" layer="97">VCC = 5V or 3.3V Output</text>
+<text x="38.1" y="137.16" size="1.778" layer="97">Max Voltage Input: 18VDC</text>
+<text x="38.1" y="134.62" size="1.778" layer="97">Max Current Output: 3A</text>
+<text x="38.1" y="139.7" size="1.778" layer="97">VCC = 5V Output</text>
 <wire x1="-256.54" y1="76.2" x2="-256.54" y2="-2.54" width="0.1524" layer="97"/>
 <wire x1="-256.54" y1="-2.54" x2="-5.08" y2="-2.54" width="0.1524" layer="97"/>
 <wire x1="-5.08" y1="-2.54" x2="-5.08" y2="86.36" width="0.1524" layer="97"/>
@@ -6799,43 +7669,26 @@ Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part M
 <wire x1="22.86" y1="185.42" x2="304.8" y2="185.42" width="0.1524" layer="97"/>
 <text x="0" y="180.34" size="6.4516" layer="97">MCU</text>
 <text x="-187.96" y="180.34" size="1.778" layer="97">Led driver for dynamically controlling the current </text>
-<text x="-71.12" y="22.86" size="1.778" layer="97" rot="R180">input power</text>
+<text x="-71.12" y="45.72" size="1.778" layer="97" rot="R180">input power</text>
 <text x="-203.2" y="162.56" size="1.778" layer="97">I_LED = 0.1 / R1
       = 350mA</text>
-<text x="-71.12" y="53.34" size="1.778" layer="97" rot="R180">led strip</text>
+<text x="-71.12" y="76.2" size="1.778" layer="97" rot="R180">led strip</text>
 </plain>
 <instances>
-<instance part="C10" gate="G$1" x="83.82" y="152.4" smashed="yes">
-<attribute name="NAME" x="85.344" y="155.321" size="1.778" layer="95"/>
-<attribute name="VALUE" x="85.344" y="150.241" size="1.778" layer="96"/>
+<instance part="R11" gate="G$1" x="121.92" y="154.94" smashed="yes" rot="R90">
+<attribute name="NAME" x="120.4214" y="151.13" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="125.222" y="151.13" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="C13" gate="G$1" x="76.2" y="154.94" smashed="yes">
-<attribute name="NAME" x="77.216" y="155.575" size="1.778" layer="95"/>
-<attribute name="VALUE" x="77.216" y="150.749" size="1.778" layer="96"/>
+<instance part="LED1" gate="G$1" x="121.92" y="144.78" smashed="yes">
+<attribute name="NAME" x="125.476" y="140.208" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="127.635" y="140.208" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="GND25" gate="1" x="76.2" y="144.78" smashed="yes">
-<attribute name="VALUE" x="73.66" y="142.24" size="1.778" layer="96"/>
+<instance part="GND28" gate="1" x="121.92" y="129.54" smashed="yes">
+<attribute name="VALUE" x="119.38" y="127" size="1.778" layer="96"/>
 </instance>
-<instance part="GND26" gate="1" x="83.82" y="144.78" smashed="yes">
-<attribute name="VALUE" x="81.28" y="142.24" size="1.778" layer="96"/>
-</instance>
-<instance part="R11" gate="G$1" x="104.14" y="152.4" smashed="yes" rot="R90">
-<attribute name="NAME" x="102.6414" y="148.59" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="107.442" y="148.59" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="LED1" gate="G$1" x="104.14" y="142.24" smashed="yes">
-<attribute name="NAME" x="107.696" y="137.668" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="109.855" y="137.668" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="GND28" gate="1" x="104.14" y="132.08" smashed="yes">
-<attribute name="VALUE" x="101.6" y="129.54" size="1.778" layer="96"/>
-</instance>
-<instance part="C3" gate="G$1" x="91.44" y="154.94" smashed="yes" rot="R180">
-<attribute name="NAME" x="92.456" y="155.067" size="1.778" layer="95"/>
-<attribute name="VALUE" x="92.456" y="150.749" size="1.778" layer="96"/>
-</instance>
-<instance part="GND1" gate="1" x="91.44" y="144.78" smashed="yes">
-<attribute name="VALUE" x="88.9" y="142.24" size="1.778" layer="96"/>
+<instance part="C3" gate="G$1" x="109.22" y="157.48" smashed="yes" rot="R180">
+<attribute name="NAME" x="110.236" y="157.607" size="1.778" layer="95"/>
+<attribute name="VALUE" x="110.236" y="153.289" size="1.778" layer="96"/>
 </instance>
 <instance part="R6" gate="G$1" x="162.56" y="104.14" smashed="yes" rot="R270">
 <attribute name="NAME" x="164.0586" y="107.95" size="1.778" layer="95" rot="R270"/>
@@ -6845,28 +7698,21 @@ Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part M
 <attribute name="NAME" x="168.402" y="91.694" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="158.877" y="93.726" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="U2" gate="G$1" x="63.5" y="154.94" smashed="yes">
-<attribute name="NAME" x="55.88" y="164.084" size="1.778" layer="95"/>
-<attribute name="VALUE" x="55.88" y="143.51" size="1.778" layer="96"/>
+<instance part="C19" gate="G$1" x="20.32" y="165.1" smashed="yes">
+<attribute name="NAME" x="21.336" y="165.735" size="1.778" layer="95"/>
+<attribute name="VALUE" x="21.336" y="160.909" size="1.778" layer="96"/>
 </instance>
-<instance part="C19" gate="G$1" x="40.64" y="154.94" smashed="yes">
-<attribute name="NAME" x="41.656" y="155.575" size="1.778" layer="95"/>
-<attribute name="VALUE" x="41.656" y="150.749" size="1.778" layer="96"/>
+<instance part="GND32" gate="1" x="20.32" y="142.24" smashed="yes">
+<attribute name="VALUE" x="17.78" y="139.7" size="1.778" layer="96"/>
 </instance>
-<instance part="GND30" gate="1" x="48.26" y="144.78" smashed="yes">
-<attribute name="VALUE" x="45.72" y="142.24" size="1.778" layer="96"/>
-</instance>
-<instance part="GND32" gate="1" x="40.64" y="144.78" smashed="yes">
-<attribute name="VALUE" x="38.1" y="142.24" size="1.778" layer="96"/>
-</instance>
-<instance part="P+12" gate="G$1" x="104.14" y="162.56" smashed="yes">
-<attribute name="VALUE" x="103.124" y="166.116" size="1.778" layer="96"/>
+<instance part="P+12" gate="G$1" x="121.92" y="165.1" smashed="yes">
+<attribute name="VALUE" x="120.904" y="168.656" size="1.778" layer="96"/>
 </instance>
 <instance part="P+4" gate="G$1" x="279.4" y="172.72" smashed="yes">
 <attribute name="VALUE" x="277.114" y="175.768" size="1.778" layer="96"/>
 </instance>
-<instance part="GND2" gate="1" x="-81.28" y="30.48" smashed="yes">
-<attribute name="VALUE" x="-83.82" y="27.94" size="1.778" layer="96"/>
+<instance part="GND2" gate="1" x="-81.28" y="53.34" smashed="yes">
+<attribute name="VALUE" x="-83.82" y="50.8" size="1.778" layer="96"/>
 </instance>
 <instance part="R4" gate="G$1" x="172.72" y="104.14" smashed="yes" rot="R270">
 <attribute name="NAME" x="174.2186" y="107.95" size="1.778" layer="95" rot="R270"/>
@@ -6925,8 +7771,8 @@ Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part M
 <instance part="J3" gate="G$1" x="-198.12" y="12.7" smashed="yes" rot="R270">
 <attribute name="NAME" x="-192.278" y="15.24" size="1.778" layer="95" rot="R270"/>
 </instance>
-<instance part="POWER_IN" gate="G$1" x="-88.9" y="12.7" smashed="yes" rot="R90">
-<attribute name="NAME" x="-94.742" y="10.16" size="1.778" layer="95" rot="R90"/>
+<instance part="POWER_IN" gate="G$1" x="-88.9" y="35.56" smashed="yes" rot="R90">
+<attribute name="NAME" x="-94.742" y="33.02" size="1.778" layer="95" rot="R90"/>
 </instance>
 <instance part="S2" gate="G$1" x="35.56" y="68.58" smashed="yes">
 <attribute name="NAME" x="35.56" y="73.914" size="1.778" layer="95" font="vector" align="bottom-center"/>
@@ -7012,13 +7858,13 @@ Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part M
 <attribute name="NAME" x="-44.2214" y="156.21" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="-49.022" y="156.21" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="J6" gate="G$1" x="-68.58" y="43.18" smashed="yes" rot="R180">
-<attribute name="VALUE" x="-63.5" y="50.546" size="1.778" layer="96" font="vector" rot="R180"/>
-<attribute name="NAME" x="-63.5" y="35.052" size="1.778" layer="95" font="vector" rot="R180"/>
+<instance part="J6" gate="G$1" x="-68.58" y="66.04" smashed="yes" rot="R180">
+<attribute name="VALUE" x="-63.5" y="73.406" size="1.778" layer="96" font="vector" rot="R180"/>
+<attribute name="NAME" x="-63.5" y="57.912" size="1.778" layer="95" font="vector" rot="R180"/>
 </instance>
-<instance part="R10" gate="G$1" x="-88.9" y="43.18" smashed="yes" rot="R180">
-<attribute name="NAME" x="-85.09" y="41.6814" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="-85.09" y="46.482" size="1.778" layer="96" rot="R180"/>
+<instance part="R10" gate="G$1" x="-88.9" y="66.04" smashed="yes" rot="R180">
+<attribute name="NAME" x="-85.09" y="64.5414" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-85.09" y="69.342" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="GND18" gate="1" x="269.24" y="96.52" smashed="yes">
 <attribute name="VALUE" x="266.7" y="93.98" size="1.778" layer="96"/>
@@ -7067,41 +7913,57 @@ Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part M
 <attribute name="NAME" x="56.134" y="107.95" size="1.778" layer="95" font="vector"/>
 <attribute name="VALUE" x="55.88" y="90.932" size="1.778" layer="96" font="vector" align="top-left"/>
 </instance>
+<instance part="U8" gate="G$1" x="53.34" y="160.02" smashed="yes">
+<attribute name="NAME" x="50.8" y="172.72" size="1.27" layer="95"/>
+<attribute name="VALUE" x="50.8" y="147.32" size="1.27" layer="96"/>
+</instance>
+<instance part="L4" gate="G$1" x="81.28" y="162.56" smashed="yes" rot="R90">
+<attribute name="NAME" x="81.28" y="160.02" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="78.74" y="160.02" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="C1" gate="G$1" x="101.6" y="157.48" smashed="yes">
+<attribute name="NAME" x="102.616" y="158.115" size="1.778" layer="95"/>
+<attribute name="VALUE" x="102.616" y="153.289" size="1.778" layer="96"/>
+</instance>
+<instance part="C6" gate="G$1" x="71.12" y="167.64" smashed="yes" rot="R180">
+<attribute name="NAME" x="72.136" y="167.767" size="1.778" layer="95"/>
+<attribute name="VALUE" x="72.136" y="163.449" size="1.778" layer="96"/>
+</instance>
+<instance part="J4" gate="G$1" x="-88.9" y="17.78" smashed="yes">
+<attribute name="VALUE" x="-99.06" y="27.94" size="1.778" layer="96" font="vector"/>
+<attribute name="NAME" x="-99.06" y="17.78" size="1.778" layer="95" font="vector"/>
+</instance>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="GND" class="0">
 <segment>
-<wire x1="76.2" y1="147.32" x2="76.2" y2="149.86" width="0.1524" layer="91"/>
-<pinref part="C13" gate="G$1" pin="-"/>
-<pinref part="GND25" gate="1" pin="GND"/>
-</segment>
-<segment>
-<wire x1="83.82" y1="147.32" x2="83.82" y2="149.86" width="0.1524" layer="91"/>
-<pinref part="C10" gate="G$1" pin="2"/>
-<pinref part="GND26" gate="1" pin="GND"/>
-</segment>
-<segment>
-<wire x1="104.14" y1="134.62" x2="104.14" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="132.08" x2="121.92" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="LED1" gate="G$1" pin="C"/>
 <pinref part="GND28" gate="1" pin="GND"/>
-</segment>
-<segment>
-<wire x1="91.44" y1="147.32" x2="91.44" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="137.16" x2="121.92" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="C1" gate="G$1" pin="-"/>
+<wire x1="101.6" y1="152.4" x2="101.6" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="137.16" x2="109.22" y2="137.16" width="0.1524" layer="91"/>
+<junction x="121.92" y="137.16"/>
+<wire x1="109.22" y1="137.16" x2="121.92" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="C3" gate="G$1" pin="1"/>
-<pinref part="GND1" gate="1" pin="GND"/>
+<wire x1="109.22" y1="152.4" x2="109.22" y2="137.16" width="0.1524" layer="91"/>
+<junction x="109.22" y="137.16"/>
 </segment>
 <segment>
-<wire x1="53.34" y1="149.86" x2="48.26" y2="149.86" width="0.1524" layer="91"/>
-<wire x1="48.26" y1="149.86" x2="48.26" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="U2" gate="G$1" pin="GND"/>
-<pinref part="GND30" gate="1" pin="GND"/>
-</segment>
-<segment>
-<wire x1="40.64" y1="147.32" x2="40.64" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="144.78" x2="20.32" y2="152.4" width="0.1524" layer="91"/>
 <pinref part="C19" gate="G$1" pin="-"/>
 <pinref part="GND32" gate="1" pin="GND"/>
+<pinref part="U8" gate="G$1" pin="PGND"/>
+<wire x1="20.32" y1="152.4" x2="20.32" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="154.94" x2="20.32" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="152.4" x2="20.32" y2="152.4" width="0.1524" layer="91"/>
+<junction x="20.32" y="152.4"/>
+<pinref part="U8" gate="G$1" pin="GND"/>
+<wire x1="38.1" y1="154.94" x2="20.32" y2="154.94" width="0.1524" layer="91"/>
+<junction x="20.32" y="154.94"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="GND"/>
@@ -7115,8 +7977,8 @@ Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part M
 </segment>
 <segment>
 <pinref part="POWER_IN" gate="G$1" pin="-"/>
-<wire x1="-83.82" y1="12.7" x2="-73.66" y2="12.7" width="0.1524" layer="91"/>
-<label x="-73.66" y="12.7" size="1.778" layer="95" rot="R180"/>
+<wire x1="-83.82" y1="35.56" x2="-73.66" y2="35.56" width="0.1524" layer="91"/>
+<label x="-73.66" y="35.56" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
 <pinref part="R8" gate="G$1" pin="1"/>
@@ -7197,12 +8059,12 @@ Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part M
 <segment>
 <pinref part="J6" gate="G$1" pin="3"/>
 <pinref part="GND2" gate="1" pin="GND"/>
-<wire x1="-73.66" y1="40.64" x2="-81.28" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="-81.28" y1="40.64" x2="-81.28" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="-73.66" y1="63.5" x2="-81.28" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="-81.28" y1="63.5" x2="-81.28" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="J6" gate="G$1" pin="4"/>
-<wire x1="-81.28" y1="38.1" x2="-81.28" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="-73.66" y1="38.1" x2="-81.28" y2="38.1" width="0.1524" layer="91"/>
-<junction x="-81.28" y="38.1"/>
+<wire x1="-81.28" y1="60.96" x2="-81.28" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="-73.66" y1="60.96" x2="-81.28" y2="60.96" width="0.1524" layer="91"/>
+<junction x="-81.28" y="60.96"/>
 </segment>
 <segment>
 <wire x1="76.2" y1="91.44" x2="76.2" y2="93.98" width="0.1524" layer="91"/>
@@ -7220,6 +8082,16 @@ Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part M
 <wire x1="53.34" y1="93.98" x2="45.72" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="93.98" x2="45.72" y2="88.9" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="J4" gate="G$1" pin="GNDBREAK"/>
+<wire x1="-86.36" y1="22.86" x2="-83.82" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="J4" gate="G$1" pin="GND"/>
+<wire x1="-83.82" y1="22.86" x2="-73.66" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="-86.36" y1="20.32" x2="-83.82" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="-83.82" y1="20.32" x2="-83.82" y2="22.86" width="0.1524" layer="91"/>
+<junction x="-83.82" y="22.86"/>
+<label x="-73.66" y="22.86" size="1.778" layer="95" align="bottom-right"/>
+</segment>
 </net>
 <net name="RESET" class="0">
 <segment>
@@ -7230,33 +8102,12 @@ Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part M
 </net>
 <net name="N$38" class="0">
 <segment>
-<wire x1="104.14" y1="144.78" x2="104.14" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="147.32" x2="121.92" y2="149.86" width="0.1524" layer="91"/>
 <pinref part="R11" gate="G$1" pin="1"/>
 <pinref part="LED1" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="3V3" class="0">
-<segment>
-<wire x1="71.12" y1="160.02" x2="76.2" y2="160.02" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="160.02" x2="76.2" y2="157.48" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="160.02" x2="83.82" y2="160.02" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="160.02" x2="83.82" y2="157.48" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="160.02" x2="91.44" y2="160.02" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="157.48" x2="91.44" y2="160.02" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="160.02" x2="104.14" y2="160.02" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="160.02" x2="104.14" y2="162.56" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="160.02" x2="104.14" y2="157.48" width="0.1524" layer="91"/>
-<junction x="76.2" y="160.02"/>
-<junction x="83.82" y="160.02"/>
-<junction x="91.44" y="160.02"/>
-<junction x="104.14" y="160.02"/>
-<pinref part="P+12" gate="G$1" pin="3.3V"/>
-<pinref part="C10" gate="G$1" pin="1"/>
-<pinref part="C13" gate="G$1" pin="+"/>
-<pinref part="U2" gate="G$1" pin="OUT"/>
-<pinref part="C3" gate="G$1" pin="2"/>
-<pinref part="R11" gate="G$1" pin="2"/>
-</segment>
 <segment>
 <wire x1="162.56" y1="86.36" x2="162.56" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="D3" gate="G$1" pin="A"/>
@@ -7311,18 +8162,18 @@ Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part M
 </net>
 <net name="RAW" class="1">
 <segment>
-<wire x1="48.26" y1="160.02" x2="53.34" y2="160.02" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="154.94" x2="48.26" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="48.26" y1="154.94" x2="48.26" y2="160.02" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="160.02" x2="48.26" y2="160.02" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="157.48" x2="40.64" y2="160.02" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="160.02" x2="27.94" y2="160.02" width="0.1524" layer="91"/>
-<junction x="48.26" y="160.02"/>
-<junction x="40.64" y="160.02"/>
-<label x="27.94" y="160.02" size="1.778" layer="95"/>
-<pinref part="U2" gate="G$1" pin="IN"/>
-<pinref part="U2" gate="G$1" pin="EN"/>
+<wire x1="20.32" y1="167.64" x2="20.32" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="170.18" x2="7.62" y2="170.18" width="0.1524" layer="91"/>
+<junction x="20.32" y="170.18"/>
+<label x="7.62" y="170.18" size="1.778" layer="95"/>
 <pinref part="C19" gate="G$1" pin="+"/>
+<pinref part="U8" gate="G$1" pin="VCC"/>
+<wire x1="38.1" y1="170.18" x2="30.48" y2="170.18" width="0.1524" layer="91"/>
+<pinref part="U8" gate="G$1" pin="EN"/>
+<wire x1="30.48" y1="170.18" x2="20.32" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="162.56" x2="30.48" y2="162.56" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="162.56" x2="30.48" y2="170.18" width="0.1524" layer="91"/>
+<junction x="30.48" y="170.18"/>
 </segment>
 <segment>
 <pinref part="S2" gate="G$1" pin="2"/>
@@ -7385,16 +8236,6 @@ Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part M
 <pinref part="R9" gate="G$1" pin="1"/>
 <wire x1="-45.72" y1="157.48" x2="-45.72" y2="160.02" width="0.1524" layer="91"/>
 <junction x="-45.72" y="160.02"/>
-</segment>
-<segment>
-<wire x1="53.34" y1="104.14" x2="45.72" y2="104.14" width="0.1524" layer="91"/>
-<label x="30.48" y="104.14" size="1.778" layer="95"/>
-<pinref part="U4" gate="U1" pin="IN"/>
-<pinref part="U4" gate="U1" pin="EN"/>
-<wire x1="45.72" y1="104.14" x2="30.48" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="99.06" x2="45.72" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="45.72" y1="99.06" x2="45.72" y2="104.14" width="0.1524" layer="91"/>
-<junction x="45.72" y="104.14"/>
 </segment>
 </net>
 <net name="D-" class="0">
@@ -7460,8 +8301,13 @@ Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part M
 </segment>
 <segment>
 <pinref part="POWER_IN" gate="G$1" pin="+"/>
-<wire x1="-83.82" y1="15.24" x2="-73.66" y2="15.24" width="0.1524" layer="91"/>
-<label x="-73.66" y="15.24" size="1.778" layer="95" rot="R180"/>
+<wire x1="-83.82" y1="38.1" x2="-73.66" y2="38.1" width="0.1524" layer="91"/>
+<label x="-73.66" y="38.1" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="J4" gate="G$1" pin="PWR"/>
+<wire x1="-86.36" y1="25.4" x2="-73.66" y2="25.4" width="0.1524" layer="91"/>
+<label x="-73.66" y="25.4" size="1.778" layer="95" align="bottom-right"/>
 </segment>
 </net>
 <net name="SWITCH_D8" class="0">
@@ -7726,7 +8572,7 @@ Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part M
 <segment>
 <pinref part="J6" gate="G$1" pin="2"/>
 <pinref part="R10" gate="G$1" pin="1"/>
-<wire x1="-73.66" y1="43.18" x2="-83.82" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="-73.66" y1="66.04" x2="-83.82" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="STRIP_5V" class="0">
@@ -7741,8 +8587,8 @@ Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part M
 </segment>
 <segment>
 <pinref part="R10" gate="G$1" pin="2"/>
-<wire x1="-93.98" y1="43.18" x2="-96.52" y2="43.18" width="0.1524" layer="91"/>
-<label x="-96.52" y="43.18" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="-93.98" y1="66.04" x2="-96.52" y2="66.04" width="0.1524" layer="91"/>
+<label x="-96.52" y="66.04" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="5V" class="0">
@@ -7753,8 +8599,40 @@ Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part M
 </segment>
 <segment>
 <pinref part="J6" gate="G$1" pin="1"/>
-<wire x1="-73.66" y1="45.72" x2="-81.28" y2="45.72" width="0.1524" layer="91"/>
-<label x="-81.28" y="45.72" size="1.778" layer="95"/>
+<wire x1="-73.66" y1="68.58" x2="-81.28" y2="68.58" width="0.1524" layer="91"/>
+<label x="-81.28" y="68.58" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="101.6" y1="162.56" x2="101.6" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="162.56" x2="109.22" y2="162.56" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="160.02" x2="109.22" y2="162.56" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="162.56" x2="121.92" y2="162.56" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="162.56" x2="121.92" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="162.56" x2="121.92" y2="160.02" width="0.1524" layer="91"/>
+<junction x="109.22" y="162.56"/>
+<junction x="121.92" y="162.56"/>
+<pinref part="P+12" gate="G$1" pin="3.3V"/>
+<pinref part="C3" gate="G$1" pin="2"/>
+<pinref part="R11" gate="G$1" pin="2"/>
+<pinref part="U8" gate="G$1" pin="FB"/>
+<wire x1="68.58" y1="154.94" x2="93.98" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="154.94" x2="93.98" y2="162.56" width="0.1524" layer="91"/>
+<pinref part="L4" gate="G$1" pin="2"/>
+<wire x1="93.98" y1="162.56" x2="88.9" y2="162.56" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="162.56" x2="101.6" y2="162.56" width="0.1524" layer="91"/>
+<junction x="93.98" y="162.56"/>
+<junction x="101.6" y="162.56"/>
+<pinref part="C1" gate="G$1" pin="+"/>
+</segment>
+<segment>
+<wire x1="53.34" y1="104.14" x2="45.72" y2="104.14" width="0.1524" layer="91"/>
+<label x="30.48" y="104.14" size="1.778" layer="95"/>
+<pinref part="U4" gate="U1" pin="IN"/>
+<pinref part="U4" gate="U1" pin="EN"/>
+<wire x1="45.72" y1="104.14" x2="30.48" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="99.06" x2="45.72" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="99.06" x2="45.72" y2="104.14" width="0.1524" layer="91"/>
+<junction x="45.72" y="104.14"/>
 </segment>
 </net>
 <net name="STRIP_3V3" class="0">
@@ -7772,6 +8650,23 @@ Standard 3.3V and 5V 500mA LDO voltage regulator in SOT-23 layout. Micrel part M
 <wire x1="183.266" y1="157.534" x2="183.266" y2="157.48" width="0.1524" layer="91"/>
 <wire x1="183.266" y1="157.48" x2="167.64" y2="157.48" width="0.1524" layer="91"/>
 <label x="167.64" y="157.48" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="U8" gate="G$1" pin="BST"/>
+<wire x1="68.58" y1="170.18" x2="71.12" y2="170.18" width="0.1524" layer="91"/>
+<pinref part="C6" gate="G$1" pin="2"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="U8" gate="G$1" pin="VSW"/>
+<pinref part="L4" gate="G$1" pin="1"/>
+<wire x1="68.58" y1="162.56" x2="71.12" y2="162.56" width="0.1524" layer="91"/>
+<pinref part="C6" gate="G$1" pin="1"/>
+<wire x1="71.12" y1="162.56" x2="73.66" y2="162.56" width="0.1524" layer="91"/>
+<junction x="71.12" y="162.56"/>
 </segment>
 </net>
 </nets>
@@ -7829,6 +8724,11 @@ will not be understood (or retained) with this version.
 Since Version 8.3, EAGLE supports the association of 3D packages
 with devices in libraries, schematics, and board files. Those 3D
 packages will not be understood (or retained) with this version.
+</note>
+<note version="9.0" severity="warning">
+Since Version 9.0, EAGLE supports the align property for labels. 
+Labels in schematic will not be understood with this version. Update EAGLE to the latest version 
+for full support of labels. 
 </note>
 </compatibility>
 </eagle>
