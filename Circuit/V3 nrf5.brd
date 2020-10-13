@@ -156,6 +156,7 @@
 <layer number="255" name="routoute" color="7" fill="1" visible="no" active="yes"/>
 </layers>
 <board>
+<fusionsync huburn="a.YnVzaW5lc3M6b2Zicm9va2x5bg" projecturn="a.YnVzaW5lc3M6b2Zicm9va2x5biMyMDIwMTAwMTMzODU2MDI1Ng" f3durn="urn:adsk.wipprod:dm.lineage:SL4CSvC4SpaL5gJje6L0Cw" pcbguid="ac9dea31-9c73-4b16-bc6c-1414a23b27c4" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="34e563dd-6266-4273-82c8-daf1daea4f35" lastsyncedrevisionid="34e563dd-6266-4273-82c8-daf1daea4f35" lastboardhashguid="e539813a-fa92-eb02-bcd7-67c5e1fc8a30" lastpushedtime="2020-10-01T16:48:20Z" linktopcb3d="true"/>
 <plain>
 <wire x1="29.21" y1="-11.801978125" x2="29.21" y2="48.314478125" width="0.2032" layer="20"/>
 <wire x1="29.21" y1="48.314478125" x2="27.041978125" y2="50.4825" width="0.2032" layer="20" curve="90"/>
@@ -1243,7 +1244,7 @@ necessary adjustments and save your customized
 design rules under a new name.</description>
 <param name="layerSetup" value="(1*16)"/>
 <param name="mtCopper" value="0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm"/>
-<param name="mtIsolate" value="0.213359375mm 1.0161mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.213359375mm"/>
+<param name="mtIsolate" value="1.53mm 1.0161mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.213359375mm"/>
 <param name="mdWireWire" value="5mil"/>
 <param name="mdWirePad" value="5mil"/>
 <param name="mdWireVia" value="5mil"/>
@@ -2694,6 +2695,11 @@ which will not be processed correctly with this version.
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
 with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports Fusion synchronisation.
+This feature will not be available in this version and saving
+the document will break the link to the Fusion PCB feature.
 </note>
 <note version="8.3" severity="warning">
 Since Version 8.3, EAGLE supports URNs for individual library
