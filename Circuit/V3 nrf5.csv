@@ -27,7 +27,7 @@
 "J3";"";"JST_2MM_MALE";"JST-2-SMD";"JST 2MM MALE RA CONNECTOR";"";"";"";"";"";"";"";"";"";"";"";"";"";"CONN-11443";"";"PRT-08612";"";"";"";"";"";"";"";
 "J6";"";"CONN_04SCREW";"SCREWTERMINAL-3.5MM-4";"Multi connection point. Often used as Generic Header-pin footprint for 0.1 inch spaced/style header connections";"";"";"";"";"";"";"";"";"";"";"";"";"";"2xCONN-08399";"";"2xPRT-08084";"";"";"";"";"";"";"";
 "J7";"CORTEX_DEBUG_SMD";"CORTEX_DEBUG_SMD";"SAMTECH_FTSH-105-01";"Cortex Debug Connector - 10 pin";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";
-"J12";"AMP FCI 10103594-0001LF";"USB_MICRO-B_HALF_PTH";"USB-MICROB-PTH";"USB Type Micro-B Connector";"";"";"";"";"";"";"";"";"";"";"";"";"";"CONN-13711";"";"";"";"";"";"AMP FCI 10103594-0001LF";"";"";"";
+"J12";"AMP FCI 10103594-0001LF";"MICRO-USB-RECEPTACLE47589-0001";"47589-0001";"MICRO USB RECEPTACLES";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";
 "JP1";"";"CONN_02";"1X02";"Multi connection point. Often used as Generic Header-pin footprint for 0.1 inch spaced/style header connections";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";
 "JP2";"";"CONN_02";"1X02";"Multi connection point. Often used as Generic Header-pin footprint for 0.1 inch spaced/style header connections";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";
 "JP4";"";"CONN_02";"1X02";"Multi connection point. Often used as Generic Header-pin footprint for 0.1 inch spaced/style header connections";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";
