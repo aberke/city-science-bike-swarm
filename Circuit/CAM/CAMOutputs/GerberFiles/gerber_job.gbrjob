@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2020-11-18T00:12:20Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.6.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.6,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "V3 nrf5"
+        },
+        "Owner": "Sam Clay <samuel@ofbrooklyn.com>",
+        "Size": {
+            "X": 40.9574,
+            "Y": 64.459091
+        }
+    }
+}
