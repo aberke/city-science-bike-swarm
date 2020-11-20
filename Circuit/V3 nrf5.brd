@@ -1120,6 +1120,71 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package>
 </packages>
 </library>
+<library name="testpad" urn="urn:adsk.eagle:library:385">
+<description>&lt;b&gt;Test Pins/Pads&lt;/b&gt;&lt;p&gt;
+Cream on SMD OFF.&lt;br&gt;
+new: Attribute TP_SIGNAL_NAME&lt;br&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="B1,27" urn="urn:adsk.eagle:footprint:27900/1" library_version="3">
+<description>&lt;b&gt;TEST PAD&lt;/b&gt;</description>
+<wire x1="-0.635" y1="0" x2="0.635" y2="0" width="0.0024" layer="37"/>
+<wire x1="0" y1="0.635" x2="0" y2="-0.635" width="0.0024" layer="37"/>
+<smd name="TP" x="0" y="0" dx="1.27" dy="1.27" layer="1" roundness="100" cream="no"/>
+<text x="-0.635" y="1.016" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-0.635" y="-0.762" size="0.0254" layer="27">&gt;VALUE</text>
+<text x="-0.635" y="-1.905" size="1" layer="37">&gt;TP_SIGNAL_NAME</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="B1,27" urn="urn:adsk.eagle:package:27944/2" type="box" library_version="3">
+<description>TEST PAD</description>
+<packageinstances>
+<packageinstance name="B1,27"/>
+</packageinstances>
+</package3d>
+</packages3d>
+</library>
+<library name="SparkFun-Clocks" urn="urn:adsk.eagle:library:511">
+<description>&lt;h3&gt;SparkFun Clocks, Oscillators and Resonators&lt;/h3&gt;
+This library contains the real-time clocks, oscillators, resonators, and crystals we use. 
+&lt;br&gt;
+&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+&lt;br&gt;
+&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
+&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;
+&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="CRYSTAL-SMD-3.2X1.5MM" urn="urn:adsk.eagle:footprint:37491/1" library_version="1">
+<description>&lt;h3&gt;3.2 x 1.5mm SMD Crystal Package&lt;/h3&gt;
+&lt;p&gt;Example: &lt;a href="http://www.sii.co.jp/en/quartz/files/2013/03/file_PRODUCT_MASTER_50812_GRAPHIC03.pdf"&gt;SX-32S&lt;/a&gt;&lt;/p&gt;</description>
+<smd name="P$1" x="-1.25" y="0" dx="1" dy="1.8" layer="1"/>
+<smd name="P$2" x="1.25" y="0" dx="1" dy="1.8" layer="1"/>
+<wire x1="-1.6" y1="0.75" x2="1.6" y2="0.75" width="0.127" layer="51"/>
+<wire x1="1.6" y1="0.75" x2="1.6" y2="-0.75" width="0.127" layer="51"/>
+<wire x1="1.6" y1="-0.75" x2="-1.6" y2="-0.75" width="0.127" layer="51"/>
+<wire x1="-1.6" y1="-0.75" x2="-1.6" y2="0.75" width="0.127" layer="51"/>
+<wire x1="-0.5" y1="0.85" x2="0.5" y2="0.85" width="0.2032" layer="21"/>
+<wire x1="0.5" y1="-0.85" x2="-0.5" y2="-0.85" width="0.2032" layer="21"/>
+<text x="0" y="1.043" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;Name</text>
+<text x="0" y="-1.043" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;Value</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="CRYSTAL-SMD-3.2X1.5MM" urn="urn:adsk.eagle:package:37548/1" type="box" library_version="1">
+<description>3.2 x 1.5mm SMD Crystal Package
+Example: SX-32S</description>
+<packageinstances>
+<packageinstance name="CRYSTAL-SMD-3.2X1.5MM"/>
+</packageinstances>
+</package3d>
+</packages3d>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1513,7 +1578,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="-9.2075" y="-9.2075" size="0.6096" layer="27" font="vector" ratio="20" rot="R180" align="top-center"/>
 </element>
 <element name="R5" library="SparkFun-Resistors" package="0603" value="1k" x="-10.16" y="-12.065" smashed="yes" rot="R180">
-<attribute name="DIGIKEY" value="P1.0KGCT-ND" x="-10.16" y="-12.065" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DIGIKEY" value="RMCF0603FG1K00" x="-10.16" y="-12.065" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="-8.4455" y="-12.065" size="0.6096" layer="25" font="vector" rot="R270" align="bottom-center"/>
 <attribute name="PROD_ID" value="RES-07856" x="15.24" y="-33.655" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="-10.16" y="-11.303" size="0.6096" layer="27" font="vector" ratio="20" rot="R180" align="top-center"/>
@@ -1648,7 +1713,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="-20.955" y="-41.529" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
 <element name="R14" library="SparkFun-Resistors" package="0603" value="1k" x="-20.955" y="-44.1325" smashed="yes">
-<attribute name="DIGIKEY" value="P1.0KGCT-ND" x="-20.955" y="-44.1325" size="1.778" layer="27" display="off"/>
+<attribute name="DIGIKEY" value="RMCF0603FG1K00" x="-20.955" y="-44.1325" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="-20.955" y="-43.3705" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
 <attribute name="PROD_ID" value="RES-07856" x="-20.955" y="-44.1325" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="-20.955" y="-44.8945" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
@@ -1658,6 +1723,60 @@ design rules under a new name.</description>
 <attribute name="NAME" x="-20.955" y="-46.736" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-08402" x="-20.955" y="-47.625" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="-20.955" y="-48.514" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
+</element>
+<element name="TP1" library="testpad" library_urn="urn:adsk.eagle:library:385" package="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2" value="TPSB1,27" x="-21.9075" y="-52.07" smashed="yes">
+<attribute name="NAME" x="-22.5425" y="-51.054" size="1.27" layer="25" ratio="10"/>
+<attribute name="POPULARITY" value="0" x="-21.9075" y="-52.07" size="1.778" layer="27" display="off"/>
+<attribute name="TP_SIGNAL_NAME" value="" x="-21.9075" y="-52.07" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="-22.5425" y="-52.832" size="0.0254" layer="27"/>
+</element>
+<element name="TP2" library="testpad" library_urn="urn:adsk.eagle:library:385" package="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2" value="TPSB1,27" x="-21.9075" y="-56.1975" smashed="yes">
+<attribute name="NAME" x="-22.5425" y="-55.1815" size="1.27" layer="25" ratio="10"/>
+<attribute name="POPULARITY" value="0" x="-21.9075" y="-56.1975" size="1.778" layer="27" display="off"/>
+<attribute name="TP_SIGNAL_NAME" value="" x="-21.9075" y="-56.1975" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="-22.5425" y="-56.9595" size="0.0254" layer="27"/>
+</element>
+<element name="TP3" library="testpad" library_urn="urn:adsk.eagle:library:385" package="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2" value="TPSB1,27" x="-21.9075" y="-60.325" smashed="yes">
+<attribute name="NAME" x="-22.5425" y="-59.309" size="1.27" layer="25" ratio="10"/>
+<attribute name="POPULARITY" value="0" x="-21.9075" y="-60.325" size="1.778" layer="27" display="off"/>
+<attribute name="TP_SIGNAL_NAME" value="" x="-21.9075" y="-60.325" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="-22.5425" y="-61.087" size="0.0254" layer="27"/>
+</element>
+<element name="TP4" library="testpad" library_urn="urn:adsk.eagle:library:385" package="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2" value="TPSB1,27" x="-21.9075" y="-64.4525" smashed="yes">
+<attribute name="NAME" x="-22.5425" y="-63.4365" size="1.27" layer="25" ratio="10"/>
+<attribute name="POPULARITY" value="0" x="-21.9075" y="-64.4525" size="1.778" layer="27" display="off"/>
+<attribute name="TP_SIGNAL_NAME" value="" x="-21.9075" y="-64.4525" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="-22.5425" y="-65.2145" size="0.0254" layer="27"/>
+</element>
+<element name="TP5" library="testpad" library_urn="urn:adsk.eagle:library:385" package="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2" value="TPSB1,27" x="-21.9075" y="-68.58" smashed="yes">
+<attribute name="NAME" x="-22.5425" y="-67.564" size="1.27" layer="25" ratio="10"/>
+<attribute name="POPULARITY" value="0" x="-21.9075" y="-68.58" size="1.778" layer="27" display="off"/>
+<attribute name="TP_SIGNAL_NAME" value="" x="-21.9075" y="-68.58" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="-22.5425" y="-69.342" size="0.0254" layer="27"/>
+</element>
+<element name="TP6" library="testpad" library_urn="urn:adsk.eagle:library:385" package="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2" value="TPSB1,27" x="-21.9075" y="-72.7075" smashed="yes">
+<attribute name="NAME" x="-22.5425" y="-71.6915" size="1.27" layer="25" ratio="10"/>
+<attribute name="POPULARITY" value="0" x="-21.9075" y="-72.7075" size="1.778" layer="27" display="off"/>
+<attribute name="TP_SIGNAL_NAME" value="" x="-21.9075" y="-72.7075" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="-22.5425" y="-73.4695" size="0.0254" layer="27"/>
+</element>
+<element name="Y1" library="SparkFun-Clocks" library_urn="urn:adsk.eagle:library:511" package="CRYSTAL-SMD-3.2X1.5MM" package3d_urn="urn:adsk.eagle:package:37548/1" value="32.768kHz" x="-25.0825" y="-72.0725" smashed="yes">
+<attribute name="DIGIKEY" value="1923-1342-1-ND" x="-25.0825" y="-72.0725" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="-25.0825" y="-71.0295" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
+<attribute name="PROD_ID" value="XTAL-13062" x="-25.0825" y="-72.0725" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="-25.0825" y="-73.1155" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
+</element>
+<element name="C9" library="SparkFun-Capacitors" package="0805" value="22uF" x="-25.7175" y="-75.8825" smashed="yes">
+<attribute name="DIGIKEY" value="1276-6780-2-ND" x="-25.7175" y="-75.8825" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="-25.7175" y="-74.9935" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
+<attribute name="PROD_ID" value="CAP-08402" x="-25.7175" y="-75.8825" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="-25.7175" y="-76.7715" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
+</element>
+<element name="C17" library="SparkFun-Capacitors" package="0805" value="22uF" x="-25.7175" y="-79.6925" smashed="yes">
+<attribute name="DIGIKEY" value="1276-6780-2-ND" x="-25.7175" y="-79.6925" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="-25.7175" y="-78.8035" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
+<attribute name="PROD_ID" value="CAP-08402" x="-25.7175" y="-79.6925" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="-25.7175" y="-80.5815" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
 </elements>
 <signals>
@@ -1916,6 +2035,10 @@ design rules under a new name.</description>
 <contactref element="C3" pad="2"/>
 <contactref element="R14" pad="2"/>
 <contactref element="C6" pad="2"/>
+<contactref element="C9" pad="2"/>
+<contactref element="C17" pad="2"/>
+<wire x1="-24.8175" y1="-75.8825" x2="-24.8175" y2="-79.6925" width="0" layer="19" extent="1-1"/>
+<wire x1="-20.055" y1="-47.625" x2="-24.8175" y2="-75.8825" width="0" layer="19" extent="1-1"/>
 <wire x1="-20.105" y1="-44.1325" x2="-20.055" y2="-47.625" width="0" layer="19" extent="1-1"/>
 <wire x1="-20.055" y1="-40.64" x2="-20.105" y2="-44.1325" width="0" layer="19" extent="1-1"/>
 <wire x1="-20.055" y1="-36.83" x2="-20.055" y2="-40.64" width="0" layer="19" extent="1-1"/>
@@ -2611,6 +2734,20 @@ design rules under a new name.</description>
 <contactref element="U8" pad="2"/>
 <contactref element="L4" pad="1"/>
 <wire x1="-13.51" y1="15.875" x2="-16.8275" y2="10.33" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$8">
+<contactref element="U3" pad="F6"/>
+<contactref element="C17" pad="1"/>
+<contactref element="Y1" pad="P$1"/>
+<wire x1="-26.3325" y1="-72.0725" x2="-26.6175" y2="-79.6925" width="0" layer="19" extent="1-1"/>
+<wire x1="9.1027" y1="-17.6657" x2="-26.3325" y2="-72.0725" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$10">
+<contactref element="U3" pad="F7"/>
+<contactref element="C9" pad="1"/>
+<contactref element="Y1" pad="P$2"/>
+<wire x1="-23.8325" y1="-72.0725" x2="-26.6175" y2="-75.8825" width="0" layer="19" extent="1-1"/>
+<wire x1="8.2899" y1="-17.6657" x2="-23.8325" y2="-72.0725" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
