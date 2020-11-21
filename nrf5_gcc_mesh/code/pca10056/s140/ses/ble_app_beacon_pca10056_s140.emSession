@@ -15,6 +15,18 @@
  <Project>
   <ProjectSessionItem path="ble_app_beacon_pca10056_s140"/>
   <ProjectSessionItem path="ble_app_beacon_pca10056_s140;ble_app_beacon_pca10056_s140"/>
+  <ProjectSessionItem path="ble_app_beacon_pca10056_s140;ble_app_beacon_pca10056_s140;Application"/>
+  <ProjectSessionItem path="ble_app_beacon_pca10056_s140;ble_app_beacon_pca10056_s140;Board Definition"/>
+  <ProjectSessionItem path="ble_app_beacon_pca10056_s140;ble_app_beacon_pca10056_s140;Board Support"/>
+  <ProjectSessionItem path="ble_app_beacon_pca10056_s140;ble_app_beacon_pca10056_s140;None"/>
+  <ProjectSessionItem path="ble_app_beacon_pca10056_s140;ble_app_beacon_pca10056_s140;nRF_BLE"/>
+  <ProjectSessionItem path="ble_app_beacon_pca10056_s140;ble_app_beacon_pca10056_s140;nRF_Drivers"/>
+  <ProjectSessionItem path="ble_app_beacon_pca10056_s140;ble_app_beacon_pca10056_s140;nRF_Libraries"/>
+  <ProjectSessionItem path="ble_app_beacon_pca10056_s140;ble_app_beacon_pca10056_s140;nRF_Log"/>
+  <ProjectSessionItem path="ble_app_beacon_pca10056_s140;ble_app_beacon_pca10056_s140;nRF_Segger_RTT"/>
+  <ProjectSessionItem path="ble_app_beacon_pca10056_s140;ble_app_beacon_pca10056_s140;nRF_SoftDevice"/>
+  <ProjectSessionItem path="ble_app_beacon_pca10056_s140;ble_app_beacon_pca10056_s140;Segger Startup Files"/>
+  <ProjectSessionItem path="ble_app_beacon_pca10056_s140;ble_app_beacon_pca10056_s140;UTF8/UTF16 converter"/>
  </Project>
  <Register1/>
  <Register2/>
@@ -38,8 +50,6 @@
  <Watch4>
   <Watches active="0" update="Never"/>
  </Watch4>
- <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../main.c" selected="1" top="0" codecName="Default"/>
- </Files>
+ <Files/>
  <ARMCrossStudioWindow activeProject="ble_app_beacon_pca10056_s140" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
