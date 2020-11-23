@@ -1676,7 +1676,7 @@ design rules under a new name.</description>
 <element name="J4" library="1050170001" package="MOLEX_1050170001" value="USB Micro" x="-17.4625" y="-5.715" smashed="yes" rot="R270">
 <attribute name="AVAILABILITY" value="Good" x="-17.4625" y="-5.715" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DESCRIPTION" value=" USB - micro B USB 2.0 Receptacle Connector 5 Position Surface Mount, Right Angle; Through Hole " x="-17.4625" y="-5.715" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="DIGIKEY" value="1050170001" x="-17.4625" y="-5.715" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="DIGIKEY" value="WM1399CT-ND" x="-17.4625" y="-5.715" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MF" value="Molex" x="-17.4625" y="-5.715" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MP" value="1050170001" x="-17.4625" y="-5.715" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="NAME" x="-14.082440625" y="-5.32556875" size="0.61189375" layer="25" rot="R270"/>

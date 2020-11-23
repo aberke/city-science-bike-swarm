@@ -9521,7 +9521,7 @@ Example Datasheet</description>
 <attribute name="DIGIKEY" value="277-1721-ND"/>
 </part>
 <part name="J4" library="1050170001" deviceset="1050170001" device="" value="USB Micro">
-<attribute name="DIGIKEY" value="1050170001"/>
+<attribute name="DIGIKEY" value="WM1399CT-ND"/>
 </part>
 <part name="S3" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" deviceset="SWITCH-SPDT" device="-SMD-RIGHT-ANGLE" package3d_urn="urn:adsk.eagle:package:40179/1">
 <attribute name="DIGIKEY" value="563-1102-1-ND"/>
