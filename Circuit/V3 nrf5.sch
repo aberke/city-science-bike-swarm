@@ -9493,10 +9493,10 @@ Example Datasheet</description>
 <attribute name="DIGIKEY" value="160-1436-1-ND"/>
 </part>
 <part name="C13" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="22uF">
-<attribute name="DIGIKEY" value="1276-6780-2-ND"/>
+<attribute name="DIGIKEY" value="490-10511-1-ND"/>
 </part>
 <part name="C15" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="22uF">
-<attribute name="DIGIKEY" value="1276-6780-2-ND"/>
+<attribute name="DIGIKEY" value="490-10511-1-ND"/>
 </part>
 <part name="C16" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="1uF">
 <attribute name="DIGIKEY" value="GRM188R60J106ME84D"/>
@@ -9531,18 +9531,18 @@ Example Datasheet</description>
 </part>
 <part name="GND21" library="SparkFun" deviceset="GND" device=""/>
 <part name="C1" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="10uF">
-<attribute name="DIGIKEY" value="GRM188R60J106ME84D"/>
+<attribute name="DIGIKEY" value="399-4925-1-ND"/>
 </part>
 <part name="GND24" library="SparkFun" deviceset="GND" device=""/>
 <part name="C3" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="22uF">
-<attribute name="DIGIKEY" value="1276-6780-2-ND"/>
+<attribute name="DIGIKEY" value="490-10511-1-ND"/>
 </part>
 <part name="GND27" library="SparkFun" deviceset="GND" device=""/>
 <part name="R14" library="SparkFun-Resistors" deviceset="1KOHM" device="-0603-1/10W-1%" value="1k">
 <attribute name="DIGIKEY" value="RMCF0603FG1K00"/>
 </part>
 <part name="C6" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="1uF">
-<attribute name="DIGIKEY" value="GRM188R60J106ME84D"/>
+<attribute name="DIGIKEY" value="399-8006-1-ND"/>
 </part>
 <part name="TP1" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPS" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="TP2" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPS" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
@@ -9553,10 +9553,10 @@ Example Datasheet</description>
 </part>
 <part name="GND28" library="SparkFun" deviceset="GND" device=""/>
 <part name="C9" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="22uF">
-<attribute name="DIGIKEY" value="1276-6780-2-ND"/>
+<attribute name="DIGIKEY" value="490-10511-1-ND"/>
 </part>
 <part name="C17" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="22uF">
-<attribute name="DIGIKEY" value="1276-6780-2-ND"/>
+<attribute name="DIGIKEY" value="490-10511-1-ND"/>
 </part>
 <part name="P+1" library="SparkFun" deviceset="3.3V" device="" value="3V3"/>
 </parts>
@@ -10953,37 +10953,6 @@ boosted to OUT 5V,
 </nets>
 </sheet>
 </sheets>
-<errors>
-<approved hash="102,1,152.4,172.72,3.3V,VCC,,,,"/>
-<approved hash="102,1,104.14,162.56,3.3V,VCC,,,,"/>
-<approved hash="102,1,160.02,162.56,3.3V,VCC,,,,"/>
-<approved hash="102,1,160.02,137.16,3.3V,UVCC,,,,"/>
-<approved hash="102,1,129.54,144.78,3.3V,UVCC,,,,"/>
-<approved hash="201,1,129.54,144.78,3.3V,VCC\, UVCC,,,,"/>
-<approved hash="201,1,160.02,137.16,3.3V,VCC\, UVCC,,,,"/>
-<approved hash="201,1,160.02,162.56,3.3V,VCC\, UVCC,,,,"/>
-<approved hash="201,1,104.14,162.56,3.3V,VCC\, UVCC,,,,"/>
-<approved hash="201,1,152.4,172.72,3.3V,VCC\, UVCC,,,,"/>
-<approved hash="202,1,71.12,149.86,U2,BP,,,,"/>
-<approved hash="106,1,198.12,152.4,A2,,,,,"/>
-<approved hash="106,1,198.12,149.86,A3,,,,,"/>
-<approved hash="106,1,198.12,147.32,A4,,,,,"/>
-<approved hash="106,1,198.12,144.78,A5,,,,,"/>
-<approved hash="106,1,198.12,116.84,D7,,,,,"/>
-<approved hash="106,1,198.12,106.68,D11,,,,,"/>
-<approved hash="106,1,198.12,104.14,D12,,,,,"/>
-<approved hash="106,1,198.12,101.6,D13,,,,,"/>
-<approved hash="113,1,35.56,165.682,D2,,,,,"/>
-<approved hash="113,1,-224.832,62.4561,ISP,,,,,"/>
-<approved hash="113,1,-133.943,124.17,JP4,,,,,"/>
-<approved hash="113,1,-211.318,36.83,J1,,,,,"/>
-<approved hash="113,1,-211.318,21.59,J2,,,,,"/>
-<approved hash="113,1,-211.318,6.35,J3,,,,,"/>
-<approved hash="113,1,45.72,85.0688,S2,,,,,"/>
-<approved hash="113,1,-179.663,63.4323,J4,,,,,"/>
-<approved hash="113,1,-149.183,63.4323,J5,,,,,"/>
-<approved hash="115,1,152.4,158.75,RESET,,,,,"/>
-</errors>
 </schematic>
 </drawing>
 <compatibility>

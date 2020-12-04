@@ -35,7 +35,7 @@
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
@@ -1628,13 +1628,13 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="7.62" y="-8.5725" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
 <element name="C13" library="SparkFun-Capacitors" package="0805" value="22uF" x="-18.0975" y="1.5875" smashed="yes">
-<attribute name="DIGIKEY" value="1276-6780-2-ND" x="-18.0975" y="1.5875" size="1.778" layer="27" display="off"/>
+<attribute name="DIGIKEY" value="490-10511-1-ND" x="-18.0975" y="1.5875" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="-19.6215" y="1.5875" size="0.6096" layer="25" font="vector" rot="R90" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-08402" x="-41.275" y="-33.655" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="-18.0975" y="0.6985" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
 <element name="C15" library="SparkFun-Capacitors" package="0805" value="22uF" x="-18.0975" y="3.81" smashed="yes">
-<attribute name="DIGIKEY" value="1276-6780-2-ND" x="-18.0975" y="3.81" size="1.778" layer="27" display="off"/>
+<attribute name="DIGIKEY" value="490-10511-1-ND" x="-18.0975" y="3.81" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="-19.6215" y="3.81" size="0.6096" layer="25" font="vector" rot="R90" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-08402" x="-44.45" y="-35.2425" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="-18.0975" y="2.921" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
@@ -1703,13 +1703,13 @@ design rules under a new name.</description>
 <attribute name="PURCHASE-URL" value="https://pricing.snapeda.com/search/part/TPS61235PRWLR/?ref=eda" x="-15.5575" y="7.9375" size="1.778" layer="27" display="off"/>
 </element>
 <element name="C1" library="SparkFun-Capacitors" package="0805" value="10uF" x="-15.5575" y="-0.3175" smashed="yes">
-<attribute name="DIGIKEY" value="GRM188R60J106ME84D" x="-15.5575" y="-0.3175" size="1.778" layer="27" display="off"/>
+<attribute name="DIGIKEY" value="399-4925-1-ND" x="-15.5575" y="-0.3175" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="-17.0815" y="-0.3175" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-08402" x="-15.5575" y="-0.3175" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="-15.5575" y="-1.2065" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
 <element name="C3" library="SparkFun-Capacitors" package="0805" value="22uF" x="-9.2075" y="-3.4925" smashed="yes">
-<attribute name="DIGIKEY" value="1276-6780-2-ND" x="-9.2075" y="-3.4925" size="1.778" layer="27" display="off"/>
+<attribute name="DIGIKEY" value="490-10511-1-ND" x="-9.2075" y="-3.4925" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="-10.7315" y="-3.4925" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-08402" x="-9.2075" y="-3.4925" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="-9.2075" y="-4.3815" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
@@ -1721,7 +1721,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="7.62" y="-6.1595" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
 <element name="C6" library="SparkFun-Capacitors" package="0805" value="1uF" x="-6.0325" y="-8.89" smashed="yes">
-<attribute name="DIGIKEY" value="GRM188R60J106ME84D" x="-6.0325" y="-8.89" size="1.778" layer="27" display="off"/>
+<attribute name="DIGIKEY" value="399-8006-1-ND" x="-6.0325" y="-8.89" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="-7.5565" y="-8.5725" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-08402" x="-6.0325" y="-8.89" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="-6.0325" y="-9.779" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
@@ -1757,13 +1757,13 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="5.307" y="-17.4625" size="0.6096" layer="27" font="vector" ratio="20" rot="R270" align="top-center"/>
 </element>
 <element name="C9" library="SparkFun-Capacitors" package="0805" value="22uF" x="5.715" y="-20.6375" smashed="yes" rot="R180">
-<attribute name="DIGIKEY" value="1276-6780-2-ND" x="5.715" y="-20.6375" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DIGIKEY" value="490-10511-1-ND" x="5.715" y="-20.6375" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="3.7465" y="-20.6375" size="0.6096" layer="25" font="vector" ratio="20" rot="R270" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-08402" x="5.715" y="-20.6375" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="5.715" y="-19.7485" size="0.6096" layer="27" font="vector" ratio="20" rot="R180" align="top-center"/>
 </element>
 <element name="C17" library="SparkFun-Capacitors" package="0805" value="22uF" x="5.334" y="-14.19225" smashed="yes" rot="R180">
-<attribute name="DIGIKEY" value="1276-6780-2-ND" x="5.334" y="-14.19225" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DIGIKEY" value="490-10511-1-ND" x="5.334" y="-14.19225" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="3.01625" y="-14.0335" size="0.6096" layer="25" font="vector" ratio="20" rot="R270" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-08402" x="5.334" y="-14.19225" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="5.334" y="-13.30325" size="0.6096" layer="27" font="vector" ratio="20" rot="R180" align="top-center"/>
