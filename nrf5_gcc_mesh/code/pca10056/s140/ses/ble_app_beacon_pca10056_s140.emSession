@@ -50,6 +50,9 @@
  <Watch4>
   <Watches active="0" update="Never"/>
  </Watch4>
- <Files/>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../src/main.c" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="20" y="41" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../mesh/core/include/hal.h" selected="1" top="23" codecName="Default"/>
+ </Files>
  <ARMCrossStudioWindow activeProject="ble_app_beacon_pca10056_s140" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

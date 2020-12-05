@@ -1,0 +1,150 @@
+/**
+ *
+ *
+ *
+ * @defgroup MESH_API_GROUP_APP_SUPPORT Application support modules
+ * Application support modules designed to abstract complexity of common tasks in the user code.
+ *
+ * @defgroup MESH_API_GROUP_APP_CONFIG Application configuration
+ * Application-specific configuration file for mesh resource requirements and parameters.
+ *
+ * The application configuration file provides a set of defines that controls the application
+ * specific parameters of the mesh framework, like company ID, element count and mesh flash area
+ * sizes.
+ *
+ *
+ * @defgroup MESH_API_GROUP_MODELS Mesh Models
+ * Mesh models implemented by Nordic Semiconductor.
+ *
+ * @defgroup MESH_API_GROUP_ACCESS Access
+ * The Access layer provides access to the Core Mesh for Mesh models.
+ *
+ * @defgroup DEVICE_STATE_MANAGER Device State Manager
+ *
+ * The Device State Manager provides a means for storing and retrieving Bluetooth Mesh state during operation.
+ * It handles:
+ * - Address storage - both for subscription and publishing.
+ * - Network key management - Generate and store network security material for mesh rx and tx, as
+ *   well as beacon and connectable advertisements.
+ * - Application key management - Generate and store application security material for mesh rx and
+ *   tx.
+ *
+ * @defgroup MESH_API_GROUP_CORE   Core
+ * Core mesh modules, implementing mesh message passing.
+ *
+ * @defgroup MESH_API_GROUP_FRIEND   Friend role
+ * Mesh modules that implement the Friend feature.
+ *
+ * The APIs for the Friend role are used internally by the mesh stack.
+ * The Friend feature for the application can be enabled by setting 
+ * @ref MESH_FEATURE_FRIEND_ENABLED define to 1.
+ *
+ * @defgroup MESH_API_GROUP_BEARER Bearer
+ * Bearer-layer module, providing a Bluetooth communication medium for the mesh.
+ *
+ * The bearer layer is used by the core mesh, provisioning and DFU to communicate with other
+ * devices in the mesh network. It contains a generic implementation of the Bluetooth advertiser
+ * and scanner roles, with an extended HCI-based interface. Advertisers may be instantiated by the
+ * user to implement non-mesh related features like beaconing, but direct interaction with the
+ * bearer layer is not necessary to operate the mesh.
+ *
+ * @defgroup MESH_API_GROUP_DFU    DFU
+ * Device firmware upgrade module for the mesh
+ *
+ * @defgroup MESH_API_GROUP_PROV   Provisioning
+ * Device provisioning module for the mesh.
+ *
+ * @defgroup MESH_API_GROUP_SERIAL Serial
+ * Serialization of the mesh API.
+ * For a full reference of the available mesh serial commands and events, see the @ref md_doc_user_guide_modules_serial documentation.
+ *
+ * @defgroup MESH_API_GROUP_NORDIC Nordic-specific features
+ * Mesh features specific to Nordic Semiconductor's nRF5 SDK for Mesh.
+ *
+ *
+ * @defgroup MESH_OPT Mesh options API
+ * Provides a consistent top-level API for runtime configuration options.
+ *
+ * Options are stored persistently.
+ *
+ * @warning This API must be called in the same IRQ priority as the one used by the mesh stack
+ * (see @ref md_doc_user_guide_mesh_interrupt_priorities).
+ *
+ *
+ *
+ * @defgroup CORE_CONFIG             Core configuration
+ * Configuration of the core mesh modules.
+ * @{
+ * @ingroup MESH_API_GROUP_CORE
+ * @}
+ *
+ * @internal
+ * @defgroup MESH_CORE             Core components
+ * Internal components of the Core Mesh subsystem.
+ * @{
+ * @ingroup MESH_API_GROUP_CORE
+ * @}
+ *
+ * @defgroup MESH_BEARER           Bearer components
+ * Internal components of the Bearer subsystem.
+ * @{
+ * @ingroup MESH_API_GROUP_BEARER
+ * @}
+ *
+ * @endinternal
+ *
+ * @defgroup MESH_API_GROUP_BEARER_FILTER Packet filtering
+ * @brief Filtering support for scanners.
+ *
+ * Defines a set of packet filters to reduce processing requirements.
+ * @{
+ * @ingroup MESH_API_GROUP_BEARER
+ * @}
+ *
+ *
+ * @defgroup MESH_API_GROUP_GENERIC_MODELS Generic Models
+ * Generic Models as defined in the @tagMeshMdlSp
+ * @{
+ * @ingroup MESH_API_GROUP_MODELS
+ * @}
+ *
+ * @defgroup MESH_API_GROUP_SENSOR_MODELS Sensor Models
+ * Sensor Model as defined in the @tagMeshMdlSp
+ * @{
+ * @ingroup MESH_API_GROUP_MODELS
+ * @}
+ *
+ * @defgroup MESH_API_GROUP_LIGHT_MODELS Lighting Models
+ * Lighting Models as defined in the @tagMeshMdlSp
+ * @{
+ * @ingroup MESH_API_GROUP_MODELS
+ * @}
+ *
+ * @defgroup MESH_API_GROUP_FOUNDATION_MODELS Foundation Models
+ * Foundation Models as defined in the @tagMeshSp
+ * @{
+ * @ingroup MESH_API_GROUP_MODELS
+ * @}
+ *
+ * @defgroup MESH_API_GROUP_VENDOR_MODELS Vendor Models
+ * Vendor specific model(s)
+ * @{
+ * @ingroup MESH_API_GROUP_MODELS
+ * @}
+ *
+ * @defgroup MESH_API_GROUP_PROPRIETARY_MODELS Proprietary Models
+ * Models with proprietary implementations
+ * @{
+ * @ingroup MESH_API_GROUP_MODELS
+ * @}
+ *
+ * @defgroup CONFIG_MODEL Configuration Model
+ * The configuration model provides functionality that allows nodes to be configured
+ * or configure other nodes.
+ * @{
+ * @ingroup MESH_API_GROUP_FOUNDATION_MODELS
+ * @}
+ *
+ *
+ *
+ */

@@ -1,0 +1,116 @@
+{
+    "softdevices": [
+        {
+            "name": "s110_8.0.0",
+            "flash_start": 4096,
+            "flash_size": 98304,
+            "ram_size": 8192,
+            "version": "0x0064"
+        },
+        {
+            "name": "s130_2.0.1",
+            "flash_start": 4096,
+            "flash_size": 110592,
+            "ram_size": 6400,
+            "version": "0x0087"
+        },
+        {
+            "name": "s132_5.0.0",
+            "flash_start": 4096,
+            "flash_size": 143360,
+            "ram_size": 12720,
+            "version": "0x009D"
+        },
+        {
+            "name": "s112_6.0.0",
+            "flash_start": 4096,
+            "flash_size": 102400,
+            "ram_size": 11280,
+            "version": "0x00A7"
+        },
+        {
+            "name": "s112_6.1.0",
+            "flash_start": 4096,
+            "flash_size": 102400,
+            "ram_size": 5760,
+            "version": "0x00B0"
+        },
+        {
+            "name": "s112_6.1.1",
+            "flash_start": 4096,
+            "flash_size": 102400,
+            "ram_size": 5760,
+            "version": "0x00B8"
+        },
+        {
+            "name": "s112_7.0.1",
+            "flash_start": 4096,
+            "flash_size": 102400,
+            "ram_size": 5760,
+            "version": "0x00CD"
+        },
+        {
+            "name": "s113_7.0.1",
+            "flash_start": 4096,
+            "flash_size": 114688,
+            "ram_size": 8032,
+            "version": "0x00CC"
+        },
+        {
+            "name": "s132_6.0.0",
+            "flash_start": 4096,
+            "flash_size": 155648,
+            "ram_size": 13000,
+            "version": "0x00A8"
+        },
+        {
+            "name": "s132_6.1.0",
+            "flash_start": 4096,
+            "flash_size": 155648,
+            "ram_size": 11680,
+            "version": "0x00AF"
+        },
+        {
+            "name": "s132_6.1.1",
+            "flash_start": 4096,
+            "flash_size": 155648,
+            "ram_size": 11680,
+            "version": "0x00B7"
+        },
+        {
+            "name": "s132_7.0.1",
+            "flash_start": 4096,
+            "flash_size": 155648,
+            "ram_size": 11760,
+            "version": "0x00CB"
+        },
+        {
+            "name": "s140_6.0.0",
+            "flash_start": 4096,
+            "flash_size": 155648,
+            "ram_size": 13000,
+            "version": "0x00A9"
+        },
+        {
+            "name": "s140_6.1.0",
+            "flash_start": 4096,
+            "flash_size": 155648,
+            "ram_size": 11680,
+            "version": "0x00AE"
+        },
+        {
+            "name": "s140_6.1.1",
+            "flash_start": 4096,
+            "flash_size": 155648,
+            "ram_size": 11680,
+            "version": "0x00B6"
+        },
+        {
+            "name": "s140_7.0.1",
+            "flash_start": 4096,
+            "flash_size": 159744,
+            "ram_size": 11776,
+            "version": "0x00CA"
+        }
+    ]
+}

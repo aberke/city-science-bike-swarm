@@ -1,0 +1,50 @@
+@startuml
+skinparam defaultFontName Arial
+box "Application" #FFFFFF
+participant a as "main.c"
+participant ah as "Application support\nmodules"
+end box
+participant c as "Mesh stack"
+participant s as "Generic OnOff server"
+box
+participant core as "Mesh core modules"
+end box
+
+note over a: init_params defines UUID, core params\n and event callbacks
+... Initialize ...
+a -> ah: ble_stack_init()
+a -> ah: gap_params_init()
+a -> ah: conn_params_init()
+a -> c: mesh_stack_init(...)
+c -> core: Initialize: Mesh and Foundation models
+... ...
+a -> ah: app_onoff_init(...)
+ah -> s: generic_onoff_server_init(...)
+... Start ...
+a -> c: mesh_stack_start()
+note over c: Start dynamic behavior
+
+
+alt
+    ... Provisioned node ...
+    ah <- s: Model APIs: get_cb(...), set_cb(...)
+    a <- ah: app_onoff_get/set_cb(...)
+    a -> ah: app_onoff_status_publish(...)
+    ah -> s: generic_onoff_server_status_publish(...)
+
+else
+    ... Unprovisioned device ...
+    a -> ah: mesh_provisionee_prov_start(...)
+    group Initialize provisionee
+    note over ah: Define OOB capabilities
+    ah -> core: Start unprovisioned device beacon
+    ah -> core: Listen for provisioning invite
+    end
+    ... Wait for provisioning to complete ...
+    core -> ah: Provisioning Events
+    ah -> a: provisioning_complete_cb()
+    a -> ah: gap_params_init()
+    a -> ah: conn_params_init()
+end
+
+@enduml
