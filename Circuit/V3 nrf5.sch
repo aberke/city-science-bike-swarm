@@ -11653,9 +11653,6 @@ boosted to OUT 5V,
 <junction x="121.92" y="33.02"/>
 </segment>
 <segment>
-<wire x1="38.486" y1="157.48" x2="38.1" y2="157.48" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="U3" gate="G$1" pin="G7/P005"/>
 <wire x1="132.726" y1="130.534" x2="132.726" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="132.726" y1="129.54" x2="137.16" y2="129.54" width="0.1524" layer="91"/>
