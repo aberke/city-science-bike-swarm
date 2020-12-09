@@ -10301,7 +10301,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </part>
 <part name="P+1" library="SparkFun" deviceset="3.3V" device="" value="3.3V"/>
 <part name="R11" library="SparkFun" deviceset="RESISTOR" device="0603-RES" value="22">
-<attribute name="DIGIKEY" value="P10KGCT-ND"/>
+<attribute name="DIGIKEY" value="A103067TR-ND "/>
 </part>
 <part name="R15" library="SparkFun" deviceset="RESISTOR" device="0603-RES" value="22">
 <attribute name="DIGIKEY" value="P10KGCT-ND"/>
@@ -10316,18 +10316,26 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND30" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND32" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND33" library="SparkFun" deviceset="GND" device=""/>
-<part name="Q2" library="transistor-small-signal" library_urn="urn:adsk.eagle:library:401" deviceset="BSS84" device="" package3d_urn="urn:adsk.eagle:package:28738/2"/>
+<part name="Q2" library="transistor-small-signal" library_urn="urn:adsk.eagle:library:401" deviceset="BSS84" device="" package3d_urn="urn:adsk.eagle:package:28738/2">
+<attribute name="DIGIKEY" value="DMG2305UX-13"/>
+</part>
 <part name="C20" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="22uF">
 <attribute name="DIGIKEY" value="490-10511-1-ND"/>
 </part>
 <part name="GND34" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND35" library="SparkFun" deviceset="GND" device=""/>
-<part name="RN1" library="resistor-dil" library_urn="urn:adsk.eagle:library:342" deviceset="4R-N" device="EXB38V" package3d_urn="urn:adsk.eagle:package:24923/1" value="100K"/>
-<part name="D10" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="CGRM400*-G" device="" package3d_urn="urn:adsk.eagle:package:43457/2" technology="4"/>
+<part name="RN1" library="resistor-dil" library_urn="urn:adsk.eagle:library:342" deviceset="4R-N" device="EXB38V" package3d_urn="urn:adsk.eagle:package:24923/1" value="100K">
+<attribute name="DIGIKEY" value="YC164J-100KTR-ND"/>
+</part>
+<part name="D10" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="CGRM400*-G" device="" package3d_urn="urn:adsk.eagle:package:43457/2" technology="4">
+<attribute name="DIGIKEY" value="MBR120VLSFT1G"/>
+</part>
 <part name="U4" library="SparkFun-IC-Power" library_urn="urn:adsk.eagle:library:526" deviceset="V_REG_MIC5205" device="3.3V" package3d_urn="urn:adsk.eagle:package:39060/1" value="3.3V/150mA"/>
 <part name="GND6" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND14" library="SparkFun" deviceset="GND" device=""/>
-<part name="S2" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" deviceset="MOMENTARY-SWITCH-SPST-2" device="-SMD-4.6X2.8MM" package3d_urn="urn:adsk.eagle:package:40176/1"/>
+<part name="S2" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" deviceset="MOMENTARY-SWITCH-SPST-2" device="-SMD-4.6X2.8MM" package3d_urn="urn:adsk.eagle:package:40176/1">
+<attribute name="DIGIKEY" value="401-1426-1-ND"/>
+</part>
 <part name="GND36" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND37" library="SparkFun" deviceset="GND" device=""/>
 <part name="P+2" library="SparkFun" deviceset="3.3V" device="" value="VCC"/>
@@ -10844,6 +10852,7 @@ boosted to OUT 5V,
 <instance part="Q2" gate="G$1" x="353.06" y="38.1" smashed="yes" rot="MR180">
 <attribute name="NAME" x="355.6" y="38.1" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="355.6" y="40.64" size="1.778" layer="96" rot="MR180"/>
+<attribute name="DIGIKEY" x="353.06" y="38.1" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
 <instance part="C20" gate="G$1" x="353.06" y="15.24" smashed="yes">
 <attribute name="NAME" x="354.584" y="18.161" size="1.778" layer="95" font="vector"/>
@@ -10859,6 +10868,7 @@ boosted to OUT 5V,
 <instance part="RN1" gate="A" x="342.9" y="17.78" smashed="yes" rot="R90">
 <attribute name="VALUE" x="345.948" y="20.32" size="1.778" layer="96" rot="R90"/>
 <attribute name="NAME" x="340.868" y="15.24" size="1.778" layer="95" rot="R90"/>
+<attribute name="DIGIKEY" x="342.9" y="17.78" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="RN1" gate="B" x="373.38" y="20.32" smashed="yes" rot="R90">
 <attribute name="VALUE" x="376.428" y="22.86" size="1.778" layer="96" rot="R90"/>
@@ -10875,6 +10885,7 @@ boosted to OUT 5V,
 <instance part="D10" gate="G$1" x="347.98" y="27.94" smashed="yes">
 <attribute name="NAME" x="350.52" y="28.4226" size="1.778" layer="95"/>
 <attribute name="VALUE" x="350.52" y="25.6286" size="1.778" layer="96"/>
+<attribute name="DIGIKEY" x="347.98" y="27.94" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="U4" gate="U1" x="398.78" y="22.86" smashed="yes">
 <attribute name="NAME" x="391.16" y="30.734" size="1.778" layer="95" font="vector"/>
@@ -10889,6 +10900,7 @@ boosted to OUT 5V,
 <instance part="S2" gate="G$1" x="22.86" y="33.02" smashed="yes">
 <attribute name="NAME" x="22.86" y="37.846" size="1.778" layer="95" font="vector" align="bottom-center"/>
 <attribute name="VALUE" x="22.86" y="30.226" size="1.778" layer="96" font="vector" align="top-center"/>
+<attribute name="DIGIKEY" x="22.86" y="33.02" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="GND36" gate="1" x="7.62" y="20.32" smashed="yes">
 <attribute name="VALUE" x="5.08" y="17.78" size="1.778" layer="96"/>
