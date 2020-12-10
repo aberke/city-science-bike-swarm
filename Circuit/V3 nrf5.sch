@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
@@ -10330,7 +10330,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="D10" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="CGRM400*-G" device="" package3d_urn="urn:adsk.eagle:package:43457/2" technology="4">
 <attribute name="DIGIKEY" value="MBR120VLSFT1G"/>
 </part>
-<part name="U4" library="SparkFun-IC-Power" library_urn="urn:adsk.eagle:library:526" deviceset="V_REG_MIC5205" device="3.3V" package3d_urn="urn:adsk.eagle:package:39060/1" value="3.3V/150mA"/>
+<part name="U4" library="SparkFun-IC-Power" library_urn="urn:adsk.eagle:library:526" deviceset="V_REG_MIC5205" device="3.3V" package3d_urn="urn:adsk.eagle:package:39060/1" value="3.3V/150mA">
+<attribute name="DIGIKEY" value="576-1259-1-ND"/>
+</part>
 <part name="GND6" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND14" library="SparkFun" deviceset="GND" device=""/>
 <part name="S2" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" deviceset="MOMENTARY-SWITCH-SPST-2" device="-SMD-4.6X2.8MM" package3d_urn="urn:adsk.eagle:package:40176/1">
@@ -10890,6 +10892,7 @@ boosted to OUT 5V,
 <instance part="U4" gate="U1" x="398.78" y="22.86" smashed="yes">
 <attribute name="NAME" x="391.16" y="30.734" size="1.778" layer="95" font="vector"/>
 <attribute name="VALUE" x="391.16" y="14.732" size="1.778" layer="96" font="vector" align="top-left"/>
+<attribute name="DIGIKEY" x="398.78" y="22.86" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="GND6" gate="1" x="386.08" y="7.62" smashed="yes">
 <attribute name="VALUE" x="383.54" y="5.08" size="1.778" layer="96"/>
