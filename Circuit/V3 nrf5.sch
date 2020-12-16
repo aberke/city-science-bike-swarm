@@ -10293,11 +10293,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DIGIKEY" value="1923-1342-1-ND"/>
 </part>
 <part name="GND28" library="SparkFun" deviceset="GND" device=""/>
-<part name="C9" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="22uF">
-<attribute name="DIGIKEY" value="490-10511-1-ND"/>
+<part name="C9" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="22pF">
+<attribute name="DIGIKEY" value="399-C0805C220K5HAC7800CT-ND"/>
 </part>
-<part name="C17" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="22uF">
-<attribute name="DIGIKEY" value="490-10511-1-ND"/>
+<part name="C17" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="22pF">
+<attribute name="DIGIKEY" value="399-C0805C220K5HAC7800CT-ND"/>
 </part>
 <part name="P+1" library="SparkFun" deviceset="3.3V" device="" value="3.3V"/>
 <part name="R11" library="SparkFun" deviceset="RESISTOR" device="0603-RES" value="22">

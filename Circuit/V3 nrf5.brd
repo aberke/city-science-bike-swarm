@@ -1946,14 +1946,14 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="PROD_ID" value="XTAL-13062" x="25.7175" y="14.351" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="24.6745" y="14.351" size="0.6096" layer="27" font="vector" ratio="20" rot="R270" align="top-center"/>
 </element>
-<element name="C9" library="SparkFun-Capacitors" package="0805" value="22uF" x="25.4" y="11.049" smashed="yes" rot="R180">
-<attribute name="DIGIKEY" value="490-10511-1-ND" x="25.4" y="11.049" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="C9" library="SparkFun-Capacitors" package="0805" value="22pF" x="25.4" y="11.049" smashed="yes" rot="R180">
+<attribute name="DIGIKEY" value="399-C0805C220K5HAC7800CT-ND" x="25.4" y="11.049" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="23.4315" y="11.049" size="0.6096" layer="25" font="vector" ratio="20" rot="R270" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-08402" x="25.4" y="11.049" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="25.4" y="11.938" size="0.6096" layer="27" font="vector" ratio="20" rot="R180" align="top-center"/>
 </element>
-<element name="C17" library="SparkFun-Capacitors" package="0805" value="22uF" x="25.3365" y="17.62125" smashed="yes" rot="R180">
-<attribute name="DIGIKEY" value="490-10511-1-ND" x="25.3365" y="17.62125" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="C17" library="SparkFun-Capacitors" package="0805" value="22pF" x="25.3365" y="17.62125" smashed="yes" rot="R180">
+<attribute name="DIGIKEY" value="399-C0805C220K5HAC7800CT-ND" x="25.3365" y="17.62125" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="23.01875" y="17.78" size="0.6096" layer="25" font="vector" ratio="20" rot="R270" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-08402" x="25.3365" y="17.62125" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="25.3365" y="18.51025" size="0.6096" layer="27" font="vector" ratio="20" rot="R180" align="top-center"/>
