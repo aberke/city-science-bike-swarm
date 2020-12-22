@@ -35,7 +35,7 @@
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
@@ -1639,7 +1639,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="SF_ID" value="PRT-08612" x="4.3815" y="54.83225" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="3.7465" y="53.18125" size="0.6096" layer="27" font="vector" ratio="20" rot="R90"/>
 </element>
-<element name="S1" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" package="TACTILE_SWITCH_SMD_5.2MM" package3d_urn="urn:adsk.eagle:package:40167/1" value="MOMENTARY-SWITCH-SPST-SMD-5.2MM" x="27.6225" y="4.1275" smashed="yes" rot="R180">
+<element name="S1" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" package="TACTILE_SWITCH_SMD_5.2MM" package3d_urn="urn:adsk.eagle:package:40167/1" value="SPST-SMD-5.2MM" x="27.6225" y="4.1275" smashed="yes" rot="R180">
 <attribute name="DIGIKEY" value="CKN12222-1-ND" x="27.6225" y="4.1275" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="27.6225" y="1.4605" size="0.6096" layer="25" font="vector" rot="R180" align="bottom-center"/>
 <attribute name="PROD_ID" value="SWCH-08247" x="27.6225" y="4.1275" size="1.778" layer="27" rot="R180" display="off"/>
@@ -1830,7 +1830,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="VALUE" x="11.684" y="23.8125" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center"/>
 </element>
 <element name="C16" library="SparkFun-Capacitors" package="0805" value="1uF" x="4.1275" y="29.845" smashed="yes" rot="R90">
-<attribute name="DIGIKEY" value="GRM188R60J106ME84D" x="4.1275" y="29.845" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="DIGIKEY" value="399-8006-1-ND" x="4.1275" y="29.845" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="4.1275" y="28.16225" size="0.6096" layer="25" font="vector" rot="R180" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-08402" x="46.99" y="0.3175" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="5.0165" y="29.845" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center"/>
@@ -2020,12 +2020,12 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="PROD_ID" value="SWCH-13065" x="32.0675" y="23.1775" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="32.0675" y="24.7015" size="0.6096" layer="27" font="vector" ratio="20" rot="R180" align="top-center"/>
 </element>
-<element name="JP3" library="SparkFun-Jumpers" library_urn="urn:adsk.eagle:library:528" package="SMT-JUMPER_3_1-NC_PASTE_NO-SILK" package3d_urn="urn:adsk.eagle:package:39291/1" value="JUMPER-SMT_3_1-NC_PASTE_NO-SILK" x="23.495" y="32.385" smashed="yes">
+<element name="JP3" library="SparkFun-Jumpers" library_urn="urn:adsk.eagle:library:528" package="SMT-JUMPER_3_1-NC_PASTE_NO-SILK" package3d_urn="urn:adsk.eagle:package:39291/1" value="JUMPER-SMT_3_1-NC" x="23.495" y="32.385" smashed="yes">
 <attribute name="NAME" x="23.495" y="33.528" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
 <attribute name="VALUE" x="23.495" y="31.242" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
 <element name="C11" library="SparkFun-Capacitors" package="0805" value="10uF" x="1.905" y="19.685" smashed="yes" rot="R90">
-<attribute name="DIGIKEY" value="490-10511-1-ND" x="1.905" y="19.685" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="DIGIKEY" value="399-4925-1-ND" x="1.905" y="19.685" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="1.016" y="19.685" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-08402" x="1.905" y="19.685" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="2.794" y="19.685" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center"/>

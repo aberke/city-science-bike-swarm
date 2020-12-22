@@ -10116,7 +10116,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="POWER_IN" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="JST_2MM_MALE" device="" package3d_urn="urn:adsk.eagle:package:38042/1">
 <attribute name="DIGIKEY" value="A100080CT-ND"/>
 </part>
-<part name="S1" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" deviceset="MOMENTARY-SWITCH-SPST" device="-SMD-5.2MM" package3d_urn="urn:adsk.eagle:package:40167/1">
+<part name="S1" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" deviceset="MOMENTARY-SWITCH-SPST" device="-SMD-5.2MM" package3d_urn="urn:adsk.eagle:package:40167/1" value="SPST-SMD-5.2MM">
 <attribute name="DIGIKEY" value="CKN12222-1-ND"/>
 </part>
 <part name="GND8" library="SparkFun" deviceset="GND" device=""/>
@@ -10242,7 +10242,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DIGIKEY" value="490-10511-1-ND"/>
 </part>
 <part name="C16" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="1uF">
-<attribute name="DIGIKEY" value="GRM188R60J106ME84D"/>
+<attribute name="DIGIKEY" value="399-8006-1-ND"/>
 </part>
 <part name="GND12" library="SparkFun" deviceset="GND" device=""/>
 <part name="P+9" library="SparkFun" deviceset="3.3V" device="" value="VCC"/>
@@ -10342,12 +10342,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND37" library="SparkFun" deviceset="GND" device=""/>
 <part name="P+2" library="SparkFun" deviceset="3.3V" device="" value="VCC"/>
 <part name="P+15" library="SparkFun" deviceset="3.3V" device="" value="3.3V"/>
-<part name="JP3" library="SparkFun-Jumpers" library_urn="urn:adsk.eagle:library:528" deviceset="JUMPER-SMT_3_1-NC_PASTE" device="_NO-SILK" package3d_urn="urn:adsk.eagle:package:39291/1"/>
+<part name="JP3" library="SparkFun-Jumpers" library_urn="urn:adsk.eagle:library:528" deviceset="JUMPER-SMT_3_1-NC_PASTE" device="_NO-SILK" package3d_urn="urn:adsk.eagle:package:39291/1" value="JUMPER-SMT_3_1-NC"/>
 <part name="P+8" library="SparkFun" deviceset="3.3V" device="" value="VCC">
 <attribute name="3V3" value="3.3V"/>
 </part>
 <part name="C11" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="10uF">
-<attribute name="DIGIKEY" value="490-10511-1-ND"/>
+<attribute name="DIGIKEY" value="399-4925-1-ND"/>
 </part>
 <part name="GND31" library="SparkFun" deviceset="GND" device=""/>
 <part name="R17" library="SparkFun-Resistors" deviceset="750KOHM" device="-0603-1/10W-1%" value="1M">
