@@ -112,8 +112,8 @@ uint32_t caclChannelValue(uint8_t level)
 void set_led_data(uint8_t r_level, uint8_t g_level, uint8_t b_level)
 {
     for(int i = 0; i < 3*NLEDS; i += 3) {
-            m_buffer_tx[i] = caclChannelValue(r_level);
-            m_buffer_tx[i+1] = caclChannelValue(g_level);
+            m_buffer_tx[i] = caclChannelValue(g_level);
+            m_buffer_tx[i+1] = caclChannelValue(r_level);
             m_buffer_tx[i+2] = caclChannelValue(b_level);
        
     }
@@ -126,10 +126,17 @@ void set_led_data(uint8_t r_level, uint8_t g_level, uint8_t b_level)
 
 /**@brief Application main function.
  */
-void neopixel(void)
+void neopixel(int phase)
 {
     uint32_t err_code;
-    set_led_data(255,230,128);
+
+      float multiplier = (float)phase/(float)255;
+     
+      uint8_t r_level = 255*multiplier;
+      uint8_t g_level = 120*multiplier;
+      uint8_t b_level = 35*multiplier;
+
+    set_led_data(r_level,g_level,b_level);
 
     nrf_drv_i2s_config_t config = NRF_DRV_I2S_DEFAULT_CONFIG;
     config.sdin_pin  = NULL;
@@ -156,7 +163,7 @@ void neopixel(void)
         }
          nrf_delay_ms(5);
         nrf_drv_i2s_uninit();
-        set_led_data(255,230,128);
+        set_led_data(r_level,g_level,b_level);
   
     }
 

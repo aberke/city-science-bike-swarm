@@ -1,4 +1,5 @@
 #include "leds.h"
+#include "neopixel.h"
 
 
 
@@ -348,6 +349,7 @@ void pulseLightLinear(int phase) {
 
 void light(int amplitude) {
   analogWrite(LED_PIN, amplitude);
+  neopixel(amplitude);
 }
 
 

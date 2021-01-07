@@ -2,7 +2,7 @@
  #define NEOPIXEL_H
 
 
-void neopixel(void);
+void neopixel(int phase);
 
 
 #endif
