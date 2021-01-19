@@ -12,9 +12,7 @@ long long unsigned addresses[6] = {0xF0F0F0F0F0, 0xF0F0F0F0AA, 0xF0F0F0F0BB, 0xF
 // Note: The LED_BUILTIN is connected to tx/rx so it requires
 // serial communication (monitor open) in order to work.
 // Using other LED instead
-#define LED_PIN LED_BS_2  //set to P0.14
-
-#define LED_LEVEL LED_5V
+#define LED_PIN LED_2  //set to P0.14
 
 #define lowPulse 10
 #define highPulse 255
@@ -217,9 +215,6 @@ void setup() {
   lastReceiveTime = (-10)*period; // initialize at a long time ago
   lastTransmitTime = 0;
 
-  nrf_gpio_cfg_output(LED_5V);
-     nrf_gpio_pin_clear(LED_5V);
-
   //setupRadio();
  // pinMode(LED_PIN, OUTPUT);
  // nrf_gpio_cfg_output(LED_PIN);
@@ -253,68 +248,11 @@ int updatePhase() {
     phase = (phase + timeDelta) % period;
   } else {
     phase = defaultPhase;
-   // printf("I'm broken now");
+   
   }
   lastTimeCheck = currentTime;
   return phase;
 }
-
-/*
-int radioReceive() {
-  // Read all the available messages in the queue,
-  // return the message with the highest phase message if messages available,
-  // otherwise return -1 to indicate there was no message.
-  int messageInt = -1;
-  while (radio.available()) {
-    char messageBuffer[32];
-    radio.read(&messageBuffer, sizeof(messageBuffer));
-    int newMessageInt = atoi(messageBuffer);
-    if ((newMessageInt > messageInt) && (newMessageInt <= period)) {
-      messageInt = newMessageInt;
-    }
-  }
-  return messageInt;
-}
-
-
-void radioBroadcast(int phase) {
-  radio.stopListening();
-  char messageBuffer[32];
-  itoa(phase, messageBuffer, 10);
-  radio.write(&messageBuffer, sizeof(messageBuffer));
-  radio.startListening();
-}
-*/
-
-/*
-void testLight(int phase) {
-  // This is a fake pulse light method used to keep track of the interval
-  // when using a simple LED that cannot pulse with a varying amplitude.
-  // at time between [0, period midpoint): OFF
-  // at time between [period midpoint, period): ON
-  // Check if interval time at HI: within lightTime of 0 or period
-  if (phase > periodMidpoint) {
-    //digitalWrite(LED_PIN, LOW);
-     nrf_gpio_pin_clear(LED_PIN);
-  } else  {
-    nrf_gpio_pin_set(LED_PIN);
-  }
-}
-
-void testLightAnalog(int phase) {
-  // This is a fake pulse light method used to keep track of the interval
-  // when using a simple LED that cannot pulse with a varying amplitude.
-  // at time between [0, period midpoint): OFF
-  // at time between [period midpoint, period): ON
-  // Check if interval time at HI: within lightTime of 0 or period
-  if (phase > periodMidpoint) {
-    analogWrite(LED_PIN, lowPulse);
-  } else  {
-    analogWrite(LED_PIN, highPulse);
-  }
-}
-
-*/
 
 
 
@@ -353,8 +291,8 @@ void pulseLightLinear(int phase) {
 }
 
 void light(int amplitude) {
-  analogWrite(LED_PIN, amplitude);
-  neopixel(amplitude);
+  analogWrite(LED_PIN, 255 - amplitude);
+  neopixel(amplitude);  //(RJ)
 }
 
 
@@ -371,13 +309,6 @@ void printTime(int num) {
 
 
 void ledloop() {
-
-  //nrf_gpio_pin_set(LED_5V);
-  //nrf_delay_ms(1000);
-
-   nrf_gpio_pin_clear(LED_5V);
- //    nrf_delay_ms(1000);
-  
   // Print how long a loop takes
   // Serial print statements add significant time
   // loop length 20-30ms without Serial print statements

@@ -103,14 +103,14 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t * p_rx_data)
 //                   p_rx_data->p_metadata->params.scanner.adv_addr.addr[3],
 //                   p_rx_data->p_metadata->params.scanner.adv_addr.addr[4],
 //                   p_rx_data->p_metadata->params.scanner.adv_addr.addr[5]);
-  //  __LOG_XB(LOG_SRC_APP, LOG_LEVEL_INFO, msg, p_rx_data->p_payload, p_rx_data->length);
+//    __LOG_XB(LOG_SRC_APP, LOG_LEVEL_INFO, msg, p_rx_data->p_payload, p_rx_data->length);
 
   //  sprintf(msg, "%02x", p_rx_data->p_payload);
     uint8_t *word = "SWARM";
    // printf("%s", p_rx_data->p_payload);
   if(strstr(p_rx_data->p_payload, word)!= NULL ){
      __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Target Pack RCV\n");
-    setPhase(0);
+   // setPhase(0);
   }
    
  
