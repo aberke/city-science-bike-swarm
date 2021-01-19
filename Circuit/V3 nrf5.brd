@@ -378,7 +378,7 @@ SMA is the smallest package in the DO-214 standard (DO-214AC)</description>
 In this library you'll find connectors and sockets- basically anything that can be plugged into or onto.&lt;br&gt;&lt;br&gt;
 We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
 &lt;br&gt;&lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/
 &lt;br&gt;&lt;br&gt;
 You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
 <packages>
@@ -589,12 +589,12 @@ CONN_02
 In this library you'll find switches, buttons, joysticks, and anything that moves to create or disrupt an electrical connection.
 &lt;br&gt;
 &lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application.
 &lt;br&gt;
 &lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
 &lt;br&gt;
 &lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/
 &lt;br&gt;
 &lt;br&gt;
 You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
@@ -823,7 +823,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 In this library you'll find discrete LEDs for illumination or indication, but no displays.&lt;br&gt;&lt;br&gt;
 We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
 &lt;br&gt;&lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/
 &lt;br&gt;&lt;br&gt;
 You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
 <packages>
@@ -854,7 +854,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 0603, surface mount.
 Specifications:
 Pin count: 2
-Pin pitch:0.075inch 
+Pin pitch:0.075inch
 Area: 0.06" x 0.03"
 
 Example device(s):
@@ -902,12 +902,12 @@ In this library you'll find anything that has to do with power delivery, or maki
 &lt;li&gt;Power switches&lt;/li&gt;
 &lt;/ul&gt;&lt;/p&gt;
 &lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application.
 &lt;br&gt;
 &lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
 &lt;br&gt;
 &lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/
 &lt;br&gt;
 &lt;br&gt;
 You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
@@ -939,15 +939,15 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </library>
 <library name="SparkFun-DiscreteSemi">
 <description>&lt;h3&gt;SparkFun Discrete Semiconductors&lt;/h3&gt;
-This library contains diodes, optoisolators, TRIACs, MOSFETs, transistors, etc. 
+This library contains diodes, optoisolators, TRIACs, MOSFETs, transistors, etc.
 &lt;br&gt;
 &lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application.
 &lt;br&gt;
 &lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
 &lt;br&gt;
 &lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/
 &lt;br&gt;
 &lt;br&gt;
 You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
@@ -1126,15 +1126,15 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 </library>
 <library name="SparkFun-Clocks" urn="urn:adsk.eagle:library:511">
 <description>&lt;h3&gt;SparkFun Clocks, Oscillators and Resonators&lt;/h3&gt;
-This library contains the real-time clocks, oscillators, resonators, and crystals we use. 
+This library contains the real-time clocks, oscillators, resonators, and crystals we use.
 &lt;br&gt;
 &lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application.
 &lt;br&gt;
 &lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
 &lt;br&gt;
 &lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/
 &lt;br&gt;
 &lt;br&gt;
 You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
@@ -1310,12 +1310,12 @@ In this library you'll find anything that has to do with power delivery, or maki
 &lt;li&gt;Power switches&lt;/li&gt;
 &lt;/ul&gt;&lt;/p&gt;
 &lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application.
 &lt;br&gt;
 &lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
 &lt;br&gt;
 &lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/
 &lt;br&gt;
 &lt;br&gt;
 You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
@@ -1358,12 +1358,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 In this library you'll find jumpers, or other semipermanent means of changing current paths. The least permanent form is the solder jumper. These can be changed by adding, removing, or moving solder. In cases that are less likely to be changed we have jumpers that are connected with traces. These can be cut with a razor, or reconnected with solder. Reference designator JP.
 &lt;br&gt;
 &lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application.
 &lt;br&gt;
 &lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
 &lt;br&gt;
 &lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/
 &lt;br&gt;
 &lt;br&gt;
 You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
@@ -2020,13 +2020,6 @@ design rules under a new name.</description>
 <attribute name="NAME" x="23.495" y="33.528" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
 <attribute name="VALUE" x="23.495" y="31.242" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
-<<<<<<< HEAD
-<element name="C11" library="SparkFun-Capacitors" package="0805" value="10uF" x="2.0955" y="19.812" smashed="yes" rot="R90">
-<attribute name="DIGIKEY" value="490-10511-1-ND" x="2.0955" y="19.812" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="1.2065" y="19.812" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center"/>
-<attribute name="PROD_ID" value="CAP-08402" x="2.0955" y="19.812" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="2.9845" y="19.812" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center"/>
-=======
 <element name="C11" library="SparkFun-Capacitors" package="0805" value="10uF" x="1.905" y="19.685" smashed="yes" rot="R90">
 <attribute name="DIGIKEY" value="399-4925-1-ND" x="1.905" y="19.685" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="1.016" y="19.685" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center"/>
