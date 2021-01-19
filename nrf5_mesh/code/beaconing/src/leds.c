@@ -11,7 +11,9 @@ long long unsigned addresses[6] = {0xF0F0F0F0F0, 0xF0F0F0F0AA, 0xF0F0F0F0BB, 0xF
 // Note: The LED_BUILTIN is connected to tx/rx so it requires
 // serial communication (monitor open) in order to work.
 // Using other LED instead
-#define LED_PIN LED_2  //set to P0.14
+#define LED_PIN LED_BS_2  //set to P0.14
+
+#define LED_LEVEL LED_5V
 
 #define lowPulse 10
 #define highPulse 255
@@ -214,6 +216,9 @@ void setup() {
   lastReceiveTime = (-10)*period; // initialize at a long time ago
   lastTransmitTime = 0;
 
+  nrf_gpio_cfg_output(LED_5V);
+     nrf_gpio_pin_clear(LED_5V);
+
   //setupRadio();
  // pinMode(LED_PIN, OUTPUT);
  // nrf_gpio_cfg_output(LED_PIN);
@@ -364,6 +369,13 @@ void printTime(int num) {
 
 
 void ledloop() {
+
+  //nrf_gpio_pin_set(LED_5V);
+  //nrf_delay_ms(1000);
+
+   nrf_gpio_pin_clear(LED_5V);
+ //    nrf_delay_ms(1000);
+  
   // Print how long a loop takes
   // Serial print statements add significant time
   // loop length 20-30ms without Serial print statements

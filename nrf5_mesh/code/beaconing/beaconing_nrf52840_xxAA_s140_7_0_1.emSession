@@ -3,7 +3,7 @@
  <Bookmarks/>
  <Breakpoints groups="Breakpoints" active_group="Breakpoints">
   <BreakpointListItem trigger="" line="24" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="include/buttons.h" useHWbreakpoint="false"/>
-  <BreakpointListItem trigger="" line="396" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../../mesh/core/src/packet_buffer.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="396" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="../../mesh/core/src/packet_buffer.c" useHWbreakpoint="false"/>
  </Breakpoints>
  <ExecutionProfileWindow/>
  <FrameBufferWindow>
@@ -68,9 +68,15 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="137" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="src/leds.c" selected="0" top="101" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="86" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="src/main.c" selected="1" top="39" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="6554" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="include/sdk_config.h" selected="0" top="6542" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="18" y="13" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="src/leds.c" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="69" y="291" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="src/main.c" selected="0" top="185" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="6578" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="include/sdk_config.h" selected="0" top="6120" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="src/led_softblink.c" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="44" y="56" useTextEdit="1" openedFrom="/Users/thomas/Documents/BikeSwarm/city-science-bike-swarm/nrf5_mesh/code/beaconing/src/leds.c" useBinaryEdit="0" left="0" path="../../../nrf5_gcc_mesh/components/boards/pca10056.h" selected="1" top="15" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="nrf_mesh_weak.c" selected="0" top="31" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="mesh_provisionee.c" selected="0" top="143" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="mesh_app_utils.c" selected="0" top="73" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="58" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="simple_hal.c" selected="0" top="58" codecName="Default"/>
  </Files>
  <ARMCrossStudioWindow activeProject="beaconing_nrf52840_xxAA_s140_7.0.1" fileDialogDefaultFilter="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.hxx" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="/Users/rohitjoshi/Documents/Turn_Touch/swarm/nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>
