@@ -35,7 +35,7 @@
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
@@ -1635,7 +1635,7 @@ design rules under a new name.</description>
 <attribute name="SF_ID" value="PRT-08612" x="4.3815" y="54.83225" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="3.7465" y="53.18125" size="0.6096" layer="27" font="vector" ratio="20" rot="R90"/>
 </element>
-<element name="S1" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" package="TACTILE_SWITCH_SMD_5.2MM" package3d_urn="urn:adsk.eagle:package:40167/1" value="MOMENTARY-SWITCH-SPST-SMD-5.2MM" x="27.6225" y="4.1275" smashed="yes" rot="R180">
+<element name="S1" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" package="TACTILE_SWITCH_SMD_5.2MM" package3d_urn="urn:adsk.eagle:package:40167/1" value="SPST-SMD-5.2MM" x="27.6225" y="4.1275" smashed="yes" rot="R180">
 <attribute name="DIGIKEY" value="CKN12222-1-ND" x="27.6225" y="4.1275" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="27.6225" y="1.4605" size="0.6096" layer="25" font="vector" rot="R180" align="bottom-center"/>
 <attribute name="PROD_ID" value="SWCH-08247" x="27.6225" y="4.1275" size="1.778" layer="27" rot="R180" display="off"/>
@@ -1826,7 +1826,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="11.684" y="23.8125" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center"/>
 </element>
 <element name="C16" library="SparkFun-Capacitors" package="0805" value="1uF" x="4.1275" y="29.845" smashed="yes" rot="R90">
-<attribute name="DIGIKEY" value="GRM188R60J106ME84D" x="4.1275" y="29.845" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="DIGIKEY" value="399-8006-1-ND" x="4.1275" y="29.845" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="4.1275" y="28.16225" size="0.6096" layer="25" font="vector" rot="R180" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-08402" x="46.99" y="0.3175" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="5.0165" y="29.845" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center"/>
@@ -1942,14 +1942,14 @@ design rules under a new name.</description>
 <attribute name="PROD_ID" value="XTAL-13062" x="25.7175" y="14.351" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="24.6745" y="14.351" size="0.6096" layer="27" font="vector" ratio="20" rot="R270" align="top-center"/>
 </element>
-<element name="C9" library="SparkFun-Capacitors" package="0805" value="22uF" x="25.4" y="11.049" smashed="yes" rot="R180">
-<attribute name="DIGIKEY" value="490-10511-1-ND" x="25.4" y="11.049" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="C9" library="SparkFun-Capacitors" package="0805" value="22pF" x="25.4" y="11.049" smashed="yes" rot="R180">
+<attribute name="DIGIKEY" value="399-C0805C220K5HAC7800CT-ND" x="25.4" y="11.049" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="23.4315" y="11.049" size="0.6096" layer="25" font="vector" ratio="20" rot="R270" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-08402" x="25.4" y="11.049" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="25.4" y="11.938" size="0.6096" layer="27" font="vector" ratio="20" rot="R180" align="top-center"/>
 </element>
-<element name="C17" library="SparkFun-Capacitors" package="0805" value="22uF" x="25.3365" y="17.62125" smashed="yes" rot="R180">
-<attribute name="DIGIKEY" value="490-10511-1-ND" x="25.3365" y="17.62125" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="C17" library="SparkFun-Capacitors" package="0805" value="22pF" x="25.3365" y="17.62125" smashed="yes" rot="R180">
+<attribute name="DIGIKEY" value="399-C0805C220K5HAC7800CT-ND" x="25.3365" y="17.62125" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="23.01875" y="17.78" size="0.6096" layer="25" font="vector" ratio="20" rot="R270" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-08402" x="25.3365" y="17.62125" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="25.3365" y="18.51025" size="0.6096" layer="27" font="vector" ratio="20" rot="R180" align="top-center"/>
@@ -2016,15 +2016,23 @@ design rules under a new name.</description>
 <attribute name="PROD_ID" value="SWCH-13065" x="32.16275" y="23.1775" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="32.16275" y="24.7015" size="0.6096" layer="27" font="vector" ratio="20" rot="R180" align="top-center"/>
 </element>
-<element name="JP3" library="SparkFun-Jumpers" library_urn="urn:adsk.eagle:library:528" package="SMT-JUMPER_3_1-NC_PASTE_NO-SILK" package3d_urn="urn:adsk.eagle:package:39291/1" value="JUMPER-SMT_3_1-NC_PASTE_NO-SILK" x="23.495" y="32.385" smashed="yes">
+<element name="JP3" library="SparkFun-Jumpers" library_urn="urn:adsk.eagle:library:528" package="SMT-JUMPER_3_1-NC_PASTE_NO-SILK" package3d_urn="urn:adsk.eagle:package:39291/1" value="JUMPER-SMT_3_1-NC" x="23.495" y="32.385" smashed="yes">
 <attribute name="NAME" x="23.495" y="33.528" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
 <attribute name="VALUE" x="23.495" y="31.242" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
+<<<<<<< HEAD
 <element name="C11" library="SparkFun-Capacitors" package="0805" value="10uF" x="2.0955" y="19.812" smashed="yes" rot="R90">
 <attribute name="DIGIKEY" value="490-10511-1-ND" x="2.0955" y="19.812" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="1.2065" y="19.812" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center"/>
 <attribute name="PROD_ID" value="CAP-08402" x="2.0955" y="19.812" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="2.9845" y="19.812" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center"/>
+=======
+<element name="C11" library="SparkFun-Capacitors" package="0805" value="10uF" x="1.905" y="19.685" smashed="yes" rot="R90">
+<attribute name="DIGIKEY" value="399-4925-1-ND" x="1.905" y="19.685" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="1.016" y="19.685" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center"/>
+<attribute name="PROD_ID" value="CAP-08402" x="1.905" y="19.685" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VALUE" x="2.794" y="19.685" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center"/>
+>>>>>>> d52d0e0b514441a5c0c6f8b28e6c0c8d52b5ca7d
 </element>
 <element name="R17" library="SparkFun-Resistors" package="0603" value="1M" x="6.0325" y="20.0025" smashed="yes" rot="R90">
 <attribute name="DIGIKEY" value="RMCF0603FT1M00" x="6.0325" y="20.0025" size="1.778" layer="27" rot="R90" display="off"/>

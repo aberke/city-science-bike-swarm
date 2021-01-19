@@ -55,6 +55,8 @@
 #include "nrf_mesh_configure.h"
 #include "ad_type_filter.h"
 #include "leds.h"
+#include "neopixel.h"
+
 
 #if defined(NRF51) && defined(NRF_MESH_STACK_DEPTH)
 #include "stack_depth.h"
@@ -107,7 +109,7 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t * p_rx_data)
     uint8_t *word = "SWARM";
    // printf("%s", p_rx_data->p_payload);
   if(strstr(p_rx_data->p_payload, word)!= NULL ){
- //    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Target Pack RCV\n");
+     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Target Pack RCV\n");
     setPhase(0);
   }
    
@@ -335,23 +337,20 @@ int main(void)
 
     //  ERROR_CHECK(app_timer_init());
     
+   // neopixel();
     pwm_init();
     timer_initalize();
     for (;;)
     {
         ledloop();
-
-
        int y =currentPhase();
         if (currentPhase()>2080 && currentPhase()<2100){
        // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "PHASE AT ZERO  \n" );
         pack_send();
-      //adv_start();
+       //adv_start();
         }
 
-
         //(void)sd_app_evt_wait();
-
         bool done = nrf_mesh_process();
         if (done)
         {

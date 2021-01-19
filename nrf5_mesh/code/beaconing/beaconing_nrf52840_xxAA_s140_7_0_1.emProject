@@ -47,6 +47,8 @@
       <file file_name="timer_test.c">
         <configuration Name="Debug" build_exclude_from_build="Yes" />
       </file>
+      <file file_name="nrfx_i2s.c" />
+      <file file_name="src/neopixel.c" />
     </folder>
     <folder Name="Core">
       <file file_name="../../mesh/core/src/internal_event.c" />

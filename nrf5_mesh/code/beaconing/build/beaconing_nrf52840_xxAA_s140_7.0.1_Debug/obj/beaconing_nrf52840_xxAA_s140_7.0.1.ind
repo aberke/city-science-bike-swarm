@@ -9,6 +9,8 @@
 "build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/assertion_handler_weak.o"
 "build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/leds.o"
 "build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/led_softblink.o"
+"build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrfx_i2s.o"
+"build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/neopixel.o"
 "build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/internal_event.o"
 "build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_mesh_configure.o"
 "build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/aes.o"
