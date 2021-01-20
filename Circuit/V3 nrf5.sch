@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
@@ -10334,7 +10334,6 @@ LED</description>
 <attribute name="DIGIKEY" value="576-1259-1-ND"/>
 </part>
 <part name="GND6" library="SparkFun" deviceset="GND" device=""/>
-<part name="GND14" library="SparkFun" deviceset="GND" device=""/>
 <part name="S2" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" deviceset="MOMENTARY-SWITCH-SPST-2" device="-SMD-4.6X2.8MM" package3d_urn="urn:adsk.eagle:package:40176/1">
 <attribute name="DIGIKEY" value="401-1426-1-ND"/>
 </part>
@@ -10868,14 +10867,6 @@ boosted to OUT 5V,
 <attribute name="VALUE" x="376.428" y="22.86" size="1.778" layer="96" rot="R90"/>
 <attribute name="NAME" x="376.428" y="15.24" size="1.778" layer="95" rot="R90"/>
 </instance>
-<instance part="RN1" gate="C" x="238.76" y="15.24" smashed="yes" rot="R90">
-<attribute name="VALUE" x="241.808" y="17.78" size="1.778" layer="96" rot="R90"/>
-<attribute name="NAME" x="241.808" y="10.16" size="1.778" layer="95" rot="R90"/>
-</instance>
-<instance part="RN1" gate="D" x="238.76" y="33.02" smashed="yes" rot="R90">
-<attribute name="VALUE" x="241.808" y="35.56" size="1.778" layer="96" rot="R90"/>
-<attribute name="NAME" x="241.808" y="27.94" size="1.778" layer="95" rot="R90"/>
-</instance>
 <instance part="D10" gate="G$1" x="347.98" y="27.94" smashed="yes">
 <attribute name="NAME" x="350.52" y="28.4226" size="1.778" layer="95"/>
 <attribute name="VALUE" x="350.52" y="25.6286" size="1.778" layer="96"/>
@@ -10888,9 +10879,6 @@ boosted to OUT 5V,
 </instance>
 <instance part="GND6" gate="1" x="386.08" y="7.62" smashed="yes">
 <attribute name="VALUE" x="383.54" y="5.08" size="1.778" layer="96"/>
-</instance>
-<instance part="GND14" gate="1" x="238.76" y="5.08" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="241.3" y="2.54" size="1.778" layer="96" rot="MR0"/>
 </instance>
 <instance part="S2" gate="G$1" x="22.86" y="33.02" smashed="yes">
 <attribute name="NAME" x="22.86" y="37.846" size="1.778" layer="95" font="vector" align="bottom-center"/>
@@ -11195,11 +11183,6 @@ boosted to OUT 5V,
 <wire x1="388.62" y1="17.78" x2="386.08" y2="17.78" width="0.1524" layer="91"/>
 <pinref part="GND6" gate="1" pin="GND"/>
 <wire x1="386.08" y1="17.78" x2="386.08" y2="10.16" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="RN1" gate="C" pin="1"/>
-<wire x1="238.76" y1="10.16" x2="238.76" y2="7.62" width="0.1524" layer="91"/>
-<pinref part="GND14" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="S2" gate="G$1" pin="1"/>
@@ -11870,12 +11853,14 @@ boosted to OUT 5V,
 <segment>
 <wire x1="129.54" y1="45.72" x2="129.54" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="129.54" y1="48.26" x2="129.54" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="137.16" y1="40.64" x2="137.16" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="48.26" x2="129.54" y2="48.26" width="0.1524" layer="91"/>
 <junction x="129.54" y="48.26"/>
 <pinref part="R2" gate="G$1" pin="1"/>
-<pinref part="Q1" gate="G$1" pin="G"/>
 <pinref part="P+15" gate="G$1" pin="3.3V"/>
+<wire x1="137.16" y1="48.26" x2="137.16" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="Q1" gate="G$1" pin="G"/>
+<wire x1="137.16" y1="43.18" x2="137.16" y2="41.91" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="40.64" x2="137.16" y2="41.91" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R8" gate="G$1" pin="1"/>
@@ -11942,23 +11927,6 @@ boosted to OUT 5V,
 <wire x1="378.46" y1="22.86" x2="388.62" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="VDIV" class="0">
-<segment>
-<pinref part="RN1" gate="C" pin="2"/>
-<pinref part="RN1" gate="D" pin="1"/>
-<wire x1="238.76" y1="20.32" x2="238.76" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="238.76" y1="25.4" x2="238.76" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="238.76" y1="25.4" x2="248.92" y2="25.4" width="0.1524" layer="91"/>
-<junction x="238.76" y="25.4"/>
-<label x="248.92" y="25.4" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U3" gate="G$1" pin="A0/P101"/>
-<wire x1="53.726" y1="163.534" x2="38.354" y2="163.534" width="0.1524" layer="91"/>
-<wire x1="38.354" y1="163.534" x2="38.354" y2="163.576" width="0.1524" layer="91"/>
-<label x="38.1" y="164.084" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="VBAT" class="0">
 <segment>
 <pinref part="S3" gate="1" pin="O"/>
@@ -11991,11 +11959,6 @@ boosted to OUT 5V,
 <wire x1="248.92" y1="68.58" x2="248.92" y2="73.66" width="0.1524" layer="91"/>
 <junction x="248.92" y="81.28"/>
 <label x="248.92" y="99.06" size="1.27" layer="95" xref="yes"/>
-</segment>
-<segment>
-<pinref part="RN1" gate="D" pin="2"/>
-<wire x1="238.76" y1="38.1" x2="238.76" y2="43.18" width="0.1524" layer="91"/>
-<label x="238.76" y="43.18" size="1.016" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="Q2" gate="G$1" pin="D"/>
