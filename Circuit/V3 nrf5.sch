@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
@@ -10182,8 +10182,8 @@ LED</description>
 <part name="J7" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CORTEX_DEBUG" device="_SMD" package3d_urn="urn:adsk.eagle:package:38289/1">
 <attribute name="DIGIKEY" value="SAM1161-05-ND"/>
 </part>
-<part name="Q1" library="SparkFun" deviceset="MOSFET-NCHANNEL" device="SMD" value="BSS138">
-<attribute name="DIGIKEY" value="BSS138CT-ND"/>
+<part name="Q1" library="SparkFun" deviceset="MOSFET-NCHANNEL" device="SMD" value="FDV301N">
+<attribute name="DIGIKEY" value="FDV301NCT-ND"/>
 </part>
 <part name="R2" library="SparkFun" deviceset="RESISTOR" device="0603-RES" value="10K">
 <attribute name="DIGIKEY" value="P10KGCT-ND"/>
@@ -10222,8 +10222,8 @@ LED</description>
 <part name="R7" library="SparkFun-Resistors" deviceset="750KOHM" device="-0603-1/10W-1%" value="1M">
 <attribute name="DIGIKEY" value="RMCF0603FT1M00"/>
 </part>
-<part name="R13" library="SparkFun-Resistors" deviceset="100KOHM" device="-0603-1/10W-1%" value="332k">
-<attribute name="DIGIKEY" value="RMCF0603FT332K"/>
+<part name="R13" library="SparkFun-Resistors" deviceset="100KOHM" device="-0603-1/10W-1%" value="294k">
+<attribute name="DIGIKEY" value="311-294KHRCT-ND"/>
 </part>
 <part name="GND22" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND23" library="SparkFun" deviceset="GND" device=""/>
@@ -10268,8 +10268,8 @@ LED</description>
 <part name="S3" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" deviceset="SWITCH-SPDT" device="-SMD-RIGHT-ANGLE" package3d_urn="urn:adsk.eagle:package:40179/1">
 <attribute name="DIGIKEY" value="563-1102-1-ND"/>
 </part>
-<part name="U8" library="TPS61235PRWLR" deviceset="TPS61235PRWLR" device="">
-<attribute name="DIGIKEY" value="296-47376-1-ND"/>
+<part name="U8" library="TPS61235PRWLR" deviceset="TPS61235PRWLR" device="" value="TPS61236P">
+<attribute name="DIGIKEY" value="296-44629-1-ND"/>
 </part>
 <part name="C1" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="10uF">
 <attribute name="DIGIKEY" value="399-4925-1-ND"/>
@@ -11961,11 +11961,6 @@ boosted to OUT 5V,
 </net>
 <net name="VBAT" class="0">
 <segment>
-<pinref part="POWER_IN" gate="G$1" pin="+"/>
-<wire x1="-134.62" y1="25.4" x2="-124.46" y2="25.4" width="0.1524" layer="91"/>
-<label x="-124.46" y="25.4" size="1.778" layer="95" rot="R180"/>
-</segment>
-<segment>
 <pinref part="S3" gate="1" pin="O"/>
 <wire x1="213.36" y1="88.9" x2="215.9" y2="88.9" width="0.1524" layer="91"/>
 <label x="215.9" y="88.9" size="1.27" layer="95" xref="yes"/>
@@ -12040,6 +12035,11 @@ boosted to OUT 5V,
 <wire x1="416.56" y1="175.26" x2="416.56" y2="167.64" width="0.1524" layer="91"/>
 <wire x1="416.56" y1="167.64" x2="408.94" y2="167.64" width="0.1524" layer="91"/>
 <junction x="408.94" y="167.64"/>
+</segment>
+<segment>
+<pinref part="POWER_IN" gate="G$1" pin="+"/>
+<wire x1="-134.62" y1="25.4" x2="-124.46" y2="25.4" width="0.1524" layer="91"/>
+<label x="-124.46" y="25.4" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 </nets>
