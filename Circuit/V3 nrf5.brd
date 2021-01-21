@@ -2374,8 +2374,8 @@ design rules under a new name.</description>
 <wire x1="27.6225" y1="25.4" x2="27.6225" y2="23.67825" width="0.2032" layer="1"/>
 <wire x1="27.6225" y1="23.67825" x2="27.59075" y2="23.6465" width="0.2032" layer="1"/>
 <wire x1="31.33725" y1="11.1125" x2="32.0675" y2="11.1125" width="0.2032" layer="1"/>
-<wire x1="23.749" y1="22.352" x2="23.753225" y2="22.296646875" width="0.127" layer="1"/>
-<wire x1="3.7164" y1="43.307" x2="2.38125" y2="43.74425" width="0" layer="19" extent="1-1"/>
+<wire x1="2.38125" y1="43.74425" x2="2.8185" y2="43.307" width="0.254" layer="1"/>
+<wire x1="2.8185" y1="43.307" x2="3.7164" y2="43.307" width="0.254" layer="1"/>
 </signal>
 <signal name="RESET">
 <contactref element="U3" pad="B4"/>
@@ -3118,7 +3118,7 @@ design rules under a new name.</description>
 <wire x1="36.195" y1="25.4" x2="36.195" y2="26.4795" width="0.2" layer="1"/>
 <wire x1="36.195" y1="26.4795" x2="36.2585" y2="26.543" width="0.2" layer="1"/>
 <wire x1="25.4" y1="32.385" x2="24.3078" y2="32.385" width="0.6096" layer="1"/>
-<wire x1="13.0175" y1="11.7475" x2="13.0175" y2="12.3325" width="0.8128" layer="1"/>
+<wire x1="13.0175" y1="12.3325" x2="13.0175" y2="11.7475" width="0.8128" layer="1"/>
 <wire x1="28.9274" y1="18.7071" x2="28.117475" y2="18.7071" width="0.127" layer="1"/>
 <wire x1="27.234825" y1="19.58975" x2="26.3525" y2="19.58975" width="0.127" layer="1"/>
 <wire x1="26.3525" y1="19.58975" x2="26.289" y2="19.65325" width="0.127" layer="1"/>
@@ -3133,7 +3133,7 @@ design rules under a new name.</description>
 <wire x1="30.5276" y1="14.7193" x2="30.1593" y2="15.0876" width="0.127" layer="1"/>
 <wire x1="30.1593" y1="15.0876" x2="30.1593" y2="15.8718" width="0.127" layer="1"/>
 <contactref element="Q1" pad="1"/>
-<wire x1="13.02" y1="12.335" x2="13.0175" y2="12.3325" width="0" layer="19" extent="1-1"/>
+<wire x1="13.02" y1="12.335" x2="13.0175" y2="12.3325" width="0.254" layer="1"/>
 </signal>
 <signal name="N$1">
 <contactref element="R4" pad="2"/>
