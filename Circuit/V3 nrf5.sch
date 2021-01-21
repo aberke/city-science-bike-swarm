@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
@@ -10353,8 +10353,12 @@ LED</description>
 <attribute name="DIGIKEY" value="RMCF0603FT1M00"/>
 </part>
 <part name="GND38" library="SparkFun" deviceset="GND" device=""/>
-<part name="D2" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" deviceset="LED-BLUE" device="0603" package3d_urn="urn:adsk.eagle:package:39354/1" value="BLUE"/>
-<part name="D9" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" deviceset="LED-RED" device="0603" package3d_urn="urn:adsk.eagle:package:39354/1" value="RED"/>
+<part name="D2" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" deviceset="LED-BLUE" device="0603" package3d_urn="urn:adsk.eagle:package:39354/1" value="BLUE">
+<attribute name="DIGIKEY" value="160-1647-1-ND"/>
+</part>
+<part name="D9" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" deviceset="LED-RED" device="0603" package3d_urn="urn:adsk.eagle:package:39354/1" value="RED">
+<attribute name="DIGIKEY" value="160-1436-1-ND"/>
+</part>
 </parts>
 <sheets>
 <sheet>
@@ -10735,7 +10739,7 @@ boosted to OUT 5V,
 <instance part="J4" gate="G$1" x="274.32" y="154.94" smashed="yes">
 <attribute name="NAME" x="269.228109375" y="165.633" size="1.782159375" layer="95"/>
 <attribute name="VALUE" x="269.22208125" y="142.1952" size="1.78428125" layer="96"/>
-<attribute name="DIGIKEY" x="274.32" y="154.94" size="3.4798" layer="96" ratio="10" display="off"/>
+<attribute name="DIGIKEY" x="274.32" y="154.94" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="S3" gate="1" x="208.28" y="86.36" smashed="yes">
 <attribute name="NAME" x="209.55" y="89.408" size="1.778" layer="95" font="vector" align="bottom-center"/>
@@ -10921,10 +10925,12 @@ boosted to OUT 5V,
 <instance part="D2" gate="G$1" x="360.68" y="157.48" smashed="yes" rot="R90">
 <attribute name="NAME" x="365.252" y="154.051" size="1.778" layer="95" font="vector" rot="R180"/>
 <attribute name="VALUE" x="365.252" y="159.385" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
+<attribute name="DIGIKEY" x="360.68" y="157.48" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="D9" gate="G$1" x="414.02" y="78.74" smashed="yes">
 <attribute name="NAME" x="410.591" y="74.168" size="1.778" layer="95" font="vector" rot="R90"/>
 <attribute name="VALUE" x="415.925" y="74.168" size="1.778" layer="96" font="vector" rot="R90" align="top-left"/>
+<attribute name="DIGIKEY" x="414.02" y="78.74" size="1.778" layer="96" display="off"/>
 </instance>
 </instances>
 <busses>
