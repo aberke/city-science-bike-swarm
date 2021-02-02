@@ -10176,7 +10176,7 @@ LED</description>
 <attribute name="DIGIKEY" value="277-1860-ND"/>
 </part>
 <part name="R10" library="SparkFun" deviceset="RESISTOR" device="0603-RES" value="330">
-<attribute name="DIGIKEY" value="A130088CT-ND"/>
+<attribute name="DIGIKEY" value="P330HCT-ND"/>
 </part>
 <part name="GND18" library="SparkFun" deviceset="GND" device=""/>
 <part name="J7" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CORTEX_DEBUG" device="_SMD" package3d_urn="urn:adsk.eagle:package:38289/1">
@@ -10304,7 +10304,7 @@ LED</description>
 <attribute name="DIGIKEY" value="A103067TR-ND "/>
 </part>
 <part name="R15" library="SparkFun" deviceset="RESISTOR" device="0603-RES" value="22">
-<attribute name="DIGIKEY" value="P10KGCT-ND"/>
+<attribute name="DIGIKEY" value="A103067TR-ND "/>
 </part>
 <part name="C18" library="SparkFun-Capacitors" deviceset="4.7UF" device="0603" value="4.7uF">
 <attribute name="DIGIKEY" value="399-3482-1-ND"/>

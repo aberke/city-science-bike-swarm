@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
@@ -35,7 +35,7 @@
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
@@ -1734,7 +1734,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="VALUE" x="8.5725" y="1.4605" size="0.6096" layer="27" font="vector" ratio="20"/>
 </element>
 <element name="R10" library="SparkFun" package="0603-RES" value="330" x="13.97" y="10.16" smashed="yes" rot="R180">
-<attribute name="DIGIKEY" value="A130088CT-ND" x="13.97" y="10.16" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DIGIKEY" value="P330HCT-ND" x="13.97" y="10.16" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="15.5575" y="10.89025" size="0.6096" layer="25" font="vector" rot="R270"/>
 <attribute name="VALUE" x="14.986" y="11.303" size="0.4064" layer="27" font="vector" rot="R180"/>
 </element>
@@ -1959,7 +1959,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="VALUE" x="15.1765" y="17.272" size="0.4064" layer="27" font="vector"/>
 </element>
 <element name="R15" library="SparkFun" package="0603-RES" value="22" x="16.1925" y="16.28775" smashed="yes">
-<attribute name="DIGIKEY" value="P10KGCT-ND" x="16.1925" y="16.28775" size="1.778" layer="27" display="off"/>
+<attribute name="DIGIKEY" value="A103067TR-ND " x="16.1925" y="16.28775" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="13.0175" y="15.90675" size="0.6096" layer="25" font="vector"/>
 <attribute name="VALUE" x="15.1765" y="15.14475" size="0.4064" layer="27" font="vector"/>
 </element>
@@ -2213,19 +2213,17 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="7.39775" y1="26.95875" x2="7.374" y2="26.935" width="0.6096" layer="1"/>
 <wire x1="7.374" y1="26.935" x2="7.374" y2="25.9825" width="0.6096" layer="1"/>
 <wire x1="7.374" y1="25.9825" x2="7.0565" y2="25.665" width="0.3048" layer="1"/>
-<wire x1="6.0325" y1="19.1525" x2="4.98475" y2="19.1525" width="0.3048" layer="1"/>
-<wire x1="4.7625" y1="18.415" x2="4.7625" y2="18.93025" width="0.3048" layer="1"/>
-<wire x1="4.98475" y1="19.1525" x2="4.7625" y2="18.93025" width="0.3048" layer="1"/>
-<via x="4.7625" y="18.415" extent="1-16" drill="0.35"/>
-<wire x1="4.7625" y1="18.415" x2="4.7625" y2="17.83329375" width="0.3048" layer="16"/>
-<wire x1="4.7625" y1="17.83329375" x2="4.0513" y2="17.12209375" width="0.3048" layer="16"/>
+<wire x1="6.0325" y1="19.1525" x2="6.0325" y2="15.875" width="0.3048" layer="1"/>
+<via x="6.0325" y="15.875" extent="1-16" drill="0.35"/>
+<wire x1="6.0325" y1="15.875" x2="4.7625" y2="15.875" width="0.3048" layer="16"/>
+<wire x1="4.7625" y1="15.875" x2="4.0513" y2="15.1638" width="0.3048" layer="16"/>
+<wire x1="4.0513" y1="15.1638" x2="4.0513" y2="7.3787" width="0.3048" layer="16"/>
 <via x="4.1275" y="7.3025" extent="1-16" drill="0.35"/>
 <wire x1="4.1275" y1="7.3025" x2="5.3975" y2="7.3025" width="0.3048" layer="1"/>
 <wire x1="5.3975" y1="7.3025" x2="6.6675" y2="8.5725" width="0.3048" layer="1"/>
 <wire x1="6.6675" y1="8.5725" x2="6.6675" y2="10.4775" width="0.3048" layer="1"/>
 <wire x1="6.6675" y1="10.4775" x2="6.38" y2="10.765" width="0.3048" layer="1"/>
 <wire x1="6.38" y1="10.765" x2="5.2075" y2="10.765" width="0.3048" layer="1"/>
-<wire x1="4.0513" y1="17.12209375" x2="4.0513" y2="7.3787" width="0.3048" layer="16"/>
 <wire x1="4.0513" y1="7.3787" x2="4.1275" y2="7.3025" width="0.3048" layer="16"/>
 <wire x1="8.001" y1="47.205" x2="7.9765" y2="47.1805" width="0.3048" layer="1"/>
 <wire x1="7.9765" y1="47.1805" x2="6.95325" y2="47.1805" width="0.3048" layer="1"/>
