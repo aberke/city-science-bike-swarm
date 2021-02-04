@@ -12,7 +12,7 @@ long long unsigned addresses[6] = {0xF0F0F0F0F0, 0xF0F0F0F0AA, 0xF0F0F0F0BB, 0xF
 // Note: The LED_BUILTIN is connected to tx/rx so it requires
 // serial communication (monitor open) in order to work.
 // Using other LED instead
-#define LED_PIN LED_2  //set to P0.14
+#define LED_PIN NRF_GPIO_PIN_MAP(0,12)  //set to P0.14
 
 #define lowPulse 10
 #define highPulse 255

@@ -20978,7 +20978,7 @@ OUTPUT(build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/beaconing_nrf52840_xxAA_s1
  .debug_line    0x0000000000051b77     0x14d0 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/app_timer_mesh.o
  .debug_line    0x0000000000053047      0x52c build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/app_timer_workaround.o
 
-.debug_str      0x0000000000000000    0xc9907
+.debug_str      0x0000000000000000    0xc9918
  .debug_str     0x0000000000000000    0xa1463 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/main.o
                                       0xa3e6f (size before relaxing)
  .debug_str     0x00000000000a1463     0x2f96 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/mesh_provisionee.o
@@ -20995,183 +20995,183 @@ OUTPUT(build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/beaconing_nrf52840_xxAA_s1
                                       0x92793 (size before relaxing)
  .debug_str     0x00000000000a7fa1       0x69 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/assertion_handler_weak.o
                                       0x762cd (size before relaxing)
- .debug_str     0x00000000000a800a      0xe74 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/leds.o
-                                      0x93dee (size before relaxing)
- .debug_str     0x00000000000a8e7e     0x1b09 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/neopixel.o
+ .debug_str     0x00000000000a800a      0xe85 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/leds.o
+                                      0x93dff (size before relaxing)
+ .debug_str     0x00000000000a8e8f     0x1b09 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/neopixel.o
                                       0x9287f (size before relaxing)
- .debug_str     0x00000000000aa987      0x420 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_mesh_configure.o
+ .debug_str     0x00000000000aa998      0x420 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_mesh_configure.o
                                       0x75b04 (size before relaxing)
- .debug_str     0x00000000000aada7       0xed build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/msg_cache.o
+ .debug_str     0x00000000000aadb8       0xed build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/msg_cache.o
                                       0x8813d (size before relaxing)
- .debug_str     0x00000000000aae94     0x31b9 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/transport.o
+ .debug_str     0x00000000000aaea5     0x31b9 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/transport.o
                                       0x8d2b9 (size before relaxing)
- .debug_str     0x00000000000ae04d      0x155 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/event.o
+ .debug_str     0x00000000000ae05e      0x155 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/event.o
                                       0x8b2cf (size before relaxing)
- .debug_str     0x00000000000ae1a2      0x369 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/packet_buffer.o
+ .debug_str     0x00000000000ae1b3      0x369 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/packet_buffer.o
                                       0x86649 (size before relaxing)
- .debug_str     0x00000000000ae50b      0xa94 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/flash_manager_defrag.o
+ .debug_str     0x00000000000ae51c      0xa94 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/flash_manager_defrag.o
                                       0x87809 (size before relaxing)
- .debug_str     0x00000000000aef9f      0x1aa build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/fifo.o
+ .debug_str     0x00000000000aefb0      0x1aa build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/fifo.o
                                       0x84e95 (size before relaxing)
- .debug_str     0x00000000000af149      0x11f build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_flash.o
+ .debug_str     0x00000000000af15a      0x11f build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_flash.o
                                       0x85635 (size before relaxing)
- .debug_str     0x00000000000af268     0x10b9 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/net_state.o
+ .debug_str     0x00000000000af279     0x10b9 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/net_state.o
                                       0x8c8ea (size before relaxing)
- .debug_str     0x00000000000b0321      0x41d build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/mesh_flash.o
+ .debug_str     0x00000000000b0332      0x41d build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/mesh_flash.o
                                       0x8771c (size before relaxing)
- .debug_str     0x00000000000b073e       0xcd build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_mesh_utils.o
+ .debug_str     0x00000000000b074f       0xcd build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_mesh_utils.o
                                       0x8569a (size before relaxing)
- .debug_str     0x00000000000b080b      0xe6a build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_mesh.o
+ .debug_str     0x00000000000b081c      0xe6a build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_mesh.o
                                       0x8df92 (size before relaxing)
- .debug_str     0x00000000000b1675       0xf9 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/queue.o
+ .debug_str     0x00000000000b1686       0xf9 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/queue.o
                                       0x85936 (size before relaxing)
- .debug_str     0x00000000000b176e      0x104 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/hal.o
+ .debug_str     0x00000000000b177f      0x104 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/hal.o
                                       0x85a7f (size before relaxing)
- .debug_str     0x00000000000b1872      0x22c build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/aes_cmac.o
+ .debug_str     0x00000000000b1883      0x22c build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/aes_cmac.o
                                       0x85bcb (size before relaxing)
- .debug_str     0x00000000000b1a9e      0x11c build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/timer_scheduler.o
+ .debug_str     0x00000000000b1aaf      0x11c build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/timer_scheduler.o
                                       0x85b0d (size before relaxing)
- .debug_str     0x00000000000b1bba      0x288 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/timer.o
+ .debug_str     0x00000000000b1bcb      0x288 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/timer.o
                                       0x8f130 (size before relaxing)
- .debug_str     0x00000000000b1e42      0x117 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/rand.o
+ .debug_str     0x00000000000b1e53      0x117 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/rand.o
                                       0x850c9 (size before relaxing)
- .debug_str     0x00000000000b1f59       0x85 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/mesh_opt.o
+ .debug_str     0x00000000000b1f6a       0x85 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/mesh_opt.o
                                       0x87edb (size before relaxing)
- .debug_str     0x00000000000b1fde     0x1352 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/timeslot.o
+ .debug_str     0x00000000000b1fef     0x1352 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/timeslot.o
                                       0x8bbb3 (size before relaxing)
- .debug_str     0x00000000000b3330      0x1d8 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/timeslot_timer.o
+ .debug_str     0x00000000000b3341      0x1d8 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/timeslot_timer.o
                                       0x8601e (size before relaxing)
- .debug_str     0x00000000000b3508      0x3ea build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/bearer_event.o
+ .debug_str     0x00000000000b3519      0x3ea build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/bearer_event.o
                                       0x868fd (size before relaxing)
- .debug_str     0x00000000000b38f2      0x28e build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/enc.o
+ .debug_str     0x00000000000b3903      0x28e build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/enc.o
                                       0x87ccb (size before relaxing)
- .debug_str     0x00000000000b3b80      0x39a build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/network.o
+ .debug_str     0x00000000000b3b91      0x39a build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/network.o
                                       0x8b490 (size before relaxing)
- .debug_str     0x00000000000b3f1a      0x562 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/net_packet.o
+ .debug_str     0x00000000000b3f2b      0x562 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/net_packet.o
                                       0x889d3 (size before relaxing)
- .debug_str     0x00000000000b447c       0x76 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/msqueue.o
+ .debug_str     0x00000000000b448d       0x76 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/msqueue.o
                                       0x855d7 (size before relaxing)
- .debug_str     0x00000000000b44f2      0x162 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_mesh_keygen.o
+ .debug_str     0x00000000000b4503      0x162 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_mesh_keygen.o
                                       0x872ac (size before relaxing)
- .debug_str     0x00000000000b4654       0x8e build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/list.o
+ .debug_str     0x00000000000b4665       0x8e build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/list.o
                                       0x84c51 (size before relaxing)
- .debug_str     0x00000000000b46e2      0x96f build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/log.o
+ .debug_str     0x00000000000b46f3      0x96f build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/log.o
                                       0x778e9 (size before relaxing)
- .debug_str     0x00000000000b5051      0x8ec build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/flash_manager.o
+ .debug_str     0x00000000000b5062      0x8ec build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/flash_manager.o
                                       0x8802b (size before relaxing)
- .debug_str     0x00000000000b593d      0x146 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/ccm_soft.o
+ .debug_str     0x00000000000b594e      0x146 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/ccm_soft.o
                                       0x86678 (size before relaxing)
- .debug_str     0x00000000000b5a83      0x173 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/replay_cache.o
+ .debug_str     0x00000000000b5a94      0x173 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/replay_cache.o
                                       0x8b55e (size before relaxing)
- .debug_str     0x00000000000b5bf6      0x11a build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/beacon.o
+ .debug_str     0x00000000000b5c07      0x11a build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/beacon.o
                                       0x89fea (size before relaxing)
- .debug_str     0x00000000000b5d10       0x5b build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/flash_manager_internal.o
+ .debug_str     0x00000000000b5d21       0x5b build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/flash_manager_internal.o
                                       0x86cd2 (size before relaxing)
- .debug_str     0x00000000000b5d6b      0x234 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/core_tx.o
+ .debug_str     0x00000000000b5d7c      0x234 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/core_tx.o
                                       0x88029 (size before relaxing)
- .debug_str     0x00000000000b5f9f      0x6bf build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/heartbeat.o
+ .debug_str     0x00000000000b5fb0      0x6bf build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/heartbeat.o
                                       0x8c925 (size before relaxing)
- .debug_str     0x00000000000b665e      0x491 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/net_beacon.o
+ .debug_str     0x00000000000b666f      0x491 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/net_beacon.o
                                       0x8d338 (size before relaxing)
- .debug_str     0x00000000000b6aef      0x798 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/mesh_config.o
+ .debug_str     0x00000000000b6b00      0x798 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/mesh_config.o
                                       0x8c2fd (size before relaxing)
- .debug_str     0x00000000000b7287      0x233 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/mesh_config_backend.o
+ .debug_str     0x00000000000b7298      0x233 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/mesh_config_backend.o
                                       0x881d3 (size before relaxing)
- .debug_str     0x00000000000b74ba      0x2b3 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/mesh_config_flashman_glue.o
+ .debug_str     0x00000000000b74cb      0x2b3 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/mesh_config_flashman_glue.o
                                       0x8c080 (size before relaxing)
- .debug_str     0x00000000000b776d       0xad build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/core_tx_local.o
+ .debug_str     0x00000000000b777e       0xad build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/core_tx_local.o
                                       0x87ef3 (size before relaxing)
- .debug_str     0x00000000000b781a      0x3a3 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/core_tx_adv.o
+ .debug_str     0x00000000000b782b      0x3a3 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/core_tx_adv.o
                                       0x8c863 (size before relaxing)
- .debug_str     0x00000000000b7bbd       0x63 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/mesh_mem_stdlib.o
+ .debug_str     0x00000000000b7bce       0x63 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/mesh_mem_stdlib.o
                                        0x3eda (size before relaxing)
- .debug_str     0x00000000000b7c20      0x271 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/mesh_stack.o
+ .debug_str     0x00000000000b7c31      0x271 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/mesh_stack.o
                                       0x8e490 (size before relaxing)
- .debug_str     0x00000000000b7e91       0x55 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/thumb_crt0.o
+ .debug_str     0x00000000000b7ea2       0x55 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/thumb_crt0.o
                                          0x8e (size before relaxing)
- .debug_str     0x00000000000b7ee6      0x414 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/access_publish.o
+ .debug_str     0x00000000000b7ef7      0x414 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/access_publish.o
                                       0x8644d (size before relaxing)
- .debug_str     0x00000000000b82fa      0x80a build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/access_publish_retransmission.o
+ .debug_str     0x00000000000b830b      0x80a build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/access_publish_retransmission.o
                                       0x8685e (size before relaxing)
- .debug_str     0x00000000000b8b04     0x13b0 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/access.o
+ .debug_str     0x00000000000b8b15     0x13b0 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/access.o
                                       0x8e522 (size before relaxing)
- .debug_str     0x00000000000b9eb4      0x222 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/access_reliable.o
+ .debug_str     0x00000000000b9ec5      0x222 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/access_reliable.o
                                       0x89242 (size before relaxing)
- .debug_str     0x00000000000ba0d6     0x1583 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/device_state_manager.o
+ .debug_str     0x00000000000ba0e7     0x1583 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/device_state_manager.o
                                       0x8e135 (size before relaxing)
- .debug_str     0x00000000000bb659      0x12a build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/ad_listener.o
+ .debug_str     0x00000000000bb66a      0x12a build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/ad_listener.o
                                       0x875e4 (size before relaxing)
- .debug_str     0x00000000000bb783      0x21d build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/ad_type_filter.o
+ .debug_str     0x00000000000bb794      0x21d build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/ad_type_filter.o
                                       0x86c4b (size before relaxing)
- .debug_str     0x00000000000bb9a0      0x33e build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/advertiser.o
+ .debug_str     0x00000000000bb9b1      0x33e build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/advertiser.o
                                       0x88653 (size before relaxing)
- .debug_str     0x00000000000bbcde      0x581 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/bearer_handler.o
+ .debug_str     0x00000000000bbcef      0x581 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/bearer_handler.o
                                       0x88314 (size before relaxing)
- .debug_str     0x00000000000bc25f      0x4b6 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/broadcast.o
+ .debug_str     0x00000000000bc270      0x4b6 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/broadcast.o
                                       0x88211 (size before relaxing)
- .debug_str     0x00000000000bc715       0xab build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/filter_engine.o
+ .debug_str     0x00000000000bc726       0xab build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/filter_engine.o
                                       0x86841 (size before relaxing)
- .debug_str     0x00000000000bc7c0      0x1ba build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/radio_config.o
+ .debug_str     0x00000000000bc7d1      0x1ba build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/radio_config.o
                                       0x855a7 (size before relaxing)
- .debug_str     0x00000000000bc97a      0x614 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/scanner.o
+ .debug_str     0x00000000000bc98b      0x614 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/scanner.o
                                       0x88c8b (size before relaxing)
- .debug_str     0x00000000000bcf8e      0x17d build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/mesh_pa_lna.o
+ .debug_str     0x00000000000bcf9f      0x17d build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/mesh_pa_lna.o
                                       0x86857 (size before relaxing)
- .debug_str     0x00000000000bd10b      0x5a1 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/SEGGER_RTT.o
+ .debug_str     0x00000000000bd11c      0x5a1 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/SEGGER_RTT.o
                                        0x42d4 (size before relaxing)
- .debug_str     0x00000000000bd6ac      0x17e build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/SEGGER_RTT_printf.o
+ .debug_str     0x00000000000bd6bd      0x17e build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/SEGGER_RTT_printf.o
                                        0x400b (size before relaxing)
- .debug_str     0x00000000000bd82a     0x11b1 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/uECC.o
+ .debug_str     0x00000000000bd83b     0x11b1 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/uECC.o
                                        0x446c (size before relaxing)
- .debug_str     0x00000000000be9db      0x17c build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/app_util_platform.o
+ .debug_str     0x00000000000be9ec      0x17c build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/app_util_platform.o
                                       0x7778f (size before relaxing)
- .debug_str     0x00000000000beb57       0xc4 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_section_iter.o
+ .debug_str     0x00000000000beb68       0xc4 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_section_iter.o
                                       0x8783b (size before relaxing)
- .debug_str     0x00000000000bec1b     0x260a build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_sdh_soc.o
+ .debug_str     0x00000000000bec2c     0x260a build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_sdh_soc.o
                                       0x8b646 (size before relaxing)
- .debug_str     0x00000000000c1225     0x1342 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_sdh_ble.o
+ .debug_str     0x00000000000c1236     0x1342 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_sdh_ble.o
                                       0x914d1 (size before relaxing)
- .debug_str     0x00000000000c2567      0x4a1 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_sdh.o
+ .debug_str     0x00000000000c2578      0x4a1 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_sdh.o
                                       0x8c656 (size before relaxing)
- .debug_str     0x00000000000c2a08      0x460 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/system_nrf52840.o
+ .debug_str     0x00000000000c2a19      0x460 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/system_nrf52840.o
                                       0x74e4f (size before relaxing)
- .debug_str     0x00000000000c2e68       0x99 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/app_error.o
+ .debug_str     0x00000000000c2e79       0x99 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/app_error.o
                                       0x7635f (size before relaxing)
- .debug_str     0x00000000000c2f01       0x51 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/app_error_handler_gcc.o
+ .debug_str     0x00000000000c2f12       0x51 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/app_error_handler_gcc.o
                                       0x87828 (size before relaxing)
- .debug_str     0x00000000000c2f52       0x50 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/ses_startup_nrf52840.o
+ .debug_str     0x00000000000c2f63       0x50 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/ses_startup_nrf52840.o
                                          0x97 (size before relaxing)
- .debug_str     0x00000000000c2fa2       0x52 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/ses_startup_nrf_common.o
+ .debug_str     0x00000000000c2fb3       0x52 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/ses_startup_nrf_common.o
                                          0x99 (size before relaxing)
- .debug_str     0x00000000000c2ff4      0xc06 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrfx_pwm.o
+ .debug_str     0x00000000000c3005      0xc06 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrfx_pwm.o
                                       0x93de7 (size before relaxing)
- .debug_str     0x00000000000c3bfa      0x48f build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrfx_timer.o
+ .debug_str     0x00000000000c3c0b      0x48f build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrfx_timer.o
                                       0x93d5d (size before relaxing)
- .debug_str     0x00000000000c4089      0x4d8 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrfx_i2s.o
+ .debug_str     0x00000000000c409a      0x4d8 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrfx_i2s.o
                                       0x93b59 (size before relaxing)
- .debug_str     0x00000000000c4561      0x919 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/prov_provisionee.o
+ .debug_str     0x00000000000c4572      0x919 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/prov_provisionee.o
                                       0x8c14e (size before relaxing)
- .debug_str     0x00000000000c4e7a      0x300 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_mesh_prov.o
+ .debug_str     0x00000000000c4e8b      0x300 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/nrf_mesh_prov.o
                                       0x8a449 (size before relaxing)
- .debug_str     0x00000000000c517a       0xfd build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/provisioning.o
+ .debug_str     0x00000000000c518b       0xfd build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/provisioning.o
                                       0x87346 (size before relaxing)
- .debug_str     0x00000000000c5277      0x169 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/prov_beacon.o
+ .debug_str     0x00000000000c5288      0x169 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/prov_beacon.o
                                       0x8d10e (size before relaxing)
- .debug_str     0x00000000000c53e0      0x505 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/prov_utils.o
+ .debug_str     0x00000000000c53f1      0x505 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/prov_utils.o
                                       0x8c409 (size before relaxing)
- .debug_str     0x00000000000c58e5      0xa64 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/prov_bearer_adv.o
+ .debug_str     0x00000000000c58f6      0xa64 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/prov_bearer_adv.o
                                       0x8b3aa (size before relaxing)
- .debug_str     0x00000000000c6349      0x3d6 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/composition_data.o
+ .debug_str     0x00000000000c635a      0x3d6 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/composition_data.o
                                       0x857a8 (size before relaxing)
- .debug_str     0x00000000000c671f     0x222d build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/config_server.o
+ .debug_str     0x00000000000c6730     0x222d build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/config_server.o
                                       0x916e8 (size before relaxing)
- .debug_str     0x00000000000c894c       0x97 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/packed_index_list.o
+ .debug_str     0x00000000000c895d       0x97 build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/packed_index_list.o
                                        0x342f (size before relaxing)
- .debug_str     0x00000000000c89e3      0x6ab build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/health_server.o
+ .debug_str     0x00000000000c89f4      0x6ab build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/health_server.o
                                       0x89b1f (size before relaxing)
- .debug_str     0x00000000000c908e      0x7fa build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/app_timer_mesh.o
+ .debug_str     0x00000000000c909f      0x7fa build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/app_timer_mesh.o
                                       0x90d51 (size before relaxing)
- .debug_str     0x00000000000c9888       0x7f build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/app_timer_workaround.o
+ .debug_str     0x00000000000c9899       0x7f build/beaconing_nrf52840_xxAA_s140_7.0.1_Debug/obj/app_timer_workaround.o
                                       0x88301 (size before relaxing)
 
 .comment        0x0000000000000000       0x47

@@ -10330,7 +10330,7 @@ LED</description>
 <part name="D10" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="CGRM400*-G" device="" package3d_urn="urn:adsk.eagle:package:43457/2" technology="4">
 <attribute name="DIGIKEY" value="MBR120VLSFT1G"/>
 </part>
-<part name="U4" library="SparkFun-IC-Power" library_urn="urn:adsk.eagle:library:526" deviceset="V_REG_MIC5205" device="3.3V" package3d_urn="urn:adsk.eagle:package:39060/1" value="3.3V/150mA">
+<part name="U4" library="SparkFun-IC-Power" library_urn="urn:adsk.eagle:library:526" deviceset="V_REG_MIC5205" device="3.3V" package3d_urn="urn:adsk.eagle:package:39060/1" value="MIC5205">
 <attribute name="DIGIKEY" value="576-1259-1-ND"/>
 </part>
 <part name="GND6" library="SparkFun" deviceset="GND" device=""/>
