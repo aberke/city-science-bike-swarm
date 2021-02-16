@@ -110,7 +110,7 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t * p_rx_data)
    // printf("%s", p_rx_data->p_payload);
   if(strstr(p_rx_data->p_payload, word)!= NULL ){
      __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Target Pack RCV\n");
-   // setPhase(0);
+    setPhase(0);
   }
    
  
