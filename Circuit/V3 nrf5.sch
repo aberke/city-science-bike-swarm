@@ -9429,7 +9429,9 @@ LED</description>
 <part name="RN2" library="resistor-dil" library_urn="urn:adsk.eagle:library:342" deviceset="4R-N" device="EXBV8V" package3d_urn="urn:adsk.eagle:package:24931/1">
 <attribute name="DIGIKEY" value="YC164-JR-0710KL"/>
 </part>
-<part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_03" device="SCREW_LOCK" package3d_urn="urn:adsk.eagle:package:38066/1"/>
+<part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_03" device="SCREW_LOCK" package3d_urn="urn:adsk.eagle:package:38066/1">
+<attribute name="DIGIKEY" value="A98037-ND"/>
+</part>
 <part name="GND4" library="SparkFun" deviceset="GND" device=""/>
 <part name="R1" library="SparkFun" deviceset="RESISTOR" device="0603-RES" value="330">
 <attribute name="DIGIKEY" value="P330HCT-ND"/>
@@ -9900,6 +9902,7 @@ Output is to 3V3 leds</text>
 <instance part="J1" gate="J$1" x="-60.96" y="116.84" smashed="yes">
 <attribute name="VALUE" x="-63.5" y="109.474" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="-63.5" y="122.428" size="1.778" layer="95" font="vector"/>
+<attribute name="DIGIKEY" x="-60.96" y="116.84" size="3.302" layer="96" display="off"/>
 </instance>
 <instance part="GND4" gate="1" x="-45.72" y="104.14" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="-43.18" y="101.6" size="1.778" layer="96" rot="MR0"/>
