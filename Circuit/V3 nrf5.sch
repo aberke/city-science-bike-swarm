@@ -9237,7 +9237,7 @@ LED</description>
 <part name="P+3" library="SparkFun" deviceset="VCC" device="" value="5V"/>
 <part name="TP5" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPS" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="P+8" library="SparkFun" deviceset="3.3V" device="" value="3.3V"/>
-<part name="RN2" library="resistor-dil" library_urn="urn:adsk.eagle:library:342" deviceset="4R-N" device="EXBV8V" package3d_urn="urn:adsk.eagle:package:24931/1">
+<part name="RN2" library="resistor-dil" library_urn="urn:adsk.eagle:library:342" deviceset="4R-N" device="EXBV8V" package3d_urn="urn:adsk.eagle:package:24931/1" value="10k">
 <attribute name="DIGIKEY" value="YC164-JR-0710KL"/>
 </part>
 <part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_03" device="SCREW_LOCK" package3d_urn="urn:adsk.eagle:package:38066/1">
