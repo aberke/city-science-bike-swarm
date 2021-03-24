@@ -36,9 +36,6 @@
 #include "neopixel.h"
 #include "app_timer.h"
 
-
-
-
 //volatile uint8_t g_demo_mode = 0;
 //volatile bool g_i2s_start = true;
 //volatile bool g_i2s_running = false;
@@ -47,15 +44,13 @@ bool init = false;
 
 #define NLEDS 30
 #define RESET_BITS 6
-#define I2S_BUFFER_SIZE 3*NLEDS + RESET_BITS
+#define I2S_BUFFER_SIZE 3 * NLEDS + RESET_BITS
 
 static uint32_t m_buffer_tx[I2S_BUFFER_SIZE];
 static volatile int nled = 1;
 float multiplier;
 
 APP_TIMER_DEF(my_timer_id);
-
-
 
 static void timeout_handler(void *p_context)
 {
@@ -68,22 +63,20 @@ static void timeout_handler(void *p_context)
 // This is the I2S data handler - all data exchange related to the I2S transfers
 // is done here.
 
-static void data_handler( nrfx_i2s_buffers_t const * p_released,uint32_t status)
+static void data_handler(nrfx_i2s_buffers_t const *p_released, uint32_t status)
 {
-
 
     // Non-NULL value in 'p_data_to_send' indicates that the driver needs
     // a new portion of data to send.
     if (p_released->p_tx_buffer != NULL)
     {
         // do nothing - buffer is updated elsewhere
-     
     }
 }
 
 /*
 
-    caclChannelValue()
+    calcChannelValue()
 
     Sets up a 32 bit value for a channel (R/G/B). 
 
@@ -100,25 +93,30 @@ static void data_handler( nrfx_i2s_buffers_t const * p_released,uint32_t status)
     0x8888e888
 
 */
-uint32_t caclChannelValue(uint8_t level)
+uint32_t calcChannelValue(uint8_t level)
 {
     uint32_t val = 0;
 
-    // 0 
-    if(level == 0) {
+    // 0
+    if (level == 0)
+    {
         val = 0x88888888;
     }
     // 255
-    else if (level == 255) {
+    else if (level == 255)
+    {
         val = 0xeeeeeeee;
     }
-    else {
+    else
+    {
         // apply 4-bit 0xe HIGH pattern wherever level bits are 1.
         val = 0x88888888;
-        for (uint8_t i = 0; i < 8; i++) {
-            if((1 << i) & level) {
-                uint32_t mask = ~(0x0f << 4*i);
-                uint32_t patt = (0x0e << 4*i);
+        for (uint8_t i = 0; i < 8; i++)
+        {
+            if ((1 << i) & level)
+            {
+                uint32_t mask = ~(0x0f << 4 * i);
+                uint32_t patt = (0x0e << 4 * i);
                 val = (val & mask) | patt;
             }
         }
@@ -133,19 +131,19 @@ uint32_t caclChannelValue(uint8_t level)
 // set LED data
 void set_led_data(uint8_t r_level, uint8_t g_level, uint8_t b_level)
 {
-    for(int i = 0; i < 3*NLEDS; i += 3) {
-            m_buffer_tx[i] = caclChannelValue(g_level);
-            m_buffer_tx[i+1] = caclChannelValue(r_level);
-            m_buffer_tx[i+2] = caclChannelValue(b_level);
-       
+    for (int i = 0; i < 3 * NLEDS; i += 3)
+    {
+        m_buffer_tx[i] = calcChannelValue(g_level);
+        m_buffer_tx[i + 1] = calcChannelValue(r_level);
+        m_buffer_tx[i + 2] = calcChannelValue(b_level);
     }
 
-    // reset 
-    for(int i = 3*NLEDS; i < I2S_BUFFER_SIZE; i++) {
+    // reset
+    for (int i = 3 * NLEDS; i < I2S_BUFFER_SIZE; i++)
+    {
         m_buffer_tx[i] = 0;
     }
 }
-
 
 /**@brief Application main function.
  */
@@ -154,51 +152,47 @@ void neopixel(int phase)
     uint32_t err_code;
     static bool init = false;
 
-    if (init==false)
+    if (init == false)
     {
         err_code = app_timer_create(&my_timer_id, APP_TIMER_MODE_REPEATED, timeout_handler);
         APP_ERROR_CHECK(err_code);
-    //
+        //
         err_code = app_timer_start(my_timer_id, APP_TIMER_TICKS(2), NULL);
         APP_ERROR_CHECK(err_code);
         init = true;
     }
 
-      multiplier = (float)phase/(float)255;
-     
-      uint8_t r_level = 255*multiplier;
-      uint8_t g_level = 120*multiplier; //was 120
-      uint8_t b_level = 35*multiplier;  //was 35
+    multiplier = (float)phase / (float)255;
 
-      set_led_data(r_level,g_level,b_level);
+    uint8_t r_level = 255 * multiplier;
+    uint8_t g_level = 120 * multiplier; //was 120
+    uint8_t b_level = 35 * multiplier;  //was 35
 
-      if (neopixel_running == false)
-      {
+    set_led_data(r_level, g_level, b_level);
+
+    if (neopixel_running == false)
+    {
 
         nrf_drv_i2s_config_t config = NRF_DRV_I2S_DEFAULT_CONFIG;
-        config.sdin_pin  = NULL;
+        config.sdin_pin = NULL;
         config.sdout_pin = 5;
         config.mck_setup = I2S_CONFIG_MCKFREQ_MCKFREQ_32MDIV10; ///< 32 MHz / 10 = 3.2 MHz.
-        config.ratio     = NRF_I2S_RATIO_32X; //NRF_I2S_RATIO_32X;    ///< LRCK = MCK / 32.
-        config.channels  = I2S_CONFIG_CHANNELS_CHANNELS_Stereo;
- 
+        config.ratio = NRF_I2S_RATIO_32X;                       //NRF_I2S_RATIO_32X;    ///< LRCK = MCK / 32.
+        config.channels = I2S_CONFIG_CHANNELS_CHANNELS_Stereo;
 
         err_code = nrf_drv_i2s_init(&config, data_handler);
 
         APP_ERROR_CHECK(err_code);
-        init =true;
+        init = true;
 
         nrf_drv_i2s_buffers_t const initial_buffers = {
-        .p_tx_buffer = &m_buffer_tx[0],
+            .p_tx_buffer = &m_buffer_tx[0],
         };
-       err_code = nrf_drv_i2s_start(&initial_buffers, I2S_BUFFER_SIZE, 0);
-       set_led_data(r_level,g_level,b_level);
-       neopixel_running = true;
-     }
-
-
+        err_code = nrf_drv_i2s_start(&initial_buffers, I2S_BUFFER_SIZE, 0);
+        set_led_data(r_level, g_level, b_level);
+        neopixel_running = true;
+    }
 }
-
 
 /**
  * @}

@@ -35,7 +35,6 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 #include <stdio.h>
 #include "nrf_delay.h"
 #include "nrf_gpio.h"
@@ -57,7 +56,6 @@
 #include "leds.h"
 #include "neopixel.h"
 
-
 #if defined(NRF51) && defined(NRF_MESH_STACK_DEPTH)
 #include "stack_depth.h"
 #endif
@@ -65,13 +63,11 @@
 /*****************************************************************************
  * Definitions
  *****************************************************************************/
-#define ADVERTISER_BUFFER_SIZE  (64)
-
+#define ADVERTISER_BUFFER_SIZE (64)
 
 /*****************************************************************************
  * Forward declaration of static functions
  *****************************************************************************/
-
 
 /*****************************************************************************
  * Static variables
@@ -79,44 +75,56 @@
 /** Single advertiser instance. May periodically transmit one packet at a time. */
 static advertiser_t m_advertiser;
 
-static uint8_t      m_adv_buffer[ADVERTISER_BUFFER_SIZE];
-static bool         m_device_provisioned;
+static uint8_t m_adv_buffer[ADVERTISER_BUFFER_SIZE];
+static bool m_device_provisioned;
+unsigned long timealive = 0;
 
 advertiser_tx_complete_cb_t tx_complete_cb;
 
+APP_TIMER_DEF(mytimealive);
 
-
-
-
-
-static void rx_cb(const nrf_mesh_adv_packet_rx_data_t * p_rx_data)
+static void timealive_handler(void *p_context)
 {
-    LEDS_OFF(BSP_LED_0_MASK);  /* @c LED_RGB_RED_MASK on pca10031 */
+
+    timealive = timealive + 100;
+}
+
+static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
+{
+    LEDS_OFF(BSP_LED_0_MASK); /* @c LED_RGB_RED_MASK on pca10031 */
     char msg[128];
-//    (void) sprintf(msg, "RX [@%u]: RSSI: %3d ADV TYPE: %x ADDR: [%02x:%02x:%02x:%02x:%02x:%02x]",
-//                   p_rx_data->p_metadata->params.scanner.timestamp,
-//                   p_rx_data->p_metadata->params.scanner.rssi,
-//                   p_rx_data->adv_type,
-//                   p_rx_data->p_metadata->params.scanner.adv_addr.addr[0],
-//                   p_rx_data->p_metadata->params.scanner.adv_addr.addr[1],
-//                   p_rx_data->p_metadata->params.scanner.adv_addr.addr[2],
-//                   p_rx_data->p_metadata->params.scanner.adv_addr.addr[3],
-//                   p_rx_data->p_metadata->params.scanner.adv_addr.addr[4],
-//                   p_rx_data->p_metadata->params.scanner.adv_addr.addr[5]);
-//    __LOG_XB(LOG_SRC_APP, LOG_LEVEL_INFO, msg, p_rx_data->p_payload, p_rx_data->length);
 
-  //  sprintf(msg, "%02x", p_rx_data->p_payload);
+    // sprintf(msg, "%02x", p_rx_data->p_payload);
     uint8_t *word = "SWARM";
-   // printf("%s", p_rx_data->p_payload);
-  if(strstr(p_rx_data->p_payload, word)!= NULL ){
-     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Target Pack RCV\n");
-    setPhase(0);
-  }
-   
- 
+    // printf("%s", p_rx_data->p_payload);
+    if (strstr(p_rx_data->p_payload, word) != NULL)
+    {
+        //    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Target Pack RCV\n");
 
-  //  LEDS_ON(BSP_LED_0_MASK);  /* @c LED_RGB_RED_MASK on pca10031 */
+        //(void) sprintf(msg, "RX [@%u]: RSSI: %3d ADV TYPE: %x ADDR: [%02x:%02x:%02x:%02x:%02x:%02x]",
+        //               p_rx_data->p_metadata->params.scanner.timestamp,
+        //               p_rx_data->p_metadata->params.scanner.rssi,
+        //               p_rx_data->adv_type,
+        //               p_rx_data->p_metadata->params.scanner.adv_addr.addr[0],
+        //               p_rx_data->p_metadata->params.scanner.adv_addr.addr[1],
+        //               p_rx_data->p_metadata->params.scanner.adv_addr.addr[2],
+        //               p_rx_data->p_metadata->params.scanner.adv_addr.addr[3],
+        //               p_rx_data->p_metadata->params.scanner.adv_addr.addr[4],
+        //               p_rx_data->p_metadata->params.scanner.adv_addr.addr[5]);
+        //  __LOG_XB(LOG_SRC_APP, LOG_LEVEL_INFO, msg, p_rx_data->p_payload, p_rx_data->length);
 
+        unsigned long int rxTimeAlive = 0;
+
+        rxTimeAlive = ((p_rx_data->p_payload[7 + 0] << 24) + (p_rx_data->p_payload[7 + 1] << 16) + (p_rx_data->p_payload[7 + 2] << 8) + (p_rx_data->p_payload[7 + 3]));
+        //  printf("rxtimealive: %l ",rxTimeAlive);
+        //   __NOP();
+        if (rxTimeAlive > timealive)
+        {
+            setPhase(0);
+        }
+    }
+
+    //  LEDS_ON(BSP_LED_0_MASK);  /* @c LED_RGB_RED_MASK on pca10031 */
 }
 
 static void adv_init(void)
@@ -131,18 +139,18 @@ static void adv_start(void)
 
     advertiser_enable(&m_advertiser);
     static const uint8_t adv_data[] =
-    {
-        0x06, /* AD data length (including type, but not itself) */
-        BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME, /* AD data type (Complete local name) */
-        'S',  /* AD data payload (Name of device) */
-        'W',
-        'A',
-        'R',
-        'M',
-    };
+        {
+            0x06,                                /* AD data length (including type, but not itself) */
+            BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME, /* AD data type (Complete local name) */
+            'S',                                 /* AD data payload (Name of device) */
+            'W',
+            'A',
+            'R',
+            'M',
+        };
 
     /* Allocate packet */
-    adv_packet_t * p_packet = advertiser_packet_alloc(&m_advertiser, sizeof(adv_data));
+    adv_packet_t *p_packet = advertiser_packet_alloc(&m_advertiser, sizeof(adv_data));
     if (p_packet)
     {
         /* Construct packet contents */
@@ -153,35 +161,35 @@ static void adv_start(void)
         advertiser_packet_send(&m_advertiser, p_packet);
     }
 
-
- //   advertiser_disable(&m_advertiser);
-
+    //   advertiser_disable(&m_advertiser);
 }
-
 
 static void pack_send(void)
 {
 
-
+    //unsigned long timealive = millis();
 
     /* Let scanner accept Complete Local Name AD Type. */
     bearer_adtype_add(BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME);
     advertiser_flush(&m_advertiser);
-  //  advertiser_enable(&m_advertiser);
-    static const uint8_t adv_data[] =
-    {
-        0x06, /* AD data length (including type, but not itself) */
-        BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME, /* AD data type (Complete local name) */
-        'S',  /* AD data payload (Name of device) */
-        'W',
-        'A',
-        'R',
-        'M',
-        
-    };
+    //  advertiser_enable(&m_advertiser);
+    uint8_t adv_data[] =
+        {
+            0x06 + 0x04,                         /* AD data length (including type, but not itself) 6 bytes plus sie of the long */
+            BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME, /* AD data type (Complete local name) */
+            'S',                                 /* AD data payload (Name of device) */
+            'W',
+            'A',
+            'R',
+            'M',
+            (int)((timealive >> 24) & 0xFF),
+            (int)((timealive >> 16) & 0xFF),
+            (int)((timealive >> 8) & 0XFF),
+            (int)((timealive & 0XFF)),
+        };
 
     /* Allocate packet */
-    adv_packet_t * p_packet = advertiser_packet_alloc(&m_advertiser, sizeof(adv_data));
+    adv_packet_t *p_packet = advertiser_packet_alloc(&m_advertiser, sizeof(adv_data));
     if (p_packet)
     {
         /* Construct packet contents */
@@ -190,25 +198,21 @@ static void pack_send(void)
         p_packet->config.repeats = 0x01;
 
         advertiser_packet_send(&m_advertiser, p_packet);
-    //    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "PHASE AT ZERO packet sent  \n" );
+        //    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> PHASE AT ZERO packet sent  \n" );
     }
- //   __NOP();
-//    advertiser_disable(&m_advertiser);
-
+    //   __NOP();
+    //    advertiser_disable(&m_advertiser);
 }
-
-
-
 
 static void node_reset(void)
 {
-    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- Node reset  -----\n");
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> ----- Node reset -----\n");
     hal_led_blink_ms(LEDS_MASK, LED_BLINK_INTERVAL_MS, LED_BLINK_CNT_RESET);
     /* This function may return if there are ongoing flash operations. */
     mesh_stack_device_reset();
 }
 
-static void config_server_evt_cb(const config_server_evt_t * p_evt)
+static void config_server_evt_cb(const config_server_evt_t *p_evt)
 {
     if (p_evt->type == CONFIG_SERVER_EVT_NODE_RESET)
     {
@@ -219,7 +223,7 @@ static void config_server_evt_cb(const config_server_evt_t * p_evt)
 static void device_identification_start_cb(uint8_t attention_duration_s)
 {
     hal_led_mask_set(LEDS_MASK, false);
-    hal_led_blink_ms(BSP_LED_2_MASK  | BSP_LED_3_MASK,
+    hal_led_blink_ms(BSP_LED_2_MASK | BSP_LED_3_MASK,
                      LED_BLINK_ATTENTION_INTERVAL_MS,
                      LED_BLINK_ATTENTION_COUNT(attention_duration_s));
 }
@@ -233,12 +237,12 @@ static void unicast_address_print(void)
 {
     dsm_local_unicast_address_t node_address;
     dsm_local_unicast_addresses_get(&node_address);
-    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Node Address: 0x%04x \n", node_address.address_start);
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Node Address: 0x%04x \n", node_address.address_start);
 }
 
 static void provisioning_complete_cb(void)
 {
-    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Successfully provisioned\n");
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Successfully provisioned\n");
 
     unicast_address_print();
     hal_led_blink_stop();
@@ -249,23 +253,22 @@ static void provisioning_complete_cb(void)
 static void mesh_init(void)
 {
     mesh_stack_init_params_t init_params =
-    {
-        .core.irq_priority = NRF_MESH_IRQ_PRIORITY_THREAD,
-        .core.lfclksrc     = DEV_BOARD_LF_CLK_CFG,
-        .models.config_server_cb = config_server_evt_cb
-    };
+        {
+            .core.irq_priority = NRF_MESH_IRQ_PRIORITY_THREAD,
+            .core.lfclksrc = DEV_BOARD_LF_CLK_CFG,
+            .models.config_server_cb = config_server_evt_cb};
 
     uint32_t status = mesh_stack_init(&init_params, &m_device_provisioned);
     switch (status)
     {
-        case NRF_ERROR_INVALID_DATA:
-            __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Data in the persistent memory was corrupted. Device starts as unprovisioned.\n");
-            __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Reset device before starting of the provisioning process.\n");
-            break;
-        case NRF_SUCCESS:
-            break;
-        default:
-            ERROR_CHECK(status);
+    case NRF_ERROR_INVALID_DATA:
+        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ***> Data in the persistent memory was corrupted. Device starts as unprovisioned.\n");
+        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ***> Reset device before starting of the provisioning process.\n");
+        break;
+    case NRF_SUCCESS:
+        break;
+    default:
+        ERROR_CHECK(status);
     }
 
     /* Start listening for incoming packets */
@@ -285,13 +288,13 @@ static void initialize(void)
     hal_leds_init();
 
     __LOG_INIT(LOG_SRC_APP, LOG_LEVEL_INFO, log_callback_rtt);
-    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "----- Bluetooth Mesh Beacon Example -----\n");
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> ----- Swarm Bluetooth Mesh Beacon Initializing... -----\n");
 
     ble_stack_init();
 
     mesh_init();
 
-    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Initialization complete!\n");
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Initialization complete.\n");
 }
 
 static void start(void)
@@ -300,14 +303,13 @@ static void start(void)
     {
         static const uint8_t static_auth_data[NRF_MESH_KEY_SIZE] = STATIC_AUTH_DATA;
         mesh_provisionee_start_params_t prov_start_params =
-        {
-            .p_static_data    = static_auth_data,
-            .prov_complete_cb = provisioning_complete_cb,
-            .prov_device_identification_start_cb = device_identification_start_cb,
-            .prov_device_identification_stop_cb = NULL,
-            .prov_abort_cb = provisioning_aborted_cb,
-            .p_device_uri = EX_URI_BEACON
-        };
+            {
+                .p_static_data = static_auth_data,
+                .prov_complete_cb = provisioning_complete_cb,
+                .prov_device_identification_start_cb = device_identification_start_cb,
+                .prov_device_identification_stop_cb = NULL,
+                .prov_abort_cb = provisioning_aborted_cb,
+                .p_device_uri = EX_URI_BEACON};
         ERROR_CHECK(mesh_provisionee_prov_start(&prov_start_params));
     }
     else
@@ -324,10 +326,10 @@ static void start(void)
 
     ERROR_CHECK(mesh_stack_start());
 
-    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Bluetooth Mesh Beacon example started!\n");
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Swarm Bluetooth Mesh Beacon started.\n");
 
- //   hal_led_mask_set(LEDS_MASK, LED_MASK_STATE_OFF);
-  //  hal_led_blink_ms(LEDS_MASK, LED_BLINK_INTERVAL_MS, LED_BLINK_CNT_START);
+    //   hal_led_mask_set(LEDS_MASK, LED_MASK_STATE_OFF);
+    //  hal_led_blink_ms(LEDS_MASK, LED_BLINK_INTERVAL_MS, LED_BLINK_CNT_START);
 }
 
 int main(void)
@@ -335,19 +337,27 @@ int main(void)
     initialize();
     start();
 
-    //  ERROR_CHECK(app_timer_init());
-    
-   // neopixel();
+    // ERROR_CHECK(app_timer_init());
+
+    // neopixel();
+
     pwm_init();
     timer_initalize();
+    
+    ret_code_t err_code = app_timer_create(&mytimealive, APP_TIMER_MODE_REPEATED, timealive_handler);
+    APP_ERROR_CHECK(err_code);
+    err_code = app_timer_start(mytimealive, APP_TIMER_TICKS(100), NULL);
+    APP_ERROR_CHECK(err_code);
+
     for (;;)
     {
         ledloop();
-       int y =currentPhase();
-        if (currentPhase()>2080 && currentPhase()<2100){
-       // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "PHASE AT ZERO  \n" );
-        pack_send();
-       //adv_start();
+        int y = currentPhase();
+        if (currentPhase() > 2080 && currentPhase() < 2100)
+        {
+            // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> PHASE AT ZERO  \n" );
+            pack_send();
+            //adv_start();
         }
 
         //(void)sd_app_evt_wait();
@@ -356,7 +366,5 @@ int main(void)
         {
             sd_app_evt_wait();
         }
-
-
     }
 }

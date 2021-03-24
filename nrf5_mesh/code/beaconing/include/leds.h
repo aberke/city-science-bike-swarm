@@ -37,7 +37,7 @@ void light(int amplitude);
 void ledloop();
 int currentPhase(void);
 void setPhase (int phasecnt);
-
+unsigned long millis();
 
 
 void pwm_init(void);
