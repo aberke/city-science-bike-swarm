@@ -10297,10 +10297,10 @@ Output is to 3V3 leds</text>
 <junction x="111.76" y="50.8"/>
 </segment>
 <segment>
-<pinref part="U3" gate="G$1" pin="D7/P006"/>
-<wire x1="81.106" y1="97.454" x2="81.106" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="81.106" y1="86.36" x2="81.28" y2="86.36" width="0.1524" layer="91"/>
-<label x="81.28" y="83.82" size="1.778" layer="95" rot="R90"/>
+<pinref part="U3" gate="G$1" pin="G1/P030"/>
+<wire x1="125.106" y1="137.454" x2="135.128" y2="137.454" width="0.1524" layer="91"/>
+<wire x1="135.128" y1="137.454" x2="135.128" y2="137.414" width="0.1524" layer="91"/>
+<label x="126.238" y="137.668" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LED_2" class="0">
@@ -10569,10 +10569,10 @@ Output is to 3V3 leds</text>
 <pinref part="RN2" gate="B" pin="1"/>
 </segment>
 <segment>
-<pinref part="U3" gate="G$1" pin="G1/P030"/>
-<wire x1="125.106" y1="137.454" x2="135.128" y2="137.454" width="0.1524" layer="91"/>
-<wire x1="135.128" y1="137.454" x2="135.128" y2="137.414" width="0.1524" layer="91"/>
-<label x="126.238" y="137.668" size="1.778" layer="95"/>
+<pinref part="U3" gate="G$1" pin="D7/P006"/>
+<wire x1="81.106" y1="97.454" x2="81.106" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="81.106" y1="86.36" x2="81.28" y2="86.36" width="0.1524" layer="91"/>
+<label x="81.28" y="76.2" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="HEADLAMP_5V" class="0">
