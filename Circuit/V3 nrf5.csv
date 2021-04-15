@@ -1,5 +1,4 @@
 "Qty";"Value";"Device";"Package";"Parts";"Description";"AVAILABILITY";"DESCRIPTION";"DIGI-KEY_PART_NUMBER";"DIGIKEY";"MF";"MP";"MPN";"OC_FARNELL";"OC_NEWARK";"PACKAGE";"POPULARITY";"PRICE";"PROD_ID";"PURCHASE-URL";"SF_ID";"SF_SKU";"TP_SIGNAL_NAME";"VALUE";
-"1";"";"4R-NEXBV8V";"EXBV8V";"RN2";"Array Chip Resistor";"";"";"";"YC164-JR-0710KL";"";"";"";"unknown";"unknown";"";"0";"";"";"";"";"";"";"";
 "1";"";"CONN_03SCREW_LOCK";"SCREWTERMINAL-3.5MM-3_LOCK.007S";"J1";"Multi connection point. Often used as Generic Header-pin footprint for 0.1 inch spaced/style header connections";"";"";"";"A98037-ND";"";"";"";"";"";"";"";"";"CONN-08288";"";"PRT-08235";"";"";"";
 "1";"";"CONN_04SCREW";"SCREWTERMINAL-3.5MM-4";"J6";"Multi connection point. Often used as Generic Header-pin footprint for 0.1 inch spaced/style header connections";"";"";"";"277-1860-ND";"";"";"";"";"";"";"";"";"2xCONN-08399";"";"2xPRT-08084";"";"";"";
 "1";"";"JST_2MM_MALE";"JST-2-SMD";"POWER_IN";"JST 2MM MALE RA CONNECTOR";"";"";"";"A100080CT-ND";"";"";"";"";"";"";"";"";"CONN-11443";"";"PRT-08612";"";"";"";
@@ -21,12 +20,12 @@
 "1";"3A/40V/500mV";"DIODE-SCHOTTKY-B340A";"SMA-DIODE";"D8";"Schottky diode";"";"";"";"B340A-E3/61TGICT-ND";"";"";"";"";"";"";"";"";"DIO-09886";"";"";"";"";"3A/40V/500mV";
 "1";"3A/40V/500mV";"DIODE-SCHOTTKY-B340A";"SMA-DIODE";"D7";"Schottky diode";"";"";"";"B340A-FDITR-ND";"";"";"";"";"";"";"";"";"DIO-09886";"";"";"";"";"3A/40V/500mV";
 "4";"4.7uF";"4.7UF0603";"0603";"C10, C12, C18, C19";"4.7µF ceramic capacitors";"";"";"";"399-3482-1-ND";"";"";"";"";"";"";"";"";"CAP-08280";"";"";"";"";"4.7uF";
+"1";"74AHCT2G125";"74AHCT2G125";"TSSOP8";"U1";"";"";"";"";"1727-6544-1-ND‎";"";"";"";"";"";"";"";"";"";"";"";"";"";"";
 "1";"BC840M";"BC840M";"BC840M";"U3";"";"";"";"";"1914-BC840MCT-ND";"";"";"";"";"";"";"";"";"";"";"";"";"";"";
 "1";"BLUE";"LED-BLUE0603";"LED-0603";"D2";"Blue SMD LED";"";"";"";"160-1647-1-ND";"";"";"";"";"";"";"";"";"DIO-08575";"";"";"";"";"BLUE";
 "1";"BSS84";"BSS84";"SOT23";"Q2";"P-CHANNEL MOS FET";"";"";"";"DMG2305UX-13";"";"";"";"";"";"";"8";"";"";"";"";"";"";"";
 "1";"CGRM4004-G";"CGRM4004-G";"SOD-123_MINI-SMA";"D10";"Molded plasitc,JEDEC SOD-123/Mini SMA";"";"";"";"SM5817PL-TPMSCT-ND‎";"";"";"";"";"";"";"0";"";"";"";"";"";"";"";
 "1";"CORTEX_DEBUG_SMD";"CORTEX_DEBUG_SMD";"SAMTECH_FTSH-105-01";"J7";"Cortex Debug Connector - 10 pin";"";"";"";"SAM1161-05-ND";"";"";"";"";"";"";"";"";"";"";"";"";"";"";
-"2";"FDV301N";"MOSFET-NCHANNELSMD";"SOT23-3";"Q1, Q3";"";"";"";"";"FDV301NCT-ND";"";"";"";"";"";"";"";"";"";"";"";"";"";"";
 "1";"Green";"LED0603";"LED-0603";"D3";"LEDs";"";"";"";"160-1183-1-ND";"";"";"";"";"";"";"";"";"";"";"";"";"";"";
 "1";"MCP73831";"MCP73831";"SOT23-5";"U2";"MCP73831T Li-Ion, Li-Pol Controller";"";"";"";"MCP73831T-2ACI/OTCT-ND";"";"";"";"";"";"";"";"";"IC-09995";"";"";"";"";"";
 "1";"MIC5205";"V_REG_MIC52053.3V";"SOT23-5";"U4";"V_REG MIC5205 Standard 3.3V, 5V, and Adjustable 150mA LDO voltage regulator in SOT-23 layout. Micrel part MIC5205. BP (by-pass) pin is used to lower output noise with 470pF cap, may be left open. On the adjustable version BP is used to set output.";"";"";"";"576-1259-1-ND";"";"";"";"";"";"";"";"";"VREG-00822";"";"";"";"";"3.3V/150mA";
