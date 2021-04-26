@@ -281,7 +281,9 @@ void pulseLightLinear(int phase)
 
 void light(int amplitude)
 {
-  analogWrite(LED_PIN, 255 - amplitude);
+  // The nrf52-DK and Swarm boards have opposite of each other status LEDs
+  analogWrite(LED_PIN, amplitude); // nrf52-DK
+//  analogWrite(LED_PIN, 255 - amplitude); // Swarm boards
   neopixel(amplitude); //(RJ)
 }
 
