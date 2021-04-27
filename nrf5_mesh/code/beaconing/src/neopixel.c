@@ -50,6 +50,7 @@ static uint32_t m_buffer_tx[I2S_BUFFER_SIZE];
 static volatile int nled = 1;
 float multiplier;
 
+
 APP_TIMER_DEF(my_timer_id);
 
 static void timeout_handler(void *p_context)
@@ -151,6 +152,8 @@ void neopixel(int phase)
 {
     uint32_t err_code;
     static bool init = false;
+    bool neopixel = false;
+    bool high_current = true;
 
     if (init == false)
     {
@@ -164,18 +167,30 @@ void neopixel(int phase)
 
     multiplier = (float)phase / (float)255;
 
-    uint8_t r_level = 255 * multiplier;
-    uint8_t g_level = 120 * multiplier; //was 120
-    uint8_t b_level = 35 * multiplier;  //was 35
+      uint8_t r_level;// was 255 
+      uint8_t g_level; //was 120
+      uint8_t b_level;  //was 35
+    
+    if (neopixel == true){
+      r_level = 255 * multiplier;// was 255 
+      g_level =  120 * multiplier; //was 120
+      b_level = 35 * multiplier;  //was 35
+      set_led_data(r_level, g_level, b_level);
+    }
 
-    set_led_data(r_level, g_level, b_level);
+    else if(high_current == true){
+       r_level = 255 * multiplier;// was 255 
+       g_level =  0 * multiplier; //was 120
+       b_level =  60 * multiplier;  //was 35
+      set_led_data(g_level, r_level, b_level);
+    }
 
     if (neopixel_running == false)
     {
 
         nrf_drv_i2s_config_t config = NRF_DRV_I2S_DEFAULT_CONFIG;
         config.sdin_pin = NULL;
-        config.sdout_pin = 5;
+        config.sdout_pin = 6;
         config.mck_setup = I2S_CONFIG_MCKFREQ_MCKFREQ_32MDIV10; ///< 32 MHz / 10 = 3.2 MHz.
         config.ratio = NRF_I2S_RATIO_32X;                       //NRF_I2S_RATIO_32X;    ///< LRCK = MCK / 32.
         config.channels = I2S_CONFIG_CHANNELS_CHANNELS_Stereo;

@@ -10,7 +10,8 @@ long long unsigned addresses[6] = {0xF0F0F0F0F0, 0xF0F0F0F0AA, 0xF0F0F0F0BB, 0xF
 // Note: The LED_BUILTIN is connected to tx/rx so it requires
 // serial communication (monitor open) in order to work.
 // Using other LED instead
-#define LED_PIN NRF_GPIO_PIN_MAP(0, 12) //set to P0.14
+#define LED1_PIN NRF_GPIO_PIN_MAP(0, 8)
+#define LED2_PIN NRF_GPIO_PIN_MAP(0, 12)
 
 #define lowPulse 10
 #define highPulse 255
@@ -103,10 +104,10 @@ void pwm_init(void)
       {
           .output_pins =
               {
-                  LED_PIN,                  // channel 0
+                  LED1_PIN,                 // channel 0
                   LED_3,                    // channel 1
                   LED_4,                    // channel 2
-                  NRF_DRV_PWM_PIN_NOT_USED, // channel 3
+                  LED2_PIN,                 // channel 3
               },
           .irq_priority = APP_IRQ_PRIORITY_LOWEST,
           .base_clock = NRF_PWM_CLK_1MHz,
@@ -282,7 +283,8 @@ void pulseLightLinear(int phase)
 void light(int amplitude)
 {
   // The nrf52-DK and Swarm boards have opposite of each other status LEDs
-  analogWrite(LED_PIN, amplitude); // nrf52-DK
+  analogWrite(LED1_PIN, amplitude); // nrf52-DK
+  analogWrite(LED2_PIN, amplitude); // nrf52-DK
 //  analogWrite(LED_PIN, 255 - amplitude); // Swarm boards
   neopixel(amplitude); //(RJ)
 }
