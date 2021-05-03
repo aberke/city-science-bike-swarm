@@ -9,3 +9,4 @@ Circuit/**/*.lck
 Circuit/*.b#?
 Circuit/*.s#?
 *.mak
+**/build/*
