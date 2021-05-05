@@ -77,7 +77,7 @@ static advertiser_t m_advertiser;
 
 static uint8_t m_adv_buffer[ADVERTISER_BUFFER_SIZE];
 static bool m_device_provisioned;
-unsigned long timealive = 0;
+unsigned long int timealive = 0;
 
 advertiser_tx_complete_cb_t tx_complete_cb;
 
@@ -120,6 +120,9 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
         //   __NOP();
         if (rxTimeAlive > timealive)
         {
+        
+            sprintf(msg, " ---> RX %d > my timealive %d\n", rxTimeAlive, timealive);
+            __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, msg);
             setPhase(0);
         }
     }
