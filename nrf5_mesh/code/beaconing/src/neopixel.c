@@ -42,7 +42,7 @@
 volatile bool neopixel_running = false;
 bool init = false;
 
-#define NLEDS 30
+#define NLEDS 72
 #define RESET_BITS 6
 #define I2S_BUFFER_SIZE 3 * NLEDS + RESET_BITS
 
@@ -152,8 +152,8 @@ void neopixel(int phase)
 {
     uint32_t err_code;
     static bool init = false;
-    bool neopixel = false;
-    bool high_current = true;
+    bool neopixel = true;
+    bool high_current = false;
 
     if (init == false)
     {
@@ -190,7 +190,7 @@ void neopixel(int phase)
 
         nrf_drv_i2s_config_t config = NRF_DRV_I2S_DEFAULT_CONFIG;
         config.sdin_pin = NULL;
-        config.sdout_pin = 6;
+        config.sdout_pin = 4;
         config.mck_setup = I2S_CONFIG_MCKFREQ_MCKFREQ_32MDIV10; ///< 32 MHz / 10 = 3.2 MHz.
         config.ratio = NRF_I2S_RATIO_32X;                       //NRF_I2S_RATIO_32X;    ///< LRCK = MCK / 32.
         config.channels = I2S_CONFIG_CHANNELS_CHANNELS_Stereo;

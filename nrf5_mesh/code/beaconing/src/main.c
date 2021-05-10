@@ -86,7 +86,7 @@ APP_TIMER_DEF(mytimealive);
 static void timealive_handler(void *p_context)
 {
 
-    timealive = timealive + 100;
+    timealive = timealive + 1;
 }
 
 static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
@@ -101,17 +101,17 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
     {
         //    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Target Pack RCV\n");
 
-        //(void) sprintf(msg, "RX [@%u]: RSSI: %3d ADV TYPE: %x ADDR: [%02x:%02x:%02x:%02x:%02x:%02x]",
-        //               p_rx_data->p_metadata->params.scanner.timestamp,
-        //               p_rx_data->p_metadata->params.scanner.rssi,
-        //               p_rx_data->adv_type,
-        //               p_rx_data->p_metadata->params.scanner.adv_addr.addr[0],
-        //               p_rx_data->p_metadata->params.scanner.adv_addr.addr[1],
-        //               p_rx_data->p_metadata->params.scanner.adv_addr.addr[2],
-        //               p_rx_data->p_metadata->params.scanner.adv_addr.addr[3],
-        //               p_rx_data->p_metadata->params.scanner.adv_addr.addr[4],
-        //               p_rx_data->p_metadata->params.scanner.adv_addr.addr[5]);
-        //  __LOG_XB(LOG_SRC_APP, LOG_LEVEL_INFO, msg, p_rx_data->p_payload, p_rx_data->length);
+        (void) sprintf(msg, "RX [@%u]: RSSI: %3d ADV TYPE: %x ADDR: [%02x:%02x:%02x:%02x:%02x:%02x]",
+                      p_rx_data->p_metadata->params.scanner.timestamp,
+                      p_rx_data->p_metadata->params.scanner.rssi,
+                      p_rx_data->adv_type,
+                      p_rx_data->p_metadata->params.scanner.adv_addr.addr[0],
+                      p_rx_data->p_metadata->params.scanner.adv_addr.addr[1],
+                      p_rx_data->p_metadata->params.scanner.adv_addr.addr[2],
+                      p_rx_data->p_metadata->params.scanner.adv_addr.addr[3],
+                      p_rx_data->p_metadata->params.scanner.adv_addr.addr[4],
+                      p_rx_data->p_metadata->params.scanner.adv_addr.addr[5]);
+         __LOG_XB(LOG_SRC_APP, LOG_LEVEL_INFO, msg, p_rx_data->p_payload, p_rx_data->length);
 
         unsigned long int rxTimeAlive = 0;
 
@@ -185,10 +185,8 @@ static void pack_send(void)
             'A',
             'R',
             'M',
-            (int)((timealive >> 24) & 0xFF),
-            (int)((timealive >> 16) & 0xFF),
-            (int)((timealive >> 8) & 0XFF),
-            (int)((timealive & 0XFF)),
+            (int)((timealive >> 8) & 0xFF),
+            (int)((timealive & 0xFF)),
         };
 
     /* Allocate packet */
@@ -349,7 +347,7 @@ int main(void)
     
     ret_code_t err_code = app_timer_create(&mytimealive, APP_TIMER_MODE_REPEATED, timealive_handler);
     APP_ERROR_CHECK(err_code);
-    err_code = app_timer_start(mytimealive, APP_TIMER_TICKS(100), NULL);
+    err_code = app_timer_start(mytimealive, APP_TIMER_TICKS(1000), NULL);
     APP_ERROR_CHECK(err_code);
 
     for (;;)
