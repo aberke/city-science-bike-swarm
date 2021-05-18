@@ -48,6 +48,7 @@
         <configuration Name="Debug" build_exclude_from_build="Yes" />
       </file>
       <file file_name="src/neopixel.c" />
+      <file file_name="src/light_service.c" />
     </folder>
     <folder Name="Core">
       <file file_name="../../mesh/core/src/internal_event.c" />
@@ -163,6 +164,8 @@
       <file file_name="../../../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_pwm.c" />
       <file file_name="../../../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_timer.c" />
       <file file_name="nrfx_i2s.c" />
+      <file file_name="../../../nRF5_SDK_16.0.0_98a08e2/components/ble/ble_advertising/ble_advertising.c" />
+      <file file_name="../../../nRF5_SDK_16.0.0_98a08e2/components/ble/ble_advertising/ble_advertising.h" />
     </folder>
     <folder Name="Provisioning">
       <file file_name="../../mesh/prov/src/prov_provisionee.c" />

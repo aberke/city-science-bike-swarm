@@ -1,4 +1,9 @@
 {
     "C_Cpp.dimInactiveRegions": false,
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "editor.formatOnSave": true,
+    "files.associations": {
+        "nrf_mesh_config_examples.h": "c",
+        "bsp_btn_ble.h": "c"
+    },
 }
