@@ -57,6 +57,7 @@
 #include "example_common.h"
 #include "fds.h"
 #include "leds.h"
+#include "light_service.h"
 #include "log.h"
 #include "mesh_app_utils.h"
 #include "mesh_provisionee.h"
@@ -259,39 +260,6 @@ static void pm_evt_handler(pm_evt_t const *p_evt)
     }
 }
 
-/**@brief Function for the GAP initialization.
- *
- * @details This function sets up all the necessary GAP (Generic Access Profile) parameters of the
- *          device including the device name, appearance, and the preferred connection parameters.
- */
-static void gap_params_init(void)
-{
-    ret_code_t err_code;
-    ble_gap_conn_params_t gap_conn_params;
-    ble_gap_conn_sec_mode_t sec_mode;
-
-    BLE_GAP_CONN_SEC_MODE_SET_OPEN(&sec_mode);
-
-    err_code = sd_ble_gap_device_name_set(&sec_mode,
-                                          (const uint8_t *)DEVICE_NAME,
-                                          strlen(DEVICE_NAME));
-    APP_ERROR_CHECK(err_code);
-
-    /* YOUR_JOB: Use an appearance value matching the application's use case.
-       err_code = sd_ble_gap_appearance_set(BLE_APPEARANCE_);
-       APP_ERROR_CHECK(err_code); */
-
-    memset(&gap_conn_params, 0, sizeof(gap_conn_params));
-
-    gap_conn_params.min_conn_interval = MIN_CONN_INTERVAL;
-    gap_conn_params.max_conn_interval = MAX_CONN_INTERVAL;
-    gap_conn_params.slave_latency = SLAVE_LATENCY;
-    gap_conn_params.conn_sup_timeout = CONN_SUP_TIMEOUT;
-
-    err_code = sd_ble_gap_ppcp_set(&gap_conn_params);
-    APP_ERROR_CHECK(err_code);
-}
-
 /**@brief Function for initializing the GATT module.
  */
 static void gatt_init(void)
@@ -383,28 +351,6 @@ static void conn_params_error_handler(uint32_t nrf_error)
     APP_ERROR_HANDLER(nrf_error);
 }
 
-/**@brief Function for initializing the Connection Parameters module.
- */
-static void conn_params_init(void)
-{
-    ret_code_t err_code;
-    ble_conn_params_init_t cp_init;
-
-    memset(&cp_init, 0, sizeof(cp_init));
-
-    cp_init.p_conn_params = NULL;
-    cp_init.first_conn_params_update_delay = FIRST_CONN_PARAMS_UPDATE_DELAY;
-    cp_init.next_conn_params_update_delay = NEXT_CONN_PARAMS_UPDATE_DELAY;
-    cp_init.max_conn_params_update_count = MAX_CONN_PARAMS_UPDATE_COUNT;
-    cp_init.start_on_notify_cccd_handle = BLE_GATT_HANDLE_INVALID;
-    cp_init.disconnect_on_fail = false;
-    cp_init.evt_handler = on_conn_params_evt;
-    cp_init.error_handler = conn_params_error_handler;
-
-    err_code = ble_conn_params_init(&cp_init);
-    APP_ERROR_CHECK(err_code);
-}
-
 /**@brief Function for handling advertising events.
  *
  * @details This function will be called for advertising events which are passed to the application.
@@ -419,12 +365,10 @@ static void on_adv_evt(ble_adv_evt_t ble_adv_evt)
     {
     case BLE_ADV_EVT_FAST:
         NRF_LOG_INFO("Fast advertising.");
-        err_code = bsp_indication_set(BSP_INDICATE_ADVERTISING);
-        APP_ERROR_CHECK(err_code);
         break;
 
     case BLE_ADV_EVT_IDLE:
-        sleep_mode_enter();
+        // sleep_mode_enter();
         break;
 
     default:
@@ -450,8 +394,6 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
 
     case BLE_GAP_EVT_CONNECTED:
         NRF_LOG_INFO("Connected.");
-        err_code = bsp_indication_set(BSP_INDICATE_CONNECTED);
-        APP_ERROR_CHECK(err_code);
         m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
         err_code = nrf_ble_qwr_conn_handle_assign(&m_qwr, m_conn_handle);
         APP_ERROR_CHECK(err_code);
