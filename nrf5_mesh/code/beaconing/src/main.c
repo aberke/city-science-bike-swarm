@@ -40,48 +40,6 @@
 #include <stdint.h>
 #include <string.h>
 
-#include "nordic_common.h"
-#include "nrf.h"
-#include "ad_type_filter.h"
-#include "advertiser.h"
-#include "app_timer.h"
-#include "ble_advdata.h"
-#include "ble_advertising.h"
-#include "ble_conn_params.h"
-#include "ble_conn_state.h"
-#include "ble_hci.h"
-#include "ble_softdevice_support.h"
-#include "ble_srv_common.h"
-#include "ble.h"
-#include "boards.h"
-#include "example_common.h"
-#include "fds.h"
-#include "leds.h"
-#include "light_service.h"
-#include "log.h"
-#include "mesh_app_utils.h"
-#include "mesh_provisionee.h"
-#include "mesh_stack.h"
-#include "neopixel.h"
-#include "nrf_ble_gatt.h"
-#include "nrf_ble_qwr.h"
-#include "nrf_delay.h"
-#include "nrf_gpio.h"
-#include "nrf_mesh_config_examples.h"
-#include "nrf_mesh_configure.h"
-#include "nrf_mesh.h"
-#include "nrf_pwr_mgmt.h"
-#include "nrf_sdh_ble.h"
-#include "nrf_sdh_soc.h"
-#include "nrf_sdh.h"
-#include "peer_manager.h"
-#include "sensorsim.h"
-#include "simple_hal.h"
-
-#if defined(NRF51) && defined(NRF_MESH_STACK_DEPTH)
-#include "stack_depth.h"
-#endif
-
 /*****************************************************************************
  * Definitions
  *****************************************************************************/
@@ -109,6 +67,49 @@
 #define SEC_PARAM_MIN_KEY_SIZE 7                             /**< Minimum encryption key size. */
 #define SEC_PARAM_MAX_KEY_SIZE 16                            /**< Maximum encryption key size. */
 #define DEAD_BEEF 0xDEADBEEF                                 /**< Value used as error code on stack dump, can be used to identify stack location on stack unwind. */
+
+#include "nordic_common.h"
+#include "nrf.h"
+#include "ad_type_filter.h"
+#include "advertiser.h"
+#include "app_timer.h"
+#include "ble_advdata.h"
+#include "ble_advertising.h"
+#include "ble_conn_params.h"
+#include "ble_conn_state.h"
+#include "ble_hci.h"
+#include "ble_srv_common.h"
+#include "ble.h"
+#include "boards.h"
+#include "example_common.h"
+#include "fds.h"
+#include "leds.h"
+#include "light_service.h"
+#include "log.h"
+#include "mesh_app_utils.h"
+#include "mesh_provisionee.h"
+#include "mesh_stack.h"
+#include "neopixel.h"
+#include "nrf_ble_gatt.h"
+#include "nrf_ble_qwr.h"
+#include "nrf_delay.h"
+#include "nrf_gpio.h"
+#include "nrf_mesh_config_examples.h"
+#include "nrf_mesh_configure.h"
+#include "nrf_mesh.h"
+#include "nrf_pwr_mgmt.h"
+#include "nrf_sdh_ble.h"
+#include "nrf_sdh_soc.h"
+#include "nrf_sdh.h"
+#include "peer_manager.h"
+#include "sensorsim.h"
+#include "simple_hal.h"
+#include <nrfx_uarte.h>
+
+#if defined(NRF51) && defined(NRF_MESH_STACK_DEPTH)
+#include "stack_depth.h"
+#endif
+
 NRF_BLE_GATT_DEF(m_gatt);                                    /**< GATT module instance. */
 NRF_BLE_QWR_DEF(m_qwr);                                      /**< Context for the Queued Write module.*/
 BLE_LIGHT_DEF(m_light_service);                              /**< Light service instance. */
@@ -166,16 +167,16 @@ static void pm_evt_handler(pm_evt_t const *p_evt)
     {
     case PM_EVT_BONDED_PEER_CONNECTED:
     {
-        NRF_LOG_INFO("Connected to a previously bonded device.");
+        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Connected to a previously bonded device.");
     }
     break;
 
     case PM_EVT_CONN_SEC_SUCCEEDED:
     {
-        NRF_LOG_INFO("Connection secured: role: %d, conn_handle: 0x%x, procedure: %d.",
-                     ble_conn_state_role(p_evt->conn_handle),
-                     p_evt->conn_handle,
-                     p_evt->params.conn_sec_succeeded.procedure);
+        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Connection secured: role: %d, conn_handle: 0x%x, procedure: %d.",
+              ble_conn_state_role(p_evt->conn_handle),
+              p_evt->conn_handle,
+              p_evt->params.conn_sec_succeeded.procedure);
     }
     break;
 
@@ -260,6 +261,39 @@ static void pm_evt_handler(pm_evt_t const *p_evt)
     }
 }
 
+/**@brief Function for the GAP initialization.
+ *
+ * @details This function sets up all the necessary GAP (Generic Access Profile) parameters of the
+ *          device including the device name, appearance, and the preferred connection parameters.
+ */
+void gap_params_init(void)
+{
+    ret_code_t err_code;
+    ble_gap_conn_params_t gap_conn_params;
+    ble_gap_conn_sec_mode_t sec_mode;
+
+    BLE_GAP_CONN_SEC_MODE_SET_OPEN(&sec_mode);
+
+    err_code = sd_ble_gap_device_name_set(&sec_mode,
+                                          (const uint8_t *)DEVICE_NAME,
+                                          strlen(DEVICE_NAME));
+    APP_ERROR_CHECK(err_code);
+
+    /* YOUR_JOB: Use an appearance value matching the application's use case.
+       err_code = sd_ble_gap_appearance_set(BLE_APPEARANCE_);
+       APP_ERROR_CHECK(err_code); */
+
+    memset(&gap_conn_params, 0, sizeof(gap_conn_params));
+
+    gap_conn_params.min_conn_interval = MIN_CONN_INTERVAL;
+    gap_conn_params.max_conn_interval = MAX_CONN_INTERVAL;
+    gap_conn_params.slave_latency = SLAVE_LATENCY;
+    gap_conn_params.conn_sup_timeout = CONN_SUP_TIMEOUT;
+
+    err_code = sd_ble_gap_ppcp_set(&gap_conn_params);
+    APP_ERROR_CHECK(err_code);
+}
+
 /**@brief Function for initializing the GATT module.
  */
 static void gatt_init(void)
@@ -287,12 +321,12 @@ static void light_evt_handler(ble_light_service_t *p_light_service, ble_light_ev
     if (p_evt->evt_type == BLE_DATA_IO_EVT_NOTIFICATION_ENABLED)
     {
         // Possibly save to a global variable to know that notifications are ENABLED
-        NRF_LOG_INFO("Notifications ENABLED on Data I/O Characteristic");
+        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Notifications ENABLED on Data I/O Characteristic");
     }
     else if (p_evt->evt_type == BLE_DATA_IO_EVT_NOTIFICATION_DISABLED)
     {
         // Possibly save to a global variable to know that notifications are DISABLED
-        NRF_LOG_INFO("Notifications DISABLED on Data I/O Characteristic");
+        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Notifications DISABLED on Data I/O Characteristic");
     }
 
     // Handle any other events necessary...
@@ -317,7 +351,7 @@ static void services_init(void)
     light_init.evt_handler = light_evt_handler;
 
     err_code = ble_light_service_init(&m_light_service, &light_init);
-    NRF_LOG_INFO("Done with services_init()\r\n");
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Done with services_init()\r\n");
     APP_ERROR_CHECK(err_code);
 }
 
@@ -351,6 +385,28 @@ static void conn_params_error_handler(uint32_t nrf_error)
     APP_ERROR_HANDLER(nrf_error);
 }
 
+/**@brief Function for initializing the Connection Parameters module.
+ */
+void conn_params_init(void)
+{
+    ret_code_t err_code;
+    ble_conn_params_init_t cp_init;
+
+    memset(&cp_init, 0, sizeof(cp_init));
+
+    cp_init.p_conn_params = NULL;
+    cp_init.first_conn_params_update_delay = FIRST_CONN_PARAMS_UPDATE_DELAY;
+    cp_init.next_conn_params_update_delay = NEXT_CONN_PARAMS_UPDATE_DELAY;
+    cp_init.max_conn_params_update_count = MAX_CONN_PARAMS_UPDATE_COUNT;
+    cp_init.start_on_notify_cccd_handle = BLE_GATT_HANDLE_INVALID;
+    cp_init.disconnect_on_fail = false;
+    cp_init.evt_handler = on_conn_params_evt;
+    cp_init.error_handler = conn_params_error_handler;
+
+    err_code = ble_conn_params_init(&cp_init);
+    APP_ERROR_CHECK(err_code);
+}
+
 /**@brief Function for handling advertising events.
  *
  * @details This function will be called for advertising events which are passed to the application.
@@ -364,7 +420,7 @@ static void on_adv_evt(ble_adv_evt_t ble_adv_evt)
     switch (ble_adv_evt)
     {
     case BLE_ADV_EVT_FAST:
-        NRF_LOG_INFO("Fast advertising.");
+        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Fast advertising.");
         break;
 
     case BLE_ADV_EVT_IDLE:
@@ -388,12 +444,12 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
     switch (p_ble_evt->header.evt_id)
     {
     case BLE_GAP_EVT_DISCONNECTED:
-        NRF_LOG_INFO("Disconnected.");
+        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Disconnected.");
         // LED indication will be changed when advertising starts.
         break;
 
     case BLE_GAP_EVT_CONNECTED:
-        NRF_LOG_INFO("Connected.");
+        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Connected.");
         m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
         err_code = nrf_ble_qwr_conn_handle_assign(&m_qwr, m_conn_handle);
         APP_ERROR_CHECK(err_code);
@@ -401,7 +457,7 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
 
     case BLE_GAP_EVT_PHY_UPDATE_REQUEST:
     {
-        NRF_LOG_DEBUG("PHY update request.");
+        __LOG(LOG_SRC_APP, LOG_LEVEL_DBG1, "PHY update request.");
         ble_gap_phys_t const phys =
             {
                 .rx_phys = BLE_GAP_PHY_AUTO,
@@ -414,7 +470,7 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
 
     case BLE_GATTC_EVT_TIMEOUT:
         // Disconnect on GATT Client timeout event.
-        NRF_LOG_DEBUG("GATT Client Timeout.");
+        __LOG(LOG_SRC_APP, LOG_LEVEL_DBG1, "GATT Client Timeout.");
         err_code = sd_ble_gap_disconnect(p_ble_evt->evt.gattc_evt.conn_handle,
                                          BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
         APP_ERROR_CHECK(err_code);
@@ -422,7 +478,7 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
 
     case BLE_GATTS_EVT_TIMEOUT:
         // Disconnect on GATT Server timeout event.
-        NRF_LOG_DEBUG("GATT Server Timeout.");
+        __LOG(LOG_SRC_APP, LOG_LEVEL_DBG1, "GATT Server Timeout.");
         err_code = sd_ble_gap_disconnect(p_ble_evt->evt.gatts_evt.conn_handle,
                                          BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
         APP_ERROR_CHECK(err_code);
@@ -432,6 +488,31 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
         // No implementation needed.
         break;
     }
+}
+
+/**@brief Function for initializing the BLE stack.
+ *
+ * @details Initializes the SoftDevice and the BLE event interrupt.
+ */
+static void ble_stack_init(void)
+{
+    ret_code_t err_code;
+
+    err_code = nrf_sdh_enable_request();
+    APP_ERROR_CHECK(err_code);
+
+    // Configure the BLE stack using the default settings.
+    // Fetch the start address of the application RAM.
+    uint32_t ram_start = 0;
+    err_code = nrf_sdh_ble_default_cfg_set(APP_BLE_CONN_CFG_TAG, &ram_start);
+    APP_ERROR_CHECK(err_code);
+
+    // Enable BLE stack.
+    err_code = nrf_sdh_ble_enable(&ram_start);
+    APP_ERROR_CHECK(err_code);
+
+    // Register a handler for BLE events.
+    NRF_SDH_BLE_OBSERVER(m_ble_observer, APP_BLE_OBSERVER_PRIO, ble_evt_handler, NULL);
 }
 
 /**@brief Function for the Peer Manager initialization.
@@ -473,7 +554,7 @@ static void delete_bonds(void)
 {
     ret_code_t err_code;
 
-    NRF_LOG_INFO("Erase bonds!");
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Erase bonds!");
 
     err_code = pm_peers_delete();
     APP_ERROR_CHECK(err_code);
@@ -735,12 +816,16 @@ static void initialize(void)
     gatt_init();
     services_init();
     advertising_init();
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Advertising init complete\n");
     conn_params_init();
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Conn params complete\n");
     peer_manager_init();
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Peer manager complete\n");
     advertising_start(false);
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Advertising start complete\n");
 
-    // Register a handler for BLE events.
-    NRF_SDH_BLE_OBSERVER(m_ble_observer, APP_BLE_OBSERVER_PRIO, ble_evt_handler, NULL);
+    // // Register a handler for BLE events.
+    // NRF_SDH_BLE_OBSERVER(m_ble_observer, APP_BLE_OBSERVER_PRIO, ble_evt_handler, NULL);
 
     mesh_init();
 
