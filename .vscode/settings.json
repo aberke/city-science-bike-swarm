@@ -15,6 +15,6 @@
         "**/*.uvprojx": true,
         // "**/*.emProject": true,
         "**/*.mak": true,
-        "Archive/**/*": true,
+        // "Archive/**/*": true,
     },
 }

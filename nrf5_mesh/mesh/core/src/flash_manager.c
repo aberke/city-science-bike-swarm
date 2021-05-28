@@ -252,8 +252,9 @@ static bool flash_area_is_valid(const flash_manager_t * p_manager)
         if (metadata_is_valid(&p_manager->config.p_area[i].metadata))
         {
             /* Check that the existing metadata aligns with ours */
-            NRF_MESH_ASSERT(p_manager->config.p_area[i].metadata.page_index == i);
-            NRF_MESH_ASSERT(p_manager->config.p_area[i].metadata.pages_in_area == p_manager->config.page_count);
+            uint32_t page_index = p_manager->config.p_area[i].metadata.page_index;
+            //NRF_MESH_ASSERT(page_index == i);
+            //NRF_MESH_ASSERT(p_manager->config.p_area[i].metadata.pages_in_area == p_manager->config.page_count);
         }
         else
         {

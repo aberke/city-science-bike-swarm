@@ -420,7 +420,7 @@ static void on_adv_evt(ble_adv_evt_t ble_adv_evt)
     switch (ble_adv_evt)
     {
     case BLE_ADV_EVT_FAST:
-        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Fast advertising.");
+        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Fast advertising.\n");
         break;
 
     case BLE_ADV_EVT_IDLE:
@@ -444,12 +444,12 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
     switch (p_ble_evt->header.evt_id)
     {
     case BLE_GAP_EVT_DISCONNECTED:
-        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Disconnected.");
+        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Disconnected.\n");
         // LED indication will be changed when advertising starts.
         break;
 
     case BLE_GAP_EVT_CONNECTED:
-        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Connected.");
+        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Connected.\n");
         m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
         err_code = nrf_ble_qwr_conn_handle_assign(&m_qwr, m_conn_handle);
         APP_ERROR_CHECK(err_code);
@@ -457,7 +457,7 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
 
     case BLE_GAP_EVT_PHY_UPDATE_REQUEST:
     {
-        __LOG(LOG_SRC_APP, LOG_LEVEL_DBG1, "PHY update request.");
+        __LOG(LOG_SRC_APP, LOG_LEVEL_DBG1, "PHY update request.\n");
         ble_gap_phys_t const phys =
             {
                 .rx_phys = BLE_GAP_PHY_AUTO,
@@ -470,7 +470,7 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
 
     case BLE_GATTC_EVT_TIMEOUT:
         // Disconnect on GATT Client timeout event.
-        __LOG(LOG_SRC_APP, LOG_LEVEL_DBG1, "GATT Client Timeout.");
+        __LOG(LOG_SRC_APP, LOG_LEVEL_DBG1, "GATT Client Timeout.\n");
         err_code = sd_ble_gap_disconnect(p_ble_evt->evt.gattc_evt.conn_handle,
                                          BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
         APP_ERROR_CHECK(err_code);
@@ -478,7 +478,7 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
 
     case BLE_GATTS_EVT_TIMEOUT:
         // Disconnect on GATT Server timeout event.
-        __LOG(LOG_SRC_APP, LOG_LEVEL_DBG1, "GATT Server Timeout.");
+        __LOG(LOG_SRC_APP, LOG_LEVEL_DBG1, "GATT Server Timeout.\n");
         err_code = sd_ble_gap_disconnect(p_ble_evt->evt.gatts_evt.conn_handle,
                                          BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
         APP_ERROR_CHECK(err_code);
@@ -528,18 +528,18 @@ static void peer_manager_init(void)
     memset(&sec_param, 0, sizeof(ble_gap_sec_params_t));
 
     // Security parameters to be used for all security procedures.
-    sec_param.bond = SEC_PARAM_BOND;
-    sec_param.mitm = SEC_PARAM_MITM;
-    sec_param.lesc = SEC_PARAM_LESC;
-    sec_param.keypress = SEC_PARAM_KEYPRESS;
-    sec_param.io_caps = SEC_PARAM_IO_CAPABILITIES;
-    sec_param.oob = SEC_PARAM_OOB;
-    sec_param.min_key_size = SEC_PARAM_MIN_KEY_SIZE;
-    sec_param.max_key_size = SEC_PARAM_MAX_KEY_SIZE;
-    sec_param.kdist_own.enc = 1;
-    sec_param.kdist_own.id = 1;
-    sec_param.kdist_peer.enc = 1;
-    sec_param.kdist_peer.id = 1;
+    sec_param.bond = false;
+    sec_param.mitm = false;
+    sec_param.lesc = 0;
+    sec_param.keypress = 0;
+    sec_param.io_caps = BLE_GAP_IO_CAPS_NONE;
+    sec_param.oob = false;
+    sec_param.min_key_size = 7;
+    sec_param.max_key_size = 16;
+    sec_param.kdist_own.enc = 0;
+    sec_param.kdist_own.id = 0;
+    sec_param.kdist_peer.enc = 0;
+    sec_param.kdist_peer.id = 0;
 
     err_code = pm_sec_params_set(&sec_param);
     APP_ERROR_CHECK(err_code);

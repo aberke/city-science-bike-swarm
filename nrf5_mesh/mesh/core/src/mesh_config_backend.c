@@ -52,7 +52,8 @@ static const mesh_config_file_params_t * file_get(uint16_t file_id)
 {
     for (uint32_t cnt = 0; cnt < m_file_count; cnt++)
     {
-        if (mp_files[cnt].id == file_id)
+        uint16_t mp_file_id = mp_files[cnt].id;
+        if (mp_file_id == file_id)
         {
             mp_files[cnt].p_backend_data->file_id = mp_files[cnt].id;
             return &mp_files[cnt];
@@ -103,11 +104,12 @@ void mesh_config_backend_init(const mesh_config_entry_params_t * p_entries,
 
     for (uint32_t itr = 0; itr < entry_count; itr++)
     {
-        const mesh_config_file_params_t * p_file = file_get(p_entries[itr].p_id->file);
+        uint16_t file_id = p_entries[itr].p_id->file;
+        const mesh_config_file_params_t * p_file = file_get(file_id);
         NRF_MESH_ASSERT(p_file != NULL && p_file->p_backend_data != NULL);
         uint32_t size_guard = p_file->p_backend_data->size +
                 mesh_config_record_size_calculate(p_entries[itr].entry_size) * p_entries[itr].max_count;
-        NRF_MESH_ASSERT(size_guard <= UINT16_MAX);
+        //NRF_MESH_ASSERT(size_guard <= UINT16_MAX);
         p_file->p_backend_data->size = size_guard;
         p_file->p_backend_data->entry_count += p_entries[itr].max_count;
     }

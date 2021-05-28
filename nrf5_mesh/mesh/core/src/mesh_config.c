@@ -348,7 +348,9 @@ void mesh_config_init(void)
 
     entry_validation();
 #if PERSISTENT_STORAGE
-    mesh_config_backend_init(entry_params_get(0), CONFIG_ENTRY_COUNT, file_params_get(0), CONFIG_FILE_COUNT, backend_evt_handler);
+    const mesh_config_entry_params_t *entry = entry_params_get(0);
+    const mesh_config_file_params_t *file = file_params_get(0);
+    mesh_config_backend_init(entry, CONFIG_ENTRY_COUNT, file, CONFIG_FILE_COUNT, backend_evt_handler);
 #else
     (void)m_emergency_action;
 #endif
