@@ -102,7 +102,7 @@ typedef struct
     nrf_atomic_flag_t         log_skipping;
     nrf_atomic_flag_t         log_skipped;
     nrf_atomic_u32_t          log_dropped_cnt;
-} log_data_t; 
+} log_data_t;
 
 static log_data_t   m_log_data;
 
@@ -901,7 +901,7 @@ bool nrf_log_frontend_dequeue(void)
             nrf_log_backend_flush(p_backend);
             p_backend = p_backend->p_cb->p_next;
         }
-        //NRF_LOG_WARNING("Backends flushed");
+        NRF_LOG_WARNING("Backends flushed");
     }
 
     return buffer_is_empty() ? false : true;
