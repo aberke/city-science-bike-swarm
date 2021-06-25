@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
@@ -167,7 +167,7 @@
 <text x="22.51075" y="8.73125" size="1.016" layer="21" rot="R180">D</text>
 <text x="16.51" y="8.79475" size="1.016" layer="21" rot="R180">GND</text>
 <text x="18.0975" y="40.3225" size="1.778" layer="22" rot="MR0" align="center">[bike]swarm
-V8 5/24/2021
+V9 6/24/2021
 swarms.city</text>
 <circle x="38.2437" y="50.072" radius="1.6764" width="0.2032" layer="20"/>
 <circle x="-1.1263" y="3.3995" radius="1.6764" width="0.2032" layer="20"/>
