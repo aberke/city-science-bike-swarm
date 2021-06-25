@@ -1,53 +1,23 @@
 <!DOCTYPE CrossStudio_Session_File>
 <session>
  <Bookmarks/>
- <Breakpoints groups="Breakpoints" active_group="Breakpoints">
-  <BreakpointListItem trigger="" line="178" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="ble_softdevice_support.c" useHWbreakpoint="false"/>
-  <BreakpointListItem trigger="" line="54" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="ble_softdevice_support.c" useHWbreakpoint="false"/>
-  <BreakpointListItem trigger="" line="24" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="include/buttons.h" useHWbreakpoint="false"/>
-  <BreakpointListItem trigger="" line="82" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="src/leds.c" useHWbreakpoint="false"/>
-  <BreakpointListItem trigger="" line="87" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="../../../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/include/nrfx_timer.h" useHWbreakpoint="false"/>
-  <BreakpointListItem trigger="" line="396" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../../mesh/core/src/packet_buffer.c" useHWbreakpoint="false"/>
- </Breakpoints>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints"/>
  <ExecutionProfileWindow/>
  <FrameBufferWindow>
   <FrameBufferWindow bufferHeight="-1" addressSpace="" addressText="" bufferWidth="-1"/>
  </FrameBufferWindow>
- <Memory1>
-  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" addressOrder="0" columnsText="" refreshPeriod="0" name="beaconing_nrf52840_xxAA_s140_7.0.1" radix="16" sizeText="" addressText=""/>
- </Memory1>
- <Memory2>
-  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" addressOrder="0" columnsText="" refreshPeriod="0" name="beaconing_nrf52840_xxAA_s140_7.0.1" radix="16" sizeText="" addressText=""/>
- </Memory2>
- <Memory3>
-  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" addressOrder="0" columnsText="" refreshPeriod="0" name="beaconing_nrf52840_xxAA_s140_7.0.1" radix="16" sizeText="" addressText=""/>
- </Memory3>
- <Memory4>
-  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" addressOrder="0" columnsText="" refreshPeriod="0" name="beaconing_nrf52840_xxAA_s140_7.0.1" radix="16" sizeText="" addressText=""/>
- </Memory4>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
  <Project>
   <ProjectSessionItem path="beaconing_nrf52840_xxAA_s140_7.0.1"/>
   <ProjectSessionItem path="beaconing_nrf52840_xxAA_s140_7.0.1;beaconing_nrf52840_xxAA_s140_7.0.1"/>
-  <ProjectSessionItem path="beaconing_nrf52840_xxAA_s140_7.0.1;beaconing_nrf52840_xxAA_s140_7.0.1;Access"/>
-  <ProjectSessionItem path="beaconing_nrf52840_xxAA_s140_7.0.1;beaconing_nrf52840_xxAA_s140_7.0.1;Application"/>
-  <ProjectSessionItem path="beaconing_nrf52840_xxAA_s140_7.0.1;beaconing_nrf52840_xxAA_s140_7.0.1;Core"/>
-  <ProjectSessionItem path="beaconing_nrf52840_xxAA_s140_7.0.1;beaconing_nrf52840_xxAA_s140_7.0.1;nRF_Drivers"/>
-  <ProjectSessionItem path="beaconing_nrf52840_xxAA_s140_7.0.1;beaconing_nrf52840_xxAA_s140_7.0.1;nRF_Libraries"/>
-  <ProjectSessionItem path="beaconing_nrf52840_xxAA_s140_7.0.1;beaconing_nrf52840_xxAA_s140_7.0.1;nRF5 SDK"/>
-  <ProjectSessionItem path="beaconing_nrf52840_xxAA_s140_7.0.1;beaconing_nrf52840_xxAA_s140_7.0.1;Other"/>
  </Project>
- <Register1>
-  <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="beaconing_nrf52840_xxAA_s140_7.0.1" decimalNodes="" octalNodes="" unsignedNodes=""/>
- </Register1>
- <Register2>
-  <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="beaconing_nrf52840_xxAA_s140_7.0.1" decimalNodes="" octalNodes="" unsignedNodes=""/>
- </Register2>
- <Register3>
-  <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="beaconing_nrf52840_xxAA_s140_7.0.1" decimalNodes="" octalNodes="" unsignedNodes=""/>
- </Register3>
- <Register4>
-  <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="beaconing_nrf52840_xxAA_s140_7.0.1" decimalNodes="" octalNodes="" unsignedNodes=""/>
- </Register4>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
  <Threads>
   <ThreadsWindow showLists=""/>
  </Threads>
@@ -55,22 +25,7 @@
   <Trace enabled="Yes"/>
  </TraceWindow>
  <Watch1>
-  <Watches active="1" update="Never">
-   <Watchpoint expression="r_level" name="r_level" radix="10" linenumber="0" filename="../beaconing"/>
-   <Watchpoint expression="phase" name="phase" radix="10" linenumber="169" filename="src/neopixel.c"/>
-   <Watchpoint expression="multiplier" name="multiplier" radix="10" linenumber="0" filename="../beaconing"/>
-   <Watchpoint expression="i" name="i" radix="16" linenumber="0" filename="../beaconing"/>
-   <Watchpoint expression="g_level" name="g_level" radix="10" linenumber="0" filename="../beaconing"/>
-   <Watchpoint expression="b_level" name="b_level" radix="10" linenumber="0" filename="../beaconing"/>
-   <Watchpoint expression="data" name="data" radix="-1" linenumber="0" filename="../beaconing"/>
-   <Watchpoint expression="sendbuf" name="sendbuf" radix="-1" linenumber="0" filename="../beaconing"/>
-   <Watchpoint expression="bytearray" name="bytearray" radix="-1" linenumber="0" filename="../beaconing"/>
-   <Watchpoint expression="err_code" name="err_code" radix="-1" linenumber="0" filename="../beaconing"/>
-   <Watchpoint expression="app_buttons" name="app_buttons" radix="-1" linenumber="0" filename="../beaconing"/>
-   <Watchpoint expression="m_cb" name="m_cb" radix="-1" linenumber="0" filename="../beaconing"/>
-   <Watchpoint expression="p_buttons" name="p_buttons" radix="-1" linenumber="0" filename="../beaconing"/>
-   <Watchpoint expression="p_btn" name="p_btn" radix="-1" linenumber="0" filename="../beaconing"/>
-  </Watches>
+  <Watches active="1" update="Never"/>
  </Watch1>
  <Watch2>
   <Watches active="0" update="Never"/>
@@ -81,55 +36,6 @@
  <Watch4>
   <Watches active="0" update="Never"/>
  </Watch4>
- <Files>
-<<<<<<< HEAD
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="50" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/external/segger_rtt/SEGGER_RTT_Conf.h" selected="0" top="31" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="870" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="src/main.c" selected="0" top="839" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="301" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/components/libraries/balloc/nrf_balloc.c" selected="0" top="266" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="77" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../mesh/stack/src/mesh_stack.c" selected="0" top="195" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="343" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../mesh/core/src/nrf_mesh.c" selected="0" top="321" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="352" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../mesh/core/src/mesh_config.c" selected="0" top="320" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="98" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../mesh/core/src/mesh_config_backend.c" selected="1" top="63" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="54" useTextEdit="1" openedFrom="/Users/sclay/projects/bikeswarm/nrf5_mesh/mesh/core/src/mesh_config_backend.c" useBinaryEdit="0" left="0" path="../../mesh/core/api/nrf_mesh_assert.h" selected="0" top="34" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="903" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/components/libraries/log/src/nrf_log_frontend.c" selected="0" top="873" codecName="Default"/>
- </Files>
- <ARMCrossStudioWindow activeProject="beaconing_nrf52840_xxAA_s140_7.0.1" fileDialogDefaultFilter="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.hxx" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/app_error.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/app_error_handler_gcc.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/app_error_weak.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/app_util_platform.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/assertion_handler_weak.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/ble_softdevice_support.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/mesh_app_utils.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/mesh_provisionee.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/nrf_mesh_weak.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/nrf_sdh.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/nrf_sdh_ble.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/nrf_sdh_soc.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/nrf_section_iter.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/nrfx_i2s.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/ses_startup_nrf52840.s&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/ses_startup_nrf_common.s&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/simple_hal.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/src/main.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/src/neopixel.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/system_nrf52840.c&#xa;" fileDialogInitialDirectory="/Users/sclay/projects/bikeswarm/nRF5_SDK_16.0.0_98a08e2/components/ble/nrf_ble_qwr" debugSearchPath="" autoConnectCapabilities="3199"/>
-=======
-  <SessionOpenFile windowGroup="DockEditLeft" x="40" y="102" useTextEdit="1" openedFrom="/Users/rohitjoshi/Documents/Turn_Touch/swarm-master/nrf5_mesh/code/beaconing/src/main.c" useBinaryEdit="0" left="0" path="src/neopixel_SPI.c" selected="0" top="74" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="20" y="58" useTextEdit="1" openedFrom="/Users/rohitjoshi/Documents/Turn_Touch/swarm/nrf5_mesh/code/beaconing/src/leds.c" useBinaryEdit="0" left="0" path="src/neopixel.c" selected="0" top="89" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="87" useTextEdit="1" openedFrom="/Users/rohitjoshi/Documents/Turn_Touch/swarm-master/nrf5_mesh/code/beaconing/src/main.c" useBinaryEdit="0" left="0" path="src/leds.c" selected="0" top="76" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="6679" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="include/sdk_config.h" selected="0" top="6653" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="4" useTextEdit="1" openedFrom="/Users/rohitjoshi/Documents/Turn_Touch/swarm-master/nrf5_mesh/code/beaconing/src/neopixel_SPI.c" useBinaryEdit="0" left="0" path="include/neopixel_SPI.h" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="11" y="490" useTextEdit="1" openedFrom="/Users/rohitjoshi/Documents/Turn_Touch/swarm/nrf5_mesh/code/beaconing/src/neopixel_SPI.c" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_spi.h" selected="0" top="471" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="189" useTextEdit="1" openedFrom="/Users/rohitjoshi/Documents/Turn_Touch/swarm-master/nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_spi.h" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/include/nrfx_spim.h" selected="0" top="157" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="453" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="nrfx_spim.c" selected="0" top="437" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="57" y="371" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="src/main.c" selected="1" top="353" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="78" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="app_error_weak.c" selected="0" top="61" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="403" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../mesh/core/src/bearer_event.c" selected="0" top="386" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="85" useTextEdit="1" openedFrom="/Users/rohitjoshi/Documents/Turn_Touch/swarm/nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_spi.h" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/hal/nrf_spi.h" selected="0" top="66" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="12499" useTextEdit="1" openedFrom="/Users/rohitjoshi/Documents/Turn_Touch/swarm/nRF5_SDK_16.0.0_98a08e2/modules/nrfx/hal/nrf_spi.h" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/mdk/nrf52840_bitfields.h" selected="0" top="12491" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="552" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/hal/nrf_spim.h" selected="0" top="536" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="26" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="src/buttons.c" selected="0" top="9" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="23" y="23" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="include/buttons.h" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="23" y="47" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/components/libraries/bsp/bsp.h" selected="0" top="17" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="25" y="92" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/include/nrfx_timer.h" selected="0" top="53" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="304" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_timer.c" selected="0" top="283" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="35" y="336" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="10" path="../../../nRF5_SDK_16.0.0_98a08e2/components/libraries/timer/app_timer2.c" selected="0" top="311" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="61" y="75" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/components/libraries/timer/drv_rtc.h" selected="0" top="52" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="6" y="20" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../common/include/simple_hal.h" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="20" y="476" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/components/libraries/bsp/bsp.c" selected="0" top="475" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="5" y="275" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/components/libraries/button/app_button.c" selected="0" top="259" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="6" y="137" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/integration/nrfx/legacy/nrf_drv_uart.h" selected="0" top="112" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="18" y="674" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_uarte.c" selected="0" top="632" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="62" y="62" useTextEdit="1" openedFrom="/Users/sclay/projects/swarm/nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_uarte.c" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/soc/nrfx_irqs_nrf52840.h" selected="0" top="35" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="61" y="112" useTextEdit="1" openedFrom="/Users/sclay/projects/swarm/nrf5_mesh/code/beaconing/src/neopixel_SPI.c" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/components/libraries/log/nrf_log.h" selected="0" top="90" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="39" y="145" useTextEdit="1" openedFrom="/Users/sclay/projects/swarm/nRF5_SDK_16.0.0_98a08e2/components/libraries/log/nrf_log.h" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/components/libraries/log/src/nrf_log_internal.h" selected="0" top="117" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="280" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/drivers/src/nrfx_gpiote.c" selected="0" top="244" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="887" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/hal/nrf_gpio.h" selected="0" top="840" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="1684" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/components/toolchain/cmsis/include/core_cm4.h" selected="0" top="1660" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="418" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/hal/nrf_gpiote.h" selected="0" top="400" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="21" y="125" useTextEdit="1" openedFrom="/Users/sclay/projects/swarm/nrf5_mesh/code/beaconing/src/main.c" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/components/boards/boards.h" selected="0" top="134" codecName="Default"/>
- </Files>
- <ARMCrossStudioWindow activeProject="beaconing_nrf52840_xxAA_s140_7.0.1" fileDialogDefaultFilter="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.hxx" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/app_error.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/app_error_handler_gcc.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/app_error_weak.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/app_util_platform.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/assertion_handler_weak.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/ble_softdevice_support.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/mesh_app_utils.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/mesh_provisionee.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/nrf_mesh_weak.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/nrf_sdh.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/nrf_sdh_ble.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/nrf_sdh_soc.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/nrf_section_iter.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/nrfx_i2s.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/ses_startup_nrf52840.s&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/ses_startup_nrf_common.s&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/simple_hal.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/src/main.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/src/neopixel.c&#xa;&#xa;/Users/sclay/projects/swarm/nrf5_mesh/examples/beaconing/system_nrf52840.c&#xa;" fileDialogInitialDirectory="/Users/rohitjoshi/Documents/Turn_Touch/nRF5SDK160098a08e2/modules/nrfx/drivers/src/prs" debugSearchPath="" autoConnectCapabilities="3711"/>
->>>>>>> e9a3e932beb20ef73b95fd90a0e9e8e70abe7ae7
+ <Files/>
+ <ARMCrossStudioWindow activeProject="beaconing_nrf52840_xxAA_s140_7.0.1" fileDialogDefaultFilter="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.hxx" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
