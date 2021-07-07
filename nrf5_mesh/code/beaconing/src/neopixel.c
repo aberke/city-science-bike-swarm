@@ -42,7 +42,7 @@
 volatile bool neopixel_running = false;
 bool init = false;
 
-#define NLEDS 72
+#define NLEDS 144
 #define RESET_BITS 6
 #define I2S_BUFFER_SIZE 3 * NLEDS + RESET_BITS
 
@@ -151,15 +151,15 @@ void neopixel(int phase)
 {
     uint32_t err_code;
     static bool init = false;
-    bool neopixel = false;
-    bool high_current = true;
+    bool neopixel = true;
+
 
     if (init == false)
     {
         err_code = app_timer_create(&my_timer_id, APP_TIMER_MODE_REPEATED, timeout_handler);
         APP_ERROR_CHECK(err_code);
         //
-        err_code = app_timer_start(my_timer_id, APP_TIMER_TICKS(2), NULL);
+        err_code = app_timer_start(my_timer_id, APP_TIMER_TICKS(10), NULL);
         APP_ERROR_CHECK(err_code);
         init = true;
     }
@@ -172,23 +172,13 @@ void neopixel(int phase)
 
     if (neopixel == true)
     {
-        r_level = 255 * multiplier; // was 255
-        g_level = 120 * multiplier; //was 120
-        b_level = 35 * multiplier;  //was 35
+        r_level = 0 * multiplier; // was 255
+        g_level = 0 * multiplier; //was 120
+        b_level = 255 * multiplier;  //was 35
         set_led_data(r_level, g_level, b_level);
     }
 
-    else if (high_current == true)
-    {
-        //r_level = 255 * multiplier;// was 255
-        //g_level =  0 * multiplier; //was 120
-        //b_level =  60 * multiplier;  //was 35
 
-        r_level = 40; // was 255
-        g_level = 0;  //was 120
-        b_level = 0;  //was 35
-        set_led_data(g_level, r_level, b_level);
-    }
 
     if (neopixel_running == false)
     {

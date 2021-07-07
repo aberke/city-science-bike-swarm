@@ -100,8 +100,8 @@ void setup_spi()
 {
 
     nrf_drv_spi_config_t spi_config = NRF_DRV_SPI_DEFAULT_CONFIG;
-    spi_config.bit_order = NRF_DRV_SPI_BIT_ORDER_MSB_FIRST;
-    spi_config.frequency = 0x56000000UL;
+    spi_config.bit_order = NRF_DRV_SPI_BIT_ORDER_LSB_FIRST;
+    spi_config.frequency = 0x54000000UL;
     spi_config.ss_pin = SPI_SS_PIN;
     spi_config.miso_pin = SPI_MISO_PIN;
     spi_config.mosi_pin = 6;
@@ -129,13 +129,13 @@ void neopixel_SPI(int phase)
 
     multiply = (float)phase / (float)255;
 
-    multiply = 1;
+   // multiply = 1;
 
     for (x = 0; x < N_LEDS; x++)
     {
         led_data[x].r = 0 * multiply;   //red max 128?
-        led_data[x].g = 255 * multiply; //green
-        led_data[x].b = 0 * multiply;   //blue?
+        led_data[x].g = 0 * multiply; //green
+        led_data[x].b = 255 * multiply;   //blue?
     }
 
     j = 0;
@@ -145,7 +145,7 @@ void neopixel_SPI(int phase)
     // Send the new data to the LED string
     update_string(led_data, N_LEDS);
 
-    nrf_delay_us(50);
+    //nrf_delay_us(50);
 
     return;
 }
@@ -159,7 +159,7 @@ void update_string(color *data, uint16_t len)
     uint16_t i = 0;
     int16_t j = 0;
     uint8_t tmp = 0;
-    uint8_t sendbuf[8];
+    uint8_t sendbuf[17];
 
     len = len * 3;
     spi_xfer_done = false;
@@ -176,17 +176,21 @@ void update_string(color *data, uint16_t len)
     for (i = 0; i < len; i++)
     {
         tmp = bytearray[i];
-
+        int i=0;
         for (j = 7; j >= 0; j--)
         {
             spi_xfer_done = false;
+            
             if (tmp & (0x01 << j))
             {
                 // generate the sequence to represent a 'one' to the WS2811.
                 //	spi_send(SPI1, 0xFFF0);
-                uint8_t one = 0xFC;
+                uint8_t one = 0x3F;
 
-                sendbuf[j] = one;
+                sendbuf[i] = one;
+           //     sendbuf[i+1] = 0x00;
+                i++;
+              //  i++;
 
                 //0b1111 1111 1111 0000
             }
@@ -195,12 +199,17 @@ void update_string(color *data, uint16_t len)
                 // generate the sequence to represent a 'zero'.
                 //	spi_send(SPI1, 0xE000);
                 uint8_t zero = 0x03;
-                sendbuf[j] = zero;
-
+                sendbuf[i] = zero;
+                //sendbuf[i+1] = 0x00;
+                //i=i+2;
+                i++;
                 __NOP();
                 //0b1110 0000 0000 0000
             }
         }
+
+       
+  //      sendbuf[9] = 0x00;
 
         APP_ERROR_CHECK(nrf_drv_spi_transfer(&spi, sendbuf, 8, NULL, 0));
 

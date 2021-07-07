@@ -258,25 +258,28 @@ static void provisioning_complete_cb(void)
  */
 void bsp_evt_handler(bsp_event_t evt)
 {
-    uint32_t err_code;
-    static bsp_indication_t actual_state =  BSP_INDICATE_FIRST;         /**< Currently indicated state. */
-    static const char * indications_list[] = BSP_INDICATIONS_LIST;
-
     switch (evt)
     {
         case BSP_EVENT_KEY_0:
-            bsp_board_led_on(0);
+            bsp_board_led_invert(0);
             break;
 
         case BSP_EVENT_KEY_1:
-            bsp_board_led_on(3);
+            bsp_board_led_invert(1);
+            break;
+
+        case BSP_EVENT_KEY_2:
+            bsp_board_led_invert(2);
+            break;
+
+        case BSP_EVENT_KEY_3:
+            bsp_board_led_invert(3);
             break;
 
         default:
             return; // no implementation needed
     }
     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "BSP: %u\n", evt);
-    APP_ERROR_CHECK(err_code);
 }
 
 /**@brief Function for initializing bsp module.
@@ -380,10 +383,7 @@ int main(void)
 
     // ERROR_CHECK(app_timer_init());
 
-    // neopixel();
-
-    //   neopixel_SPI();
-    neopixel_SPI(1);
+    
 
     pwm_init();
     timer_initalize();

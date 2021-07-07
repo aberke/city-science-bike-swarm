@@ -12,8 +12,6 @@ long long unsigned addresses[6] = {0xF0F0F0F0F0, 0xF0F0F0F0AA, 0xF0F0F0F0BB, 0xF
 // Note: The LED_BUILTIN is connected to tx/rx so it requires
 // serial communication (monitor open) in order to work.
 // Using other LED instead
-#define LED1_PIN NRF_GPIO_PIN_MAP(0, 12)
-#define LED2_PIN NRF_GPIO_PIN_MAP(0, 8)
 
 #define lowPulse 10
 #define highPulse 255
@@ -107,8 +105,8 @@ void pwm_init(void)
         {
             .output_pins =
                 {
-                    LED1_PIN, // channel 0
-                    // LED2_PIN, // channel 3
+                    LED_1, // channel 0
+                    LED_2, // channel 3
                     LED_3,    // channel 1
                     LED_4,    // channel 2
                 },
@@ -123,7 +121,7 @@ void pwm_init(void)
 }
 
 // Sets pwm for 3 channels similar to arduino AnalogWrite function.
-void analogWrite(int OUTPUT_PIN, int pulse)
+void analogWrite(int pulse)
 {
 
     int duty_cycle = pulse / 2.55;
@@ -288,13 +286,13 @@ void pulseLightLinear(int phase)
 
 void light(int amplitude)
 {
-    // The nrf52-DK and Swarm boards have opposite of each other status LEDs
-    analogWrite(LED1_PIN, amplitude); // nrf52-DK
-    // analogWrite(LED2_PIN, amplitude); // nrf52-DK
-    //// analogWrite(LED1_PIN, 255 - amplitude); // Swarm boards
+    analogWrite(amplitude); // nrf52-DK
+    
+    neopixel_SPI(amplitude);
 
     __NOP();
-    //neopixel(amplitude); //(RJ)
+
+    neopixel(amplitude); //(RJ)
 }
 
 void printTime(int num)

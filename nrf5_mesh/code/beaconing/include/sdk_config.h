@@ -165,7 +165,7 @@
 // <4294967295=> Not connected 
 
 #ifndef SPI_MISO_PIN
-#define SPI_MISO_PIN 30
+#define SPI_MISO_PIN 8
 #endif
 
 // <o> SPI_MOSI_PIN  - Pin number
@@ -277,7 +277,7 @@
 // <4294967295=> Not connected 
 
 #ifndef SPI_SS_PIN
-#define SPI_SS_PIN 31
+#define SPI_SS_PIN 9
 #endif
 
 // <o> SPI_IRQ_PRIORITY  - Interrupt priority
@@ -294,7 +294,7 @@
 // <7=> 7 
 
 #ifndef SPI_IRQ_PRIORITY
-#define SPI_IRQ_PRIORITY 6
+#define SPI_IRQ_PRIORITY 3
 #endif
 
 //==========================================================
@@ -2884,7 +2884,7 @@
 // <7=> 7
 
 #ifndef I2S_CONFIG_IRQ_PRIORITY
-#define I2S_CONFIG_IRQ_PRIORITY 6
+#define I2S_CONFIG_IRQ_PRIORITY 2
 #endif
 
 // <e> I2S_CONFIG_LOG_ENABLED - Enables logging in the module.
@@ -4617,7 +4617,7 @@
 // <7=> 7
 
 #ifndef NRFX_SPIM_DEFAULT_CONFIG_IRQ_PRIORITY
-#define NRFX_SPIM_DEFAULT_CONFIG_IRQ_PRIORITY 6
+#define NRFX_SPIM_DEFAULT_CONFIG_IRQ_PRIORITY 3
 #endif
 
 // <e> NRFX_SPIM_CONFIG_LOG_ENABLED - Enables logging in the module.
@@ -4857,7 +4857,7 @@
 // <7=> 7
 
 #ifndef NRFX_SPI_DEFAULT_CONFIG_IRQ_PRIORITY
-#define NRFX_SPI_DEFAULT_CONFIG_IRQ_PRIORITY 6
+#define NRFX_SPI_DEFAULT_CONFIG_IRQ_PRIORITY 2
 #endif
 
 // <e> NRFX_SPI_CONFIG_LOG_ENABLED - Enables logging in the module.
@@ -6753,7 +6753,7 @@
 // <7=> 7
 
 #ifndef SPI_DEFAULT_CONFIG_IRQ_PRIORITY
-#define SPI_DEFAULT_CONFIG_IRQ_PRIORITY 6
+#define SPI_DEFAULT_CONFIG_IRQ_PRIORITY 2
 #endif
 
 // <o> NRF_SPI_DRV_MISO_PULLUP_CFG  - MISO PIN pull-up configuration.
