@@ -12715,11 +12715,11 @@ Source: Epson Toyocom FC-12M.pdf</description>
 </part>
 <part name="GND14" library="SparkFun" deviceset="GND" device=""/>
 <part name="P+5" library="SparkFun" deviceset="3.3V" device="" value="3.3V"/>
-<part name="J5" library="SparkFun-Connectors" deviceset="CONN_04" device="SMD2" package3d_urn="urn:adsk.eagle:package:38096/1"/>
-<part name="J2" library="SparkFun-Connectors" deviceset="CONN_06" device="SMD-1MM" package3d_urn="urn:adsk.eagle:package:26665780/2"/>
+<part name="J5" library="SparkFun-Connectors" deviceset="CONN_04" device="SMD2" package3d_urn="urn:adsk.eagle:package:38096/1" value="DNC"/>
+<part name="J2" library="SparkFun-Connectors" deviceset="CONN_06" device="SMD-1MM" package3d_urn="urn:adsk.eagle:package:26665780/2" value="DNC"/>
 <part name="P+8" library="SparkFun" deviceset="3.3V" device="" value="3.3V"/>
 <part name="GND15" library="SparkFun" deviceset="GND" device=""/>
-<part name="S4" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" deviceset="SWITCH-SPDT" device="-PTH-11.6X4.0MM" package3d_urn="urn:adsk.eagle:package:40177/1"/>
+<part name="S4" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" deviceset="SWITCH-SPDT" device="-PTH-11.6X4.0MM" package3d_urn="urn:adsk.eagle:package:40177/1" value="DNC"/>
 <part name="P+15" library="SparkFun" deviceset="3.3V" device="" value="3.3V"/>
 <part name="P+18" library="SparkFun" deviceset="3.3V" device="" value="3.3V"/>
 <part name="TP6" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPS" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>

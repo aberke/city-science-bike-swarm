@@ -1997,19 +1997,19 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="POPULARITY" value="2" x="25.7175" y="14.2875" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="26.7605" y="14.2875" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center"/>
 </element>
-<element name="J5" library="SparkFun-Connectors" package="1X04_1MM_RA" package3d_urn="urn:adsk.eagle:package:38096/1" value="" x="28.2575" y="24.4475" smashed="yes" rot="MR270">
+<element name="J5" library="SparkFun-Connectors" package="1X04_1MM_RA" package3d_urn="urn:adsk.eagle:package:38096/1" value="DNC" x="28.2575" y="24.4475" smashed="yes" rot="MR270">
 <attribute name="NAME" x="27.2415" y="25.527" size="0.6096" layer="26" font="vector" ratio="20" rot="MR270"/>
 <attribute name="PROD_ID" value="CONN-10310" x="28.2575" y="24.4475" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="SF_ID" value="PRT-10208" x="28.2575" y="24.4475" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="VALUE" x="31.5595" y="26.0985" size="0.6096" layer="28" font="vector" ratio="20" rot="MR270"/>
 </element>
-<element name="J2" library="SparkFun-Connectors" package="1X06-1MM" package3d_urn="urn:adsk.eagle:package:26665780/2" value="" x="16.8275" y="23.495" smashed="yes" rot="MR90">
+<element name="J2" library="SparkFun-Connectors" package="1X06-1MM" package3d_urn="urn:adsk.eagle:package:26665780/2" value="DNC" x="16.8275" y="23.495" smashed="yes" rot="MR90">
 <attribute name="NAME" x="16.4465" y="22.098" size="0.6096" layer="26" font="vector" ratio="20" rot="MR90"/>
 <attribute name="PROD_ID" value="CONN-08249" x="16.8275" y="23.495" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="SF_ID" value="GPS-00579" x="16.8275" y="23.495" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="VALUE" x="15.5575" y="21.844" size="0.6096" layer="28" font="vector" ratio="20" rot="MR90"/>
 </element>
-<element name="S4" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" package="SWITCH_SPDT_PTH_11.6X4.0MM" package3d_urn="urn:adsk.eagle:package:40177/1" value="" x="22.86" y="46.355" smashed="yes" rot="R90">
+<element name="S4" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" package="SWITCH_SPDT_PTH_11.6X4.0MM" package3d_urn="urn:adsk.eagle:package:40177/1" value="DNC" x="22.86" y="46.355" smashed="yes" rot="R90">
 <attribute name="NAME" x="22.86" y="43.942" size="0.6096" layer="25" font="vector" ratio="20" rot="R180" align="bottom-center"/>
 <attribute name="PROD_ID" value="SWCH-08261" x="22.86" y="46.355" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="SF_SKU" value="COM-00102" x="22.86" y="46.355" size="1.778" layer="27" rot="R90" display="off"/>
