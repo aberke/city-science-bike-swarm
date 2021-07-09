@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
@@ -12528,7 +12528,7 @@ Source: Epson Toyocom FC-12M.pdf</description>
 <attribute name="DIGIKEY" value="311-330HRTR-ND"/>
 </part>
 <part name="D3" library="SparkFun" deviceset="LED" device="0603" value="Green">
-<attribute name="DIGIKEY" value="754-1116-2-ND"/>
+<attribute name="DIGIKEY" value="754-1116-1-ND"/>
 </part>
 <part name="P+4" library="SparkFun" deviceset="3.3V" device="" value="VCC"/>
 <part name="GND2" library="SparkFun" deviceset="GND" device=""/>
@@ -12536,10 +12536,10 @@ Source: Epson Toyocom FC-12M.pdf</description>
 <attribute name="DIGIKEY" value="311-330HRTR-ND"/>
 </part>
 <part name="D1" library="SparkFun" deviceset="LED" device="0603" value="Yellow">
-<attribute name="DIGIKEY" value="160-1184-1-ND"/>
+<attribute name="DIGIKEY" value="350-4349-2-ND"/>
 </part>
 <part name="POWER_IN" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="JST_2MM_MALE" device="" package3d_urn="urn:adsk.eagle:package:38042/1">
-<attribute name="DIGIKEY" value="A100080CT-ND"/>
+<attribute name="DIGIKEY" value="732-2711-2-ND"/>
 </part>
 <part name="S1" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" deviceset="MOMENTARY-SWITCH-SPST" device="-SMD-5.2MM" package3d_urn="urn:adsk.eagle:package:40167/1" value="SPST-SMD-5.2MM">
 <attribute name="DIGIKEY" value="CKN12222-1-ND"/>
@@ -12568,7 +12568,7 @@ Source: Epson Toyocom FC-12M.pdf</description>
 <part name="GND1" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="GND20" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="R5" library="SparkFun-Resistors" library_urn="urn:adsk.eagle:library:532" deviceset="1KOHM" device="-0603-1/10W-1%" package3d_urn="urn:adsk.eagle:package:39650/1" value="1k">
-<attribute name="DIGIKEY" value="RMCF0603FG1K00"/>
+<attribute name="DIGIKEY" value="RMCF0603FG1K00CT-ND "/>
 </part>
 <part name="GND3" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="RPROG" library="SparkFun-Resistors" library_urn="urn:adsk.eagle:library:532" deviceset="2.0KOHM" device="-0603-1/10W-5%" package3d_urn="urn:adsk.eagle:package:39650/1" value="2.0k">
@@ -12587,10 +12587,10 @@ Source: Epson Toyocom FC-12M.pdf</description>
 <part name="GND25" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND26" library="SparkFun" deviceset="GND" device=""/>
 <part name="D7" library="SparkFun-DiscreteSemi" library_urn="urn:adsk.eagle:library:514" deviceset="DIODE-SCHOTTKY" device="-B340A" package3d_urn="urn:adsk.eagle:package:38443/1" value="3A/40V/500mV">
-<attribute name="DIGIKEY" value="MBRA340T3GOSTR-ND"/>
+<attribute name="DIGIKEY" value="B240AE-13DITR-ND"/>
 </part>
 <part name="D8" library="SparkFun-DiscreteSemi" library_urn="urn:adsk.eagle:library:514" deviceset="DIODE-SCHOTTKY" device="-B340A" package3d_urn="urn:adsk.eagle:package:38443/1" value="3A/40V/500mV">
-<attribute name="DIGIKEY" value="MBRA340T3GOSTR-ND"/>
+<attribute name="DIGIKEY" value="B240AE-13DITR-ND"/>
 </part>
 <part name="C13" library="SparkFun-Capacitors" library_urn="urn:adsk.eagle:library:510" deviceset="22UF" device="-0805-6.3V-20%" package3d_urn="urn:adsk.eagle:package:37429/1" value="22uF">
 <attribute name="DIGIKEY" value="490-10511-1-ND"/>
@@ -12615,6 +12615,7 @@ Source: Epson Toyocom FC-12M.pdf</description>
 </part>
 <part name="U8" library="TPS61235PRWLR" deviceset="TPS61235PRWLR" device="" value="TPS61235P">
 <attribute name="DIGIKEY" value="296-47376-2-ND"/>
+<attribute name="MOUSER" value="595-TPS61235PRWLR"/>
 </part>
 <part name="C1" library="SparkFun-Capacitors" library_urn="urn:adsk.eagle:library:510" deviceset="22UF" device="-0805-6.3V-20%" package3d_urn="urn:adsk.eagle:package:37429/1" value="22uF">
 <attribute name="DIGIKEY" value="490-10511-1-ND"/>
@@ -12641,10 +12642,10 @@ Source: Epson Toyocom FC-12M.pdf</description>
 <attribute name="DIGIKEY" value="399-C0805C220K5HAC7800CT-ND"/>
 </part>
 <part name="R11" library="SparkFun" deviceset="RESISTOR" device="0603-RES" value="22">
-<attribute name="DIGIKEY" value="A103067TR-ND "/>
+<attribute name="DIGIKEY" value="311-22.0HRTR-ND"/>
 </part>
 <part name="R15" library="SparkFun" deviceset="RESISTOR" device="0603-RES" value="22">
-<attribute name="DIGIKEY" value="A103067TR-ND "/>
+<attribute name="DIGIKEY" value="311-22.0HRTR-ND"/>
 </part>
 <part name="C18" library="SparkFun-Capacitors" library_urn="urn:adsk.eagle:library:510" deviceset="4.7UF" device="0603" package3d_urn="urn:adsk.eagle:package:37414/1" value="4.7uF">
 <attribute name="DIGIKEY" value="399-3482-1-ND"/>
@@ -12655,7 +12656,7 @@ Source: Epson Toyocom FC-12M.pdf</description>
 <part name="GND29" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="GND30" library="SparkFun" deviceset="GND" device=""/>
 <part name="Q2" library="transistor-small-signal" library_urn="urn:adsk.eagle:library:401" deviceset="BSS84" device="" package3d_urn="urn:adsk.eagle:package:28738/2">
-<attribute name="DIGIKEY" value="DMP2120U-7DITR-ND"/>
+<attribute name="DIGIKEY" value="TSM2305CXRFGTR-ND"/>
 </part>
 <part name="C20" library="SparkFun-Capacitors" library_urn="urn:adsk.eagle:library:510" deviceset="22UF" device="-0805-6.3V-20%" package3d_urn="urn:adsk.eagle:package:37429/1" value="22uF">
 <attribute name="DIGIKEY" value="490-10511-1-ND"/>
@@ -12663,13 +12664,14 @@ Source: Epson Toyocom FC-12M.pdf</description>
 <part name="GND34" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND35" library="SparkFun" deviceset="GND" device=""/>
 <part name="RN1" library="resistor-dil" library_urn="urn:adsk.eagle:library:342" deviceset="4R-N" device="EXB38V" package3d_urn="urn:adsk.eagle:package:24923/1" value="100K">
-<attribute name="DIGIKEY" value="YC164J-100KTR-ND"/>
+<attribute name="DIGIKEY" value="YC164J-100KCT-ND"/>
 </part>
 <part name="D10" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="CGRM400*-G" device="" package3d_urn="urn:adsk.eagle:package:43457/2" technology="4">
-<attribute name="DIGIKEY" value="SM5817PL-TPMSCT-ND‎"/>
+<attribute name="DIGIKEY" value="MBR120LSFT3GOSTR-ND"/>
 </part>
 <part name="U4" library="SparkFun-IC-Power" library_urn="urn:adsk.eagle:library:526" deviceset="V_REG_MIC5205" device="3.3V" package3d_urn="urn:adsk.eagle:package:39060/1" value="MIC5317 (MIC5205)">
 <attribute name="DIGIKEY" value="MIC5317-3.3YM5-TR-ND"/>
+<attribute name="MOUSER" value="998-MIC5317-3.3YM5TR"/>
 </part>
 <part name="GND6" library="SparkFun" deviceset="GND" device=""/>
 <part name="S2" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" deviceset="MOMENTARY-SWITCH-SPST-2" device="-SMD-4.6X2.8MM" package3d_urn="urn:adsk.eagle:package:40176/1">
@@ -12715,11 +12717,11 @@ Source: Epson Toyocom FC-12M.pdf</description>
 </part>
 <part name="GND14" library="SparkFun" deviceset="GND" device=""/>
 <part name="P+5" library="SparkFun" deviceset="3.3V" device="" value="3.3V"/>
-<part name="J5" library="SparkFun-Connectors" deviceset="CONN_04" device="SMD2" package3d_urn="urn:adsk.eagle:package:38096/1" value="DNC"/>
-<part name="J2" library="SparkFun-Connectors" deviceset="CONN_06" device="SMD-1MM" package3d_urn="urn:adsk.eagle:package:26665780/2" value="DNC"/>
+<part name="J5" library="SparkFun-Connectors" deviceset="CONN_04" device="SMD2" package3d_urn="urn:adsk.eagle:package:38096/1"/>
+<part name="J2" library="SparkFun-Connectors" deviceset="CONN_06" device="SMD-1MM" package3d_urn="urn:adsk.eagle:package:26665780/2"/>
 <part name="P+8" library="SparkFun" deviceset="3.3V" device="" value="3.3V"/>
 <part name="GND15" library="SparkFun" deviceset="GND" device=""/>
-<part name="S4" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" deviceset="SWITCH-SPDT" device="-PTH-11.6X4.0MM" package3d_urn="urn:adsk.eagle:package:40177/1" value="DNC"/>
+<part name="S4" library="SparkFun-Switches" library_urn="urn:adsk.eagle:library:535" deviceset="SWITCH-SPDT" device="-PTH-11.6X4.0MM" package3d_urn="urn:adsk.eagle:package:40177/1"/>
 <part name="P+15" library="SparkFun" deviceset="3.3V" device="" value="3.3V"/>
 <part name="P+18" library="SparkFun" deviceset="3.3V" device="" value="3.3V"/>
 <part name="TP6" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPS" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
@@ -12991,6 +12993,7 @@ Output is to 3V3 leds</text>
 <attribute name="NAME" x="314.9403" y="97.3031" size="1.272459375" layer="95"/>
 <attribute name="VALUE" x="314.6731" y="74.1295" size="1.274" layer="96"/>
 <attribute name="DIGIKEY" x="325.12" y="86.36" size="1.778" layer="96" display="off"/>
+<attribute name="MOUSER" x="325.12" y="86.36" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="C1" gate="G$1" x="269.24" y="76.2" smashed="yes">
 <attribute name="NAME" x="270.764" y="79.121" size="1.778" layer="95" font="vector"/>
@@ -13103,6 +13106,7 @@ Output is to 3V3 leds</text>
 <attribute name="NAME" x="317.5" y="33.274" size="1.778" layer="95" font="vector"/>
 <attribute name="VALUE" x="317.5" y="17.272" size="1.778" layer="96" font="vector" align="top-left"/>
 <attribute name="DIGIKEY" x="325.12" y="25.4" size="1.778" layer="96" display="off"/>
+<attribute name="MOUSER" x="325.12" y="25.4" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="GND6" gate="1" x="312.42" y="10.16" smashed="yes">
 <attribute name="VALUE" x="309.88" y="7.62" size="1.778" layer="96"/>
