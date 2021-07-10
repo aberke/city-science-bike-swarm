@@ -40,7 +40,7 @@
       <file file_name="assertion_handler_weak.c" />
       <file file_name="include/sdk_config.h" />
       <file file_name="src/buttons.c">
-        <configuration Name="Debug" build_exclude_from_build="Yes" />
+        <configuration Name="Debug" build_exclude_from_build="No" />
       </file>
       <file file_name="src/leds.c" />
       <file file_name="src/led_softblink.c" />

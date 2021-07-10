@@ -54,6 +54,7 @@
 #include "example_common.h"
 #include "nrf_mesh_configure.h"
 #include "ad_type_filter.h"
+#include "buttons.h"
 #include "leds.h"
 #include "neopixel.h"
 #include "neopixel_SPI.h"
@@ -98,10 +99,10 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
 
     // sprintf(msg, "%02x", p_rx_data->p_payload);
     uint8_t *word = "SWARM";
-    // printf("%s", p_rx_data->p_payload);
+    //printf("Rx_cb: %s\n", p_rx_data->p_payload);
     if (strstr(p_rx_data->p_payload, word) != NULL)
     {
-        //    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Target Pack RCV\n");
+        // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Target Pack RCV\n");
 
         (void)sprintf(msg, "RX [@%u]: RSSI: %3d ADV TYPE: %x ADDR: [%02x:%02x:%02x:%02x:%02x:%02x]",
                       p_rx_data->p_metadata->params.scanner.timestamp,
@@ -113,19 +114,23 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
                       p_rx_data->p_metadata->params.scanner.adv_addr.addr[3],
                       p_rx_data->p_metadata->params.scanner.adv_addr.addr[4],
                       p_rx_data->p_metadata->params.scanner.adv_addr.addr[5]);
-        __LOG_XB(LOG_SRC_APP, LOG_LEVEL_INFO, msg, p_rx_data->p_payload, p_rx_data->length);
+        //__LOG_XB(LOG_SRC_APP, LOG_LEVEL_INFO, msg, p_rx_data->p_payload, p_rx_data->length);
 
         unsigned long int rxTimeAlive = 0;
 
-        rxTimeAlive = ((p_rx_data->p_payload[7 + 0] << 24) + (p_rx_data->p_payload[7 + 1] << 16) + (p_rx_data->p_payload[7 + 2] << 8) + (p_rx_data->p_payload[7 + 3]));
-        //  printf("rxtimealive: %l ",rxTimeAlive);
+        rxTimeAlive = ((p_rx_data->p_payload[7 + 0] << 8) + (p_rx_data->p_payload[7 + 1]));
         //   __NOP();
         if (rxTimeAlive > timealive)
         {
 
-            sprintf(msg, " ---> RX %d > my timealive %d\n", rxTimeAlive, timealive);
+            sprintf(msg, " ---> Older node found: %d > me: %d\n", rxTimeAlive, timealive);
+            timealive = rxTimeAlive;
             __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, msg);
             setPhase(0);
+        }
+        else
+        {
+            __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> I'm older, ignoring: %d (me: %d)\n", rxTimeAlive, timealive);
         }
     }
 
@@ -137,38 +142,6 @@ static void adv_init(void)
     advertiser_instance_init(&m_advertiser, NULL, m_adv_buffer, ADVERTISER_BUFFER_SIZE);
 }
 
-static void adv_start(void)
-{
-    /* Let scanner accept Complete Local Name AD Type. */
-    bearer_adtype_add(BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME);
-
-    advertiser_enable(&m_advertiser);
-    static const uint8_t adv_data[] =
-        {
-            0x06,                                /* AD data length (including type, but not itself) */
-            BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME, /* AD data type (Complete local name) */
-            'S',                                 /* AD data payload (Name of device) */
-            'W',
-            'A',
-            'R',
-            'M',
-        };
-
-    /* Allocate packet */
-    adv_packet_t *p_packet = advertiser_packet_alloc(&m_advertiser, sizeof(adv_data));
-    if (p_packet)
-    {
-        /* Construct packet contents */
-        memcpy(p_packet->packet.payload, adv_data, sizeof(adv_data));
-        /* Repeat forever */
-        p_packet->config.repeats = 0x01;
-
-        advertiser_packet_send(&m_advertiser, p_packet);
-    }
-
-    //   advertiser_disable(&m_advertiser);
-}
-
 static void pack_send(void)
 {
 
@@ -176,19 +149,20 @@ static void pack_send(void)
 
     /* Let scanner accept Complete Local Name AD Type. */
     bearer_adtype_add(BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME);
+    advertiser_enable(&m_advertiser);
     advertiser_flush(&m_advertiser);
     //  advertiser_enable(&m_advertiser);
     uint8_t adv_data[] =
         {
-            0x06 + 0x04,                         /* AD data length (including type, but not itself) 6 bytes plus sie of the long */
+            0x06 + 0x02,                         /* AD data length (including type, but not itself) 6 bytes plus sie of the long */
             BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME, /* AD data type (Complete local name) */
             'S',                                 /* AD data payload (Name of device) */
             'W',
             'A',
             'R',
             'M',
-            (int)((timealive >> 8) & 0xFF),
-            (int)((timealive & 0xFF)),
+            (uint8_t)((timealive >> 8) & 0xFF),
+            (uint8_t)((timealive & 0xFF)),
         };
 
     /* Allocate packet */
@@ -201,7 +175,7 @@ static void pack_send(void)
         p_packet->config.repeats = 0x01;
 
         advertiser_packet_send(&m_advertiser, p_packet);
-        //    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> PHASE AT ZERO packet sent  \n" );
+        //__LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> PHASE AT ZERO packet sent  \n");
     }
     //   __NOP();
     //    advertiser_disable(&m_advertiser);
@@ -251,45 +225,6 @@ static void provisioning_complete_cb(void)
     hal_led_blink_stop();
     hal_led_mask_set(LEDS_MASK, LED_MASK_STATE_OFF);
     hal_led_blink_ms(LEDS_MASK, LED_BLINK_INTERVAL_MS, LED_BLINK_CNT_PROV);
-}
-
-
-/**@brief Function for handling bsp events.
- */
-void bsp_evt_handler(bsp_event_t evt)
-{
-    switch (evt)
-    {
-        case BSP_EVENT_KEY_0:
-            bsp_board_led_invert(0);
-            break;
-
-        case BSP_EVENT_KEY_1:
-            bsp_board_led_invert(1);
-            break;
-
-        case BSP_EVENT_KEY_2:
-            bsp_board_led_invert(2);
-            break;
-
-        case BSP_EVENT_KEY_3:
-            bsp_board_led_invert(3);
-            break;
-
-        default:
-            return; // no implementation needed
-    }
-    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "BSP: %u\n", evt);
-}
-
-/**@brief Function for initializing bsp module.
- */
-void bsp_configuration()
-{
-    uint32_t err_code;
-
-    err_code = bsp_init(BSP_INIT_LEDS | BSP_INIT_BUTTONS, bsp_evt_handler);
-    APP_ERROR_CHECK(err_code);
 }
 
 static void mesh_init(void)
@@ -364,7 +299,7 @@ static void start(void)
     /* Start advertising own beacon */
     /* Note: If application wants to start beacons at later time, adv_start() API must be called
      * from the same IRQ priority context same as that of the Mesh Stack. */
-    adv_start();
+    pack_send();
 
     mesh_app_uuid_print(nrf_mesh_configure_device_uuid_get());
 
@@ -383,8 +318,6 @@ int main(void)
 
     // ERROR_CHECK(app_timer_init());
 
-    
-
     pwm_init();
     timer_initalize();
 
@@ -400,9 +333,8 @@ int main(void)
         int y = currentPhase();
         if (currentPhase() > 2080 && currentPhase() < 2100)
         {
-            // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> PHASE AT ZERO  \n" );
+            //__LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> PHASE AT ZERO  \n");
             pack_send();
-            //adv_start();
         }
 
         //(void)sd_app_evt_wait();

@@ -106,7 +106,7 @@ void pwm_init(void)
             .output_pins =
                 {
                     LED_1, // channel 0
-                    LED_2, // channel 3
+                    // LED_2, // channel 3
                     LED_3,    // channel 1
                     LED_4,    // channel 2
                 },
@@ -133,14 +133,14 @@ void analogWrite(int pulse)
         seq_values->channel_0 = 100;
         seq_values->channel_1 = 100;
         seq_values->channel_2 = 100;
-        seq_values->channel_3 = 100;
+        // seq_values->channel_3 = 100;
     }
     else
     {
         seq_values->channel_0 = duty_cycle;
         seq_values->channel_1 = duty_cycle;
         seq_values->channel_2 = duty_cycle;
-        seq_values->channel_3 = duty_cycle;
+        // seq_values->channel_3 = duty_cycle;
     }
 
     nrf_drv_pwm_simple_playback(&m_pwm0, &seq, 1, NRF_DRV_PWM_FLAG_LOOP);
