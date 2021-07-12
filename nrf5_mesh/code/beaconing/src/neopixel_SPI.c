@@ -53,17 +53,10 @@
 #include "log.h"
 #include <string.h>
 #include "neopixel_SPI.h"
+#include "buttons.h"
 
 #define N_LEDS 1
 
-// Single pixel RGB data structure. Make an array out of this to store RGB data for a string.
-typedef struct
-{
-
-    uint8_t r;
-    uint8_t g;
-    uint8_t b;
-} color;
 
 void update_string(color *data, uint16_t len);
 
@@ -122,6 +115,7 @@ void neopixel_SPI(int phase)
 
     color led_data[N_LEDS];
     color scratch[N_LEDS];
+    btn_color_t current_color = btn_current_color();
 
     //union leds
 
@@ -133,9 +127,9 @@ void neopixel_SPI(int phase)
 
     for (x = 0; x < N_LEDS; x++)
     {
-        led_data[x].r = 0 * multiply;   //red max 128?
-        led_data[x].g = 0 * multiply; //green
-        led_data[x].b = 255 * multiply;   //blue?
+        led_data[x].r = current_color.r * multiply;   //red max 128?
+        led_data[x].g = current_color.g * multiply; //green
+        led_data[x].b = current_color.b * multiply;   //blue?
     }
 
     j = 0;

@@ -27,8 +27,20 @@ void bsp_evt_handler(bsp_event_t evt)
             return; // no implementation needed
     }
     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "BSP: %u\n", evt);
+
+    advance_color_pattern();
 }
 
+void advance_color_pattern() {
+    uint8_t next_color_pattern = (selected_color_pattern + 1) % COLOR_PATTERNS_COUNT;
+
+    selected_color_pattern = next_color_pattern;
+    m_current_color = color_patterns[selected_color_pattern];
+}
+
+btn_color_t btn_current_color() {
+    return m_current_color;
+}
 /**@brief Function for initializing bsp module.
  */
 void bsp_configuration()
@@ -37,6 +49,8 @@ void bsp_configuration()
 
     err_code = bsp_init(BSP_INIT_LEDS | BSP_INIT_BUTTONS, bsp_evt_handler);
     APP_ERROR_CHECK(err_code);
+
+    m_current_color = color_patterns[selected_color_pattern];
 }
 
 void button_handler(uint8_t pin_no, uint8_t button_action)

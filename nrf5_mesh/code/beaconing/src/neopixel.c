@@ -35,6 +35,7 @@
 #include "nrfx_i2s.h"
 #include "neopixel.h"
 #include "app_timer.h"
+#include "buttons.h"
 
 //volatile uint8_t g_demo_mode = 0;
 //volatile bool g_i2s_start = true;
@@ -169,12 +170,13 @@ void neopixel(int phase)
     uint8_t r_level; // was 255
     uint8_t g_level; //was 120
     uint8_t b_level; //was 35
+    btn_color_t current_color = btn_current_color();
 
     if (neopixel == true)
     {
-        r_level = 0 * multiplier; // was 255
-        g_level = 0 * multiplier; //was 120
-        b_level = 255 * multiplier;  //was 35
+        r_level = current_color.r * multiplier; // was 255
+        g_level = current_color.g * multiplier; //was 120
+        b_level = current_color.b * multiplier;  //was 35
         set_led_data(r_level, g_level, b_level);
     }
 
