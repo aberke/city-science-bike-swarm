@@ -58,6 +58,7 @@
 #include "leds.h"
 #include "neopixel.h"
 #include "neopixel_SPI.h"
+#include "swarm_state.h"
 
 #if defined(NRF51) && defined(NRF_MESH_STACK_DEPTH)
 #include "stack_depth.h"
@@ -80,16 +81,8 @@ static advertiser_t m_advertiser;
 
 static uint8_t m_adv_buffer[ADVERTISER_BUFFER_SIZE];
 static bool m_device_provisioned;
-unsigned long int timealive = 0;
 
 advertiser_tx_complete_cb_t tx_complete_cb;
-
-APP_TIMER_DEF(mytimealive);
-
-static void timealive_handler(void *p_context)
-{
-    timealive = timealive + 1;
-}
 
 static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
 {
@@ -121,19 +114,19 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
                       payload_hex);
         __LOG_XB(LOG_SRC_APP, LOG_LEVEL_INFO, msg, p_rx_data->p_payload, p_rx_data->length);
 
-        unsigned long int rxTimeAlive = 0;
+        unsigned long rxTimeAlive = 0;
         rxTimeAlive = ((p_rx_data->p_payload[7 + 0] << 8) + (p_rx_data->p_payload[7 + 1]));
 
         btn_color_t remote_color = {p_rx_data->p_payload[7 + 2],
                                     p_rx_data->p_payload[7 + 3],
                                     p_rx_data->p_payload[7 + 4]};
-
+        unsigned long timealive = timealive_duration();
         if (rxTimeAlive > timealive)
         {
             sprintf(msg, " ---> Older node found: %d > me: %d\n", rxTimeAlive, timealive);
             __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, msg);
             
-            timealive = rxTimeAlive;
+            set_updated_timealive(rxTimeAlive);
             
             set_phase(0);
             set_next_color(remote_color);
@@ -155,8 +148,7 @@ static void adv_init(void)
 
 static void pack_send(void)
 {
-
-    //unsigned long timealive = millis();
+    unsigned long timealive = timealive_duration();
 
     /* Let scanner accept Complete Local Name AD Type. */
     bearer_adtype_add(BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME);
@@ -317,6 +309,7 @@ static void start(void)
      * from the same IRQ priority context same as that of the Mesh Stack. */
     pack_send();
 
+
     mesh_app_uuid_print(nrf_mesh_configure_device_uuid_get());
 
     ERROR_CHECK(mesh_stack_start());
@@ -336,11 +329,7 @@ int main(void)
 
     pwm_init();
     timer_initalize();
-
-    ret_code_t err_code = app_timer_create(&mytimealive, APP_TIMER_MODE_REPEATED, timealive_handler);
-    APP_ERROR_CHECK(err_code);
-    err_code = app_timer_start(mytimealive, APP_TIMER_TICKS(1000), NULL);
-    APP_ERROR_CHECK(err_code);
+    swarm_state_init();
 
     for (;;)
     {

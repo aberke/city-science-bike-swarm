@@ -1,4 +1,5 @@
 #include "buttons.h"
+#include "swarm_state.h"
 
 /**@brief Function for handling bsp events.
  */
@@ -47,6 +48,8 @@ void advance_color_pattern()
     selected_color_pattern = next_color_pattern;
     m_next_color = color_patterns[selected_color_pattern];
     m_current_color = m_next_color;
+
+    jump_timealive(5);
 }
 
 btn_color_t btn_current_color()
