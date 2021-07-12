@@ -35,8 +35,8 @@ void swarm_leds_loop(void);
 void swarm_leds_restart(void);
 void light(int amplitude);
 void ledloop();
-int currentPhase(void);
-void setPhase (int phasecnt);
+int current_phase(void);
+void set_phase (int phasecnt);
 unsigned long millis();
 
 

@@ -357,12 +357,12 @@ void ledloop()
     //  }
 }
 
-int currentPhase(void)
+int current_phase(void)
 {
     return phase;
 }
 
-void setPhase(int phasecnt)
+void set_phase(int phasecnt)
 {
 
     phase = phasecnt;

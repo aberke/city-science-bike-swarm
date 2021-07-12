@@ -88,7 +88,6 @@ APP_TIMER_DEF(mytimealive);
 
 static void timealive_handler(void *p_context)
 {
-
     timealive = timealive + 1;
 }
 
@@ -103,8 +102,12 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
     if (strstr(p_rx_data->p_payload, word) != NULL)
     {
         // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Target Pack RCV\n");
-
-        (void)sprintf(msg, "RX [@%u]: RSSI: %3d ADV TYPE: %x ADDR: [%02x:%02x:%02x:%02x:%02x:%02x]",
+        char payload_hex[p_rx_data->length];
+        for (int i = 0 ; i != p_rx_data->length ; i++) {
+            sprintf(&payload_hex[2*i], "%02X", p_rx_data->p_payload[i]);
+        }
+        // payload_hex[p_rx_data->length] = '\0';
+        (void)sprintf(msg, "RX [@%u]: RSSI: %3d ADV TYPE: %x ADDR: [%02x:%02x:%02x:%02x:%02x:%02x] %d bytes: %s\n",
                       p_rx_data->p_metadata->params.scanner.timestamp,
                       p_rx_data->p_metadata->params.scanner.rssi,
                       p_rx_data->adv_type,
@@ -113,20 +116,28 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
                       p_rx_data->p_metadata->params.scanner.adv_addr.addr[2],
                       p_rx_data->p_metadata->params.scanner.adv_addr.addr[3],
                       p_rx_data->p_metadata->params.scanner.adv_addr.addr[4],
-                      p_rx_data->p_metadata->params.scanner.adv_addr.addr[5]);
-        //__LOG_XB(LOG_SRC_APP, LOG_LEVEL_INFO, msg, p_rx_data->p_payload, p_rx_data->length);
+                      p_rx_data->p_metadata->params.scanner.adv_addr.addr[5],
+                      p_rx_data->length,
+                      payload_hex);
+        __LOG_XB(LOG_SRC_APP, LOG_LEVEL_INFO, msg, p_rx_data->p_payload, p_rx_data->length);
 
         unsigned long int rxTimeAlive = 0;
-
         rxTimeAlive = ((p_rx_data->p_payload[7 + 0] << 8) + (p_rx_data->p_payload[7 + 1]));
-        //   __NOP();
+
+        btn_color_t remote_color = {p_rx_data->p_payload[7 + 2],
+                                    p_rx_data->p_payload[7 + 3],
+                                    p_rx_data->p_payload[7 + 4]};
+
         if (rxTimeAlive > timealive)
         {
-
             sprintf(msg, " ---> Older node found: %d > me: %d\n", rxTimeAlive, timealive);
-            timealive = rxTimeAlive;
             __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, msg);
-            setPhase(0);
+            
+            timealive = rxTimeAlive;
+            
+            set_phase(0);
+            set_next_color(remote_color);
+            bsp_board_led_invert(1);
         }
         else
         {
@@ -151,10 +162,12 @@ static void pack_send(void)
     bearer_adtype_add(BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME);
     advertiser_enable(&m_advertiser);
     advertiser_flush(&m_advertiser);
+
+    btn_color_t current_color = btn_next_color();
     //  advertiser_enable(&m_advertiser);
     uint8_t adv_data[] =
         {
-            0x06 + 0x02,                         /* AD data length (including type, but not itself) 6 bytes plus sie of the long */
+            0x06 + 0x05,                         /* AD data length (including type, but not itself) 6 bytes plus sie of the long */
             BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME, /* AD data type (Complete local name) */
             'S',                                 /* AD data payload (Name of device) */
             'W',
@@ -163,6 +176,9 @@ static void pack_send(void)
             'M',
             (uint8_t)((timealive >> 8) & 0xFF),
             (uint8_t)((timealive & 0xFF)),
+            (uint8_t)current_color.r,
+            (uint8_t)current_color.g,
+            (uint8_t)current_color.b,
         };
 
     /* Allocate packet */
@@ -330,8 +346,9 @@ int main(void)
     {
 
         ledloop();
-        int y = currentPhase();
-        if (currentPhase() > 2080 && currentPhase() < 2100)
+        int y = current_phase();
+
+        if (y > 2080 && y < 2100)
         {
             //__LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> PHASE AT ZERO  \n");
             pack_send();

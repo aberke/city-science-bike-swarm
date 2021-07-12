@@ -154,7 +154,6 @@ void neopixel(int phase)
     static bool init = false;
     bool neopixel = true;
 
-
     if (init == false)
     {
         err_code = app_timer_create(&my_timer_id, APP_TIMER_MODE_REPEATED, timeout_handler);
@@ -176,11 +175,9 @@ void neopixel(int phase)
     {
         r_level = current_color.r * multiplier; // was 255
         g_level = current_color.g * multiplier; //was 120
-        b_level = current_color.b * multiplier;  //was 35
+        b_level = current_color.b * multiplier; //was 35
         set_led_data(r_level, g_level, b_level);
     }
-
-
 
     if (neopixel_running == false)
     {
