@@ -2,7 +2,7 @@
 #include "swarm_state.h"
 #include "app_timer.h"
 
-APP_TIMER_DEF(mytimealive);
+APP_TIMER_DEF(timer_timealive);
 
 static void timealive_handler(void *p_context)
 {
@@ -10,11 +10,11 @@ static void timealive_handler(void *p_context)
 }
 
 void swarm_state_init() {
-    ret_code_t err_code = app_timer_create(&mytimealive, APP_TIMER_MODE_REPEATED, timealive_handler);
+    ret_code_t err_code = app_timer_create(&timer_timealive, APP_TIMER_MODE_REPEATED, timealive_handler);
     APP_ERROR_CHECK(err_code);
-    err_code = app_timer_start(mytimealive, APP_TIMER_TICKS(1000), NULL);
-    APP_ERROR_CHECK(err_code);
+    err_code = app_timer_start(timer_timealive, APP_TIMER_TICKS(1000), NULL);
 }
+
 
 void jump_timealive(int amount) {
     m_timealive = m_timealive + amount;

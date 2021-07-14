@@ -255,7 +255,7 @@ void pulseLightCurve(int phase)
     // 0:HI mid:LO
     // A = [cos(phase*2*pi/period) + 1]((HI - LO)/2) + LO
     float theta = phase * (2 * PI / (float)period);
-    int amplitude = (cos(theta) + 1) * ((highPulse - lowPulse) / 2) + lowPulse;
+    int amplitude = (cos(theta + PI) + 1) * ((highPulse - lowPulse) / 2) + lowPulse;
     //    printf("amplitude %d  phase: %d  highPulse %d  lowPulse %d \n", amplitude, phase, highPulse, lowPulse);
     light(amplitude);
 }
@@ -268,10 +268,10 @@ void pulseLightLinear(int phase)
     // Phase picture:
     //
     // |\           /\
-// |  \       /    \
-// |   \    /        \
-// |     \/            \
-//0:HI mid:LO
+    // |  \       /    \
+    // |   \    /        \
+    // |     \/            \
+    //0:HI mid:LO
     int amplitude;
     if (phase < periodMidpoint)
     {

@@ -39,6 +39,20 @@ void set_next_color(btn_color_t next_color)
 
     m_next_color = next_color;
     m_current_color = next_color;
+
+    // Remote node advanced our pattern, so update internal selection to make 
+    // the next button press work as expected
+    for (int s = 0; s <= sizeof(color_patterns); s++)
+    {
+        btn_color_t pattern = color_patterns[s];
+        if (pattern.r == next_color.r &&
+            pattern.g == next_color.g &&
+            pattern.b == next_color.b)
+        {
+            selected_color_pattern = s;
+            break;
+        }
+    }
 }
 
 void advance_color_pattern()
