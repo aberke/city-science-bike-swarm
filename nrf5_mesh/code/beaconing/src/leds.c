@@ -2,6 +2,7 @@
 #include "neopixel.h"
 #include "neopixel_SPI.h"
 #include "log.h"
+#include "buttons.h"
 
 int nodeNumber = 2; // TODO: switch between 0 and N depending on radio
 const int N = 6;    // Reading only supported on pipes 1-5
@@ -15,6 +16,7 @@ long long unsigned addresses[6] = {0xF0F0F0F0F0, 0xF0F0F0F0AA, 0xF0F0F0F0BB, 0xF
 
 #define lowPulse 10
 #define highPulse 255
+#define limitedHighPulse 55
 
 // The length of the full breathing period
 #define period 2200 // ms
@@ -254,10 +256,17 @@ void pulseLightCurve(int phase)
     // And then increases in amplitude
     // 0:HI mid:LO
     // A = [cos(phase*2*pi/period) + 1]((HI - LO)/2) + LO
+
     float theta = phase * (2 * PI / (float)period);
+    int relativeHighPulse = highPulse;
+    btn_color_t current_color = btn_current_color();
+    if (current_color.r + current_color.g + current_color.b > 0xFF) {
+        relativeHighPulse = limitedHighPulse;
+    }
     int amplitude = (cos(theta + PI) + 1) * ((highPulse - lowPulse) / 2) + lowPulse;
+    int limitedAmplitude = (cos(theta + PI) + 1) * ((relativeHighPulse - lowPulse) / 2) + lowPulse;
     //    printf("amplitude %d  phase: %d  highPulse %d  lowPulse %d \n", amplitude, phase, highPulse, lowPulse);
-    light(amplitude);
+    light(amplitude, limitedAmplitude);
 }
 
 void pulseLightLinear(int phase)
@@ -281,10 +290,10 @@ void pulseLightLinear(int phase)
     {
         amplitude = lowPulse + (amplitudeSlope * (phase - periodMidpoint));
     }
-    light(amplitude);
+    light(amplitude, amplitude);
 }
 
-void light(int amplitude)
+void light(int amplitude, int limitedAmplitude)
 {
     analogWrite(amplitude); // nrf52-DK
     
@@ -292,7 +301,7 @@ void light(int amplitude)
 
     __NOP();
 
-    neopixel(amplitude); //(RJ)
+    neopixel(limitedAmplitude); //(RJ)
 }
 
 void printTime(int num)
