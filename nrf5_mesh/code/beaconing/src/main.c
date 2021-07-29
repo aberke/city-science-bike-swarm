@@ -121,7 +121,7 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
                                     p_rx_data->p_payload[7 + 3],
                                     p_rx_data->p_payload[7 + 4]};
         unsigned long timealive = timealive_duration();
-        if (rxTimeAlive > timealive)
+        if (rxTimeAlive > timealive +3)
         {
             sprintf(msg, " ---> Older node found: %d > me: %d\n", rxTimeAlive, timealive);
             __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, msg);
@@ -328,7 +328,7 @@ int main(void)
     // ERROR_CHECK(app_timer_init());
 
     pwm_init();
-    timer_initalize();
+    phasetimer_init();
     swarm_state_init();
 
     for (;;)

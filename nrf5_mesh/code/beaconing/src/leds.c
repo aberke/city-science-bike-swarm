@@ -3,6 +3,7 @@
 #include "neopixel_SPI.h"
 #include "log.h"
 #include "buttons.h"
+#include "app_timer.h"
 
 int nodeNumber = 2; // TODO: switch between 0 and N depending on radio
 const int N = 6;    // Reading only supported on pipes 1-5
@@ -17,6 +18,7 @@ long long unsigned addresses[6] = {0xF0F0F0F0F0, 0xF0F0F0F0AA, 0xF0F0F0F0BB, 0xF
 #define lowPulse 10
 #define highPulse 255
 #define limitedHighPulse 55
+#define Phaseupdateperiod 16
 
 // The length of the full breathing period
 #define period 2200 // ms
@@ -66,39 +68,30 @@ nrf_pwm_sequence_t const seq =
         .repeats = 0,
         .end_delay = 0};
 
-// Event handler for timer interrupts
-void timer_led_event_handler(nrf_timer_event_t event_type, void *p_context)
-{
-    switch (event_type)
-    {
-    case NRF_TIMER_EVENT_COMPARE0:
-        updatePhase();
-        pulseLightCurve(phase);
-        break;
 
-    default:
-        //Do nothing.
-        break;
-    }
+
+
+
+
+APP_TIMER_DEF(timer_phasetimer);
+
+static void phasetimer_handler(void *p_context)
+{
+         updatePhase();
+         pulseLightCurve(phase);
 }
 
-// Initializes timer to update the phase every 100ms for smooth LED dimming
-void timer_initalize(void)
-{
-    uint32_t time_ms = 16; //Time(in miliseconds) between consecutive compare events.
-    uint32_t time_ticks;
-    uint32_t err_code = NRF_SUCCESS;
-    //Configure TIMER_LED for generating simple light effect - leds on board will invert his state one after the other.
-    nrf_drv_timer_config_t timer_cfg = NRF_DRV_TIMER_DEFAULT_CONFIG;
-    timer_cfg.frequency = NRF_TIMER_FREQ_31250Hz;
-    err_code = nrf_drv_timer_init(&TIMER_LED, &timer_cfg, timer_led_event_handler);
-    // printf("errcode: %d",err_code);
+void phasetimer_init() {
+    ret_code_t err_code = app_timer_create(&timer_phasetimer, APP_TIMER_MODE_REPEATED, phasetimer_handler);
     APP_ERROR_CHECK(err_code);
-
-    time_ticks = nrf_drv_timer_ms_to_ticks(&TIMER_LED, time_ms);
-    nrf_drv_timer_extended_compare(&TIMER_LED, NRF_TIMER_CC_CHANNEL0, time_ticks, NRF_TIMER_SHORT_COMPARE0_CLEAR_MASK, true);
-    nrf_drv_timer_enable(&TIMER_LED);
+    err_code = app_timer_start(timer_phasetimer, APP_TIMER_TICKS(Phaseupdateperiod), NULL);
 }
+
+
+
+
+
+
 
 // Initialize PWM for 3 channels of LEDS
 void pwm_init(void)
@@ -180,25 +173,6 @@ void swarm_leds_restart(void)
     swarm_leds_init();
 }
 
-// Returns time since boot
-unsigned long millis()
-{
-    unsigned long mills = 0;
-    static unsigned long lastmills = 0;
-    static unsigned int overflows = 0;
-
-    mills = app_timer_cnt_get() * ((APP_TIMER_CONFIG_RTC_FREQUENCY + 1) * 1000) / APP_TIMER_CLOCK_FREQ;
-
-    //if (mills<lastmills){
-    //  overflows++;
-    //}
-
-    //mills= mills+(512000*overflows);
-
-    //lastmills=mills;
-
-    return mills;
-}
 
 void setup()
 {
@@ -206,7 +180,7 @@ void setup()
     // 9600 is the 'baud rate'
     // Serial.begin(9600);
 
-    lastTimeCheck = millis();         // NOW
+ //   lastTimeCheck = millis();         // NOW
     lastReceiveTime = (-10) * period; // initialize at a long time ago
     lastTransmitTime = 0;
 
@@ -235,17 +209,18 @@ int updatePhase()
 {
     // Update phase when in sync with another bike
     // Otherwise set phase to default and stay there
-    currentTime = millis();
+  //  currentTime = millis();
     if (inSync)
     {
-        int timeDelta = (currentTime - lastTimeCheck);
-        phase = (phase + timeDelta) % period;
+    //    int timeDelta = (currentTime - lastTimeCheck);
+        phase = (phase + Phaseupdateperiod) % period;
     }
     else
     {
         phase = defaultPhase;
     }
     lastTimeCheck = currentTime;
+  //   printf("phase %d \n", phase);
     return phase;
 }
 
@@ -304,66 +279,27 @@ void light(int amplitude, int limitedAmplitude)
     neopixel(limitedAmplitude); //(RJ)
 }
 
-void printTime(int num)
-{
-    unsigned long newTime = millis();
-    printf("%d", num);
-    printf(": Time: %d", newTime);
-
-    printf("%d;  Delta: %d", newTime, newTime - currentTime);
-
-    currentTime = newTime;
-}
-
 void ledloop()
 {
     // Print how long a loop takes
     // Serial print statements add significant time
     // loop length 20-30ms without Serial print statements
-    unsigned long newLoopTime = millis();
-    loopLength = newLoopTime - loopTime;
-    // printf("\n Total loop time length: %d \n", loopLength);
-    // Serial.println(loopLength);
-    loopTime = newLoopTime;
-    // update current interval
-    currentTime = millis();
+    //unsigned long newLoopTime = millis();
+    //loopLength = newLoopTime - loopTime;
+    //// printf("\n Total loop time length: %d \n", loopLength);
+    //// Serial.println(loopLength);
+    //loopTime = newLoopTime;
+    //// update current interval
+    //currentTime = millis();
     // check/update whether in sync with another bike
     // being in sync with another bike times out after given amount of time
     // without hearing from other bikes
-    // inSync = false;
-    // if ((currentTime - lastReceiveTime) < 2*period)  {
+
     inSync = true;
-    //}
-    // updatePhase();
-    // pulseLightCurve(phase);
-    // updatePhase();
+
     // listen for messages from other bikes
     bool changedPhase = false;
-    // int otherPhase = radioReceive();
 
-    //  int otherPhase = -1;
-    // //needs to receive phase here
-    //  if (otherPhase >= 0) {  // -1 indicates no message was received
-    //    // another bike sent their current interval time
-    //    lastReceiveTime = millis();  // update for later checking whether in sync
-    //    // change to other bike’s interval iff it is GREATER than our current interval
-    //    // allow a phase shift to determine whose interval is sooner to account for latency
-    //    updatePhase();
-    //    int allowedPhaseShift = min(maxAllowedPhaseShift, loopLength);
-    //    if ((otherPhase > phase) && computePhaseShift(phase, otherPhase) > allowedPhaseShift)  {
-    //      // change to other phase
-    //      expectedLatency = loopLength/2;
-    //      phase = otherPhase + expectedLatency;
-    //      lastTimeCheck = lastReceiveTime;
-    //      changedPhase = true;
-    //    }
-    //  }
-    //  // send to other bikes at limited frequency or if phase recently changed
-    //  if (changedPhase || (millis() - lastTransmitTime) > period) {
-    //  //  radioBroadcast(phase);
-    //  //needs to broadcast phase here
-    //    lastTransmitTime = millis();
-    //  }
 }
 
 int current_phase(void)
