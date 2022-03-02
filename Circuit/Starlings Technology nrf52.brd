@@ -2106,6 +2106,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="VALUE" x="28.8925" y="45.466" size="0.6096" layer="27" font="vector" ratio="20" align="top-left"/>
 </element>
 <element name="S1" library="RA1122DWR" package="CF-LD-1DC4-AR2W" value="CF-LD-1DC4-AR2W" x="24.765" y="49.2125" smashed="yes" rot="R270">
+<attribute name="DIGIKEY" value="563-1946-ND" x="24.765" y="49.2125" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="NAME" x="28.575" y="50.4825" size="1.27" layer="25" rot="R270"/>
 <attribute name="VALUE" x="19.685" y="50.4825" size="1.27" layer="27" rot="R270"/>
 </element>

@@ -12809,7 +12809,9 @@ Source: Epson Toyocom FC-12M.pdf</description>
 <part name="SW1" library="FSM8JSMASTR" deviceset="FSM8JSMASTR" device=""/>
 <part name="SW2" library="FSM8JSMASTR" deviceset="FSM8JSMASTR" device=""/>
 <part name="J8" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_01" device="" package3d_urn="urn:adsk.eagle:package:38028/1"/>
-<part name="S1" library="RA1122DWR" deviceset="CF-LD-1DC4-AR2W" device=""/>
+<part name="S1" library="RA1122DWR" deviceset="CF-LD-1DC4-AR2W" device="">
+<attribute name="DIGIKEY" value="563-1946-ND"/>
+</part>
 </parts>
 <sheets>
 <sheet>
@@ -13324,6 +13326,7 @@ Output is to 5V leds</text>
 </instance>
 <instance part="S1" gate="A" x="454.66" y="160.02" smashed="yes">
 <attribute name="NAME" x="447.04" y="162.56" size="1.27" layer="95"/>
+<attribute name="DIGIKEY" x="454.66" y="160.02" size="1.778" layer="96" display="off"/>
 </instance>
 </instances>
 <busses>
