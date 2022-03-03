@@ -13617,7 +13617,7 @@ Output is to 5V leds</text>
 <segment>
 <pinref part="U3" gate="G$1" pin="B4/P018/RESET"/>
 <wire x1="46.106" y1="131.454" x2="30.48" y2="131.454" width="0.1524" layer="91"/>
-<label x="30.48" y="131.572" size="1.778" layer="95"/>
+<label x="30.48" y="131.572" size="1.27" layer="95"/>
 </segment>
 <segment>
 <pinref part="S2" gate="G$1" pin="3"/>
@@ -13640,7 +13640,7 @@ Output is to 5V leds</text>
 <pinref part="U3" gate="G$1" pin="A5/D-"/>
 <wire x1="46.106" y1="148.454" x2="30.48" y2="148.454" width="0.1524" layer="91"/>
 <wire x1="30.48" y1="148.454" x2="40.64" y2="148.463" width="0.1524" layer="91"/>
-<label x="30.48" y="148.5646" size="1.778" layer="95"/>
+<label x="30.48" y="148.5646" size="1.27" layer="95"/>
 </segment>
 <segment>
 <pinref part="R11" gate="G$1" pin="2"/>
@@ -13653,7 +13653,7 @@ Output is to 5V leds</text>
 <pinref part="U3" gate="G$1" pin="A4/D+"/>
 <wire x1="30.4546" y1="150.4442" x2="38.4606" y2="150.4442" width="0.1524" layer="91"/>
 <wire x1="38.4606" y1="150.4442" x2="46.106" y2="150.454" width="0.1524" layer="91"/>
-<label x="30.48" y="150.5712" size="1.778" layer="95"/>
+<label x="30.48" y="150.5712" size="1.27" layer="95"/>
 </segment>
 <segment>
 <pinref part="R15" gate="G$1" pin="2"/>
@@ -13665,7 +13665,7 @@ Output is to 5V leds</text>
 <segment>
 <pinref part="U3" gate="G$1" pin="C1/SWDCLK"/>
 <wire x1="46.106" y1="118.454" x2="29.972" y2="118.454" width="0.1524" layer="91"/>
-<label x="30.48" y="118.618" size="1.778" layer="95"/>
+<label x="30.48" y="118.618" size="1.27" layer="95"/>
 </segment>
 <segment>
 <pinref part="J7" gate="G$1" pin="SWDCLK/TCK"/>
@@ -13678,7 +13678,7 @@ Output is to 5V leds</text>
 <pinref part="U3" gate="G$1" pin="B1/SWDIO"/>
 <wire x1="46.106" y1="137.454" x2="46.106" y2="137.16" width="0.1524" layer="91"/>
 <wire x1="46.106" y1="137.16" x2="30.226" y2="137.16" width="0.1524" layer="91"/>
-<label x="30.48" y="137.16" size="1.778" layer="95"/>
+<label x="30.48" y="137.16" size="1.27" layer="95"/>
 </segment>
 <segment>
 <pinref part="J7" gate="G$1" pin="SWDIO/TMS"/>
@@ -13695,7 +13695,7 @@ Output is to 5V leds</text>
 <segment>
 <pinref part="U3" gate="G$1" pin="D0/P100"/>
 <wire x1="67.106" y1="97.454" x2="67.106" y2="83.82" width="0.1524" layer="91"/>
-<label x="66.802" y="83.566" size="1.778" layer="95" rot="R90"/>
+<label x="66.802" y="83.566" size="1.27" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="STRIP_5V" class="0">
@@ -13792,8 +13792,8 @@ Output is to 5V leds</text>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="E7/P004"/>
-<wire x1="103.106" y1="97.454" x2="103.106" y2="86.36" width="0.1524" layer="91"/>
-<label x="103.378" y="76.2" size="1.778" layer="95" rot="R90"/>
+<wire x1="103.106" y1="97.454" x2="103.106" y2="83.82" width="0.1524" layer="91"/>
+<label x="102.616" y="83.566" size="1.27" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="N$11" class="0">
@@ -13851,7 +13851,7 @@ Output is to 5V leds</text>
 <segment>
 <pinref part="U3" gate="G$1" pin="D5/P011"/>
 <wire x1="77.106" y1="97.454" x2="77.106" y2="83.82" width="0.1524" layer="91"/>
-<label x="76.962" y="83.566" size="1.778" layer="95" rot="R90"/>
+<label x="76.962" y="83.566" size="1.27" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="LED_2" class="0">
@@ -13863,7 +13863,7 @@ Output is to 5V leds</text>
 <segment>
 <pinref part="U3" gate="G$1" pin="C4/P014"/>
 <wire x1="46.106" y1="112.454" x2="30.48" y2="112.454" width="0.1524" layer="91"/>
-<label x="30.48" y="112.776" size="1.778" layer="95"/>
+<label x="30.48" y="112.776" size="1.27" layer="95"/>
 </segment>
 </net>
 <net name="VBUS" class="0">
@@ -13894,7 +13894,7 @@ Output is to 5V leds</text>
 <segment>
 <pinref part="U3" gate="G$1" pin="B5/VBUS"/>
 <wire x1="46.106" y1="129.454" x2="30.48" y2="129.454" width="0.1524" layer="91"/>
-<label x="30.48" y="129.54" size="1.778" layer="95"/>
+<label x="30.48" y="129.54" size="1.27" layer="95"/>
 </segment>
 <segment>
 <pinref part="Q2" gate="G$1" pin="G"/>
@@ -14093,8 +14093,8 @@ Output is to 5V leds</text>
 <net name="HEADLAMP_3V3" class="0">
 <segment>
 <pinref part="U3" gate="G$1" pin="D7/P006"/>
-<wire x1="81.106" y1="97.454" x2="81.106" y2="86.36" width="0.1524" layer="91"/>
-<label x="81.28" y="76.2" size="1.778" layer="95" rot="R90"/>
+<wire x1="81.106" y1="97.454" x2="81.106" y2="83.82" width="0.1524" layer="91"/>
+<label x="80.772" y="82.55" size="1.27" layer="95" rot="R90"/>
 </segment>
 <segment>
 <label x="457.2" y="20.32" size="1.27" layer="95" xref="yes"/>
@@ -14155,8 +14155,8 @@ Output is to 5V leds</text>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="E6/P026"/>
-<wire x1="101.106" y1="97.454" x2="101.106" y2="86.36" width="0.1524" layer="91"/>
-<label x="100.33" y="84.582" size="1.778" layer="95" rot="R90"/>
+<wire x1="101.106" y1="97.454" x2="101.106" y2="83.82" width="0.1524" layer="91"/>
+<label x="100.584" y="83.566" size="1.27" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="SCL" class="0">
@@ -14167,8 +14167,8 @@ Output is to 5V leds</text>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="D6/P027"/>
-<wire x1="79.106" y1="97.454" x2="79.106" y2="81.28" width="0.1524" layer="91"/>
-<label x="78.74" y="83.82" size="1.778" layer="95" rot="R90"/>
+<wire x1="79.106" y1="97.454" x2="79.106" y2="83.82" width="0.1524" layer="91"/>
+<label x="78.74" y="83.82" size="1.27" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="PIN_01" class="0">
@@ -14180,7 +14180,13 @@ Output is to 5V leds</text>
 <segment>
 <pinref part="U3" gate="G$1" pin="D1/P105"/>
 <wire x1="69.106" y1="97.454" x2="69.106" y2="83.82" width="0.1524" layer="91"/>
-<label x="69.088" y="83.566" size="1.778" layer="95" rot="R90"/>
+<label x="68.58" y="83.566" size="1.27" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="G1/P030"/>
+<wire x1="125.106" y1="137.454" x2="134.62" y2="137.454" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="137.454" x2="134.62" y2="137.668" width="0.1524" layer="91"/>
+<label x="129.54" y="137.668" size="1.27" layer="95"/>
 </segment>
 </net>
 <net name="PIN_02" class="0">
@@ -14191,8 +14197,14 @@ Output is to 5V leds</text>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="E0/P103"/>
-<wire x1="89.106" y1="97.454" x2="89.106" y2="86.36" width="0.1524" layer="91"/>
-<label x="88.9" y="83.82" size="1.778" layer="95" rot="R90"/>
+<wire x1="89.106" y1="97.454" x2="89.106" y2="83.82" width="0.1524" layer="91"/>
+<label x="88.392" y="83.82" size="1.27" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="C6/P109"/>
+<wire x1="46.106" y1="108.454" x2="46.106" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="46.106" y1="109.22" x2="30.48" y2="109.22" width="0.1524" layer="91"/>
+<label x="30.48" y="109.728" size="1.27" layer="95"/>
 </segment>
 </net>
 <net name="PIN_03" class="0">
@@ -14203,8 +14215,14 @@ Output is to 5V leds</text>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="E1/P106"/>
-<wire x1="91.106" y1="97.454" x2="91.106" y2="86.36" width="0.1524" layer="91"/>
-<label x="91.44" y="83.82" size="1.778" layer="95" rot="R90"/>
+<wire x1="91.106" y1="97.454" x2="91.106" y2="83.82" width="0.1524" layer="91"/>
+<label x="90.678" y="84.074" size="1.27" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="C7/P008"/>
+<wire x1="46.106" y1="106.454" x2="30.48" y2="106.454" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="106.454" x2="30.48" y2="106.68" width="0.1524" layer="91"/>
+<label x="30.48" y="106.934" size="1.27" layer="95"/>
 </segment>
 </net>
 <net name="PIN_04" class="0">
@@ -14216,7 +14234,7 @@ Output is to 5V leds</text>
 <segment>
 <pinref part="U3" gate="G$1" pin="F4/P002"/>
 <wire x1="125.106" y1="112.454" x2="132.08" y2="112.454" width="0.1524" layer="91"/>
-<label x="129.54" y="111.76" size="1.778" layer="95"/>
+<label x="129.286" y="113.284" size="1.27" layer="95"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -14235,7 +14253,7 @@ Output is to 5V leds</text>
 <segment>
 <pinref part="U3" gate="G$1" pin="D4/P013"/>
 <wire x1="75.106" y1="97.454" x2="75.106" y2="83.82" width="0.1524" layer="91"/>
-<label x="74.422" y="83.82" size="1.778" layer="95" rot="R90"/>
+<label x="74.422" y="83.82" size="1.27" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -14253,6 +14271,12 @@ Output is to 5V leds</text>
 <wire x1="124.46" y1="33.02" x2="134.62" y2="33.02" width="0.1524" layer="91"/>
 <junction x="124.46" y="33.02"/>
 <label x="134.62" y="33.02" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="B7/P012"/>
+<wire x1="46.106" y1="125.454" x2="30.48" y2="125.454" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="125.454" x2="30.48" y2="125.476" width="0.1524" layer="91"/>
+<label x="30.48" y="125.73" size="1.27" layer="95"/>
 </segment>
 </net>
 </nets>

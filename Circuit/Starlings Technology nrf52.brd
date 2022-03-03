@@ -158,7 +158,7 @@
 <layer number="255" name="routoute" color="7" fill="1" visible="no" active="yes"/>
 </layers>
 <board>
-<fusionsync huburn="a.YnVzaW5lc3M6b2Zicm9va2x5bg" projecturn="a.YnVzaW5lc3M6b2Zicm9va2x5biMyMDIwMTAwMTMzODU2MDI1Ng" f3durn="urn:adsk.wipprod:dm.lineage:hXMIRU8zTouxHumEHYtLwg" pcbguid="" lastpulledtime="2020-10-19T19:53:36Z" lastsyncedchangeguid="" latestrevisionid="15b58f2b-fb4b-468f-845a-644111b4afad" lastsyncedrevisionid="15b58f2b-fb4b-468f-845a-644111b4afad" lastboardhashguid="4d7612c6-9046-ea51-b418-22ff4dbd317c" lastpushedtime="2022-03-02T20:37:53Z" linktopcb3d="true"/>
+<fusionsync huburn="a.YnVzaW5lc3M6b2Zicm9va2x5bg" projecturn="a.YnVzaW5lc3M6b2Zicm9va2x5biMyMDIwMTAwMTMzODU2MDI1Ng" f3durn="urn:adsk.wipprod:dm.lineage:hXMIRU8zTouxHumEHYtLwg" pcbguid="" lastpulledtime="2020-10-19T19:53:36Z" lastsyncedchangeguid="" latestrevisionid="2cab605c-ff0e-4758-a60a-1f9ac1ab2252" lastsyncedrevisionid="2cab605c-ff0e-4758-a60a-1f9ac1ab2252" lastboardhashguid="16d225a2-b8a0-5d47-a770-6431c6796998" lastpushedtime="2022-03-02T22:39:47Z" linktopcb3d="true"/>
 <plain>
 <text x="2.3495" y="49.9745" size="0.762" layer="21">Charging</text>
 <text x="40.005" y="21.59" size="1.016" layer="21" rot="R180">NRF</text>
@@ -2081,15 +2081,15 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="NAME" x="28.575" y="7.747" size="0.6096" layer="25" font="vector" ratio="20"/>
 <attribute name="VALUE" x="29.845" y="6.223" size="0.6096" layer="27" font="vector" ratio="20"/>
 </element>
-<element name="SW1" library="FSM8JSMASTR" package="SW4_FSM8JSMASTR_TEC" value="FSM8JSMASTR" x="-3.4925" y="26.67" smashed="yes" rot="R90">
-<attribute name="COPYRIGHT" value="Copyright (C) 2022 Ultra Librarian. All rights reserved." x="-3.4925" y="26.67" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="DIGI-KEY_PART_NUMBER_1" value="450-2135-2-ND" x="-3.4925" y="26.67" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="DIGI-KEY_PART_NUMBER_2" value="450-2135-1-ND" x="-3.4925" y="26.67" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="DIGI-KEY_PART_NUMBER_3" value="450-2135-6-ND" x="-3.4925" y="26.67" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="FSM8JSMASTR" x="-3.4925" y="26.67" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MFR_NAME" value="TE Connectivity" x="-3.4925" y="26.67" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="-2.8575" y="23.3934" size="1.27" layer="27" ratio="6" rot="SR90"/>
-<attribute name="VALUE" x="-2.8575" y="24.9428" size="1.27" layer="21" ratio="6" rot="SR90"/>
+<element name="SW1" library="FSM8JSMASTR" package="SW4_FSM8JSMASTR_TEC" value="FSM8JSMASTR" x="-2.54" y="26.9875" smashed="yes" rot="R180">
+<attribute name="COPYRIGHT" value="Copyright (C) 2022 Ultra Librarian. All rights reserved." x="-2.54" y="26.9875" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DIGI-KEY_PART_NUMBER_1" value="450-2135-2-ND" x="-2.54" y="26.9875" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DIGI-KEY_PART_NUMBER_2" value="450-2135-1-ND" x="-2.54" y="26.9875" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DIGI-KEY_PART_NUMBER_3" value="450-2135-6-ND" x="-2.54" y="26.9875" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="FSM8JSMASTR" x="-2.54" y="26.9875" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MFR_NAME" value="TE Connectivity" x="-2.54" y="26.9875" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="0.7366" y="27.6225" size="1.27" layer="27" ratio="6" rot="SR180"/>
+<attribute name="VALUE" x="-0.8128" y="27.6225" size="1.27" layer="21" ratio="6" rot="SR180"/>
 </element>
 <element name="SW2" library="FSM8JSMASTR" package="SW4_FSM8JSMASTR_TEC" value="FSM8JSMASTR" x="38.735" y="26.9875" smashed="yes" rot="R180">
 <attribute name="COPYRIGHT" value="Copyright (C) 2022 Ultra Librarian. All rights reserved." x="38.735" y="26.9875" size="1.778" layer="27" rot="R180" display="off"/>
@@ -2352,7 +2352,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="3.54125" y1="34.34375" x2="9.2075" y2="28.6775" width="0.6096" layer="1"/>
 <wire x1="3.54125" y1="38.65575" x2="7.9375" y2="34.2595" width="0.6096" layer="1"/>
 <via x="19.3675" y="20.955" extent="1-16" drill="0.35"/>
-<via x="2.54" y="26.67" extent="1-16" drill="6.985"/>
+<via x="31.75" y="5.08" extent="1-16" drill="6.985"/>
 <contactref element="J6" pad="3"/>
 <contactref element="J6" pad="4"/>
 <wire x1="18.4" y1="4.1275" x2="14.9" y2="4.1275" width="0.6096" layer="16"/>
@@ -2446,9 +2446,9 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="31.08325" y1="28.448" x2="28.84275" y2="27.1525" width="0" layer="19" extent="1-1"/>
 <wire x1="31.115" y1="8.255" x2="30.519" y2="8.255" width="0" layer="19" extent="1-1"/>
 <wire x1="25.146" y1="20.73275" x2="24.41575" y2="24.03475" width="0" layer="19" extent="1-1"/>
-<wire x1="2.54" y1="26.67" x2="5.9055" y2="17.41" width="0" layer="19" extent="1-1"/>
-<wire x1="-1.2446" y1="22.0726" x2="2.54" y2="26.67" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.7404" y1="22.0726" x2="-1.2446" y2="22.0726" width="0" layer="19" extent="1-1"/>
+<wire x1="31.75" y1="5.08" x2="5.9055" y2="17.41" width="0" layer="19" extent="1-1"/>
+<wire x1="2.0574" y1="29.2354" x2="31.75" y2="5.08" width="0" layer="19" extent="1-1"/>
+<wire x1="2.0574" y1="24.7396" x2="2.0574" y2="29.2354" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="RESET">
 <contactref element="U3" pad="B4"/>
@@ -2745,8 +2745,8 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="34.6075" y1="7.3025" x2="35.2425" y2="7.3025" width="0.1524" layer="1"/>
 <contactref element="SW1" pad="3"/>
 <contactref element="SW1" pad="4"/>
-<wire x1="-1.2446" y1="31.2674" x2="30.5276" y2="16.3195" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.7404" y1="31.2674" x2="-1.2446" y2="31.2674" width="0" layer="19" extent="1-1"/>
+<wire x1="-7.1374" y1="29.2354" x2="30.5276" y2="16.3195" width="0" layer="19" extent="1-1"/>
+<wire x1="-7.1374" y1="24.7396" x2="-7.1374" y2="29.2354" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="LED_2">
 <contactref element="D3" pad="C"/>
@@ -3160,6 +3160,8 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="23.4" y1="38.4175" x2="23.39975" y2="38.41725" width="0.1524" layer="1"/>
 <wire x1="23.39975" y1="38.41725" x2="23.39975" y2="36.79825" width="0.1524" layer="1"/>
 <wire x1="23.39975" y1="36.79825" x2="24.22525" y2="35.97275" width="0.1524" layer="1"/>
+<contactref element="U3" pad="G1"/>
+<wire x1="33.728" y1="16.3195" x2="33.728" y2="13.9065" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIN_02">
 <contactref element="J2" pad="4"/>
@@ -3187,6 +3189,8 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="20.5204" y1="36.7129" x2="22.4324875" y2="36.7129" width="0.1524" layer="16"/>
 <wire x1="22.733" y1="35.84575" x2="22.733" y2="36.4123875" width="0.1524" layer="16"/>
 <wire x1="22.733" y1="36.4123875" x2="22.4324875" y2="36.7129" width="0.1524" layer="16"/>
+<contactref element="U3" pad="C6"/>
+<wire x1="34.5408" y1="15.5067" x2="29.7402" y2="17.1069" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIN_03">
 <contactref element="J2" pad="5"/>
@@ -3203,7 +3207,6 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="29.545175" y1="8.9944" x2="21.6877125" y2="8.9944" width="0.1524" layer="16"/>
 <wire x1="21.6877125" y1="8.9944" x2="12.8389" y2="17.8432125" width="0.1524" layer="16"/>
 <wire x1="12.8389" y1="24.69995625" x2="12.8389" y2="17.8432125" width="0.1524" layer="16"/>
-<wire x1="21.4" y1="38.4175" x2="21.4" y2="36.385" width="0.1524" layer="1"/>
 <wire x1="21.9075" y1="35.8775" x2="21.4" y2="36.385" width="0.1524" layer="1"/>
 <wire x1="20.4244" y1="36.0972875" x2="20.7352125" y2="36.4081" width="0.1524" layer="16"/>
 <wire x1="20.7352125" y1="36.4081" x2="21.8097875" y2="36.4081" width="0.1524" layer="16"/>
@@ -3213,6 +3216,9 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <via x="21.9075" y="35.8775" extent="1-16" drill="0.35"/>
 <wire x1="21.8097875" y1="36.4081" x2="21.9075" y2="36.3103875" width="0.1524" layer="16"/>
 <wire x1="21.9075" y1="36.3103875" x2="21.9075" y2="35.8775" width="0.1524" layer="16"/>
+<contactref element="U3" pad="C7"/>
+<wire x1="21.4" y1="36.385" x2="21.4" y2="38.4175" width="0" layer="19" extent="1-1"/>
+<wire x1="28.9274" y1="17.1069" x2="33.728" y2="15.5067" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIN_04">
 <contactref element="J2" pad="6"/>
@@ -3277,7 +3283,9 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <signal name="SWITCH_2">
 <contactref element="SW2" pad="4"/>
 <contactref element="SW2" pad="3"/>
+<contactref element="U3" pad="B7"/>
 <wire x1="34.1376" y1="24.7396" x2="34.1376" y2="29.2354" width="0" layer="19" extent="1-1"/>
+<wire x1="28.9274" y1="17.9197" x2="34.1376" y2="24.7396" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="6">
 <contactref element="S1" pad="5"/>
@@ -3290,11 +3298,6 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
 <mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
 </mfgpreviewcolors>
-<errors>
-<approved hash="19,1,2fdc05b448e75d77"/>
-<approved hash="5,1,70e15953f3cbe7b7"/>
-<approved hash="5,1,45197a944e013e00"/>
-</errors>
 </board>
 </drawing>
 <compatibility>
