@@ -6252,7 +6252,7 @@ Warning: This is the KIT version of the AXIAL-0.3 package. This package has a sm
 </deviceset>
 </devicesets>
 </library>
-<library name="SparkFun-IC-Power">
+<library name="SparkFun-IC-Power" urn="urn:adsk.eagle:library:526">
 <description>&lt;h3&gt;SparkFun Power Driver and Management ICs&lt;/h3&gt;
 In this library you'll find anything that has to do with power delivery, or making power supplies.
 &lt;p&gt;Contents:
@@ -6273,7 +6273,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 &lt;br&gt;
 You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
 <packages>
-<package name="SOT23-5">
+<package name="SOT23-5" urn="urn:adsk.eagle:footprint:39006/1" library_version="1">
 <description>&lt;b&gt;Small Outline Transistor&lt;/b&gt;</description>
 <wire x1="1.27" y1="0.4294" x2="1.27" y2="-0.4294" width="0.2032" layer="21"/>
 <wire x1="1.4" y1="-0.8" x2="-1.4" y2="-0.8" width="0.1524" layer="51"/>
@@ -6297,8 +6297,16 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <circle x="-1.6002" y="-1.016" radius="0.127" width="0" layer="21"/>
 </package>
 </packages>
+<packages3d>
+<package3d name="SOT23-5" urn="urn:adsk.eagle:package:39060/1" type="box" library_version="1">
+<description>Small Outline Transistor</description>
+<packageinstances>
+<packageinstance name="SOT23-5"/>
+</packageinstances>
+</package3d>
+</packages3d>
 <symbols>
-<symbol name="MCP73831">
+<symbol name="MCP73831" urn="urn:adsk.eagle:symbol:39005/1" library_version="1">
 <wire x1="-7.62" y1="5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
 <wire x1="7.62" y1="5.08" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
 <wire x1="7.62" y1="-5.08" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
@@ -6313,7 +6321,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="MCP73831" prefix="U">
+<deviceset name="MCP73831" urn="urn:adsk.eagle:component:39093/1" prefix="U" library_version="1">
 <description>&lt;h3&gt;MCP73831T Li-Ion, Li-Pol Controller&lt;/h3&gt;
 &lt;p&gt;Miniature single cell, fully integrated Li-Ion, Li-polymer charge management controller
 &lt;li&gt;&lt;a href=”http://ww1.microchip.com/downloads/en/DeviceDoc/20001984g.pdf”&gt;Datasheet&lt;/a&gt;&lt;/li&gt;&lt;/p&gt;
@@ -6333,6 +6341,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <connect gate="G$1" pin="VIN" pad="4"/>
 <connect gate="G$1" pin="VSS" pad="2"/>
 </connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:39060/1"/>
+</package3dinstances>
 <technologies>
 <technology name="">
 <attribute name="PROD_ID" value="IC-09995"/>
@@ -12276,6 +12287,13 @@ Source: Epson Toyocom FC-12M.pdf</description>
 <pad name="3" x="2.54" y="2.54" drill="0.85"/>
 <pad name="4" x="2.54" y="0" drill="0.85"/>
 <pad name="5" x="2.54" y="-2.54" drill="0.85"/>
+<circle x="-2.54" y="2.54" radius="0.0254" width="1.27" layer="31"/>
+<circle x="2.54" y="2.54" radius="0.0254" width="1.27" layer="31"/>
+<circle x="2.54" y="0" radius="0.0254" width="1.27" layer="31"/>
+<circle x="2.54" y="-2.54" radius="0.0254" width="1.27" layer="31"/>
+<circle x="-2.54" y="-2.54" radius="0.0254" width="1.27" layer="31"/>
+<circle x="-2.54" y="2.54" radius="0.0254" width="1.27" layer="31"/>
+<circle x="-2.54" y="2.54" radius="0.0254" width="1.27" layer="31"/>
 </package>
 </packages>
 <symbols>
@@ -12962,9 +12980,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/22049b.pdf</description>
 <part name="U3" library="BC840M-v1" deviceset="BC840M" device="" value="BC840M">
 <attribute name="DIGIKEY" value="1914-BC840MCT-ND"/>
 </part>
-<part name="J6" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="SCREW" package3d_urn="urn:adsk.eagle:package:38090/1">
-<attribute name="DIGIKEY" value="277-1860-ND"/>
-</part>
+<part name="J6" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="SCREW" package3d_urn="urn:adsk.eagle:package:38090/1"/>
 <part name="GND18" library="SparkFun" deviceset="GND" device=""/>
 <part name="J7" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CORTEX_DEBUG" device="_SMD" package3d_urn="urn:adsk.eagle:package:38289/1">
 <attribute name="DIGIKEY" value="SAM1161-05-ND"/>
@@ -12992,7 +13008,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/22049b.pdf</description>
 <part name="GND9" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="GND11" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="P+7" library="SparkFun-PowerSymbols" deviceset="VCC" device="" value="5V"/>
-<part name="U2" library="SparkFun-IC-Power" deviceset="MCP73831" device="">
+<part name="U2" library="SparkFun-IC-Power" library_urn="urn:adsk.eagle:library:526" deviceset="MCP73831" device="" package3d_urn="urn:adsk.eagle:package:39060/1">
 <attribute name="DIGIKEY" value="MCP73831T-2ACI/OTTR-ND"/>
 </part>
 <part name="GND25" library="SparkFun" deviceset="GND" device=""/>
@@ -13074,9 +13090,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/22049b.pdf</description>
 </part>
 <part name="P+3" library="SparkFun" deviceset="VCC" device="" value="5V"/>
 <part name="TP5" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPS" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
-<part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_03" device="SCREW_LOCK" package3d_urn="urn:adsk.eagle:package:38066/1">
-<attribute name="DIGIKEY" value="A98037-ND"/>
-</part>
+<part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_03" device="SCREW_LOCK" package3d_urn="urn:adsk.eagle:package:38066/1"/>
 <part name="GND4" library="SparkFun" deviceset="GND" device=""/>
 <part name="P+10" library="SparkFun-PowerSymbols" deviceset="VCC" device="" value="5V"/>
 <part name="P+11" library="SparkFun" deviceset="3.3V" device="" value="VBAT"/>
@@ -13264,7 +13278,6 @@ Output is to 5V leds</text>
 <instance part="J6" gate="G$1" x="-58.42" y="83.82" smashed="yes" rot="MR180">
 <attribute name="VALUE" x="-63.5" y="91.186" size="1.778" layer="96" font="vector" rot="MR180"/>
 <attribute name="NAME" x="-63.5" y="75.692" size="1.778" layer="95" font="vector" rot="MR180"/>
-<attribute name="DIGIKEY" x="-58.42" y="83.82" size="3.4798" layer="96" ratio="10" rot="MR180" display="off"/>
 </instance>
 <instance part="GND18" gate="1" x="137.668" y="81.28" smashed="yes">
 <attribute name="VALUE" x="135.128" y="78.74" size="1.778" layer="96"/>
@@ -13484,7 +13497,6 @@ Output is to 5V leds</text>
 <instance part="J1" gate="J$1" x="-60.96" y="116.84" smashed="yes">
 <attribute name="VALUE" x="-63.5" y="109.474" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="-63.5" y="122.428" size="1.778" layer="95" font="vector"/>
-<attribute name="DIGIKEY" x="-60.96" y="116.84" size="3.302" layer="96" display="off"/>
 </instance>
 <instance part="GND4" gate="1" x="-45.72" y="104.14" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="-43.18" y="101.6" size="1.778" layer="96" rot="MR0"/>

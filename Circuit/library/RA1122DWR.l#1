@@ -38,9 +38,9 @@
 <layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
-<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="yes" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
-<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="yes" active="yes"/>
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
@@ -73,7 +73,7 @@
 </layers>
 <library>
 <packages>
-<package name="RA1122DWR">
+<package name="CF-LD-1DC4-AR2W">
 <pad name="1" x="-2.54" y="2.54" drill="0.85"/>
 <pad name="2" x="-2.54" y="-2.54" drill="0.85"/>
 <text x="-1.27" y="3.81" size="1.27" layer="25">&gt;NAME</text>
@@ -81,10 +81,16 @@
 <pad name="3" x="2.54" y="2.54" drill="0.85"/>
 <pad name="4" x="2.54" y="0" drill="0.85"/>
 <pad name="5" x="2.54" y="-2.54" drill="0.85"/>
+<circle x="-2.54" y="2.54" radius="0.0254" width="1.27" layer="31"/>
+<circle x="2.54" y="2.54" radius="0.0254" width="1.27" layer="31"/>
+<circle x="2.54" y="0" radius="0.0254" width="1.27" layer="31"/>
+<circle x="2.54" y="-2.54" radius="0.0254" width="1.27" layer="31"/>
+<circle x="-2.54" y="-2.54" radius="0.0254" width="1.27" layer="31"/>
+<circle x="-2.54" y="2.54" radius="0.0254" width="1.27" layer="31"/>
 </package>
 </packages>
 <symbols>
-<symbol name="RA1122DWR">
+<symbol name="CF-LD-1DC4-AR2W">
 <pin name="5" x="-10.16" y="-2.54" visible="off" length="point" direction="pwr" function="dot" rot="R180"/>
 <pin name="4" x="0" y="0" visible="off" length="point" direction="pwr" function="dot" swaplevel="1"/>
 <wire x1="-7.62" y1="-2.54" x2="-10.16" y2="-2.54" width="0.1524" layer="94"/>
@@ -99,12 +105,12 @@
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="RA1122DWR" prefix="S">
+<deviceset name="CF-LD-1DC4-AR2W" prefix="S">
 <gates>
-<gate name="A" symbol="RA1122DWR" x="0" y="0"/>
+<gate name="A" symbol="CF-LD-1DC4-AR2W" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="RA1122DWR">
+<device name="" package="CF-LD-1DC4-AR2W">
 <connects>
 <connect gate="A" pin="4" pad="3"/>
 <connect gate="A" pin="5" pad="4"/>
