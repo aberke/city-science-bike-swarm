@@ -3743,6 +3743,39 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
 <mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
 </mfgpreviewcolors>
+<errors>
+<approved hash="23,1,6bce501adbb045c5"/>
+<approved hash="23,1,5ae59cd59c7a5a4a"/>
+<approved hash="23,1,f5e8379e189bbb59"/>
+<approved hash="23,1,c2e3ba56ce89a705"/>
+<approved hash="23,1,479aa7f4a101416f"/>
+<approved hash="23,1,d5286a5615daacf2"/>
+<approved hash="23,1,33d653c9593b2d22"/>
+<approved hash="23,1,811d86dfb4a3bd63"/>
+<approved hash="23,1,a4b77bf77bd3a493"/>
+<approved hash="23,1,866221d07e407a16"/>
+<approved hash="23,1,e0ff81dc8442c6e1"/>
+<approved hash="23,1,9c7491d54028e796"/>
+<approved hash="23,1,0f26cb7bcf0703a5"/>
+<approved hash="23,1,8843d647d474284a"/>
+<approved hash="23,1,b8ef66c161cfbfe1"/>
+<approved hash="23,1,7b2a39803e597cf3"/>
+<approved hash="23,1,c9ecf582f540c92e"/>
+<approved hash="23,1,366a33487da8c41f"/>
+<approved hash="23,1,10ec96a3dfad549b"/>
+<approved hash="23,1,d958dfb56a762c48"/>
+<approved hash="23,1,20ae525e527d208d"/>
+<approved hash="23,1,b02cb5acb5edb06d"/>
+<approved hash="23,1,45dda31da36145a1"/>
+<approved hash="23,1,551207253a380fe4"/>
+<approved hash="23,16,9438a3d04bc2c465"/>
+<approved hash="23,16,8ce8cd20e0abe938"/>
+<approved hash="23,16,f2efe26fe21bf29b"/>
+<approved hash="23,16,56d0aad8f25cf793"/>
+<approved hash="23,16,c17800bb89ae9a58"/>
+<approved hash="23,16,491eeeeeee3b49cb"/>
+<approved hash="23,16,20aeb7386ac6665b"/>
+</errors>
 </board>
 </drawing>
 <compatibility>
