@@ -12980,7 +12980,9 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/22049b.pdf</description>
 <part name="U3" library="BC840M-v1" deviceset="BC840M" device="" value="BC840M">
 <attribute name="DIGIKEY" value="1914-BC840MCT-ND"/>
 </part>
-<part name="J6" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="SCREW" package3d_urn="urn:adsk.eagle:package:38090/1"/>
+<part name="J6" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="LOCK_LONGPADS" package3d_urn="urn:adsk.eagle:package:38091/1">
+<attribute name="DIGIKEY" value="S1111EC-04-ND"/>
+</part>
 <part name="GND18" library="SparkFun" deviceset="GND" device=""/>
 <part name="J7" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CORTEX_DEBUG" device="_SMD" package3d_urn="urn:adsk.eagle:package:38289/1">
 <attribute name="DIGIKEY" value="SAM1161-05-ND"/>
@@ -13090,7 +13092,9 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/22049b.pdf</description>
 </part>
 <part name="P+3" library="SparkFun" deviceset="VCC" device="" value="5V"/>
 <part name="TP5" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPS" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
-<part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_03" device="SCREW_LOCK" package3d_urn="urn:adsk.eagle:package:38066/1"/>
+<part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_03" device="LOCK_LONGPADS" package3d_urn="urn:adsk.eagle:package:38065/1">
+<attribute name="DIGIKEY" value="S1111EC-03-ND"/>
+</part>
 <part name="GND4" library="SparkFun" deviceset="GND" device=""/>
 <part name="P+10" library="SparkFun-PowerSymbols" deviceset="VCC" device="" value="5V"/>
 <part name="P+11" library="SparkFun" deviceset="3.3V" device="" value="VBAT"/>
@@ -13197,6 +13201,7 @@ Output is to 5V leds</text>
 - Adding second tactile switch
 - Adjusting board dimensions to place buttons
 - Adding rocker on/off switch
+- Switching LED terminal blocks to .1" headers
 
 2021-06-24: Revision 9
 - Moving to nrf52840-DK BSP pins for buttons and leds
@@ -13278,6 +13283,7 @@ Output is to 5V leds</text>
 <instance part="J6" gate="G$1" x="-58.42" y="83.82" smashed="yes" rot="MR180">
 <attribute name="VALUE" x="-63.5" y="91.186" size="1.778" layer="96" font="vector" rot="MR180"/>
 <attribute name="NAME" x="-63.5" y="75.692" size="1.778" layer="95" font="vector" rot="MR180"/>
+<attribute name="DIGIKEY" x="-58.42" y="83.82" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
 <instance part="GND18" gate="1" x="137.668" y="81.28" smashed="yes">
 <attribute name="VALUE" x="135.128" y="78.74" size="1.778" layer="96"/>
@@ -13497,6 +13503,7 @@ Output is to 5V leds</text>
 <instance part="J1" gate="J$1" x="-60.96" y="116.84" smashed="yes">
 <attribute name="VALUE" x="-63.5" y="109.474" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="-63.5" y="122.428" size="1.778" layer="95" font="vector"/>
+<attribute name="DIGIKEY" x="-60.96" y="116.84" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="GND4" gate="1" x="-45.72" y="104.14" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="-43.18" y="101.6" size="1.778" layer="96" rot="MR0"/>
