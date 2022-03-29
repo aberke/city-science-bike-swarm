@@ -337,7 +337,7 @@ int main(void)
         ledloop();
         int y = current_phase();
 
-        if (y > 2080 && y < 2100)
+        //if (y > 2080 && y < 2100)
         {
             //__LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> PHASE AT ZERO  \n");
             pack_send();

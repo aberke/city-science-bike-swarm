@@ -9,11 +9,12 @@ void bsp_evt_handler(bsp_event_t evt)
     {
     case BSP_EVENT_KEY_0:
         bsp_board_led_invert(1);
-        advance_color_pattern();
+        advance_color_pattern(1);
         break;
 
     case BSP_EVENT_KEY_1:
         // bsp_board_led_invert(1);
+        advance_color_pattern(-1);
         break;
 
     case BSP_EVENT_KEY_2:
@@ -55,9 +56,9 @@ void set_next_color(btn_color_t next_color)
     }
 }
 
-void advance_color_pattern()
+void advance_color_pattern(uint8_t direction)
 {
-    uint8_t next_color_pattern = (selected_color_pattern + 1) % COLOR_PATTERNS_COUNT;
+    uint8_t next_color_pattern = (selected_color_pattern + direction) % COLOR_PATTERNS_COUNT;
 
     selected_color_pattern = next_color_pattern;
     m_next_color = color_patterns[selected_color_pattern];
