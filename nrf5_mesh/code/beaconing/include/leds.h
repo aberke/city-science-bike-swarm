@@ -36,16 +36,10 @@ void swarm_leds_restart(void);
 void light(int amplitude, int limitedAmplitude);
 void ledloop();
 int current_phase(void);
-void set_phase (int phasecnt);
-unsigned long millis();
-
+void set_phase(int phasecnt);
 
 void pwm_init(void);
 void timer_initalize(void);
-
-
-
-
-
+void phasetimer_init();
 
 #endif /* _LEDS_H */

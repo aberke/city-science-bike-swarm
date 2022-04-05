@@ -28,6 +28,7 @@
 #include "app_util_platform.h"
 #include "nrf_drv_twi.h"
 #include "nrf_delay.h"
+// #include "easing.h"
 
 #include "boards.h"
 
@@ -130,20 +131,29 @@ uint32_t calcChannelValue(uint8_t level)
 }
 
 // set LED data
-void set_led_data(uint8_t r_level, uint8_t g_level, uint8_t b_level)
+void set_led_data(uint8_t position, uint8_t r_level, uint8_t g_level, uint8_t b_level)
 {
-    for (int i = 0; i < 3 * NLEDS; i += 3)
-    {
-        m_buffer_tx[i] = calcChannelValue(g_level);
-        m_buffer_tx[i + 1] = calcChannelValue(r_level);
-        m_buffer_tx[i + 2] = calcChannelValue(b_level);
-    }
+    m_buffer_tx[position * 3] = calcChannelValue(g_level);
+    m_buffer_tx[position * 3 + 1] = calcChannelValue(r_level);
+    m_buffer_tx[position * 3 + 2] = calcChannelValue(b_level);
 
-    // reset
-    for (int i = 3 * NLEDS; i < I2S_BUFFER_SIZE; i++)
-    {
-        m_buffer_tx[i] = 0;
-    }
+    // // reset
+    // for (int i = 3 * position; i < I2S_BUFFER_SIZE; i++)
+    // {
+    //     m_buffer_tx[i] = 0;
+    // }
+}
+
+uint32_t millis(void)
+{
+    return (app_timer_cnt_get() / 32.768);
+}
+
+uint32_t compareMillis(uint32_t previousMillis, uint32_t currentMillis)
+{
+    if (currentMillis < previousMillis)
+        return (currentMillis + OVERFLOW + 1 - previousMillis);
+    return (currentMillis - previousMillis);
 }
 
 /**@brief Application main function.
@@ -173,10 +183,28 @@ void neopixel(int phase)
 
     if (neopixel == true)
     {
-        r_level = current_color.r * multiplier; // was 255
-        g_level = current_color.g * multiplier; //was 120
-        b_level = current_color.b * multiplier; //was 35
-        set_led_data(r_level, g_level, b_level);
+        for (int i = 0; i < NLEDS; i += 1)
+        {
+            if (i < 20)
+            {
+                r_level = current_color.r * multiplier; // CubicEaseIn(multiplier);
+                g_level = 0; //(current_color.g * multiplier);
+                b_level = 0; //(current_color.b * multiplier);
+            }
+            else if (i < 40)
+            {
+                r_level = 0; //(current_color.r * multiplier);
+                g_level = 0; //(current_color.g * multiplier);
+                b_level = (current_color.b * multiplier);
+            }
+            else
+            {
+                r_level = 0; //(current_color.r * multiplier);
+                g_level = (current_color.g * multiplier);
+                b_level = 0; //(current_color.b * multiplier);
+            }
+            set_led_data(i, r_level, g_level, b_level);
+        }
     }
 
     if (neopixel_running == false)
@@ -198,7 +226,10 @@ void neopixel(int phase)
             .p_tx_buffer = &m_buffer_tx[0],
         };
         err_code = nrf_drv_i2s_start(&initial_buffers, I2S_BUFFER_SIZE, 0);
-        set_led_data(r_level, g_level, b_level);
+        // for (int i = 0; i < NLEDS; i += 1)
+        // {
+        //     set_led_data(i, r_level, g_level, b_level);
+        // }
         neopixel_running = true;
     }
 }

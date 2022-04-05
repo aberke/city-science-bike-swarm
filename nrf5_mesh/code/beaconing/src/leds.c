@@ -5,20 +5,13 @@
 #include "buttons.h"
 #include "app_timer.h"
 
-int nodeNumber = 2; // TODO: switch between 0 and N depending on radio
-const int N = 6;    // Reading only supported on pipes 1-5
-// Addresses through which N modules communicate.
-// Note: Using other types for addressing did not work for reading from multiple pipes.  Why?  IDK but this works ;-)
-long long unsigned addresses[6] = {0xF0F0F0F0F0, 0xF0F0F0F0AA, 0xF0F0F0F0BB, 0xF0F0F0F0CC, 0xF0F0F0F0DD, 0xF0F0F0F0EE};
-
-// Note: The LED_BUILTIN is connected to tx/rx so it requires
-// serial communication (monitor open) in order to work.
-// Using other LED instead
-
+// LED boundaries, 0x00-0xFF
 #define lowPulse 10
 #define highPulse 255
+#define phaseUpdatePeriod 16
+
+// Limiting pulse anytime more than a single led channel is lit due to battery discharge capacity
 #define limitedHighPulse 55
-#define Phaseupdateperiod 16
 
 // The length of the full breathing period
 #define period 2200 // ms
@@ -34,8 +27,6 @@ unsigned long lastTransmitTime;
 unsigned long currentTime;
 unsigned long loopTime;   // using for profiling/debugging
 unsigned long loopLength; // used for calculated expected latency
-
-int sendFrequency = period / 2;
 
 bool inSync = false; // True when in sync with another bicycle
 
@@ -68,11 +59,6 @@ nrf_pwm_sequence_t const seq =
         .repeats = 0,
         .end_delay = 0};
 
-
-
-
-
-
 APP_TIMER_DEF(timer_phasetimer);
 
 static void phasetimer_handler(void *p_context)
@@ -84,14 +70,8 @@ static void phasetimer_handler(void *p_context)
 void phasetimer_init() {
     ret_code_t err_code = app_timer_create(&timer_phasetimer, APP_TIMER_MODE_REPEATED, phasetimer_handler);
     APP_ERROR_CHECK(err_code);
-    err_code = app_timer_start(timer_phasetimer, APP_TIMER_TICKS(Phaseupdateperiod), NULL);
+    err_code = app_timer_start(timer_phasetimer, APP_TIMER_TICKS(phaseUpdatePeriod), NULL);
 }
-
-
-
-
-
-
 
 // Initialize PWM for 3 channels of LEDS
 void pwm_init(void)
@@ -213,7 +193,7 @@ int updatePhase()
     if (inSync)
     {
     //    int timeDelta = (currentTime - lastTimeCheck);
-        phase = (phase + Phaseupdateperiod) % period;
+    phase = (phase + phaseUpdatePeriod) % period;
     }
     else
     {
