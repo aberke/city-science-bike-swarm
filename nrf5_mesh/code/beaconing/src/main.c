@@ -121,11 +121,11 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
         unsigned long rxTimeAlive = 0;
         rxTimeAlive = ((p_rx_data->p_payload[7 + 0] << 8) + (p_rx_data->p_payload[7 + 1]));
 
-        int received_phase = ((p_rx_data->p_payload[7 + 2] << 8) + (p_rx_data->p_payload[7 + 3]));
-
-        btn_color_t remote_color = {p_rx_data->p_payload[7 + 4],
-                                    p_rx_data->p_payload[7 + 5],
-                                    p_rx_data->p_payload[7 + 6]};
+        int remote_phase = ((p_rx_data->p_payload[7 + 2] << 8) + (p_rx_data->p_payload[7 + 3]));
+        uint8_t remote_pattern = p_rx_data->p_payload[7 + 4];
+        btn_color_t remote_color = {p_rx_data->p_payload[7 + 5],
+                                    p_rx_data->p_payload[7 + 6],
+                                    p_rx_data->p_payload[7 + 7]};
 
         unsigned long timealive = timealive_duration();
         if (rxTimeAlive > timealive +3)
@@ -135,7 +135,8 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
             
             set_updated_timealive(rxTimeAlive);
 
-            set_phase(received_phase);
+            set_phase(remote_phase);
+            set_pattern(remote_pattern);
             set_next_color(remote_color);
             bsp_board_led_invert(1);
         }
@@ -169,13 +170,14 @@ static void pack_send()
     advertiser_enable(&m_advertiser);
     advertiser_flush(&m_advertiser);
 
-    btn_color_t current_color = btn_next_color();
     int phase = current_phase();
+    uint8_t pattern = current_pattern();
+    btn_color_t color = btn_next_color();
 
     //  advertiser_enable(&m_advertiser);
     uint8_t adv_data[] =
         {
-            0x06 + 0x06,                         /* AD data length (including type, but not itself) 6 bytes plus size of the data */
+            0x06 + 0x08,                         /* AD data length (including type, but not itself) 6 bytes plus size of the data */
             BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME, /* AD data type (Complete local name) */
             'S',                                 /* AD data payload (Name of device) */
             'W',
@@ -186,9 +188,10 @@ static void pack_send()
             (uint8_t)((timealive & 0xFF)),
             (uint8_t)((phase >> 8) & 0xFF),
             (uint8_t)((phase & 0xFF)),
-            (uint8_t)current_color.r,
-            (uint8_t)current_color.g,
-            (uint8_t)current_color.b,
+            (uint8_t)pattern,
+            (uint8_t)color.r,
+            (uint8_t)color.g,
+            (uint8_t)color.b,
         };
 
     /* Allocate packet */
