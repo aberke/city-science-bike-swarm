@@ -123,9 +123,9 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
 
         int received_phase = ((p_rx_data->p_payload[7 + 2] << 8) + (p_rx_data->p_payload[7 + 3]));
 
-        btn_color_t remote_color = {p_rx_data->p_payload[7 + 3],
-                                    p_rx_data->p_payload[7 + 4],
-                                    p_rx_data->p_payload[7 + 5]};
+        btn_color_t remote_color = {p_rx_data->p_payload[7 + 4],
+                                    p_rx_data->p_payload[7 + 5],
+                                    p_rx_data->p_payload[7 + 6]};
 
         unsigned long timealive = timealive_duration();
         if (rxTimeAlive > timealive +3)
