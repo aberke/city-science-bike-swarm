@@ -81,6 +81,7 @@ static advertiser_t m_advertiser;
 
 static uint8_t m_adv_buffer[ADVERTISER_BUFFER_SIZE];
 static bool m_device_provisioned;
+static unsigned long lastPackSend;
 
 advertiser_tx_complete_cb_t tx_complete_cb;
 
@@ -149,6 +150,13 @@ static void adv_init(void)
 static void pack_send(void)
 {
     unsigned long timealive = timealive_duration();
+    if (compareMillis(lastPackSend, millis()) <= 200)
+    {
+        // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Packet sent too soon, cooling off... %ld (me: %d)\n", lastPackSend, timealive);
+        return;
+    }
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Sending packet... %ld (me: %d)\n", lastPackSend, timealive);
+    lastPackSend = millis();
 
     /* Let scanner accept Complete Local Name AD Type. */
     bearer_adtype_add(BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME);
@@ -281,6 +289,8 @@ static void initialize(void)
 
     bsp_configuration();
 
+    lastPackSend = 0;
+
     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Initialization complete.\n");
 }
 
@@ -337,11 +347,8 @@ int main(void)
         ledloop();
         int y = current_phase();
 
-        //if (y > 2080 && y < 2100)
-        {
-            //__LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> PHASE AT ZERO  \n");
-            pack_send();
-        }
+        //__LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> PHASE AT ZERO  \n");
+        pack_send();
 
         //(void)sd_app_evt_wait();
         bool done = nrf_mesh_process();

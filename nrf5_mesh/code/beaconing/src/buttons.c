@@ -13,7 +13,7 @@ void bsp_evt_handler(bsp_event_t evt)
         break;
 
     case BSP_EVENT_KEY_1:
-        // bsp_board_led_invert(1);
+        bsp_board_led_invert(1);
         advance_color_pattern(-1);
         break;
 
