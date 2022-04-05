@@ -101,41 +101,47 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
             sprintf(&payload_hex[2*i], "%02X", p_rx_data->p_payload[i]);
         }
         // payload_hex[p_rx_data->length] = '\0';
-        (void)sprintf(msg, "RX [@%u]: RSSI: %3d ADV TYPE: %x ADDR: [%02x:%02x:%02x:%02x:%02x:%02x] %d bytes: %s\n",
-                      p_rx_data->p_metadata->params.scanner.timestamp,
-                      p_rx_data->p_metadata->params.scanner.rssi,
-                      p_rx_data->adv_type,
-                      p_rx_data->p_metadata->params.scanner.adv_addr.addr[0],
-                      p_rx_data->p_metadata->params.scanner.adv_addr.addr[1],
-                      p_rx_data->p_metadata->params.scanner.adv_addr.addr[2],
-                      p_rx_data->p_metadata->params.scanner.adv_addr.addr[3],
-                      p_rx_data->p_metadata->params.scanner.adv_addr.addr[4],
-                      p_rx_data->p_metadata->params.scanner.adv_addr.addr[5],
-                      p_rx_data->length,
-                      payload_hex);
-        __LOG_XB(LOG_SRC_APP, LOG_LEVEL_INFO, msg, p_rx_data->p_payload, p_rx_data->length);
+        if (false)
+        {
+            (void)sprintf(msg, "RX [@%u]: RSSI: %3d ADV TYPE: %x ADDR: [%02x:%02x:%02x:%02x:%02x:%02x] %d bytes: %s\n",
+                          p_rx_data->p_metadata->params.scanner.timestamp,
+                          p_rx_data->p_metadata->params.scanner.rssi,
+                          p_rx_data->adv_type,
+                          p_rx_data->p_metadata->params.scanner.adv_addr.addr[0],
+                          p_rx_data->p_metadata->params.scanner.adv_addr.addr[1],
+                          p_rx_data->p_metadata->params.scanner.adv_addr.addr[2],
+                          p_rx_data->p_metadata->params.scanner.adv_addr.addr[3],
+                          p_rx_data->p_metadata->params.scanner.adv_addr.addr[4],
+                          p_rx_data->p_metadata->params.scanner.adv_addr.addr[5],
+                          p_rx_data->length,
+                          payload_hex);
+            __LOG_XB(LOG_SRC_APP, LOG_LEVEL_INFO, msg, p_rx_data->p_payload, p_rx_data->length);
+        }
 
         unsigned long rxTimeAlive = 0;
         rxTimeAlive = ((p_rx_data->p_payload[7 + 0] << 8) + (p_rx_data->p_payload[7 + 1]));
 
-        btn_color_t remote_color = {p_rx_data->p_payload[7 + 2],
-                                    p_rx_data->p_payload[7 + 3],
-                                    p_rx_data->p_payload[7 + 4]};
+        int received_phase = ((p_rx_data->p_payload[7 + 2] << 8) + (p_rx_data->p_payload[7 + 3]));
+
+        btn_color_t remote_color = {p_rx_data->p_payload[7 + 3],
+                                    p_rx_data->p_payload[7 + 4],
+                                    p_rx_data->p_payload[7 + 5]};
+
         unsigned long timealive = timealive_duration();
         if (rxTimeAlive > timealive +3)
         {
-            sprintf(msg, " ---> Older node found: %d > me: %d\n", rxTimeAlive, timealive);
+            sprintf(msg, " ---> Older node found: %d > me: %d, phase: %d\n", rxTimeAlive, timealive, received_phase);
             __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, msg);
             
             set_updated_timealive(rxTimeAlive);
-            
-            set_phase(0);
+
+            set_phase(received_phase);
             set_next_color(remote_color);
             bsp_board_led_invert(1);
         }
         else
         {
-            __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> I'm older, ignoring: %d (me: %d)\n", rxTimeAlive, timealive);
+            // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> I'm older, ignoring: %d (me: %d)\n", rxTimeAlive, timealive);
         }
     }
 
@@ -147,7 +153,7 @@ static void adv_init(void)
     advertiser_instance_init(&m_advertiser, NULL, m_adv_buffer, ADVERTISER_BUFFER_SIZE);
 }
 
-static void pack_send(void)
+static void pack_send()
 {
     unsigned long timealive = timealive_duration();
     if (compareMillis(lastPackSend, millis()) <= 200)
@@ -155,7 +161,7 @@ static void pack_send(void)
         // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Packet sent too soon, cooling off... %ld (me: %d)\n", lastPackSend, timealive);
         return;
     }
-    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Sending packet... %ld (me: %d)\n", lastPackSend, timealive);
+    // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Sending packet... %ld (me: %d)\n", lastPackSend, timealive);
     lastPackSend = millis();
 
     /* Let scanner accept Complete Local Name AD Type. */
@@ -164,10 +170,12 @@ static void pack_send(void)
     advertiser_flush(&m_advertiser);
 
     btn_color_t current_color = btn_next_color();
+    int phase = current_phase();
+
     //  advertiser_enable(&m_advertiser);
     uint8_t adv_data[] =
         {
-            0x06 + 0x05,                         /* AD data length (including type, but not itself) 6 bytes plus sie of the long */
+            0x06 + 0x06,                         /* AD data length (including type, but not itself) 6 bytes plus size of the data */
             BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME, /* AD data type (Complete local name) */
             'S',                                 /* AD data payload (Name of device) */
             'W',
@@ -176,6 +184,8 @@ static void pack_send(void)
             'M',
             (uint8_t)((timealive >> 8) & 0xFF),
             (uint8_t)((timealive & 0xFF)),
+            (uint8_t)((phase >> 8) & 0xFF),
+            (uint8_t)((phase & 0xFF)),
             (uint8_t)current_color.r,
             (uint8_t)current_color.g,
             (uint8_t)current_color.b,
@@ -317,8 +327,8 @@ static void start(void)
     /* Start advertising own beacon */
     /* Note: If application wants to start beacons at later time, adv_start() API must be called
      * from the same IRQ priority context same as that of the Mesh Stack. */
-    pack_send();
 
+    pack_send();
 
     mesh_app_uuid_print(nrf_mesh_configure_device_uuid_get());
 
@@ -345,7 +355,6 @@ int main(void)
     {
 
         ledloop();
-        int y = current_phase();
 
         //__LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> PHASE AT ZERO  \n");
         pack_send();

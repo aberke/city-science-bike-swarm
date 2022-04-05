@@ -28,7 +28,7 @@
 #include "app_util_platform.h"
 #include "nrf_drv_twi.h"
 #include "nrf_delay.h"
-// #include "easing.h"
+#include "easing.h"
 
 #include "boards.h"
 
@@ -187,21 +187,21 @@ void neopixel(int phase)
         {
             if (i < 20)
             {
-                r_level = current_color.r * multiplier; // CubicEaseIn(multiplier);
-                g_level = 0; //(current_color.g * multiplier);
-                b_level = 0; //(current_color.b * multiplier);
+                r_level = current_color.r * CubicEaseIn(multiplier);
+                g_level = current_color.g * CubicEaseIn(multiplier);
+                b_level = current_color.b * CubicEaseIn(multiplier);
             }
             else if (i < 40)
             {
-                r_level = 0; //(current_color.r * multiplier);
-                g_level = 0; //(current_color.g * multiplier);
-                b_level = (current_color.b * multiplier);
+                r_level = current_color.r * CubicEaseInOut(multiplier);
+                g_level = current_color.g * CubicEaseInOut(multiplier);
+                b_level = current_color.b * CubicEaseInOut(multiplier);
             }
             else
             {
-                r_level = 0; //(current_color.r * multiplier);
-                g_level = (current_color.g * multiplier);
-                b_level = 0; //(current_color.b * multiplier);
+                r_level = current_color.r * CubicEaseOut(multiplier);
+                g_level = current_color.g * CubicEaseOut(multiplier);
+                b_level = current_color.b * CubicEaseOut(multiplier);
             }
             set_led_data(i, r_level, g_level, b_level);
         }

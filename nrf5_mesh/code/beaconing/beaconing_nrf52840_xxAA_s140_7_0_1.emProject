@@ -49,6 +49,8 @@
       <file file_name="src/neopixel.c" />
       <file file_name="src/neopixel_SPI.c" />
       <file file_name="src/swarm_state.c" />
+      <file file_name="src/easing.c" />
+      <file file_name="src/neopixel_nrf52.cpp" />
     </folder>
     <folder Name="Core">
       <file file_name="../../mesh/core/src/internal_event.c" />
