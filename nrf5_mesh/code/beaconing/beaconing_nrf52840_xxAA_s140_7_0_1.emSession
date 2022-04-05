@@ -79,7 +79,7 @@
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="/Users/rohitjoshi/Documents/Turn_Touch/swarm/nrf5_mesh/code/beaconing/src/main.c" useBinaryEdit="0" left="0" path="src/leds.c" selected="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="157" useTextEdit="1" openedFrom="/Users/rohitjoshi/Documents/Turn_Touch/swarm/nrf5_mesh/code/beaconing/src/leds.c" useBinaryEdit="0" left="0" path="src/neopixel_SPI.c" selected="0" top="64" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="14" useTextEdit="1" openedFrom="/Users/rohitjoshi/Documents/Turn_Touch/swarm/nrf5_mesh/code/beaconing/src/main.c" useBinaryEdit="0" left="0" path="src/swarm_state.c" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="9" y="51" useTextEdit="1" openedFrom="/Users/rohitjoshi/Documents/Turn_Touch/swarm/nrf5_mesh/code/beaconing/src/main.c" useBinaryEdit="0" left="0" path="src/buttons.c" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="25" y="14" useTextEdit="1" openedFrom="/Users/rohitjoshi/Documents/Turn_Touch/swarm/nrf5_mesh/code/beaconing/src/main.c" useBinaryEdit="0" left="0" path="src/buttons.c" selected="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="78" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="app_error_weak.c" selected="0" top="55" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="6755" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="include/sdk_config.h" selected="0" top="6732" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="367" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../mesh/core/src/bearer_event.c" selected="0" top="150" codecName="Default"/>
@@ -90,7 +90,7 @@
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="45" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="include/leds.h" selected="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="71" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="ses_startup_nrf52840.s" selected="0" top="44" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="420" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../external/rtt/src/SEGGER_RTT.c" selected="0" top="395" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="55" y="338" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="src/main.c" selected="1" top="310" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="349" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="src/main.c" selected="1" top="320" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="7" y="23" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="include/easing/EasingBase.h" selected="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="12" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="include/easing/QuadraticEase.h" selected="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="33" y="2361" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../nRF5_SDK_16.0.0_98a08e2/modules/nrfx/mdk/nrf52840_bitfields.h" selected="0" top="2339" codecName="Default"/>

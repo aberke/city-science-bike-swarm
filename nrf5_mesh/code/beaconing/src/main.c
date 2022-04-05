@@ -130,13 +130,13 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
         unsigned long timealive = timealive_duration();
         if (rxTimeAlive > timealive +3)
         {
-            sprintf(msg, " ---> Older node found: %d > me: %d, phase: %d\n", rxTimeAlive, timealive, received_phase);
+            sprintf(msg, " ---> Older node found: %d > me: %d, phase: %d, pattern: %d, color: %d%d%d\n", rxTimeAlive, timealive, remote_phase, remote_pattern, remote_color.r, remote_color.g, remote_color.b);
             __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, msg);
             
             set_updated_timealive(rxTimeAlive);
 
             set_phase(remote_phase);
-            set_pattern(remote_pattern);
+            set_button_pattern(remote_pattern);
             set_next_color(remote_color);
             bsp_board_led_invert(1);
         }
@@ -171,7 +171,7 @@ static void pack_send()
     advertiser_flush(&m_advertiser);
 
     int phase = current_phase();
-    uint8_t pattern = current_pattern();
+    uint8_t pattern = btn_current_pattern();
     btn_color_t color = btn_next_color();
 
     //  advertiser_enable(&m_advertiser);

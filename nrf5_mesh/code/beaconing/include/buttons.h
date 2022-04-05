@@ -26,8 +26,9 @@ typedef struct
 } color;
 typedef color btn_color_t;
 
-#define COLOR_PATTERNS_COUNT 7
-static btn_color_t color_patterns[COLOR_PATTERNS_COUNT] = {
+#define BUTTON_PATTERNS_COUNT 3
+#define BUTTON_COLORS_COUNT 7
+static btn_color_t button_colors[BUTTON_COLORS_COUNT] = {
     {0xFF, 0x00, 0x00},
     {0x00, 0xFF, 0x00},
     {0x00, 0x00, 0xFF},
@@ -37,13 +38,20 @@ static btn_color_t color_patterns[COLOR_PATTERNS_COUNT] = {
     {0xFF, 0xFF, 0xFF},
 };
 
-static uint8_t selected_color_pattern = 0;
+static uint8_t selected_button_color = 0;
+static uint8_t selected_button_pattern = 0;
 static btn_color_t m_current_color = {0xFF, 0x00, 0x00};
 static btn_color_t m_next_color = {0x00, 0x00, 0x00};
+
+uint8_t btn_current_pattern();
+void set_button_pattern(uint8_t next_pattern);
+void advance_button_pattern(uint8_t direction);
 
 btn_color_t btn_current_color();
 btn_color_t btn_next_color();
 void set_next_color(btn_color_t next_color);
+void advance_button_color(uint8_t direction);
+
 void bsp_evt_handler(bsp_event_t evt);
 void bsp_configuration();
 void button_handler(uint8_t pin_no, uint8_t button_action);
