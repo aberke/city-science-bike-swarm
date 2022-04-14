@@ -27,3 +27,13 @@ void set_updated_timealive(unsigned long rxTimealive) {
 unsigned long timealive_duration() {
     return m_timealive;
 }
+
+void touch_lastsync()
+{
+    m_lastsync = m_timealive;
+}
+
+unsigned long time_since_lastsync()
+{
+    return m_timealive - m_lastsync;
+}

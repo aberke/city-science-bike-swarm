@@ -272,7 +272,8 @@ void ledloop()
     // being in sync with another bike times out after given amount of time
     // without hearing from other bikes
 
-    inSync = true;
+    unsigned long last_sync_elapsed = time_since_lastsync();
+    inSync = (last_sync_elapsed > 0 && last_sync_elapsed < 5);
 
     // listen for messages from other bikes
     bool changedPhase = false;

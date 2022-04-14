@@ -132,6 +132,8 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
             ((compressed_color >> 2) & 0x07) * (255 / 7),
             (compressed_color & 0x03) * (255 / 3)};
 
+        touch_lastsync();
+
         unsigned long timealive = timealive_duration();
         if (rxTimeAlive > timealive +3)
         {
