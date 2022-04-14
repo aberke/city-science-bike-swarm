@@ -121,14 +121,17 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
         unsigned long rxTimeAlive = 0;
         rxTimeAlive = ((p_rx_data->p_payload[7 + 0] << 8) + (p_rx_data->p_payload[7 + 1]));
 
-        int remote_phase = ((p_rx_data->p_payload[7 + 2] << 8) + (p_rx_data->p_payload[7 + 3]));
-        uint8_t remote_pattern = p_rx_data->p_payload[7 + 4];
+        uint8_t compressed_phase = (p_rx_data->p_payload[7 + 2]);
+        int remote_phase = ((float)compressed_phase / 0xFF) * PHASE_DURATION;
 
-        uint8_t compressed_color = p_rx_data->p_payload[7 + 5];
+        uint8_t remote_pattern = p_rx_data->p_payload[7 + 3];
+
+        uint8_t compressed_color = p_rx_data->p_payload[7 + 4];
         btn_color_t remote_color = {
             (compressed_color >> 5) * (255 / 7),
             ((compressed_color >> 2) & 0x07) * (255 / 7),
             (compressed_color & 0x03) * (255 / 3)};
+
         unsigned long timealive = timealive_duration();
         if (rxTimeAlive > timealive +3)
         {
@@ -173,7 +176,10 @@ static void pack_send()
     advertiser_flush(&m_advertiser);
 
     int phase = current_phase();
+    uint8_t compressed_phase = (((float)phase / PHASE_DURATION) * 0xFF);
+
     uint8_t pattern = btn_current_pattern();
+
     btn_color_t color = btn_next_color();
     uint8_t compressed_color = (((color.r * 7 / 255) << 5) +
                                 ((color.g * 7 / 255) << 2) +
@@ -182,7 +188,7 @@ static void pack_send()
     //  advertiser_enable(&m_advertiser);
     uint8_t adv_data[] =
         {
-            0x06 + 0x06,                         /* AD data length (including type, but not itself) 6 bytes plus size of the data */
+            0x06 + 0x05,                         /* AD data length (including type, but not itself) 6 bytes plus size of the data */
             BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME, /* AD data type (Complete local name) */
             'S',                                 /* AD data payload (Name of device) */
             'W',
@@ -192,8 +198,7 @@ static void pack_send()
             // TODO: Add a parity bit
             (uint8_t)((timealive >> 8) & 0xFF),
             (uint8_t)((timealive & 0xFF)), // TODO: Bump timealive younger when not in sync and joining a swarm
-            (uint8_t)((phase >> 8) & 0xFF),
-            (uint8_t)((phase & 0xFF)), // TODO: Compress phase into 1 byte
+            (uint8_t)compressed_phase,
             (uint8_t)pattern,
             (uint8_t)compressed_color};
 

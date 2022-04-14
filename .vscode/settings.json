@@ -7,7 +7,8 @@
         "bsp_btn_ble.h": "c",
         "ble_softdevice_support.h": "c",
         "nrf_ble_qwr.h": "c",
-        "ble_srv_common.h": "c"
+        "ble_srv_common.h": "c",
+        "chrono": "c"
     },
     "search.exclude": {
         "**/*.map": true,

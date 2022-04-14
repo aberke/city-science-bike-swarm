@@ -13,10 +13,7 @@
 // Limiting pulse anytime more than a single led channel is lit due to battery discharge capacity
 #define limitedHighPulse 55
 
-// The length of the full breathing period
-#define period 2200 // ms
-
-const float periodMidpoint = (float)period / 2.0;
+const float periodMidpoint = (float)PHASE_DURATION / 2.0;
 float amplitudeSlope = (float)(highPulse - lowPulse) / periodMidpoint;
 
 // Keep track of when last message was received from another bike
@@ -161,7 +158,7 @@ void setup()
     // Serial.begin(9600);
 
  //   lastTimeCheck = millis();         // NOW
-    lastReceiveTime = (-10) * period; // initialize at a long time ago
+    lastReceiveTime = (-10) * PHASE_DURATION; // initialize at a long time ago
     lastTransmitTime = 0;
 
     // setupRadio();
@@ -179,7 +176,7 @@ int computePhaseShift(int phase1, int phase2)
         phase2 = temp;
     }
     int a = phase2 - phase1;
-    int b = period - phase2 + phase1;
+    int b = PHASE_DURATION - phase2 + phase1;
     int phaseShift = min(a, b);
     printf("phaseShift %d \n", phaseShift);
     return phaseShift;
@@ -193,7 +190,7 @@ int updatePhase()
     if (inSync)
     {
     //    int timeDelta = (currentTime - lastTimeCheck);
-    phase = (phase + phaseUpdatePeriod) % period;
+    phase = (phase + phaseUpdatePeriod) % PHASE_DURATION;
     }
     else
     {
@@ -212,7 +209,7 @@ void pulseLightCurve(int phase)
     // 0:HI mid:LO
     // A = [cos(phase*2*pi/period) + 1]((HI - LO)/2) + LO
 
-    float theta = phase * (2 * PI / (float)period);
+    float theta = phase * (2 * PI / (float)PHASE_DURATION);
     int relativeHighPulse = highPulse;
     btn_color_t current_color = btn_current_color();
     if (current_color.r + current_color.g + current_color.b > 0xFF) {

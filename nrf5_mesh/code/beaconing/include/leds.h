@@ -25,10 +25,8 @@
 #define LED_SB_INIT_PARAMS_OFF_TIME_TICKS 5000
 #endif
 
-
-
-
-
+// The length of the full breathing period
+#define PHASE_DURATION 2200 // ms
 
 void swarm_leds_init(void);
 void swarm_leds_loop(void);
