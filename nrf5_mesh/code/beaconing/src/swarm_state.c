@@ -35,5 +35,7 @@ void touch_lastsync()
 
 unsigned long time_since_lastsync()
 {
+    if (m_lastsync == 0)
+        return -1;
     return m_timealive - m_lastsync;
 }

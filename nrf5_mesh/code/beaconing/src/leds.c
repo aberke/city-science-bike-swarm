@@ -187,6 +187,7 @@ int updatePhase()
     // Update phase when in sync with another bike
     // Otherwise set phase to default and stay there
   //  currentTime = millis();
+    check_in_sync();
     if (inSync)
     {
     //    int timeDelta = (currentTime - lastTimeCheck);
@@ -272,12 +273,24 @@ void ledloop()
     // being in sync with another bike times out after given amount of time
     // without hearing from other bikes
 
-    unsigned long last_sync_elapsed = time_since_lastsync();
-    inSync = (last_sync_elapsed > 0 && last_sync_elapsed < 5);
+    check_in_sync();
 
     // listen for messages from other bikes
     bool changedPhase = false;
 
+}
+
+void check_in_sync()
+{
+    unsigned long last_sync_elapsed = time_since_lastsync();
+    if (last_sync_elapsed == -1)
+    {
+        inSync = false;
+    }
+    else
+    {
+        inSync = (last_sync_elapsed < 15);
+    }
 }
 
 int current_phase(void)

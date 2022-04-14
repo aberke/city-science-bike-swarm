@@ -132,15 +132,14 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
             ((compressed_color >> 2) & 0x07) * (255 / 7),
             (compressed_color & 0x03) * (255 / 3)};
 
-        touch_lastsync();
-
         unsigned long timealive = timealive_duration();
         if (rxTimeAlive > timealive +3)
         {
-            sprintf(msg, " ---> Older node found: %d > me: %d, phase: %d, pattern: %d, color: %d%d%d\n", rxTimeAlive, timealive, remote_phase, remote_pattern, remote_color.r, remote_color.g, remote_color.b);
+            sprintf(msg, " ---> Older node found: %d > me: %d, phase: %d, pattern: %d, color: %d %d %d\n", rxTimeAlive, timealive, remote_phase, remote_pattern, remote_color.r, remote_color.g, remote_color.b);
             __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, msg);
             
             set_updated_timealive(rxTimeAlive);
+            touch_lastsync();
 
             set_phase(remote_phase);
             set_button_pattern(remote_pattern);
@@ -149,7 +148,9 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
         }
         else
         {
-            // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> I'm older, ignoring: %d (me: %d)\n", rxTimeAlive, timealive);
+            touch_lastsync();
+            int phase = current_phase();
+            __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> I'm older, ignoring: %d (me: %d, phase: %d)\n", rxTimeAlive, timealive, phase);
         }
     }
 
