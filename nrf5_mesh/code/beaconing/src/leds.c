@@ -4,6 +4,7 @@
 #include "log.h"
 #include "buttons.h"
 #include "app_timer.h"
+#include "swarm_state.h"
 
 // LED boundaries, 0x00-0xFF
 #define lowPulse 10
@@ -272,15 +273,11 @@ void ledloop()
     //loopTime = newLoopTime;
     //// update current interval
     //currentTime = millis();
+
     // check/update whether in sync with another bike
     // being in sync with another bike times out after given amount of time
     // without hearing from other bikes
-
     check_in_sync();
-
-    // listen for messages from other bikes
-    bool changedPhase = false;
-
 }
 
 void check_in_sync()

@@ -15,7 +15,7 @@ typedef enum
     STATE_SYNC_ACTIVE = 2,
     STATE_SYNC_DEACTIVATING = 3
 } state_sync_t;
-state_sync_t m_sync_state;
+static state_sync_t m_sync_state;
 
 static unsigned long int m_timealive = 0;
 static unsigned long int m_lastsync = 0;

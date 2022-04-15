@@ -16,15 +16,7 @@
 #include "nrf_log_ctrl.h"
 #include "nrf_log_default_backends.h"
 
-// Single pixel RGB data structure. Make an array out of this to store RGB data for a string.
-typedef struct
-{
-
-    uint8_t r;
-    uint8_t g;
-    uint8_t b;
-} color;
-typedef color btn_color_t;
+#include "color.h"
 
 #define BUTTON_PATTERNS_COUNT 3
 #define BUTTON_COLORS_COUNT 7

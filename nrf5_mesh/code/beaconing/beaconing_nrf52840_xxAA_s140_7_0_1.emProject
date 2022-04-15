@@ -51,6 +51,7 @@
       <file file_name="src/swarm_state.c" />
       <file file_name="src/easing.c" />
       <file file_name="src/neopixel_nrf52.cpp" />
+      <file file_name="src/color.c" />
     </folder>
     <folder Name="Core">
       <file file_name="../../mesh/core/src/internal_event.c" />
