@@ -33,12 +33,12 @@ void bsp_evt_handler(bsp_event_t evt)
     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "BSP: %u\n", evt);
 }
 
-uint8_t btn_current_pattern()
+btn_pattern_t btn_current_pattern()
 {
     return selected_button_pattern;
 }
 
-void set_button_pattern(uint8_t next_pattern)
+void set_button_pattern(btn_pattern_t next_pattern)
 {
     if (next_pattern == selected_button_pattern)
         return;
@@ -53,7 +53,7 @@ btn_color_t btn_current_color()
 
 void advance_button_pattern(uint8_t direction)
 {
-    uint8_t next_button_pattern = (selected_button_pattern + direction) % BUTTON_PATTERNS_COUNT;
+    btn_pattern_t next_button_pattern = ((uint8_t)selected_button_pattern + direction) % BUTTON_PATTERNS_COUNT;
 
     selected_button_pattern = next_button_pattern;
 

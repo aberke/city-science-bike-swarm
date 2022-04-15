@@ -50,7 +50,6 @@ bool init = false;
 
 static uint32_t m_buffer_tx[I2S_BUFFER_SIZE];
 static volatile int nled = 1;
-float multiplier;
 
 APP_TIMER_DEF(my_timer_id);
 
@@ -162,7 +161,6 @@ void neopixel(int phase)
 {
     uint32_t err_code;
     static bool init = false;
-    bool neopixel = true;
 
     if (init == false)
     {
@@ -174,34 +172,71 @@ void neopixel(int phase)
         init = true;
     }
 
-    multiplier = (float)phase / (float)255;
+    float phase_progress = (float)phase / 255.f;
 
-    uint8_t r_level; // was 255
-    uint8_t g_level; //was 120
-    uint8_t b_level; //was 35
+    uint8_t r_level;
+    uint8_t g_level;
+    uint8_t b_level;
     btn_color_t current_color = btn_current_color();
+    btn_pattern_t current_pattern = btn_current_pattern();
 
-    if (neopixel == true)
+    if (current_pattern == BUTTON_PATTERN_WHOLE_FADE)
     {
         for (int i = 0; i < NLEDS; i += 1)
         {
-            if (i < 20)
+            r_level = current_color.r * phase_progress;
+            g_level = current_color.g * phase_progress;
+            b_level = current_color.b * phase_progress;
+
+            set_led_data(i, r_level, g_level, b_level);
+        }
+    }
+    else if (current_pattern == BUTTON_PATTERN_BUILD_FADE)
+    {
+        for (int i = 0; i < NLEDS; i += 1)
+        {
+            if (i < NLEDS / 3)
             {
-                r_level = current_color.r * CubicEaseIn(multiplier);
-                g_level = current_color.g * CubicEaseIn(multiplier);
-                b_level = current_color.b * CubicEaseIn(multiplier);
+                r_level = current_color.r * CubicEaseIn(phase_progress);
+                g_level = current_color.g * CubicEaseIn(phase_progress);
+                b_level = current_color.b * CubicEaseIn(phase_progress);
             }
-            else if (i < 40)
+            else if (i < (2 * NLEDS / 3))
             {
-                r_level = current_color.r * CubicEaseInOut(multiplier);
-                g_level = current_color.g * CubicEaseInOut(multiplier);
-                b_level = current_color.b * CubicEaseInOut(multiplier);
+                r_level = current_color.r * CubicEaseInOut(phase_progress);
+                g_level = current_color.g * CubicEaseInOut(phase_progress);
+                b_level = current_color.b * CubicEaseInOut(phase_progress);
             }
             else
             {
-                r_level = current_color.r * CubicEaseOut(multiplier);
-                g_level = current_color.g * CubicEaseOut(multiplier);
-                b_level = current_color.b * CubicEaseOut(multiplier);
+                r_level = current_color.r * CubicEaseOut(phase_progress);
+                g_level = current_color.g * CubicEaseOut(phase_progress);
+                b_level = current_color.b * CubicEaseOut(phase_progress);
+            }
+            set_led_data(i, r_level, g_level, b_level);
+        }
+    }
+    else if (current_pattern == BUTTON_PATTERN_CHASERS)
+    {
+        for (int i = 0; i < NLEDS; i += 1)
+        {
+            if (i < NLEDS / 3)
+            {
+                r_level = current_color.r * CubicEaseOut(phase_progress);
+                g_level = current_color.g * CubicEaseOut(phase_progress);
+                b_level = current_color.b * CubicEaseOut(phase_progress);
+            }
+            else if (i < (2 * NLEDS / 3))
+            {
+                r_level = current_color.r * CubicEaseInOut(phase_progress);
+                g_level = current_color.g * CubicEaseInOut(phase_progress);
+                b_level = current_color.b * CubicEaseInOut(phase_progress);
+            }
+            else
+            {
+                r_level = current_color.r * CubicEaseIn(phase_progress);
+                g_level = current_color.g * CubicEaseIn(phase_progress);
+                b_level = current_color.b * CubicEaseIn(phase_progress);
             }
             set_led_data(i, r_level, g_level, b_level);
         }
