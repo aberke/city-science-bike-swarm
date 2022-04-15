@@ -248,13 +248,16 @@ void pulseLightLinear(int phase)
 
 void light(int amplitude, int limitedAmplitude)
 {
-    analogWrite(amplitude); // nrf52-DK
-    
+    // Pulse lights on the nrf52-DK
+    analogWrite(amplitude);
+
+    // Pulse lights on the headlamp
     neopixel_SPI(amplitude);
 
     __NOP();
 
-    neopixel(limitedAmplitude); //(RJ)
+    // Pulse lights on the LED strip
+    neopixel(limitedAmplitude);
 }
 
 void ledloop()
