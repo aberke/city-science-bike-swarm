@@ -150,7 +150,7 @@ static void rx_cb(const nrf_mesh_adv_packet_rx_data_t *p_rx_data)
         {
             touch_lastsync();
             int phase = current_phase();
-            __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> I'm older, ignoring: %d (me: %d, phase: %d)\n", rxTimeAlive, timealive, phase);
+            // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> I'm older, ignoring: %d (me: %d, phase: %d)\n", rxTimeAlive, timealive, phase);
         }
     }
 

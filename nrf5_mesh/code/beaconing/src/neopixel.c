@@ -56,6 +56,7 @@ static volatile int nled = 1;
 static btn_color_t m_led_strip_state[NLEDS];
 static float last_seen_phase_progress = 1.f;
 static uint32_t meteor_timer;
+static uint16_t last_seen_meteor_position;
 
 APP_TIMER_DEF(my_timer_id);
 
@@ -269,10 +270,14 @@ void neopixel(int amplitude, int phase)
             meteor_timer = millis();
         }
 
-        uint32_t meteor_duration = (int)PHASE_DURATION / 3;
+        uint32_t meteor_duration = (int)PHASE_DURATION / 2;
 
         float meteor_progress = (millis() - meteor_timer) / (float)meteor_duration;
-
+        uint16_t meteor_position = floor(QuadraticEaseOut(meteor_progress) * NLEDS);
+        if (meteor_position < last_seen_meteor_position)
+        {
+            last_seen_meteor_position = 0;
+        }
         // char phase_progress_str[20];
         // ftoa(phase_progress, phase_progress_str, 2);
         // char last_seen_phase_progress_str[20];
@@ -286,60 +291,45 @@ void neopixel(int amplitude, int phase)
         for (int i = 0; i < NLEDS; i += 1)
         {
             // Animate meteor forward
-            if (meteor_progress >= 1 || i < QuadraticEaseOut(meteor_progress) * NLEDS)
+            if (i <= meteor_position && i > last_seen_meteor_position)
             {
-                // Pixels behind meteor
-                if (m_led_strip_state[i].r > 0 || m_led_strip_state[i].g > 0 || m_led_strip_state[i].b > 0)
-                {
-                    // Pixel already lit, now decay
-                    uint8_t random = 0;
-                    sd_rand_application_vector_get((uint8_t *)&random, sizeof(random));
-                    if (i == 10)
-                    {
-                        // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Pixel %d is %d%d%d\n", i, m_led_strip_state[i].r, m_led_strip_state[i].g, m_led_strip_state[i].b);
-                    }
-                    if (random % 100 < 20)
-                    {
-
-                        r_level = MAX(1, floor(m_led_strip_state[i].r * (1 - (random % 20) / 100.f)));
-                        g_level = MAX(1, floor(m_led_strip_state[i].g * (1 - (random % 20) / 100.f)));
-                        b_level = MAX(1, floor(m_led_strip_state[i].b * (1 - (random % 20) / 100.f)));
-                        if (i == 10)
-                        {
-                            __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Pixel %d decay %d%d%d\n", i, r_level, g_level, b_level);
-                        }
-                        m_led_strip_state[i] = (btn_color_t){.r = r_level, .g = g_level, .b = b_level};
-                        set_led_data(i, r_level, g_level, b_level);
-                    }
-                }
-                else
-                {
-                    // Pixel not yet lit
-                    if (i == 10)
-                    {
-                        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Pixel %d not yet lit, lighting %d%d%d\n", i, m_led_strip_state[i].r, m_led_strip_state[i].g, m_led_strip_state[i].b);
-                    }
-                    r_level = current_color.r * 1;
-                    g_level = current_color.g * 1;
-                    b_level = current_color.b * 1;
-
-                    m_led_strip_state[i] = (btn_color_t){.r = r_level, .g = g_level, .b = b_level};
-                    set_led_data(i, r_level, g_level, b_level);
-                }
-            }
-            else
-            {
-                // Pixels ahead of meteor
+                last_seen_meteor_position = i;
+                // Relight pixels
                 if (i == 10)
                 {
-                    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Pixel %d < %d (%s) not yet lit %d%d%d\n", i, (int)(meteor_progress * NLEDS), meteor_progress_str, r_level, g_level, b_level);
+                    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Pixel %d not yet lit, lighting %d%d%d\n", i, m_led_strip_state[i].r, m_led_strip_state[i].g, m_led_strip_state[i].b);
                 }
-                r_level = 0;
-                g_level = 0;
-                b_level = 0;
+                r_level = current_color.r * 1;
+                g_level = current_color.g * 1;
+                b_level = current_color.b * 1;
 
                 m_led_strip_state[i] = (btn_color_t){.r = r_level, .g = g_level, .b = b_level};
                 set_led_data(i, r_level, g_level, b_level);
+            }
+
+            // Pixels behind meteor
+            if (m_led_strip_state[i].r > 0 || m_led_strip_state[i].g > 0 || m_led_strip_state[i].b > 0)
+            {
+                // Pixel already lit, now decay
+                uint8_t random = 0;
+                sd_rand_application_vector_get((uint8_t *)&random, sizeof(random));
+                if (i == 10)
+                {
+                    // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Pixel %d is %d%d%d\n", i, m_led_strip_state[i].r, m_led_strip_state[i].g, m_led_strip_state[i].b);
+                }
+                if (random % 100 < 20)
+                {
+
+                    r_level = MAX(1, floor(m_led_strip_state[i].r * (1 - (random % 20) / 100.f)));
+                    g_level = MAX(1, floor(m_led_strip_state[i].g * (1 - (random % 20) / 100.f)));
+                    b_level = MAX(1, floor(m_led_strip_state[i].b * (1 - (random % 20) / 100.f)));
+                    if (i == 10)
+                    {
+                        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Pixel %d decay %d%d%d\n", i, r_level, g_level, b_level);
+                    }
+                    m_led_strip_state[i] = (btn_color_t){.r = r_level, .g = g_level, .b = b_level};
+                    set_led_data(i, r_level, g_level, b_level);
+                }
             }
         }
     }
