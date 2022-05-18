@@ -199,7 +199,7 @@ int updatePhase()
         phase = defaultPhase;
     }
     lastTimeCheck = currentTime;
-  //   printf("phase %d \n", phase);
+    // printf("phase %d \n", phase);
     return phase;
 }
 
@@ -220,7 +220,7 @@ void pulseLightCurve(int phase)
     int amplitude = (cos(theta + PI) + 1) * ((highPulse - lowPulse) / 2) + lowPulse;
     int limitedAmplitude = (cos(theta + PI) + 1) * ((relativeHighPulse - lowPulse) / 2) + lowPulse;
     //    printf("amplitude %d  phase: %d  highPulse %d  lowPulse %d \n", amplitude, phase, highPulse, lowPulse);
-    light(amplitude, limitedAmplitude);
+    light(amplitude, limitedAmplitude, phase);
 }
 
 void pulseLightLinear(int phase)
@@ -244,10 +244,10 @@ void pulseLightLinear(int phase)
     {
         amplitude = lowPulse + (amplitudeSlope * (phase - periodMidpoint));
     }
-    light(amplitude, amplitude);
+    light(amplitude, amplitude, phase);
 }
 
-void light(int amplitude, int limitedAmplitude)
+void light(int amplitude, int limitedAmplitude, int phase)
 {
     // Pulse lights on the nrf52-DK
     analogWrite(amplitude);
@@ -258,7 +258,7 @@ void light(int amplitude, int limitedAmplitude)
     __NOP();
 
     // Pulse lights on the LED strip
-    neopixel(limitedAmplitude);
+    neopixel(limitedAmplitude, phase);
 }
 
 void ledloop()

@@ -6,6 +6,6 @@
 uint32_t millis(void);
 uint32_t compareMillis(uint32_t previousMillis, uint32_t currentMillis);
 
-void neopixel(int phase);
+void neopixel(int amplitude, int phase);
 
 #endif

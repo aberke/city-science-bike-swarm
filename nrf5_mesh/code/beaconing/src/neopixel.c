@@ -23,6 +23,7 @@
 
 #include <stdint.h>
 #include <string.h>
+#include <math.h>
 #include "nordic_common.h"
 #include "nrf.h"
 #include "app_util_platform.h"
@@ -37,6 +38,7 @@
 #include "neopixel.h"
 #include "app_timer.h"
 #include "buttons.h"
+#include "leds.h"
 
 //volatile uint8_t g_demo_mode = 0;
 //volatile bool g_i2s_start = true;
@@ -44,14 +46,81 @@
 volatile bool neopixel_running = false;
 bool init = false;
 
-#define NLEDS 144
+#define NLEDS 72
 #define RESET_BITS 6
 #define I2S_BUFFER_SIZE 3 * NLEDS + RESET_BITS
 
 static uint32_t m_buffer_tx[I2S_BUFFER_SIZE];
 static volatile int nled = 1;
 
+static btn_color_t m_led_strip_state[NLEDS];
+static float last_seen_phase_progress = 1.f;
+static uint32_t meteor_timer;
+
 APP_TIMER_DEF(my_timer_id);
+
+// Reverses a string 'str' of length 'len'
+void reverse(char *str, int len)
+{
+    int i = 0, j = len - 1, temp;
+    while (i < j)
+    {
+        temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+        i++;
+        j--;
+    }
+}
+
+// Converts a given integer x to string str[].
+// d is the number of digits required in the output.
+// If d is more than the number of digits in x,
+// then 0s are added at the beginning.
+int intToStr(int x, char str[], int d)
+{
+    int i = 0;
+    while (x)
+    {
+        str[i++] = (x % 10) + '0';
+        x = x / 10;
+    }
+
+    // If number of digits required is more, then
+    // add 0s at the beginning
+    while (i < d)
+        str[i++] = '0';
+
+    reverse(str, i);
+    str[i] = '\0';
+    return i;
+}
+
+// Converts a floating-point/double number to a string.
+void ftoa(float n, char *res, int afterpoint)
+{
+    // Extract integer part
+    int ipart = (int)n;
+
+    // Extract floating part
+    float fpart = n - (float)ipart;
+
+    // convert integer part to string
+    int i = intToStr(ipart, res, 0);
+
+    // check for display option after point
+    if (afterpoint != 0)
+    {
+        res[i] = '.'; // add dot
+
+        // Get the value of fraction part upto given no.
+        // of points after dot. The third parameter
+        // is needed to handle cases like 233.007
+        fpart = fpart * pow(10, afterpoint);
+
+        intToStr((int)fpart, res + i + 1, afterpoint);
+    }
+}
 
 static void timeout_handler(void *p_context)
 {
@@ -157,7 +226,7 @@ uint32_t compareMillis(uint32_t previousMillis, uint32_t currentMillis)
 
 /**@brief Application main function.
  */
-void neopixel(int phase)
+void neopixel(int amplitude, int phase)
 {
     uint32_t err_code;
     static bool init = false;
@@ -172,7 +241,8 @@ void neopixel(int phase)
         init = true;
     }
 
-    float phase_progress = (float)phase / 255.f;
+    float amplitude_progress = (float)amplitude / 255.f;
+    float phase_progress = (float)phase / PHASE_DURATION;
 
     uint8_t r_level;
     uint8_t g_level;
@@ -184,36 +254,93 @@ void neopixel(int phase)
     {
         for (int i = 0; i < NLEDS; i += 1)
         {
-            r_level = current_color.r * phase_progress;
-            g_level = current_color.g * phase_progress;
-            b_level = current_color.b * phase_progress;
+            r_level = current_color.r * amplitude_progress;
+            g_level = current_color.g * amplitude_progress;
+            b_level = current_color.b * amplitude_progress;
 
             set_led_data(i, r_level, g_level, b_level);
         }
     }
     else if (current_pattern == BUTTON_PATTERN_BUILD_FADE)
     {
+        if (phase_progress < last_seen_phase_progress)
+        {
+            // New phase, throw meteor
+            meteor_timer = millis();
+        }
+
+        uint32_t meteor_duration = (int)PHASE_DURATION / 3;
+
+        float meteor_progress = (millis() - meteor_timer) / (float)meteor_duration;
+
+        // char phase_progress_str[20];
+        // ftoa(phase_progress, phase_progress_str, 2);
+        // char last_seen_phase_progress_str[20];
+        // ftoa(last_seen_phase_progress, last_seen_phase_progress_str, 2);
+        char meteor_progress_str[20];
+        ftoa(meteor_progress, meteor_progress_str, 2);
+        // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Meteor progress %s (%d), %d (%d)\n", meteor_progress_str, millis() - meteor_timer, meteor_duration, meteor_timer);
+        // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Time: %d, Meteor duration %d, timer %d,  %d %s/%s\n",
+        //   millis(), meteor_duration, meteor_timer, phase, phase_progress_str, last_seen_phase_progress_str);
+
         for (int i = 0; i < NLEDS; i += 1)
         {
-            if (i < NLEDS / 3)
+            // Animate meteor forward
+            if (meteor_progress >= 1 || i < QuadraticEaseOut(meteor_progress) * NLEDS)
             {
-                r_level = current_color.r * CubicEaseIn(phase_progress);
-                g_level = current_color.g * CubicEaseIn(phase_progress);
-                b_level = current_color.b * CubicEaseIn(phase_progress);
-            }
-            else if (i < (2 * NLEDS / 3))
-            {
-                r_level = current_color.r * CubicEaseInOut(phase_progress);
-                g_level = current_color.g * CubicEaseInOut(phase_progress);
-                b_level = current_color.b * CubicEaseInOut(phase_progress);
+                // Pixels behind meteor
+                if (m_led_strip_state[i].r > 0 || m_led_strip_state[i].g > 0 || m_led_strip_state[i].b > 0)
+                {
+                    // Pixel already lit, now decay
+                    uint8_t random = 0;
+                    sd_rand_application_vector_get((uint8_t *)&random, sizeof(random));
+                    if (i == 10)
+                    {
+                        // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Pixel %d is %d%d%d\n", i, m_led_strip_state[i].r, m_led_strip_state[i].g, m_led_strip_state[i].b);
+                    }
+                    if (random % 100 < 20)
+                    {
+
+                        r_level = MAX(1, floor(m_led_strip_state[i].r * (1 - (random % 20) / 100.f)));
+                        g_level = MAX(1, floor(m_led_strip_state[i].g * (1 - (random % 20) / 100.f)));
+                        b_level = MAX(1, floor(m_led_strip_state[i].b * (1 - (random % 20) / 100.f)));
+                        if (i == 10)
+                        {
+                            __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Pixel %d decay %d%d%d\n", i, r_level, g_level, b_level);
+                        }
+                        m_led_strip_state[i] = (btn_color_t){.r = r_level, .g = g_level, .b = b_level};
+                        set_led_data(i, r_level, g_level, b_level);
+                    }
+                }
+                else
+                {
+                    // Pixel not yet lit
+                    if (i == 10)
+                    {
+                        __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Pixel %d not yet lit, lighting %d%d%d\n", i, m_led_strip_state[i].r, m_led_strip_state[i].g, m_led_strip_state[i].b);
+                    }
+                    r_level = current_color.r * 1;
+                    g_level = current_color.g * 1;
+                    b_level = current_color.b * 1;
+
+                    m_led_strip_state[i] = (btn_color_t){.r = r_level, .g = g_level, .b = b_level};
+                    set_led_data(i, r_level, g_level, b_level);
+                }
             }
             else
             {
-                r_level = current_color.r * CubicEaseOut(phase_progress);
-                g_level = current_color.g * CubicEaseOut(phase_progress);
-                b_level = current_color.b * CubicEaseOut(phase_progress);
+                // Pixels ahead of meteor
+                if (i == 10)
+                {
+                    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Pixel %d < %d (%s) not yet lit %d%d%d\n", i, (int)(meteor_progress * NLEDS), meteor_progress_str, r_level, g_level, b_level);
+                }
+                r_level = 0;
+                g_level = 0;
+                b_level = 0;
+
+                m_led_strip_state[i] = (btn_color_t){.r = r_level, .g = g_level, .b = b_level};
+                set_led_data(i, r_level, g_level, b_level);
             }
-            set_led_data(i, r_level, g_level, b_level);
         }
     }
     else if (current_pattern == BUTTON_PATTERN_CHASERS)
@@ -261,12 +388,15 @@ void neopixel(int phase)
             .p_tx_buffer = &m_buffer_tx[0],
         };
         err_code = nrf_drv_i2s_start(&initial_buffers, I2S_BUFFER_SIZE, 0);
+
         // for (int i = 0; i < NLEDS; i += 1)
         // {
         //     set_led_data(i, r_level, g_level, b_level);
         // }
         neopixel_running = true;
     }
+
+    last_seen_phase_progress = phase_progress;
 }
 
 /**

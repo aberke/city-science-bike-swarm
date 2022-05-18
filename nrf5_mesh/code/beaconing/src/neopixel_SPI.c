@@ -57,7 +57,7 @@
 
 #define N_LEDS 1
 
-void update_string(color *data, uint16_t len);
+void update_string(btn_color_t *data, uint16_t len);
 
 float multiply;
 
@@ -112,8 +112,8 @@ void neopixel_SPI(int phase)
         spi_initialized = true;
     }
 
-    color led_data[N_LEDS];
-    color scratch[N_LEDS];
+    btn_color_t led_data[N_LEDS];
+    btn_color_t scratch[N_LEDS];
     btn_color_t current_color = btn_current_color();
 
     //union leds
@@ -145,7 +145,7 @@ void neopixel_SPI(int phase)
 
 /* turn bits into pulses of the correct ratios for the WS2811 by making *
  * bytes with the correct number of ones & zeros in the right order.    */
-void update_string(color *data, uint16_t len)
+void update_string(btn_color_t *data, uint16_t len)
 {
     uint8_t *bytearray = (uint8_t *)data;
 

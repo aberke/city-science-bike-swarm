@@ -31,7 +31,7 @@
 void swarm_leds_init(void);
 void swarm_leds_loop(void);
 void swarm_leds_restart(void);
-void light(int amplitude, int limitedAmplitude);
+void light(int amplitude, int limitedAmplitude, int phase);
 void ledloop();
 void check_in_sync();
 int current_phase(void);

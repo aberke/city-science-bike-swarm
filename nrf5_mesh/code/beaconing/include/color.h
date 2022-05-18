@@ -15,8 +15,8 @@ typedef struct
     uint8_t r;
     uint8_t g;
     uint8_t b;
-} color;
-typedef color btn_color_t;
+} COLOR;
+typedef COLOR btn_color_t;
 
 btn_color_t change_hsv_c(
     const btn_color_t in,
