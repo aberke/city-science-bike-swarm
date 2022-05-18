@@ -12076,7 +12076,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/22049b.pdf</description>
 <attribute name="DIGIKEY" value="EG2506-ND"/>
 </part>
 <part name="RN2" library="resistor-dil" library_urn="urn:adsk.eagle:library:342" deviceset="4R-N" device="EXBS8V" package3d_urn="urn:adsk.eagle:package:24925/1">
-<attribute name="DIGIKEY" value="YC124J-1.0KCT-ND"/>
+<attribute name="DIGIKEY" value="YC324J-1.0KCT-ND"/>
 </part>
 <part name="R1" library="SparkFun" deviceset="RESISTOR" device="0603-RES" value="100k">
 <attribute name="DIGIKEY" value="RMCF0603FG100KCT-ND"/>

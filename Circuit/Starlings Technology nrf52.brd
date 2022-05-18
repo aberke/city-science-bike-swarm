@@ -2004,7 +2004,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="VALUE" x="38.735" y="23.5585" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
 <element name="RN2" library="resistor-dil" library_urn="urn:adsk.eagle:library:342" package="EXBS8V" package3d_urn="urn:adsk.eagle:package:24925/1" value="" x="20.32" y="45.72" smashed="yes">
-<attribute name="DIGIKEY" value="YC124J-1.0KCT-ND" x="20.32" y="45.72" size="1.778" layer="27" display="off"/>
+<attribute name="DIGIKEY" value="YC324J-1.0KCT-ND" x="20.32" y="45.72" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="" x="20.32" y="45.72" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="20.32" y="45.72" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="17.93875" y="47.46625" size="0.6096" layer="25"/>
