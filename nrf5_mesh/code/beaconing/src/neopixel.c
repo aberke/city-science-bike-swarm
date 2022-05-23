@@ -291,7 +291,7 @@ void neopixel(int amplitude, int phase)
         for (int i = 0; i < NLEDS; i += 1)
         {
             // Animate meteor forward
-            if (i <= meteor_position && i > last_seen_meteor_position)
+            if (meteor_progress <= 1 && i <= meteor_position && i >= last_seen_meteor_position)
             {
                 last_seen_meteor_position = i;
                 // Relight pixels
