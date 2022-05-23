@@ -196,7 +196,7 @@ int updatePhase()
     }
     else
     {
-        phase = defaultPhase;
+        phase = periodMidpoint;
     }
     lastTimeCheck = currentTime;
     // printf("phase %d \n", phase);

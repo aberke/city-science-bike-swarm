@@ -53,8 +53,9 @@ bool init = false;
 static uint32_t m_buffer_tx[I2S_BUFFER_SIZE];
 static volatile int nled = 1;
 
-static btn_color_t m_led_strip_state[NLEDS];
+static float m_led_strip_meteor_decay[NLEDS];
 static float last_seen_phase_progress = 1.f;
+static uint8_t m_led_strip_heat[NLEDS];
 static uint32_t meteor_timer;
 static uint16_t last_seen_meteor_position;
 
@@ -259,10 +260,12 @@ void neopixel(int amplitude, int phase)
             g_level = current_color.g * amplitude_progress;
             b_level = current_color.b * amplitude_progress;
 
+            m_led_strip_meteor_decay[i] = amplitude_progress;
+
             set_led_data(i, r_level, g_level, b_level);
         }
     }
-    else if (current_pattern == BUTTON_PATTERN_BUILD_FADE)
+    else if (current_pattern == BUTTON_PATTERN_METEOR)
     {
         if (phase_progress < last_seen_phase_progress)
         {
@@ -297,64 +300,83 @@ void neopixel(int amplitude, int phase)
                 // Relight pixels
                 if (i == 10)
                 {
-                    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Pixel %d not yet lit, lighting %d%d%d\n", i, m_led_strip_state[i].r, m_led_strip_state[i].g, m_led_strip_state[i].b);
+                    char m_led_strip_meteor_decay_str[20];
+                    ftoa(m_led_strip_meteor_decay[i], m_led_strip_meteor_decay_str, 2);
+                    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Pixel %d not yet lit, lighting %s\n", i, m_led_strip_meteor_decay_str);
                 }
                 r_level = current_color.r * 1;
                 g_level = current_color.g * 1;
                 b_level = current_color.b * 1;
 
-                m_led_strip_state[i] = (btn_color_t){.r = r_level, .g = g_level, .b = b_level};
+                m_led_strip_meteor_decay[i] = 1.f;
                 set_led_data(i, r_level, g_level, b_level);
             }
 
             // Pixels behind meteor
-            if (m_led_strip_state[i].r > 0 || m_led_strip_state[i].g > 0 || m_led_strip_state[i].b > 0)
+            if (m_led_strip_meteor_decay[i] > 0)
             {
                 // Pixel already lit, now decay
                 uint8_t random = 0;
                 sd_rand_application_vector_get((uint8_t *)&random, sizeof(random));
-                if (i == 10)
-                {
-                    // __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Pixel %d is %d%d%d\n", i, m_led_strip_state[i].r, m_led_strip_state[i].g, m_led_strip_state[i].b);
-                }
                 if (random % 100 < 20)
                 {
-
-                    r_level = MAX(1, floor(m_led_strip_state[i].r * (1 - (random % 20) / 100.f)));
-                    g_level = MAX(1, floor(m_led_strip_state[i].g * (1 - (random % 20) / 100.f)));
-                    b_level = MAX(1, floor(m_led_strip_state[i].b * (1 - (random % 20) / 100.f)));
+                    float decay = (1 - (random % 20) / 100.f);
+                    r_level = MAX(1, floor(m_led_strip_meteor_decay[i] * current_color.r * decay));
+                    g_level = MAX(1, floor(m_led_strip_meteor_decay[i] * current_color.g * decay));
+                    b_level = MAX(1, floor(m_led_strip_meteor_decay[i] * current_color.b * decay));
                     if (i == 10)
                     {
                         __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " ---> Pixel %d decay %d%d%d\n", i, r_level, g_level, b_level);
                     }
-                    m_led_strip_state[i] = (btn_color_t){.r = r_level, .g = g_level, .b = b_level};
+                    m_led_strip_meteor_decay[i] *= decay;
+                    m_led_strip_heat[i] = m_led_strip_meteor_decay[i] * 255;
                     set_led_data(i, r_level, g_level, b_level);
                 }
             }
         }
     }
-    else if (current_pattern == BUTTON_PATTERN_CHASERS)
+    else if (current_pattern == BUTTON_PATTERN_FIRE)
     {
+        int cooldown;
+        uint8_t random = 0;
+
+        // Cool down
         for (int i = 0; i < NLEDS; i += 1)
         {
-            if (i < NLEDS / 3)
+            sd_rand_application_vector_get((uint8_t *)&random, sizeof(random));
+            if (random % 100 < 50)
             {
-                r_level = current_color.r * CubicEaseOut(phase_progress);
-                g_level = current_color.g * CubicEaseOut(phase_progress);
-                b_level = current_color.b * CubicEaseOut(phase_progress);
+                cooldown = random % 15;
+                if (cooldown > m_led_strip_heat[i])
+                {
+                    m_led_strip_heat[i] = 0;
+                }
+                else
+                {
+                    m_led_strip_heat[i] = m_led_strip_heat[i] - cooldown;
+                }
             }
-            else if (i < (2 * NLEDS / 3))
-            {
-                r_level = current_color.r * CubicEaseInOut(phase_progress);
-                g_level = current_color.g * CubicEaseInOut(phase_progress);
-                b_level = current_color.b * CubicEaseInOut(phase_progress);
-            }
-            else
-            {
-                r_level = current_color.r * CubicEaseIn(phase_progress);
-                g_level = current_color.g * CubicEaseIn(phase_progress);
-                b_level = current_color.b * CubicEaseIn(phase_progress);
-            }
+        }
+
+        // Advance and diffuse heat from below
+        for (int k = NLEDS - 1; k >= 2; k--)
+        {
+            m_led_strip_heat[k] = (m_led_strip_heat[k - 1] + 2 * m_led_strip_heat[k - 2]) / 3;
+        }
+
+        // Ignite new sparks near bottom
+        sd_rand_application_vector_get((uint8_t *)&random, sizeof(random));
+        if ((random % 255) < (amplitude_progress * 255))
+        {
+            m_led_strip_heat[random % 7] = (random % 100) + 155; // 150-255
+        }
+
+        // Translate heat to colors
+        for (int i = 0; i < NLEDS; i += 1)
+        {
+            r_level = m_led_strip_heat[i] / 255.f * current_color.r;
+            g_level = m_led_strip_heat[i] / 255.f * current_color.g;
+            b_level = m_led_strip_heat[i] / 255.f * current_color.b;
             set_led_data(i, r_level, g_level, b_level);
         }
     }

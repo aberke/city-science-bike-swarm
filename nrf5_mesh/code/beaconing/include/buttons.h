@@ -33,8 +33,8 @@ static btn_color_t button_colors[BUTTON_COLORS_COUNT] = {
 typedef enum
 {
     BUTTON_PATTERN_WHOLE_FADE = 0,
-    BUTTON_PATTERN_BUILD_FADE = 1,
-    BUTTON_PATTERN_CHASERS = 2
+    BUTTON_PATTERN_METEOR = 1,
+    BUTTON_PATTERN_FIRE = 2
 } btn_pattern_t;
 
 static uint8_t selected_button_color = 0;
