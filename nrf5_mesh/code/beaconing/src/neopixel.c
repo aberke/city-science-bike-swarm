@@ -368,7 +368,8 @@ void neopixel(int amplitude, int phase)
         sd_rand_application_vector_get((uint8_t *)&random, sizeof(random));
         if ((random % 255) < (amplitude_progress * 255))
         {
-            m_led_strip_heat[random % 7] = (random % 100) + 155; // 150-255
+            sd_rand_application_vector_get((uint8_t *)&random, sizeof(random));
+            m_led_strip_heat[random % 7] = 255; // 150-255
         }
 
         // Translate heat to colors
